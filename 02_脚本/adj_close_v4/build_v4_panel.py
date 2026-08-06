@@ -17,7 +17,7 @@ def main() -> None:
     if "date" in fund.columns:
         fund = fund.rename(columns={"date": "Date"})
     etf = pd.read_csv(config.ETF19_PANEL)
-    external = pd.read_csv(config.EXTERNAL_DAILY, parse_dates=["Date"])
+    external = pd.read_csv(config.EXTERNAL_DAILY, parse_dates=["Date"]).sort_values("Date").reset_index(drop=True)
 
     fund["Date"] = pd.to_datetime(fund["Date"])
     etf["Date"] = pd.to_datetime(etf["Date"])
@@ -39,12 +39,28 @@ def main() -> None:
         .reset_index(drop=True)
     )
 
-    keep_ext = ["Date"] + [
-        c
-        for c in external.columns
-        if c.startswith(("VIX", "TNX", "Credit", "JNK", "USD", "Sect", "Yld", "Stk"))
-    ]
-    external = external[keep_ext].sort_values("Date").reset_index(drop=True)
+    vix = external["VIX_Close"]
+    tnx = external["TNX_Yield"]
+    ext = pd.DataFrame({"Date": external["Date"]})
+    etf_for_ext = etf[
+        ["Date", "SPY", "HYG", "TLT", "JNK", "UUP", "GLD", "XLK", "XLF", "TIP"]
+    ].sort_values("Date")
+    ext = ext.merge(etf_for_ext, on="Date", how="left")
+    ext["VIX_Close"] = vix.to_numpy()
+    ext["VIX_Chg%"] = vix.pct_change() * 100
+    ext["TNX_Yield"] = tnx.to_numpy()
+    ext["TNX_ChgBp"] = tnx.diff() * 100
+    ext["CreditSpread"] = ext["HYG"] - ext["TLT"]
+    ext["JNKSpread"] = ext["JNK"] - ext["TLT"]
+    ext["StkBonCorr"] = ext["SPY"].rolling(20).corr(ext["TLT"])
+    ext["USDGoldRatio"] = ext["UUP"] - ext["GLD"]
+    ext["SectRotation"] = ext["XLK"] - ext["XLF"]
+    ext["VIX_5dChg"] = vix.pct_change(5) * 100
+    ext["VIX_20dVol"] = vix.pct_change().rolling(20).std() * 100
+    ext["VIX_TNX_Ratio"] = vix / tnx
+    ext["YldCurveProxy"] = ext["TLT"] - ext["TIP"]
+    ext = ext.drop(columns=["SPY", "HYG", "TLT", "JNK", "UUP", "GLD", "XLK", "XLF", "TIP"])
+    external = ext.sort_values("Date").reset_index(drop=True)
 
     config.PROCESSED.mkdir(parents=True, exist_ok=True)
     panel.to_csv(config.V4_ETF19_PANEL, index=False)
@@ -56,6 +72,7 @@ def main() -> None:
     print(f"v4 panel rows: {len(panel)}, range {panel['Date'].iloc[0].date()} .. {panel['Date'].iloc[-1].date()}")
     print(f"etf cols: {len(etf_cols)} -> {sorted(etf_cols)}")
     print(f"clipped fund outliers: {fund_outliers}, ETF outliers: {etf_outliers}")
+    print("note: VIX_Chg%/TNX_ChgBp and derived external columns recomputed from raw levels")
     print(f"outside original19: {outside}")
     print(f"saved: {config.V4_ETF19_PANEL}")
     print(f"saved: {config.V4_EXTERNAL_PANEL}")

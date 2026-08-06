@@ -3,7 +3,7 @@
 > 日期：2026-08-06
 > 数据范围：原始 19 支 ETF + VIX/TNX 外部数据 + 基金自身信号
 > 门槛：全历史交易数 `>= 120`、冻结期交易数 `>= 30`；全历史命中率 `> 55%`、冻结期命中率 `>= 55%`、`|Average| >= 0.2%`
-> 数据清洗：基金回报已截断到 ±50%，共截断 70 个异常值；本报告基于清洗后数据
+> 数据清洗：基金回报截断到 ±50%（70 个异常值）；外部 VIX/TNX 变化列已从原始水平重算，修正错位
 
 ## 一、扫描范围
 
@@ -18,9 +18,9 @@
 
 | 信号池 | 信号数 | 覆盖基金 |
 |---|---:|---:|
-| v4 基线（原始19支，120/30） | 2,640 | 85 |
+| v4 基线（原始19支，120/30） | 2,600 | 79 |
 | 三信号穷举通过 | 39,383 | 93 |
-| 合并去重后 | 42,023 | 99 |
+| 三信号 + 条件类型扩展合并 | 61,322 | 98 |
 
 三信号新增覆盖 14 支基金：
 
@@ -32,22 +32,22 @@ MGPSX SPPIX SPPSX UFPIX UFPSX UHPIX UHPSX UKPIX UKPSX USPIX USPSX UVPIX UVPSX UX
 
 | 口径 | Average（%） | 交易数 | 命中率 |
 |---|---:|---:|---:|
-| 全历史 | 0.5453 | 178 | 60.19% |
-| 冻结期 | 0.7678 | 40 | 64.10% |
+| 全历史 | 0.5341 | 164 | 60.15% |
+| 冻结期 | 0.6360 | 40 | 62.50% |
 
 ## 三、仍未覆盖
 
-仍未覆盖非货币基金 28 支：
+未加扩展 ETF 时仍未覆盖非货币基金 29 支：
 
 ```text
-BRPIX BRPSX ETHFX FDPIX FDPSX GVPIX GVPSX RDPIX RDPSX
-RRPIX RRPSX RTPIX RTPSX SHPIX SHPSX SNPIX SNPSX SOPIX
-SOPSX UCPIX UCPSX UIPIX UIPSX URPIX URPSX UWPIX UWPSX UXPIX
+AFBIX AFBSX BRPIX BRPSX ETHFX FDPIX FDPSX FYAIX FYASX GVPIX
+RDPIX RDPSX RTPIX RTPSX SHPIX SHPSX SOPIX SOPSX SRPIX SRPSX
+UCPIX UCPSX UIPIX UIPSX URPIX URPSX UWPIX UWPSX UXPIX
 ```
 
 ## 四、注意
 
 1. 三信号通过量很大（39,383 条），信号之间高度重叠，不能当作独立信号。
 2. Phase 4 会从合并信号池中为每支基金选 3-5 条策略，再做冲突规则对比。
-3. 剩余 28 支基金需要继续用外部信号、自身信号、高相关 ETF 映射等方法补缺口。
+3. 加 XLC 后覆盖可到 105，加推荐 3 支扩展 ETF 可到 106；详见 `v4_覆盖扩展评估.md`。
 4. 如果未来要新增“特别特别有用”ETF，按 `03_文档/数据说明/v4_新增ETF准入标准.md` 执行。

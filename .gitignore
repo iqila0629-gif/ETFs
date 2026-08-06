@@ -19,6 +19,8 @@ venv/
 # v4: regenerable combined panel (rebuilt by build_v4_panel.py)
 01_数据/processed_returns/v4_etf19_panel.csv
 04_结果/v4_中间结果/v4_76pool_recomputed.csv
+04_结果/v4_中间结果/v4_allmethods_combined_pass.csv
+04_结果/v4_中间结果/v4_with_*_combined_pass.csv
 
 # Regenerable raw fund data (large, can be re-downloaded)
 04_结果/最新成果/数据/数据_原始/profunds/adj_close_nasdaq/*.json

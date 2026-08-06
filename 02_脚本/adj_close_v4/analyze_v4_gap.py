@@ -63,7 +63,10 @@ def main() -> None:
     fund_panel["Date"] = pd.to_datetime(fund_panel["Date"])
     all_tickers = list(fund_panel.columns[1:])
 
-    best = pd.read_csv(config.V4_OUT / "v4_phase3_best_strategy.csv", keep_default_na=False)
+    best_path = config.V4_OUT / "v4_allmethods_best_strategy.csv"
+    if not best_path.exists():
+        best_path = config.V4_OUT / "v4_phase3_best_strategy.csv"
+    best = pd.read_csv(best_path, keep_default_na=False)
     covered = set(best["ticker"])
     uncovered = [
         t for t in all_tickers if t not in covered and t not in config.MONEY_FUNDS
