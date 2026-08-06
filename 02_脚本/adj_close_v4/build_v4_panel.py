@@ -22,6 +22,17 @@ def main() -> None:
     fund["Date"] = pd.to_datetime(fund["Date"])
     etf["Date"] = pd.to_datetime(etf["Date"])
 
+    fund_cols = list(fund.columns[1:])
+    etf_cols = list(etf.columns[1:])
+    fund_outliers = int((fund[fund_cols].abs() > config.FUND_RETURN_CLIP).sum().sum())
+    etf_outliers = int((etf[etf_cols].abs() > config.ETF_RETURN_CLIP).sum().sum())
+    fund[fund_cols] = fund[fund_cols].clip(
+        -config.FUND_RETURN_CLIP, config.FUND_RETURN_CLIP
+    )
+    etf[etf_cols] = etf[etf_cols].clip(
+        -config.ETF_RETURN_CLIP, config.ETF_RETURN_CLIP
+    )
+
     panel = (
         fund.merge(etf, on="Date", how="left")
         .sort_values("Date")
@@ -44,6 +55,7 @@ def main() -> None:
     outside = [c for c in etf_cols if c not in config.ORIGINAL19]
     print(f"v4 panel rows: {len(panel)}, range {panel['Date'].iloc[0].date()} .. {panel['Date'].iloc[-1].date()}")
     print(f"etf cols: {len(etf_cols)} -> {sorted(etf_cols)}")
+    print(f"clipped fund outliers: {fund_outliers}, ETF outliers: {etf_outliers}")
     print(f"outside original19: {outside}")
     print(f"saved: {config.V4_ETF19_PANEL}")
     print(f"saved: {config.V4_EXTERNAL_PANEL}")

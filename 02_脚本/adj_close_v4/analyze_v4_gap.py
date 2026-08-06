@@ -19,6 +19,9 @@ MIN_FROZEN_HIT = 0.55
 
 
 def load_pools() -> pd.DataFrame:
+    recomputed = config.V4_OUT / "v4_76pool_recomputed.csv"
+    if recomputed.exists():
+        return pd.read_csv(recomputed, keep_default_na=False).reset_index(drop=True)
     v3 = pd.read_csv(config.V3_PASS, keep_default_na=False)
     pair = pd.read_csv(config.PAIR_STRICT, keep_default_na=False)
     candidates = pd.read_csv(config.V3_CANDIDATES_STATS, keep_default_na=False)
@@ -68,6 +71,8 @@ def main() -> None:
     print("uncovered funds:", len(uncovered))
 
     pool = load_pools()
+    for col in ["full_avg", "full_trades", "full_hit", "frozen_avg", "frozen_trades", "frozen_hit"]:
+        pool[col] = pd.to_numeric(pool[col], errors="coerce")
     all_known_etf_tokens = {
         t
         for c in pool["condition"]

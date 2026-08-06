@@ -20,6 +20,10 @@ ORIGINAL19 = {
 
 MONEY_FUNDS = {"MPIXX", "MPSXX"}
 
+# Outlier guard for daily returns: fund panel is decimal, ETF panel is percent.
+FUND_RETURN_CLIP = 0.5
+ETF_RETURN_CLIP = 50.0
+
 FUND_PANEL = EVENT_INPUTS / "panel_fund_returns_adj.csv"
 ETF19_PANEL = EVENT_INPUTS / "panel_etf_returns_adj.csv"
 EXTERNAL_DAILY = EVENT_INPUTS / "external_daily.csv"

@@ -28,7 +28,7 @@ EEM_up_up_up_FXY_GLD,2,127,0
 EEM_up_up_up_FXY_GLD,3,127,0
 EEM_down_down_down_FXY_GLD,1,127,0
 EEM_down_down_down_FXY_GLD,2,127,2
-EEM_down_down_down_FXY_GLD,3,127,0
+EEM_down_down_down_FXY_GLD,3,127,2
 EEM_up_up_down_FXY_GLD,1,0,0
 EEM_up_up_down_FXY_GLD,2,0,0
 EEM_up_up_down_FXY_GLD,3,0,0
@@ -217,7 +217,7 @@ EEM_up_down_down_FXY_SPY,2,0,0
 EEM_up_down_down_FXY_SPY,3,0,0
 EEM_up_up_up_FXY_TIP,1,126,11
 EEM_up_up_up_FXY_TIP,2,126,4
-EEM_up_up_up_FXY_TIP,3,126,2
+EEM_up_up_up_FXY_TIP,3,126,4
 EEM_down_down_down_FXY_TIP,1,127,0
 EEM_down_down_down_FXY_TIP,2,127,0
 EEM_down_down_down_FXY_TIP,3,127,0
@@ -840,7 +840,7 @@ EEM_up_down_down_GLD_IWM,1,0,0
 EEM_up_down_down_GLD_IWM,2,0,0
 EEM_up_down_down_GLD_IWM,3,0,0
 EEM_up_up_up_GLD_JNK,1,128,1
-EEM_up_up_up_GLD_JNK,2,128,1
+EEM_up_up_up_GLD_JNK,2,128,0
 EEM_up_up_up_GLD_JNK,3,128,0
 EEM_down_down_down_GLD_JNK,1,127,0
 EEM_down_down_down_GLD_JNK,2,127,0
@@ -1015,7 +1015,7 @@ EEM_down_down_down_GLD_UUP,2,0,0
 EEM_down_down_down_GLD_UUP,3,0,0
 EEM_up_up_down_GLD_UUP,1,128,0
 EEM_up_up_down_GLD_UUP,2,128,0
-EEM_up_up_down_GLD_UUP,3,128,1
+EEM_up_up_down_GLD_UUP,3,128,2
 EEM_up_down_up_GLD_UUP,1,126,0
 EEM_up_down_up_GLD_UUP,2,126,0
 EEM_up_down_up_GLD_UUP,3,126,0
@@ -1152,7 +1152,7 @@ EEM_up_down_down_GLD_XLV,1,126,0
 EEM_up_down_down_GLD_XLV,2,126,2
 EEM_up_down_down_GLD_XLV,3,126,2
 EEM_up_up_up_HYG_IWM,1,128,1
-EEM_up_up_up_HYG_IWM,2,128,1
+EEM_up_up_up_HYG_IWM,2,128,0
 EEM_up_up_up_HYG_IWM,3,128,0
 EEM_down_down_down_HYG_IWM,1,128,4
 EEM_down_down_down_HYG_IWM,2,128,3
@@ -1180,7 +1180,7 @@ EEM_up_up_up_HYG_JNK,2,128,0
 EEM_up_up_up_HYG_JNK,3,128,0
 EEM_down_down_down_HYG_JNK,1,128,2
 EEM_down_down_down_HYG_JNK,2,128,2
-EEM_down_down_down_HYG_JNK,3,128,0
+EEM_down_down_down_HYG_JNK,3,128,2
 EEM_up_up_down_HYG_JNK,1,0,0
 EEM_up_up_down_HYG_JNK,2,0,0
 EEM_up_up_down_HYG_JNK,3,0,0
@@ -1248,11 +1248,11 @@ EEM_up_down_down_HYG_QQQ,1,0,0
 EEM_up_down_down_HYG_QQQ,2,0,0
 EEM_up_down_down_HYG_QQQ,3,0,0
 EEM_up_up_up_HYG_SLV,1,128,0
-EEM_up_up_up_HYG_SLV,2,128,1
+EEM_up_up_up_HYG_SLV,2,128,0
 EEM_up_up_up_HYG_SLV,3,128,0
 EEM_down_down_down_HYG_SLV,1,127,0
 EEM_down_down_down_HYG_SLV,2,127,2
-EEM_down_down_down_HYG_SLV,3,127,0
+EEM_down_down_down_HYG_SLV,3,127,2
 EEM_up_up_down_HYG_SLV,1,126,0
 EEM_up_up_down_HYG_SLV,2,126,0
 EEM_up_up_down_HYG_SLV,3,126,0
@@ -1272,7 +1272,7 @@ EEM_up_down_down_HYG_SLV,1,0,0
 EEM_up_down_down_HYG_SLV,2,0,0
 EEM_up_down_down_HYG_SLV,3,0,0
 EEM_up_up_up_HYG_SPY,1,128,1
-EEM_up_up_up_HYG_SPY,2,128,1
+EEM_up_up_up_HYG_SPY,2,128,0
 EEM_up_up_up_HYG_SPY,3,128,0
 EEM_down_down_down_HYG_SPY,1,128,2
 EEM_down_down_down_HYG_SPY,2,128,2
@@ -1464,7 +1464,7 @@ EEM_up_down_down_HYG_XLU,1,126,0
 EEM_up_down_down_HYG_XLU,2,126,2
 EEM_up_down_down_HYG_XLU,3,126,2
 EEM_up_up_up_HYG_XLV,1,128,0
-EEM_up_up_up_HYG_XLV,2,128,1
+EEM_up_up_up_HYG_XLV,2,128,0
 EEM_up_up_up_HYG_XLV,3,128,0
 EEM_down_down_down_HYG_XLV,1,128,2
 EEM_down_down_down_HYG_XLV,2,128,6
@@ -1488,7 +1488,7 @@ EEM_up_down_down_HYG_XLV,1,126,0
 EEM_up_down_down_HYG_XLV,2,126,2
 EEM_up_down_down_HYG_XLV,3,126,0
 EEM_up_up_up_IWM_JNK,1,128,1
-EEM_up_up_up_IWM_JNK,2,128,1
+EEM_up_up_up_IWM_JNK,2,128,0
 EEM_up_up_up_IWM_JNK,3,128,0
 EEM_down_down_down_IWM_JNK,1,128,4
 EEM_down_down_down_IWM_JNK,2,128,2
@@ -1824,7 +1824,7 @@ EEM_up_down_down_JNK_LQD,1,126,0
 EEM_up_down_down_JNK_LQD,2,126,0
 EEM_up_down_down_JNK_LQD,3,126,0
 EEM_up_up_up_JNK_QQQ,1,128,1
-EEM_up_up_up_JNK_QQQ,2,128,1
+EEM_up_up_up_JNK_QQQ,2,128,0
 EEM_up_up_up_JNK_QQQ,3,128,0
 EEM_down_down_down_JNK_QQQ,1,128,5
 EEM_down_down_down_JNK_QQQ,2,128,2
@@ -1848,7 +1848,7 @@ EEM_up_down_down_JNK_QQQ,1,0,0
 EEM_up_down_down_JNK_QQQ,2,0,0
 EEM_up_down_down_JNK_QQQ,3,0,0
 EEM_up_up_up_JNK_SLV,1,128,0
-EEM_up_up_up_JNK_SLV,2,128,1
+EEM_up_up_up_JNK_SLV,2,128,0
 EEM_up_up_up_JNK_SLV,3,128,0
 EEM_down_down_down_JNK_SLV,1,127,0
 EEM_down_down_down_JNK_SLV,2,127,2
@@ -1872,7 +1872,7 @@ EEM_up_down_down_JNK_SLV,1,0,0
 EEM_up_down_down_JNK_SLV,2,0,0
 EEM_up_down_down_JNK_SLV,3,0,0
 EEM_up_up_up_JNK_SPY,1,128,1
-EEM_up_up_up_JNK_SPY,2,128,1
+EEM_up_up_up_JNK_SPY,2,128,0
 EEM_up_up_up_JNK_SPY,3,128,0
 EEM_down_down_down_JNK_SPY,1,128,2
 EEM_down_down_down_JNK_SPY,2,128,2
@@ -1984,7 +1984,7 @@ EEM_down_up_up_JNK_XLE,2,126,0
 EEM_down_up_up_JNK_XLE,3,126,2
 EEM_down_down_up_JNK_XLE,1,126,0
 EEM_down_down_up_JNK_XLE,2,126,0
-EEM_down_down_up_JNK_XLE,3,126,0
+EEM_down_down_up_JNK_XLE,3,126,2
 EEM_down_up_down_JNK_XLE,1,0,0
 EEM_down_up_down_JNK_XLE,2,0,0
 EEM_down_up_down_JNK_XLE,3,0,0
@@ -3428,7 +3428,7 @@ EEM_down_down_up_UUP_XLV,3,0,0
 EEM_down_up_down_UUP_XLV,1,127,0
 EEM_down_up_down_UUP_XLV,2,127,2
 EEM_down_up_down_UUP_XLV,3,127,2
-EEM_up_down_down_UUP_XLV,1,126,2
+EEM_up_down_down_UUP_XLV,1,126,1
 EEM_up_down_down_UUP_XLV,2,126,0
 EEM_up_down_down_UUP_XLV,3,126,4
 EEM_up_up_up_XLE_XLF,1,128,0
@@ -3670,9 +3670,9 @@ EEM_down_up_down_XLU_XLV,2,126,0
 EEM_down_up_down_XLU_XLV,3,126,0
 EEM_up_down_down_XLU_XLV,1,126,0
 EEM_up_down_down_XLU_XLV,2,126,0
-EEM_up_down_down_XLU_XLV,3,126,3
+EEM_up_down_down_XLU_XLV,3,126,2
 FXY_up_up_up_GDX_GLD,1,128,14
-FXY_up_up_up_GDX_GLD,2,128,3
+FXY_up_up_up_GDX_GLD,2,128,5
 FXY_up_up_up_GDX_GLD,3,128,6
 FXY_down_down_down_GDX_GLD,1,128,0
 FXY_down_down_down_GDX_GLD,2,128,0
@@ -3697,7 +3697,7 @@ FXY_up_down_down_GDX_GLD,2,126,0
 FXY_up_down_down_GDX_GLD,3,126,0
 FXY_up_up_up_GDX_HYG,1,127,9
 FXY_up_up_up_GDX_HYG,2,127,3
-FXY_up_up_up_GDX_HYG,3,127,2
+FXY_up_up_up_GDX_HYG,3,127,0
 FXY_down_down_down_GDX_HYG,1,128,0
 FXY_down_down_down_GDX_HYG,2,128,0
 FXY_down_down_down_GDX_HYG,3,128,0
@@ -3726,8 +3726,8 @@ FXY_down_down_down_GDX_IWM,1,127,0
 FXY_down_down_down_GDX_IWM,2,127,2
 FXY_down_down_down_GDX_IWM,3,127,0
 FXY_up_up_down_GDX_IWM,1,126,47
-FXY_up_up_down_GDX_IWM,2,126,4
-FXY_up_up_down_GDX_IWM,3,126,9
+FXY_up_up_down_GDX_IWM,2,126,6
+FXY_up_up_down_GDX_IWM,3,126,11
 FXY_up_down_up_GDX_IWM,1,0,0
 FXY_up_down_up_GDX_IWM,2,0,0
 FXY_up_down_up_GDX_IWM,3,0,0
@@ -3744,11 +3744,11 @@ FXY_up_down_down_GDX_IWM,1,0,0
 FXY_up_down_down_GDX_IWM,2,0,0
 FXY_up_down_down_GDX_IWM,3,0,0
 FXY_up_up_up_GDX_JNK,1,127,7
-FXY_up_up_up_GDX_JNK,2,127,3
-FXY_up_up_up_GDX_JNK,3,127,2
+FXY_up_up_up_GDX_JNK,2,127,2
+FXY_up_up_up_GDX_JNK,3,127,0
 FXY_down_down_down_GDX_JNK,1,127,0
 FXY_down_down_down_GDX_JNK,2,127,0
-FXY_down_down_down_GDX_JNK,3,127,0
+FXY_down_down_down_GDX_JNK,3,127,2
 FXY_up_up_down_GDX_JNK,1,126,27
 FXY_up_up_down_GDX_JNK,2,126,2
 FXY_up_up_down_GDX_JNK,3,126,10
@@ -3775,7 +3775,7 @@ FXY_down_down_down_GDX_LQD,2,128,0
 FXY_down_down_down_GDX_LQD,3,128,1
 FXY_up_up_down_GDX_LQD,1,126,4
 FXY_up_up_down_GDX_LQD,2,126,1
-FXY_up_up_down_GDX_LQD,3,126,4
+FXY_up_up_down_GDX_LQD,3,126,6
 FXY_up_down_up_GDX_LQD,1,126,0
 FXY_up_down_up_GDX_LQD,2,126,0
 FXY_up_down_up_GDX_LQD,3,126,0
@@ -3799,7 +3799,7 @@ FXY_down_down_down_GDX_QQQ,2,126,2
 FXY_down_down_down_GDX_QQQ,3,126,2
 FXY_up_up_down_GDX_QQQ,1,126,59
 FXY_up_up_down_GDX_QQQ,2,126,18
-FXY_up_up_down_GDX_QQQ,3,126,28
+FXY_up_up_down_GDX_QQQ,3,126,31
 FXY_up_down_up_GDX_QQQ,1,0,0
 FXY_up_down_up_GDX_QQQ,2,0,0
 FXY_up_down_up_GDX_QQQ,3,0,0
@@ -3847,7 +3847,7 @@ FXY_down_down_down_GDX_SPY,2,127,2
 FXY_down_down_down_GDX_SPY,3,127,0
 FXY_up_up_down_GDX_SPY,1,126,47
 FXY_up_up_down_GDX_SPY,2,126,8
-FXY_up_up_down_GDX_SPY,3,126,20
+FXY_up_up_down_GDX_SPY,3,126,23
 FXY_up_down_up_GDX_SPY,1,0,0
 FXY_up_down_up_GDX_SPY,2,0,0
 FXY_up_down_up_GDX_SPY,3,0,0
@@ -3864,8 +3864,8 @@ FXY_up_down_down_GDX_SPY,1,0,0
 FXY_up_down_down_GDX_SPY,2,0,0
 FXY_up_down_down_GDX_SPY,3,0,0
 FXY_up_up_up_GDX_TIP,1,128,32
-FXY_up_up_up_GDX_TIP,2,128,6
-FXY_up_up_up_GDX_TIP,3,128,2
+FXY_up_up_up_GDX_TIP,2,128,4
+FXY_up_up_up_GDX_TIP,3,128,4
 FXY_down_down_down_GDX_TIP,1,128,0
 FXY_down_down_down_GDX_TIP,2,128,0
 FXY_down_down_down_GDX_TIP,3,128,1
@@ -3888,7 +3888,7 @@ FXY_up_down_down_GDX_TIP,1,0,0
 FXY_up_down_down_GDX_TIP,2,0,0
 FXY_up_down_down_GDX_TIP,3,0,0
 FXY_up_up_up_GDX_TLT,1,127,22
-FXY_up_up_up_GDX_TLT,2,127,6
+FXY_up_up_up_GDX_TLT,2,127,4
 FXY_up_up_up_GDX_TLT,3,127,2
 FXY_down_down_down_GDX_TLT,1,128,0
 FXY_down_down_down_GDX_TLT,2,128,0
@@ -3918,8 +3918,8 @@ FXY_down_down_down_GDX_UUP,1,0,0
 FXY_down_down_down_GDX_UUP,2,0,0
 FXY_down_down_down_GDX_UUP,3,0,0
 FXY_up_up_down_GDX_UUP,1,128,13
-FXY_up_up_down_GDX_UUP,2,128,2
-FXY_up_up_down_GDX_UUP,3,128,2
+FXY_up_up_down_GDX_UUP,2,128,0
+FXY_up_up_down_GDX_UUP,3,128,0
 FXY_up_down_up_GDX_UUP,1,0,0
 FXY_up_down_up_GDX_UUP,2,0,0
 FXY_up_down_up_GDX_UUP,3,0,0
@@ -3991,7 +3991,7 @@ FXY_down_down_down_GDX_XLK,2,126,0
 FXY_down_down_down_GDX_XLK,3,126,0
 FXY_up_up_down_GDX_XLK,1,126,64
 FXY_up_up_down_GDX_XLK,2,126,15
-FXY_up_up_down_GDX_XLK,3,126,24
+FXY_up_up_down_GDX_XLK,3,126,27
 FXY_up_down_up_GDX_XLK,1,0,0
 FXY_up_down_up_GDX_XLK,2,0,0
 FXY_up_down_up_GDX_XLK,3,0,0
@@ -4009,13 +4009,13 @@ FXY_up_down_down_GDX_XLK,2,0,0
 FXY_up_down_down_GDX_XLK,3,0,0
 FXY_up_up_up_GDX_XLU,1,127,17
 FXY_up_up_up_GDX_XLU,2,127,2
-FXY_up_up_up_GDX_XLU,3,127,4
+FXY_up_up_up_GDX_XLU,3,127,2
 FXY_down_down_down_GDX_XLU,1,127,0
 FXY_down_down_down_GDX_XLU,2,127,0
 FXY_down_down_down_GDX_XLU,3,127,0
 FXY_up_up_down_GDX_XLU,1,126,15
 FXY_up_up_down_GDX_XLU,2,126,2
-FXY_up_up_down_GDX_XLU,3,126,10
+FXY_up_up_down_GDX_XLU,3,126,11
 FXY_up_down_up_GDX_XLU,1,0,0
 FXY_up_down_up_GDX_XLU,2,0,0
 FXY_up_down_up_GDX_XLU,3,0,0
@@ -4039,7 +4039,7 @@ FXY_down_down_down_GDX_XLV,2,127,2
 FXY_down_down_down_GDX_XLV,3,127,0
 FXY_up_up_down_GDX_XLV,1,126,35
 FXY_up_up_down_GDX_XLV,2,126,6
-FXY_up_up_down_GDX_XLV,3,126,10
+FXY_up_up_down_GDX_XLV,3,126,12
 FXY_up_down_up_GDX_XLV,1,0,0
 FXY_up_down_up_GDX_XLV,2,0,0
 FXY_up_down_up_GDX_XLV,3,0,0
@@ -4057,12 +4057,12 @@ FXY_up_down_down_GDX_XLV,2,0,0
 FXY_up_down_down_GDX_XLV,3,0,0
 FXY_up_up_up_GLD_HYG,1,127,2
 FXY_up_up_up_GLD_HYG,2,127,0
-FXY_up_up_up_GLD_HYG,3,127,2
+FXY_up_up_up_GLD_HYG,3,127,0
 FXY_down_down_down_GLD_HYG,1,127,0
 FXY_down_down_down_GLD_HYG,2,127,0
 FXY_down_down_down_GLD_HYG,3,127,0
 FXY_up_up_down_GLD_HYG,1,126,21
-FXY_up_up_down_GLD_HYG,2,126,8
+FXY_up_up_down_GLD_HYG,2,126,10
 FXY_up_up_down_GLD_HYG,3,126,6
 FXY_up_down_up_GLD_HYG,1,0,0
 FXY_up_down_up_GLD_HYG,2,0,0
@@ -4086,8 +4086,8 @@ FXY_down_down_down_GLD_IWM,1,127,0
 FXY_down_down_down_GLD_IWM,2,127,2
 FXY_down_down_down_GLD_IWM,3,127,2
 FXY_up_up_down_GLD_IWM,1,126,16
-FXY_up_up_down_GLD_IWM,2,126,4
-FXY_up_up_down_GLD_IWM,3,126,2
+FXY_up_up_down_GLD_IWM,2,126,5
+FXY_up_up_down_GLD_IWM,3,126,3
 FXY_up_down_up_GLD_IWM,1,0,0
 FXY_up_down_up_GLD_IWM,2,0,0
 FXY_up_down_up_GLD_IWM,3,0,0
@@ -4110,7 +4110,7 @@ FXY_down_down_down_GLD_JNK,1,127,0
 FXY_down_down_down_GLD_JNK,2,127,0
 FXY_down_down_down_GLD_JNK,3,127,2
 FXY_up_up_down_GLD_JNK,1,126,17
-FXY_up_up_down_GLD_JNK,2,126,8
+FXY_up_up_down_GLD_JNK,2,126,9
 FXY_up_up_down_GLD_JNK,3,126,7
 FXY_up_down_up_GLD_JNK,1,0,0
 FXY_up_down_up_GLD_JNK,2,0,0
@@ -4134,8 +4134,8 @@ FXY_down_down_down_GLD_LQD,1,128,0
 FXY_down_down_down_GLD_LQD,2,128,0
 FXY_down_down_down_GLD_LQD,3,128,0
 FXY_up_up_down_GLD_LQD,1,126,2
-FXY_up_up_down_GLD_LQD,2,126,2
-FXY_up_up_down_GLD_LQD,3,126,2
+FXY_up_up_down_GLD_LQD,2,126,4
+FXY_up_up_down_GLD_LQD,3,126,3
 FXY_up_down_up_GLD_LQD,1,0,0
 FXY_up_down_up_GLD_LQD,2,0,0
 FXY_up_down_up_GLD_LQD,3,0,0
@@ -4167,7 +4167,7 @@ FXY_down_up_up_GLD_QQQ,1,126,0
 FXY_down_up_up_GLD_QQQ,2,126,0
 FXY_down_up_up_GLD_QQQ,3,126,0
 FXY_down_down_up_GLD_QQQ,1,126,0
-FXY_down_down_up_GLD_QQQ,2,126,1
+FXY_down_down_up_GLD_QQQ,2,126,0
 FXY_down_down_up_GLD_QQQ,3,126,0
 FXY_down_up_down_GLD_QQQ,1,126,2
 FXY_down_up_down_GLD_QQQ,2,126,2
@@ -4177,7 +4177,7 @@ FXY_up_down_down_GLD_QQQ,2,0,0
 FXY_up_down_down_GLD_QQQ,3,0,0
 FXY_up_up_up_GLD_SLV,1,128,9
 FXY_up_up_up_GLD_SLV,2,128,0
-FXY_up_up_up_GLD_SLV,3,128,1
+FXY_up_up_up_GLD_SLV,3,128,2
 FXY_down_down_down_GLD_SLV,1,128,0
 FXY_down_down_down_GLD_SLV,2,128,0
 FXY_down_down_down_GLD_SLV,3,128,0
@@ -4200,13 +4200,13 @@ FXY_up_down_down_GLD_SLV,1,126,2
 FXY_up_down_down_GLD_SLV,2,126,0
 FXY_up_down_down_GLD_SLV,3,126,0
 FXY_up_up_up_GLD_SPY,1,126,0
-FXY_up_up_up_GLD_SPY,2,126,2
+FXY_up_up_up_GLD_SPY,2,126,0
 FXY_up_up_up_GLD_SPY,3,126,0
 FXY_down_down_down_GLD_SPY,1,126,0
 FXY_down_down_down_GLD_SPY,2,126,3
 FXY_down_down_down_GLD_SPY,3,126,5
 FXY_up_up_down_GLD_SPY,1,126,17
-FXY_up_up_down_GLD_SPY,2,126,6
+FXY_up_up_down_GLD_SPY,2,126,8
 FXY_up_up_down_GLD_SPY,3,126,11
 FXY_up_down_up_GLD_SPY,1,0,0
 FXY_up_down_up_GLD_SPY,2,0,0
@@ -4296,7 +4296,7 @@ FXY_up_down_down_GLD_UUP,1,0,0
 FXY_up_down_down_GLD_UUP,2,0,0
 FXY_up_down_down_GLD_UUP,3,0,0
 FXY_up_up_up_GLD_XLE,1,126,0
-FXY_up_up_up_GLD_XLE,2,126,0
+FXY_up_up_up_GLD_XLE,2,126,1
 FXY_up_up_up_GLD_XLE,3,126,0
 FXY_down_down_down_GLD_XLE,1,126,0
 FXY_down_down_down_GLD_XLE,2,126,5
@@ -4326,7 +4326,7 @@ FXY_down_down_down_GLD_XLF,1,126,0
 FXY_down_down_down_GLD_XLF,2,126,1
 FXY_down_down_down_GLD_XLF,3,126,2
 FXY_up_up_down_GLD_XLF,1,126,16
-FXY_up_up_down_GLD_XLF,2,126,12
+FXY_up_up_down_GLD_XLF,2,126,13
 FXY_up_up_down_GLD_XLF,3,126,10
 FXY_up_down_up_GLD_XLF,1,126,11
 FXY_up_down_up_GLD_XLF,2,126,18
@@ -4368,8 +4368,8 @@ FXY_up_down_down_GLD_XLK,1,0,0
 FXY_up_down_down_GLD_XLK,2,0,0
 FXY_up_down_down_GLD_XLK,3,0,0
 FXY_up_up_up_GLD_XLU,1,127,11
-FXY_up_up_up_GLD_XLU,2,127,4
-FXY_up_up_up_GLD_XLU,3,127,3
+FXY_up_up_up_GLD_XLU,2,127,2
+FXY_up_up_up_GLD_XLU,3,127,2
 FXY_down_down_down_GLD_XLU,1,127,0
 FXY_down_down_down_GLD_XLU,2,127,2
 FXY_down_down_down_GLD_XLU,3,127,0
@@ -4438,13 +4438,13 @@ FXY_down_up_down_HYG_IWM,2,0,0
 FXY_down_up_down_HYG_IWM,3,0,0
 FXY_up_down_down_HYG_IWM,1,126,0
 FXY_up_down_down_HYG_IWM,2,126,0
-FXY_up_down_down_HYG_IWM,3,126,1
+FXY_up_down_down_HYG_IWM,3,126,2
 FXY_up_up_up_HYG_JNK,1,128,5
 FXY_up_up_up_HYG_JNK,2,128,0
-FXY_up_up_up_HYG_JNK,3,128,2
+FXY_up_up_up_HYG_JNK,3,128,0
 FXY_down_down_down_HYG_JNK,1,128,0
 FXY_down_down_down_HYG_JNK,2,128,0
-FXY_down_down_down_HYG_JNK,3,128,0
+FXY_down_down_down_HYG_JNK,3,128,2
 FXY_up_up_down_HYG_JNK,1,0,0
 FXY_up_up_down_HYG_JNK,2,0,0
 FXY_up_up_down_HYG_JNK,3,0,0
@@ -4461,7 +4461,7 @@ FXY_down_up_down_HYG_JNK,1,0,0
 FXY_down_up_down_HYG_JNK,2,0,0
 FXY_down_up_down_HYG_JNK,3,0,0
 FXY_up_down_down_HYG_JNK,1,126,3
-FXY_up_down_down_HYG_JNK,2,126,0
+FXY_up_down_down_HYG_JNK,2,126,2
 FXY_up_down_down_HYG_JNK,3,126,2
 FXY_up_up_up_HYG_LQD,1,128,11
 FXY_up_up_up_HYG_LQD,2,128,0
@@ -4509,8 +4509,8 @@ FXY_down_up_down_HYG_QQQ,1,0,0
 FXY_down_up_down_HYG_QQQ,2,0,0
 FXY_down_up_down_HYG_QQQ,3,0,0
 FXY_up_down_down_HYG_QQQ,1,126,1
-FXY_up_down_down_HYG_QQQ,2,126,2
-FXY_up_down_down_HYG_QQQ,3,126,2
+FXY_up_down_down_HYG_QQQ,2,126,3
+FXY_up_down_down_HYG_QQQ,3,126,3
 FXY_up_up_up_HYG_SLV,1,127,6
 FXY_up_up_up_HYG_SLV,2,127,2
 FXY_up_up_up_HYG_SLV,3,127,1
@@ -4522,7 +4522,7 @@ FXY_up_up_down_HYG_SLV,2,0,0
 FXY_up_up_down_HYG_SLV,3,0,0
 FXY_up_down_up_HYG_SLV,1,126,4
 FXY_up_down_up_HYG_SLV,2,126,2
-FXY_up_down_up_HYG_SLV,3,126,0
+FXY_up_down_up_HYG_SLV,3,126,1
 FXY_down_up_up_HYG_SLV,1,126,0
 FXY_down_up_up_HYG_SLV,2,126,0
 FXY_down_up_up_HYG_SLV,3,126,0
@@ -4540,7 +4540,7 @@ FXY_up_up_up_HYG_SPY,2,127,0
 FXY_up_up_up_HYG_SPY,3,127,0
 FXY_down_down_down_HYG_SPY,1,128,0
 FXY_down_down_down_HYG_SPY,2,128,4
-FXY_down_down_down_HYG_SPY,3,128,2
+FXY_down_down_down_HYG_SPY,3,128,3
 FXY_up_up_down_HYG_SPY,1,0,0
 FXY_up_up_down_HYG_SPY,2,0,0
 FXY_up_up_down_HYG_SPY,3,0,0
@@ -4558,10 +4558,10 @@ FXY_down_up_down_HYG_SPY,2,0,0
 FXY_down_up_down_HYG_SPY,3,0,0
 FXY_up_down_down_HYG_SPY,1,126,2
 FXY_up_down_down_HYG_SPY,2,126,0
-FXY_up_down_down_HYG_SPY,3,126,2
+FXY_up_down_down_HYG_SPY,3,126,3
 FXY_up_up_up_HYG_TIP,1,128,11
 FXY_up_up_up_HYG_TIP,2,128,6
-FXY_up_up_up_HYG_TIP,3,128,4
+FXY_up_up_up_HYG_TIP,3,128,2
 FXY_down_down_down_HYG_TIP,1,128,0
 FXY_down_down_down_HYG_TIP,2,128,1
 FXY_down_down_down_HYG_TIP,3,128,0
@@ -4569,7 +4569,7 @@ FXY_up_up_down_HYG_TIP,1,0,0
 FXY_up_up_down_HYG_TIP,2,0,0
 FXY_up_up_down_HYG_TIP,3,0,0
 FXY_up_down_up_HYG_TIP,1,126,2
-FXY_up_down_up_HYG_TIP,2,126,0
+FXY_up_down_up_HYG_TIP,2,126,2
 FXY_up_down_up_HYG_TIP,3,126,0
 FXY_down_up_up_HYG_TIP,1,126,0
 FXY_down_up_up_HYG_TIP,2,126,0
@@ -4585,7 +4585,7 @@ FXY_up_down_down_HYG_TIP,2,0,0
 FXY_up_down_down_HYG_TIP,3,0,0
 FXY_up_up_up_HYG_TLT,1,127,6
 FXY_up_up_up_HYG_TLT,2,127,4
-FXY_up_up_up_HYG_TLT,3,127,1
+FXY_up_up_up_HYG_TLT,3,127,0
 FXY_down_down_down_HYG_TLT,1,128,0
 FXY_down_down_down_HYG_TLT,2,128,0
 FXY_down_down_down_HYG_TLT,3,128,0
@@ -4615,7 +4615,7 @@ FXY_down_down_down_HYG_UUP,2,0,0
 FXY_down_down_down_HYG_UUP,3,0,0
 FXY_up_up_down_HYG_UUP,1,128,6
 FXY_up_up_down_HYG_UUP,2,128,3
-FXY_up_up_down_HYG_UUP,3,128,2
+FXY_up_up_down_HYG_UUP,3,128,0
 FXY_up_down_up_HYG_UUP,1,0,0
 FXY_up_down_up_HYG_UUP,2,0,0
 FXY_up_down_up_HYG_UUP,3,0,0
@@ -4648,7 +4648,7 @@ FXY_down_up_up_HYG_XLE,2,126,0
 FXY_down_up_up_HYG_XLE,3,126,0
 FXY_down_down_up_HYG_XLE,1,126,0
 FXY_down_down_up_HYG_XLE,2,126,0
-FXY_down_down_up_HYG_XLE,3,126,0
+FXY_down_down_up_HYG_XLE,3,126,2
 FXY_down_up_down_HYG_XLE,1,126,0
 FXY_down_up_down_HYG_XLE,2,126,0
 FXY_down_up_down_HYG_XLE,3,126,0
@@ -4678,7 +4678,7 @@ FXY_down_up_down_HYG_XLF,2,0,0
 FXY_down_up_down_HYG_XLF,3,0,0
 FXY_up_down_down_HYG_XLF,1,126,5
 FXY_up_down_down_HYG_XLF,2,126,0
-FXY_up_down_down_HYG_XLF,3,126,0
+FXY_up_down_down_HYG_XLF,3,126,2
 FXY_up_up_up_HYG_XLK,1,127,2
 FXY_up_up_up_HYG_XLK,2,127,0
 FXY_up_up_up_HYG_XLK,3,127,0
@@ -4702,10 +4702,10 @@ FXY_down_up_down_HYG_XLK,2,0,0
 FXY_down_up_down_HYG_XLK,3,0,0
 FXY_up_down_down_HYG_XLK,1,126,4
 FXY_up_down_down_HYG_XLK,2,126,0
-FXY_up_down_down_HYG_XLK,3,126,2
+FXY_up_down_down_HYG_XLK,3,126,3
 FXY_up_up_up_HYG_XLU,1,127,13
 FXY_up_up_up_HYG_XLU,2,127,0
-FXY_up_up_up_HYG_XLU,3,127,1
+FXY_up_up_up_HYG_XLU,3,127,0
 FXY_down_down_down_HYG_XLU,1,127,0
 FXY_down_down_down_HYG_XLU,2,127,0
 FXY_down_down_down_HYG_XLU,3,127,0
@@ -4749,7 +4749,7 @@ FXY_down_up_down_HYG_XLV,1,126,0
 FXY_down_up_down_HYG_XLV,2,126,0
 FXY_down_up_down_HYG_XLV,3,126,2
 FXY_up_down_down_HYG_XLV,1,126,5
-FXY_up_down_down_HYG_XLV,2,126,0
+FXY_up_down_down_HYG_XLV,2,126,1
 FXY_up_down_down_HYG_XLV,3,126,0
 FXY_up_up_up_IWM_JNK,1,127,2
 FXY_up_up_up_IWM_JNK,2,127,0
@@ -4989,7 +4989,7 @@ FXY_down_up_down_IWM_XLF,1,126,0
 FXY_down_up_down_IWM_XLF,2,126,0
 FXY_down_up_down_IWM_XLF,3,126,0
 FXY_up_down_down_IWM_XLF,1,126,8
-FXY_up_down_down_IWM_XLF,2,126,0
+FXY_up_down_down_IWM_XLF,2,126,1
 FXY_up_down_down_IWM_XLF,3,126,0
 FXY_up_up_up_IWM_XLK,1,126,5
 FXY_up_up_up_IWM_XLK,2,126,0
@@ -5013,8 +5013,8 @@ FXY_down_up_down_IWM_XLK,1,0,0
 FXY_down_up_down_IWM_XLK,2,0,0
 FXY_down_up_down_IWM_XLK,3,0,0
 FXY_up_down_down_IWM_XLK,1,126,14
-FXY_up_down_down_IWM_XLK,2,126,4
-FXY_up_down_down_IWM_XLK,3,126,4
+FXY_up_down_down_IWM_XLK,2,126,6
+FXY_up_down_down_IWM_XLK,3,126,5
 FXY_up_up_up_IWM_XLU,1,126,8
 FXY_up_up_up_IWM_XLU,2,126,0
 FXY_up_up_up_IWM_XLU,3,126,0
@@ -5061,7 +5061,7 @@ FXY_down_up_down_IWM_XLV,1,126,0
 FXY_down_up_down_IWM_XLV,2,126,0
 FXY_down_up_down_IWM_XLV,3,126,2
 FXY_up_down_down_IWM_XLV,1,126,13
-FXY_up_down_down_IWM_XLV,2,126,6
+FXY_up_down_down_IWM_XLV,2,126,8
 FXY_up_down_down_IWM_XLV,3,126,6
 FXY_up_up_up_JNK_LQD,1,128,7
 FXY_up_up_up_JNK_LQD,2,128,1
@@ -5121,7 +5121,7 @@ FXY_up_up_down_JNK_SLV,1,0,0
 FXY_up_up_down_JNK_SLV,2,0,0
 FXY_up_up_down_JNK_SLV,3,0,0
 FXY_up_down_up_JNK_SLV,1,126,6
-FXY_up_down_up_JNK_SLV,2,126,1
+FXY_up_down_up_JNK_SLV,2,126,2
 FXY_up_down_up_JNK_SLV,3,126,2
 FXY_down_up_up_JNK_SLV,1,126,0
 FXY_down_up_up_JNK_SLV,2,126,0
@@ -5161,7 +5161,7 @@ FXY_up_down_down_JNK_SPY,2,126,0
 FXY_up_down_down_JNK_SPY,3,126,0
 FXY_up_up_up_JNK_TIP,1,128,17
 FXY_up_up_up_JNK_TIP,2,128,8
-FXY_up_up_up_JNK_TIP,3,128,4
+FXY_up_up_up_JNK_TIP,3,128,2
 FXY_down_down_down_JNK_TIP,1,128,0
 FXY_down_down_down_JNK_TIP,2,128,0
 FXY_down_down_down_JNK_TIP,3,128,1
@@ -5215,7 +5215,7 @@ FXY_down_down_down_JNK_UUP,2,0,0
 FXY_down_down_down_JNK_UUP,3,0,0
 FXY_up_up_down_JNK_UUP,1,128,5
 FXY_up_up_down_JNK_UUP,2,128,2
-FXY_up_up_down_JNK_UUP,3,128,2
+FXY_up_up_down_JNK_UUP,3,128,0
 FXY_up_down_up_JNK_UUP,1,0,0
 FXY_up_down_up_JNK_UUP,2,0,0
 FXY_up_down_up_JNK_UUP,3,0,0
@@ -5230,7 +5230,7 @@ FXY_down_up_down_JNK_UUP,2,0,0
 FXY_down_up_down_JNK_UUP,3,0,0
 FXY_up_down_down_JNK_UUP,1,126,0
 FXY_up_down_down_JNK_UUP,2,126,0
-FXY_up_down_down_JNK_UUP,3,126,0
+FXY_up_down_down_JNK_UUP,3,126,2
 FXY_up_up_up_JNK_XLE,1,126,2
 FXY_up_up_up_JNK_XLE,2,126,0
 FXY_up_up_up_JNK_XLE,3,126,0
@@ -5248,7 +5248,7 @@ FXY_down_up_up_JNK_XLE,2,126,0
 FXY_down_up_up_JNK_XLE,3,126,0
 FXY_down_down_up_JNK_XLE,1,126,0
 FXY_down_down_up_JNK_XLE,2,126,0
-FXY_down_down_up_JNK_XLE,3,126,0
+FXY_down_down_up_JNK_XLE,3,126,2
 FXY_down_up_down_JNK_XLE,1,126,0
 FXY_down_up_down_JNK_XLE,2,126,0
 FXY_down_up_down_JNK_XLE,3,126,0
@@ -5280,7 +5280,7 @@ FXY_up_down_down_JNK_XLF,1,126,16
 FXY_up_down_down_JNK_XLF,2,126,0
 FXY_up_down_down_JNK_XLF,3,126,0
 FXY_up_up_up_JNK_XLK,1,127,0
-FXY_up_up_up_JNK_XLK,2,127,2
+FXY_up_up_up_JNK_XLK,2,127,0
 FXY_up_up_up_JNK_XLK,3,127,0
 FXY_down_down_down_JNK_XLK,1,127,0
 FXY_down_down_down_JNK_XLK,2,127,2
@@ -5343,7 +5343,7 @@ FXY_down_up_up_JNK_XLV,1,126,0
 FXY_down_up_up_JNK_XLV,2,126,0
 FXY_down_up_up_JNK_XLV,3,126,0
 FXY_down_down_up_JNK_XLV,1,126,0
-FXY_down_down_up_JNK_XLV,2,126,0
+FXY_down_down_up_JNK_XLV,2,126,2
 FXY_down_down_up_JNK_XLV,3,126,0
 FXY_down_up_down_JNK_XLV,1,126,0
 FXY_down_up_down_JNK_XLV,2,126,3
@@ -5479,7 +5479,7 @@ FXY_down_down_down_LQD_UUP,2,0,0
 FXY_down_down_down_LQD_UUP,3,0,0
 FXY_up_up_down_LQD_UUP,1,128,1
 FXY_up_up_down_LQD_UUP,2,128,0
-FXY_up_up_down_LQD_UUP,3,128,2
+FXY_up_up_down_LQD_UUP,3,128,0
 FXY_up_down_up_LQD_UUP,1,0,0
 FXY_up_down_up_LQD_UUP,2,0,0
 FXY_up_down_up_LQD_UUP,3,0,0
@@ -5569,7 +5569,7 @@ FXY_up_down_down_LQD_XLK,2,0,0
 FXY_up_down_down_LQD_XLK,3,0,0
 FXY_up_up_up_LQD_XLU,1,127,15
 FXY_up_up_up_LQD_XLU,2,127,2
-FXY_up_up_up_LQD_XLU,3,127,4
+FXY_up_up_up_LQD_XLU,3,127,2
 FXY_down_down_down_LQD_XLU,1,128,0
 FXY_down_down_down_LQD_XLU,2,128,0
 FXY_down_down_down_LQD_XLU,3,128,0
@@ -5593,7 +5593,7 @@ FXY_up_down_down_LQD_XLU,2,0,0
 FXY_up_down_down_LQD_XLU,3,0,0
 FXY_up_up_up_LQD_XLV,1,127,5
 FXY_up_up_up_LQD_XLV,2,127,2
-FXY_up_up_up_LQD_XLV,3,127,4
+FXY_up_up_up_LQD_XLV,3,127,2
 FXY_down_down_down_LQD_XLV,1,128,0
 FXY_down_down_down_LQD_XLV,2,128,2
 FXY_down_down_down_LQD_XLV,3,128,5
@@ -5613,7 +5613,7 @@ FXY_down_up_down_LQD_XLV,1,126,0
 FXY_down_up_down_LQD_XLV,2,126,0
 FXY_down_up_down_LQD_XLV,3,126,3
 FXY_up_down_down_LQD_XLV,1,126,3
-FXY_up_down_down_LQD_XLV,2,126,2
+FXY_up_down_down_LQD_XLV,2,126,4
 FXY_up_down_down_LQD_XLV,3,126,5
 FXY_up_up_up_QQQ_SLV,1,126,0
 FXY_up_up_up_QQQ_SLV,2,126,0
@@ -5625,8 +5625,8 @@ FXY_up_up_down_QQQ_SLV,1,0,0
 FXY_up_up_down_QQQ_SLV,2,0,0
 FXY_up_up_down_QQQ_SLV,3,0,0
 FXY_up_down_up_QQQ_SLV,1,126,29
-FXY_up_down_up_QQQ_SLV,2,126,7
-FXY_up_down_up_QQQ_SLV,3,126,10
+FXY_up_down_up_QQQ_SLV,2,126,9
+FXY_up_down_up_QQQ_SLV,3,126,11
 FXY_down_up_up_QQQ_SLV,1,126,0
 FXY_down_up_up_QQQ_SLV,2,126,0
 FXY_down_up_up_QQQ_SLV,3,126,0
@@ -5634,7 +5634,7 @@ FXY_down_down_up_QQQ_SLV,1,126,0
 FXY_down_down_up_QQQ_SLV,2,126,3
 FXY_down_down_up_QQQ_SLV,3,126,5
 FXY_down_up_down_QQQ_SLV,1,126,0
-FXY_down_up_down_QQQ_SLV,2,126,1
+FXY_down_up_down_QQQ_SLV,2,126,0
 FXY_down_up_down_QQQ_SLV,3,126,0
 FXY_up_down_down_QQQ_SLV,1,0,0
 FXY_up_down_down_QQQ_SLV,2,0,0
@@ -5662,7 +5662,7 @@ FXY_down_up_down_QQQ_SPY,2,0,0
 FXY_down_up_down_QQQ_SPY,3,0,0
 FXY_up_down_down_QQQ_SPY,1,126,14
 FXY_up_down_down_QQQ_SPY,2,126,10
-FXY_up_down_down_QQQ_SPY,3,126,6
+FXY_up_down_down_QQQ_SPY,3,126,8
 FXY_up_up_up_QQQ_TIP,1,127,4
 FXY_up_up_up_QQQ_TIP,2,127,0
 FXY_up_up_up_QQQ_TIP,3,127,2
@@ -5674,7 +5674,7 @@ FXY_up_up_down_QQQ_TIP,2,0,0
 FXY_up_up_down_QQQ_TIP,3,0,0
 FXY_up_down_up_QQQ_TIP,1,126,22
 FXY_up_down_up_QQQ_TIP,2,126,12
-FXY_up_down_up_QQQ_TIP,3,126,2
+FXY_up_down_up_QQQ_TIP,3,126,3
 FXY_down_up_up_QQQ_TIP,1,126,0
 FXY_down_up_up_QQQ_TIP,2,126,2
 FXY_down_up_up_QQQ_TIP,3,126,2
@@ -5688,7 +5688,7 @@ FXY_up_down_down_QQQ_TIP,1,0,0
 FXY_up_down_down_QQQ_TIP,2,0,0
 FXY_up_down_down_QQQ_TIP,3,0,0
 FXY_up_up_up_QQQ_TLT,1,126,0
-FXY_up_up_up_QQQ_TLT,2,126,2
+FXY_up_up_up_QQQ_TLT,2,126,0
 FXY_up_up_up_QQQ_TLT,3,126,0
 FXY_down_down_down_QQQ_TLT,1,127,0
 FXY_down_down_down_QQQ_TLT,2,127,2
@@ -5719,7 +5719,7 @@ FXY_down_down_down_QQQ_UUP,2,0,0
 FXY_down_down_down_QQQ_UUP,3,0,0
 FXY_up_up_down_QQQ_UUP,1,127,0
 FXY_up_up_down_QQQ_UUP,2,127,0
-FXY_up_up_down_QQQ_UUP,3,127,2
+FXY_up_up_down_QQQ_UUP,3,127,0
 FXY_up_down_up_QQQ_UUP,1,0,0
 FXY_up_down_up_QQQ_UUP,2,0,0
 FXY_up_down_up_QQQ_UUP,3,0,0
@@ -5734,7 +5734,7 @@ FXY_down_up_down_QQQ_UUP,2,0,0
 FXY_down_up_down_QQQ_UUP,3,0,0
 FXY_up_down_down_QQQ_UUP,1,126,10
 FXY_up_down_down_QQQ_UUP,2,126,2
-FXY_up_down_down_QQQ_UUP,3,126,2
+FXY_up_down_down_QQQ_UUP,3,126,3
 FXY_up_up_up_QQQ_XLE,1,126,0
 FXY_up_up_up_QQQ_XLE,2,126,0
 FXY_up_up_up_QQQ_XLE,3,126,0
@@ -5806,7 +5806,7 @@ FXY_down_up_down_QQQ_XLK,2,0,0
 FXY_down_up_down_QQQ_XLK,3,0,0
 FXY_up_down_down_QQQ_XLK,1,127,21
 FXY_up_down_down_QQQ_XLK,2,127,10
-FXY_up_down_down_QQQ_XLK,3,127,8
+FXY_up_down_down_QQQ_XLK,3,127,9
 FXY_up_up_up_QQQ_XLU,1,126,0
 FXY_up_up_up_QQQ_XLU,2,126,0
 FXY_up_up_up_QQQ_XLU,3,126,0
@@ -5856,14 +5856,14 @@ FXY_up_down_down_QQQ_XLV,1,126,15
 FXY_up_down_down_QQQ_XLV,2,126,6
 FXY_up_down_down_QQQ_XLV,3,126,12
 FXY_up_up_up_SLV_SPY,1,126,0
-FXY_up_up_up_SLV_SPY,2,126,1
+FXY_up_up_up_SLV_SPY,2,126,0
 FXY_up_up_up_SLV_SPY,3,126,0
 FXY_down_down_down_SLV_SPY,1,126,0
 FXY_down_down_down_SLV_SPY,2,126,2
 FXY_down_down_down_SLV_SPY,3,126,3
 FXY_up_up_down_SLV_SPY,1,126,20
-FXY_up_up_down_SLV_SPY,2,126,2
-FXY_up_up_down_SLV_SPY,3,126,4
+FXY_up_up_down_SLV_SPY,2,126,4
+FXY_up_up_down_SLV_SPY,3,126,5
 FXY_up_down_up_SLV_SPY,1,0,0
 FXY_up_down_up_SLV_SPY,2,0,0
 FXY_up_down_up_SLV_SPY,3,0,0
@@ -5904,7 +5904,7 @@ FXY_up_down_down_SLV_TIP,1,0,0
 FXY_up_down_down_SLV_TIP,2,0,0
 FXY_up_down_down_SLV_TIP,3,0,0
 FXY_up_up_up_SLV_TLT,1,127,3
-FXY_up_up_up_SLV_TLT,2,127,4
+FXY_up_up_up_SLV_TLT,2,127,2
 FXY_up_up_up_SLV_TLT,3,127,0
 FXY_down_down_down_SLV_TLT,1,127,0
 FXY_down_down_down_SLV_TLT,2,127,0
@@ -5952,7 +5952,7 @@ FXY_up_down_down_SLV_UUP,1,0,0
 FXY_up_down_down_SLV_UUP,2,0,0
 FXY_up_down_down_SLV_UUP,3,0,0
 FXY_up_up_up_SLV_XLE,1,126,2
-FXY_up_up_up_SLV_XLE,2,126,0
+FXY_up_up_up_SLV_XLE,2,126,1
 FXY_up_up_up_SLV_XLE,3,126,0
 FXY_down_down_down_SLV_XLE,1,126,0
 FXY_down_down_down_SLV_XLE,2,126,0
@@ -5965,7 +5965,7 @@ FXY_up_down_up_SLV_XLE,2,126,0
 FXY_up_down_up_SLV_XLE,3,126,0
 FXY_down_up_up_SLV_XLE,1,126,0
 FXY_down_up_up_SLV_XLE,2,126,0
-FXY_down_up_up_SLV_XLE,3,126,1
+FXY_down_up_up_SLV_XLE,3,126,2
 FXY_down_down_up_SLV_XLE,1,126,0
 FXY_down_down_up_SLV_XLE,2,126,0
 FXY_down_down_up_SLV_XLE,3,126,0
@@ -5983,7 +5983,7 @@ FXY_down_down_down_SLV_XLF,2,126,0
 FXY_down_down_down_SLV_XLF,3,126,0
 FXY_up_up_down_SLV_XLF,1,126,11
 FXY_up_up_down_SLV_XLF,2,126,2
-FXY_up_up_down_SLV_XLF,3,126,2
+FXY_up_up_down_SLV_XLF,3,126,4
 FXY_up_down_up_SLV_XLF,1,0,0
 FXY_up_down_up_SLV_XLF,2,0,0
 FXY_up_down_up_SLV_XLF,3,0,0
@@ -6055,7 +6055,7 @@ FXY_down_down_down_SLV_XLV,2,127,0
 FXY_down_down_down_SLV_XLV,3,127,3
 FXY_up_up_down_SLV_XLV,1,126,17
 FXY_up_up_down_SLV_XLV,2,126,3
-FXY_up_up_down_SLV_XLV,3,126,4
+FXY_up_up_down_SLV_XLV,3,126,6
 FXY_up_down_up_SLV_XLV,1,0,0
 FXY_up_down_up_SLV_XLV,2,0,0
 FXY_up_down_up_SLV_XLV,3,0,0
@@ -6072,7 +6072,7 @@ FXY_up_down_down_SLV_XLV,1,0,0
 FXY_up_down_down_SLV_XLV,2,0,0
 FXY_up_down_down_SLV_XLV,3,0,0
 FXY_up_up_up_SPY_TIP,1,127,7
-FXY_up_up_up_SPY_TIP,2,127,2
+FXY_up_up_up_SPY_TIP,2,127,0
 FXY_up_up_up_SPY_TIP,3,127,0
 FXY_down_down_down_SPY_TIP,1,127,0
 FXY_down_down_down_SPY_TIP,2,127,0
@@ -6081,7 +6081,7 @@ FXY_up_up_down_SPY_TIP,1,0,0
 FXY_up_up_down_SPY_TIP,2,0,0
 FXY_up_up_down_SPY_TIP,3,0,0
 FXY_up_down_up_SPY_TIP,1,126,24
-FXY_up_down_up_SPY_TIP,2,126,2
+FXY_up_down_up_SPY_TIP,2,126,4
 FXY_up_down_up_SPY_TIP,3,126,7
 FXY_down_up_up_SPY_TIP,1,126,0
 FXY_down_up_up_SPY_TIP,2,126,0
@@ -6096,7 +6096,7 @@ FXY_up_down_down_SPY_TIP,1,0,0
 FXY_up_down_down_SPY_TIP,2,0,0
 FXY_up_down_down_SPY_TIP,3,0,0
 FXY_up_up_up_SPY_TLT,1,126,2
-FXY_up_up_up_SPY_TLT,2,126,3
+FXY_up_up_up_SPY_TLT,2,126,1
 FXY_up_up_up_SPY_TLT,3,126,0
 FXY_down_down_down_SPY_TLT,1,127,0
 FXY_down_down_down_SPY_TLT,2,127,0
@@ -6126,7 +6126,7 @@ FXY_down_down_down_SPY_UUP,1,0,0
 FXY_down_down_down_SPY_UUP,2,0,0
 FXY_down_down_down_SPY_UUP,3,0,0
 FXY_up_up_down_SPY_UUP,1,127,0
-FXY_up_up_down_SPY_UUP,2,127,2
+FXY_up_up_down_SPY_UUP,2,127,1
 FXY_up_up_down_SPY_UUP,3,127,0
 FXY_up_down_up_SPY_UUP,1,0,0
 FXY_up_down_up_SPY_UUP,2,0,0
@@ -6142,7 +6142,7 @@ FXY_down_up_down_SPY_UUP,2,0,0
 FXY_down_up_down_SPY_UUP,3,0,0
 FXY_up_down_down_SPY_UUP,1,126,5
 FXY_up_down_down_SPY_UUP,2,126,2
-FXY_up_down_down_SPY_UUP,3,126,3
+FXY_up_down_down_SPY_UUP,3,126,4
 FXY_up_up_up_SPY_XLE,1,126,0
 FXY_up_up_up_SPY_XLE,2,126,0
 FXY_up_up_up_SPY_XLE,3,126,0
@@ -6216,7 +6216,7 @@ FXY_up_down_down_SPY_XLK,1,126,16
 FXY_up_down_down_SPY_XLK,2,126,7
 FXY_up_down_down_SPY_XLK,3,126,8
 FXY_up_up_up_SPY_XLU,1,126,2
-FXY_up_up_up_SPY_XLU,2,126,1
+FXY_up_up_up_SPY_XLU,2,126,0
 FXY_up_up_up_SPY_XLU,3,126,0
 FXY_down_down_down_SPY_XLU,1,126,0
 FXY_down_down_down_SPY_XLU,2,126,0
@@ -6264,8 +6264,8 @@ FXY_up_down_down_SPY_XLV,1,126,11
 FXY_up_down_down_SPY_XLV,2,126,2
 FXY_up_down_down_SPY_XLV,3,126,6
 FXY_up_up_up_TIP_TLT,1,128,4
-FXY_up_up_up_TIP_TLT,2,128,2
-FXY_up_up_up_TIP_TLT,3,128,2
+FXY_up_up_up_TIP_TLT,2,128,0
+FXY_up_up_up_TIP_TLT,3,128,0
 FXY_down_down_down_TIP_TLT,1,128,0
 FXY_down_down_down_TIP_TLT,2,128,0
 FXY_down_down_down_TIP_TLT,3,128,0
@@ -6294,8 +6294,8 @@ FXY_down_down_down_TIP_UUP,1,0,0
 FXY_down_down_down_TIP_UUP,2,0,0
 FXY_down_down_down_TIP_UUP,3,0,0
 FXY_up_up_down_TIP_UUP,1,128,6
-FXY_up_up_down_TIP_UUP,2,128,2
-FXY_up_up_down_TIP_UUP,3,128,2
+FXY_up_up_down_TIP_UUP,2,128,3
+FXY_up_up_down_TIP_UUP,3,128,0
 FXY_up_down_up_TIP_UUP,1,0,0
 FXY_up_down_up_TIP_UUP,2,0,0
 FXY_up_down_up_TIP_UUP,3,0,0
@@ -6316,7 +6316,7 @@ FXY_up_up_up_TIP_XLE,2,126,0
 FXY_up_up_up_TIP_XLE,3,126,0
 FXY_down_down_down_TIP_XLE,1,126,0
 FXY_down_down_down_TIP_XLE,2,126,2
-FXY_down_down_down_TIP_XLE,3,126,0
+FXY_down_down_down_TIP_XLE,3,126,2
 FXY_up_up_down_TIP_XLE,1,126,23
 FXY_up_up_down_TIP_XLE,2,126,10
 FXY_up_up_down_TIP_XLE,3,126,12
@@ -6324,7 +6324,7 @@ FXY_up_down_up_TIP_XLE,1,0,0
 FXY_up_down_up_TIP_XLE,2,0,0
 FXY_up_down_up_TIP_XLE,3,0,0
 FXY_down_up_up_TIP_XLE,1,126,1
-FXY_down_up_up_TIP_XLE,2,126,0
+FXY_down_up_up_TIP_XLE,2,126,2
 FXY_down_up_up_TIP_XLE,3,126,0
 FXY_down_down_up_TIP_XLE,1,127,0
 FXY_down_down_up_TIP_XLE,2,127,0
@@ -6342,7 +6342,7 @@ FXY_down_down_down_TIP_XLF,1,127,0
 FXY_down_down_down_TIP_XLF,2,127,0
 FXY_down_down_down_TIP_XLF,3,127,2
 FXY_up_up_down_TIP_XLF,1,126,14
-FXY_up_up_down_TIP_XLF,2,126,0
+FXY_up_up_down_TIP_XLF,2,126,1
 FXY_up_up_down_TIP_XLF,3,126,2
 FXY_up_down_up_TIP_XLF,1,0,0
 FXY_up_down_up_TIP_XLF,2,0,0
@@ -6360,13 +6360,13 @@ FXY_up_down_down_TIP_XLF,1,0,0
 FXY_up_down_down_TIP_XLF,2,0,0
 FXY_up_down_down_TIP_XLF,3,0,0
 FXY_up_up_up_TIP_XLK,1,126,5
-FXY_up_up_up_TIP_XLK,2,126,1
+FXY_up_up_up_TIP_XLK,2,126,0
 FXY_up_up_up_TIP_XLK,3,126,2
 FXY_down_down_down_TIP_XLK,1,126,0
 FXY_down_down_down_TIP_XLK,2,126,2
 FXY_down_down_down_TIP_XLK,3,126,1
 FXY_up_up_down_TIP_XLK,1,126,28
-FXY_up_up_down_TIP_XLK,2,126,8
+FXY_up_up_down_TIP_XLK,2,126,10
 FXY_up_up_down_TIP_XLK,3,126,4
 FXY_up_down_up_TIP_XLK,1,0,0
 FXY_up_down_up_TIP_XLK,2,0,0
@@ -6384,8 +6384,8 @@ FXY_up_down_down_TIP_XLK,1,0,0
 FXY_up_down_down_TIP_XLK,2,0,0
 FXY_up_down_down_TIP_XLK,3,0,0
 FXY_up_up_up_TIP_XLU,1,127,21
-FXY_up_up_up_TIP_XLU,2,127,6
-FXY_up_up_up_TIP_XLU,3,127,4
+FXY_up_up_up_TIP_XLU,2,127,4
+FXY_up_up_up_TIP_XLU,3,127,2
 FXY_down_down_down_TIP_XLU,1,127,0
 FXY_down_down_down_TIP_XLU,2,127,0
 FXY_down_down_down_TIP_XLU,3,127,0
@@ -6409,7 +6409,7 @@ FXY_up_down_down_TIP_XLU,2,0,0
 FXY_up_down_down_TIP_XLU,3,0,0
 FXY_up_up_up_TIP_XLV,1,127,11
 FXY_up_up_up_TIP_XLV,2,127,4
-FXY_up_up_up_TIP_XLV,3,127,5
+FXY_up_up_up_TIP_XLV,3,127,3
 FXY_down_down_down_TIP_XLV,1,127,0
 FXY_down_down_down_TIP_XLV,2,127,0
 FXY_down_down_down_TIP_XLV,3,127,2
@@ -6420,7 +6420,7 @@ FXY_up_down_up_TIP_XLV,1,0,0
 FXY_up_down_up_TIP_XLV,2,0,0
 FXY_up_down_up_TIP_XLV,3,0,0
 FXY_down_up_up_TIP_XLV,1,126,0
-FXY_down_up_up_TIP_XLV,2,126,2
+FXY_down_up_up_TIP_XLV,2,126,4
 FXY_down_up_up_TIP_XLV,3,126,0
 FXY_down_down_up_TIP_XLV,1,126,0
 FXY_down_down_up_TIP_XLV,2,126,0
@@ -6439,7 +6439,7 @@ FXY_down_down_down_TLT_UUP,2,0,0
 FXY_down_down_down_TLT_UUP,3,0,0
 FXY_up_up_down_TLT_UUP,1,128,3
 FXY_up_up_down_TLT_UUP,2,128,2
-FXY_up_up_down_TLT_UUP,3,128,2
+FXY_up_up_down_TLT_UUP,3,128,0
 FXY_up_down_up_TLT_UUP,1,0,0
 FXY_up_down_up_TLT_UUP,2,0,0
 FXY_up_down_up_TLT_UUP,3,0,0
@@ -6504,7 +6504,7 @@ FXY_up_down_down_TLT_XLF,1,0,0
 FXY_up_down_down_TLT_XLF,2,0,0
 FXY_up_down_down_TLT_XLF,3,0,0
 FXY_up_up_up_TLT_XLK,1,126,2
-FXY_up_up_up_TLT_XLK,2,126,2
+FXY_up_up_up_TLT_XLK,2,126,0
 FXY_up_up_up_TLT_XLK,3,126,0
 FXY_down_down_down_TLT_XLK,1,126,0
 FXY_down_down_down_TLT_XLK,2,126,0
@@ -6528,7 +6528,7 @@ FXY_up_down_down_TLT_XLK,1,0,0
 FXY_up_down_down_TLT_XLK,2,0,0
 FXY_up_down_down_TLT_XLK,3,0,0
 FXY_up_up_up_TLT_XLU,1,127,16
-FXY_up_up_up_TLT_XLU,2,127,4
+FXY_up_up_up_TLT_XLU,2,127,2
 FXY_up_up_up_TLT_XLU,3,127,2
 FXY_down_down_down_TLT_XLU,1,127,0
 FXY_down_down_down_TLT_XLU,2,127,0
@@ -6553,7 +6553,7 @@ FXY_up_down_down_TLT_XLU,2,0,0
 FXY_up_down_down_TLT_XLU,3,0,0
 FXY_up_up_up_TLT_XLV,1,126,4
 FXY_up_up_up_TLT_XLV,2,126,2
-FXY_up_up_up_TLT_XLV,3,126,2
+FXY_up_up_up_TLT_XLV,3,126,0
 FXY_down_down_down_TLT_XLV,1,127,0
 FXY_down_down_down_TLT_XLV,2,127,2
 FXY_down_down_down_TLT_XLV,3,127,3
@@ -6573,8 +6573,8 @@ FXY_down_up_down_TLT_XLV,1,126,2
 FXY_down_up_down_TLT_XLV,2,126,2
 FXY_down_up_down_TLT_XLV,3,126,2
 FXY_up_down_down_TLT_XLV,1,126,0
-FXY_up_down_down_TLT_XLV,2,126,6
-FXY_up_down_down_TLT_XLV,3,126,4
+FXY_up_down_down_TLT_XLV,2,126,8
+FXY_up_down_down_TLT_XLV,3,126,6
 FXY_up_up_up_UUP_XLE,1,0,0
 FXY_up_up_up_UUP_XLE,2,0,0
 FXY_up_up_up_UUP_XLE,3,0,0
@@ -6622,7 +6622,7 @@ FXY_down_up_down_UUP_XLF,2,128,2
 FXY_down_up_down_UUP_XLF,3,128,1
 FXY_up_down_down_UUP_XLF,1,126,6
 FXY_up_down_down_UUP_XLF,2,126,2
-FXY_up_down_down_UUP_XLF,3,126,0
+FXY_up_down_down_UUP_XLF,3,126,1
 FXY_up_up_up_UUP_XLK,1,0,0
 FXY_up_up_up_UUP_XLK,2,0,0
 FXY_up_up_up_UUP_XLK,3,0,0
@@ -6633,8 +6633,8 @@ FXY_up_up_down_UUP_XLK,1,0,0
 FXY_up_up_down_UUP_XLK,2,0,0
 FXY_up_up_down_UUP_XLK,3,0,0
 FXY_up_down_up_UUP_XLK,1,127,2
-FXY_up_down_up_UUP_XLK,2,127,2
-FXY_up_down_up_UUP_XLK,3,127,2
+FXY_up_down_up_UUP_XLK,2,127,0
+FXY_up_down_up_UUP_XLK,3,127,0
 FXY_down_up_up_UUP_XLK,1,128,0
 FXY_down_up_up_UUP_XLK,2,128,0
 FXY_down_up_up_UUP_XLK,3,128,0
@@ -6657,8 +6657,8 @@ FXY_up_up_down_UUP_XLU,1,0,0
 FXY_up_up_down_UUP_XLU,2,0,0
 FXY_up_up_down_UUP_XLU,3,0,0
 FXY_up_down_up_UUP_XLU,1,127,8
-FXY_up_down_up_UUP_XLU,2,127,2
-FXY_up_down_up_UUP_XLU,3,127,2
+FXY_up_down_up_UUP_XLU,2,127,1
+FXY_up_down_up_UUP_XLU,3,127,0
 FXY_down_up_up_UUP_XLU,1,127,0
 FXY_down_up_up_UUP_XLU,2,127,0
 FXY_down_up_up_UUP_XLU,3,127,0
@@ -6814,7 +6814,7 @@ FXY_down_up_down_XLF_XLK,2,126,2
 FXY_down_up_down_XLF_XLK,3,126,0
 FXY_up_down_down_XLF_XLK,1,126,19
 FXY_up_down_down_XLF_XLK,2,126,6
-FXY_up_down_down_XLF_XLK,3,126,2
+FXY_up_down_down_XLF_XLK,3,126,3
 FXY_up_up_up_XLF_XLU,1,126,7
 FXY_up_up_up_XLF_XLU,2,126,0
 FXY_up_up_up_XLF_XLU,3,126,4
@@ -6862,7 +6862,7 @@ FXY_down_up_down_XLF_XLV,2,126,4
 FXY_down_up_down_XLF_XLV,3,126,0
 FXY_up_down_down_XLF_XLV,1,126,12
 FXY_up_down_down_XLF_XLV,2,126,0
-FXY_up_down_down_XLF_XLV,3,126,3
+FXY_up_down_down_XLF_XLV,3,126,5
 FXY_up_up_up_XLK_XLU,1,126,0
 FXY_up_up_up_XLK_XLU,2,126,0
 FXY_up_up_up_XLK_XLU,3,126,0
@@ -6913,7 +6913,7 @@ FXY_up_down_down_XLK_XLV,2,0,0
 FXY_up_down_down_XLK_XLV,3,0,0
 FXY_up_up_up_XLU_XLV,1,127,12
 FXY_up_up_up_XLU_XLV,2,127,0
-FXY_up_up_up_XLU_XLV,3,127,4
+FXY_up_up_up_XLU_XLV,3,127,2
 FXY_down_down_down_XLU_XLV,1,127,0
 FXY_down_down_down_XLU_XLV,2,127,2
 FXY_down_down_down_XLU_XLV,3,127,6
@@ -6928,21 +6928,21 @@ FXY_down_up_up_XLU_XLV,2,126,0
 FXY_down_up_up_XLU_XLV,3,126,0
 FXY_down_down_up_XLU_XLV,1,126,0
 FXY_down_down_up_XLU_XLV,2,126,0
-FXY_down_down_up_XLU_XLV,3,126,0
+FXY_down_down_up_XLU_XLV,3,126,1
 FXY_down_up_down_XLU_XLV,1,126,1
 FXY_down_up_down_XLU_XLV,2,126,0
 FXY_down_up_down_XLU_XLV,3,126,0
 FXY_up_down_down_XLU_XLV,1,126,10
-FXY_up_down_down_XLU_XLV,2,126,2
-FXY_up_down_down_XLU_XLV,3,126,7
+FXY_up_down_down_XLU_XLV,2,126,4
+FXY_up_down_down_XLU_XLV,3,126,8
 GDX_up_up_up_GLD_HYG,1,128,0
 GDX_up_up_up_GLD_HYG,2,128,0
-GDX_up_up_up_GLD_HYG,3,128,1
+GDX_up_up_up_GLD_HYG,3,128,0
 GDX_down_down_down_GLD_HYG,1,128,0
 GDX_down_down_down_GLD_HYG,2,128,0
 GDX_down_down_down_GLD_HYG,3,128,0
 GDX_up_up_down_GLD_HYG,1,126,3
-GDX_up_up_down_GLD_HYG,2,126,0
+GDX_up_up_down_GLD_HYG,2,126,1
 GDX_up_up_down_GLD_HYG,3,126,5
 GDX_up_down_up_GLD_HYG,1,0,0
 GDX_up_down_up_GLD_HYG,2,0,0
@@ -6967,7 +6967,7 @@ GDX_down_down_down_GLD_IWM,2,128,0
 GDX_down_down_down_GLD_IWM,3,128,0
 GDX_up_up_down_GLD_IWM,1,126,26
 GDX_up_up_down_GLD_IWM,2,126,12
-GDX_up_up_down_GLD_IWM,3,126,15
+GDX_up_up_down_GLD_IWM,3,126,16
 GDX_up_down_up_GLD_IWM,1,0,0
 GDX_up_down_up_GLD_IWM,2,0,0
 GDX_up_down_up_GLD_IWM,3,0,0
@@ -6990,7 +6990,7 @@ GDX_down_down_down_GLD_JNK,1,128,0
 GDX_down_down_down_GLD_JNK,2,128,0
 GDX_down_down_down_GLD_JNK,3,128,0
 GDX_up_up_down_GLD_JNK,1,126,24
-GDX_up_up_down_GLD_JNK,2,126,0
+GDX_up_up_down_GLD_JNK,2,126,1
 GDX_up_up_down_GLD_JNK,3,126,6
 GDX_up_down_up_GLD_JNK,1,0,0
 GDX_up_down_up_GLD_JNK,2,0,0
@@ -7039,7 +7039,7 @@ GDX_down_down_down_GLD_QQQ,2,127,0
 GDX_down_down_down_GLD_QQQ,3,127,0
 GDX_up_up_down_GLD_QQQ,1,126,37
 GDX_up_up_down_GLD_QQQ,2,126,10
-GDX_up_up_down_GLD_QQQ,3,126,22
+GDX_up_up_down_GLD_QQQ,3,126,23
 GDX_up_down_up_GLD_QQQ,1,0,0
 GDX_up_down_up_GLD_QQQ,2,0,0
 GDX_up_down_up_GLD_QQQ,3,0,0
@@ -7086,8 +7086,8 @@ GDX_down_down_down_GLD_SPY,1,127,0
 GDX_down_down_down_GLD_SPY,2,127,0
 GDX_down_down_down_GLD_SPY,3,127,0
 GDX_up_up_down_GLD_SPY,1,126,50
-GDX_up_up_down_GLD_SPY,2,126,9
-GDX_up_up_down_GLD_SPY,3,126,21
+GDX_up_up_down_GLD_SPY,2,126,10
+GDX_up_up_down_GLD_SPY,3,126,22
 GDX_up_down_up_GLD_SPY,1,0,0
 GDX_up_down_up_GLD_SPY,2,0,0
 GDX_up_down_up_GLD_SPY,3,0,0
@@ -7135,7 +7135,7 @@ GDX_down_down_down_GLD_TLT,2,128,0
 GDX_down_down_down_GLD_TLT,3,128,0
 GDX_up_up_down_GLD_TLT,1,127,0
 GDX_up_up_down_GLD_TLT,2,127,0
-GDX_up_up_down_GLD_TLT,3,127,0
+GDX_up_up_down_GLD_TLT,3,127,1
 GDX_up_down_up_GLD_TLT,1,0,0
 GDX_up_down_up_GLD_TLT,2,0,0
 GDX_up_down_up_GLD_TLT,3,0,0
@@ -7159,7 +7159,7 @@ GDX_down_down_down_GLD_UUP,2,126,2
 GDX_down_down_down_GLD_UUP,3,126,0
 GDX_up_up_down_GLD_UUP,1,128,2
 GDX_up_up_down_GLD_UUP,2,128,0
-GDX_up_up_down_GLD_UUP,3,128,1
+GDX_up_up_down_GLD_UUP,3,128,2
 GDX_up_down_up_GLD_UUP,1,0,0
 GDX_up_down_up_GLD_UUP,2,0,0
 GDX_up_down_up_GLD_UUP,3,0,0
@@ -7207,7 +7207,7 @@ GDX_down_down_down_GLD_XLF,2,127,0
 GDX_down_down_down_GLD_XLF,3,127,0
 GDX_up_up_down_GLD_XLF,1,126,18
 GDX_up_up_down_GLD_XLF,2,126,2
-GDX_up_up_down_GLD_XLF,3,126,12
+GDX_up_up_down_GLD_XLF,3,126,10
 GDX_up_down_up_GLD_XLF,1,0,0
 GDX_up_down_up_GLD_XLF,2,0,0
 GDX_up_down_up_GLD_XLF,3,0,0
@@ -7231,7 +7231,7 @@ GDX_down_down_down_GLD_XLK,2,127,0
 GDX_down_down_down_GLD_XLK,3,127,0
 GDX_up_up_down_GLD_XLK,1,126,50
 GDX_up_up_down_GLD_XLK,2,126,6
-GDX_up_up_down_GLD_XLK,3,126,27
+GDX_up_up_down_GLD_XLK,3,126,29
 GDX_up_down_up_GLD_XLK,1,0,0
 GDX_up_down_up_GLD_XLK,2,0,0
 GDX_up_down_up_GLD_XLK,3,0,0
@@ -7318,7 +7318,7 @@ GDX_down_up_down_HYG_IWM,2,0,0
 GDX_down_up_down_HYG_IWM,3,0,0
 GDX_up_down_down_HYG_IWM,1,126,28
 GDX_up_down_down_HYG_IWM,2,126,9
-GDX_up_down_down_HYG_IWM,3,126,17
+GDX_up_down_down_HYG_IWM,3,126,18
 GDX_up_up_up_HYG_JNK,1,128,0
 GDX_up_up_up_HYG_JNK,2,128,0
 GDX_up_up_up_HYG_JNK,3,128,0
@@ -7366,7 +7366,7 @@ GDX_down_up_down_HYG_LQD,2,0,0
 GDX_down_up_down_HYG_LQD,3,0,0
 GDX_up_down_down_HYG_LQD,1,126,0
 GDX_up_down_down_HYG_LQD,2,126,0
-GDX_up_down_down_HYG_LQD,3,126,0
+GDX_up_down_down_HYG_LQD,3,126,1
 GDX_up_up_up_HYG_QQQ,1,128,0
 GDX_up_up_up_HYG_QQQ,2,128,0
 GDX_up_up_up_HYG_QQQ,3,128,0
@@ -7402,7 +7402,7 @@ GDX_up_up_down_HYG_SLV,2,0,0
 GDX_up_up_down_HYG_SLV,3,0,0
 GDX_up_down_up_HYG_SLV,1,126,2
 GDX_up_down_up_HYG_SLV,2,126,0
-GDX_up_down_up_HYG_SLV,3,126,6
+GDX_up_down_up_HYG_SLV,3,126,7
 GDX_down_up_up_HYG_SLV,1,0,0
 GDX_down_up_up_HYG_SLV,2,0,0
 GDX_down_up_up_HYG_SLV,3,0,0
@@ -7416,7 +7416,7 @@ GDX_up_down_down_HYG_SLV,1,0,0
 GDX_up_down_down_HYG_SLV,2,0,0
 GDX_up_down_down_HYG_SLV,3,0,0
 GDX_up_up_up_HYG_SPY,1,128,0
-GDX_up_up_up_HYG_SPY,2,128,1
+GDX_up_up_up_HYG_SPY,2,128,0
 GDX_up_up_up_HYG_SPY,3,128,0
 GDX_down_down_down_HYG_SPY,1,128,0
 GDX_down_down_down_HYG_SPY,2,128,1
@@ -7438,7 +7438,7 @@ GDX_down_up_down_HYG_SPY,2,0,0
 GDX_down_up_down_HYG_SPY,3,0,0
 GDX_up_down_down_HYG_SPY,1,126,29
 GDX_up_down_down_HYG_SPY,2,126,12
-GDX_up_down_down_HYG_SPY,3,126,25
+GDX_up_down_down_HYG_SPY,3,126,26
 GDX_up_up_up_HYG_TIP,1,128,8
 GDX_up_up_up_HYG_TIP,2,128,0
 GDX_up_up_up_HYG_TIP,3,128,0
@@ -7471,7 +7471,7 @@ GDX_down_down_down_HYG_TLT,2,127,0
 GDX_down_down_down_HYG_TLT,3,127,0
 GDX_up_up_down_HYG_TLT,1,126,0
 GDX_up_up_down_HYG_TLT,2,126,4
-GDX_up_up_down_HYG_TLT,3,126,4
+GDX_up_up_down_HYG_TLT,3,126,2
 GDX_up_down_up_HYG_TLT,1,0,0
 GDX_up_down_up_HYG_TLT,2,0,0
 GDX_up_down_up_HYG_TLT,3,0,0
@@ -7495,7 +7495,7 @@ GDX_down_down_down_HYG_UUP,2,0,0
 GDX_down_down_down_HYG_UUP,3,0,0
 GDX_up_up_down_HYG_UUP,1,128,0
 GDX_up_up_down_HYG_UUP,2,128,2
-GDX_up_up_down_HYG_UUP,3,128,2
+GDX_up_up_down_HYG_UUP,3,128,0
 GDX_up_down_up_HYG_UUP,1,126,11
 GDX_up_down_up_HYG_UUP,2,126,7
 GDX_up_down_up_HYG_UUP,3,126,0
@@ -7522,13 +7522,13 @@ GDX_up_up_down_HYG_XLE,2,126,0
 GDX_up_up_down_HYG_XLE,3,126,6
 GDX_up_down_up_HYG_XLE,1,126,0
 GDX_up_down_up_HYG_XLE,2,126,0
-GDX_up_down_up_HYG_XLE,3,126,0
+GDX_up_down_up_HYG_XLE,3,126,2
 GDX_down_up_up_HYG_XLE,1,126,0
 GDX_down_up_up_HYG_XLE,2,126,0
 GDX_down_up_up_HYG_XLE,3,126,0
 GDX_down_down_up_HYG_XLE,1,126,0
 GDX_down_down_up_HYG_XLE,2,126,0
-GDX_down_down_up_HYG_XLE,3,126,0
+GDX_down_down_up_HYG_XLE,3,126,2
 GDX_down_up_down_HYG_XLE,1,126,0
 GDX_down_up_down_HYG_XLE,2,126,0
 GDX_down_up_down_HYG_XLE,3,126,2
@@ -7558,7 +7558,7 @@ GDX_down_up_down_HYG_XLF,2,0,0
 GDX_down_up_down_HYG_XLF,3,0,0
 GDX_up_down_down_HYG_XLF,1,126,41
 GDX_up_down_down_HYG_XLF,2,126,13
-GDX_up_down_down_HYG_XLF,3,126,33
+GDX_up_down_down_HYG_XLF,3,126,34
 GDX_up_up_up_HYG_XLK,1,128,0
 GDX_up_up_up_HYG_XLK,2,128,0
 GDX_up_up_up_HYG_XLK,3,128,0
@@ -7581,7 +7581,7 @@ GDX_down_up_down_HYG_XLK,1,0,0
 GDX_down_up_down_HYG_XLK,2,0,0
 GDX_down_up_down_HYG_XLK,3,0,0
 GDX_up_down_down_HYG_XLK,1,126,32
-GDX_up_down_down_HYG_XLK,2,126,14
+GDX_up_down_down_HYG_XLK,2,126,15
 GDX_up_down_down_HYG_XLK,3,126,28
 GDX_up_up_up_HYG_XLU,1,128,0
 GDX_up_up_up_HYG_XLU,2,128,0
@@ -7630,9 +7630,9 @@ GDX_down_up_down_HYG_XLV,2,0,0
 GDX_down_up_down_HYG_XLV,3,0,0
 GDX_up_down_down_HYG_XLV,1,126,30
 GDX_up_down_down_HYG_XLV,2,126,11
-GDX_up_down_down_HYG_XLV,3,126,33
+GDX_up_down_down_HYG_XLV,3,126,34
 GDX_up_up_up_IWM_JNK,1,128,0
-GDX_up_up_up_IWM_JNK,2,128,1
+GDX_up_up_up_IWM_JNK,2,128,0
 GDX_up_up_up_IWM_JNK,3,128,0
 GDX_down_down_down_IWM_JNK,1,128,0
 GDX_down_down_down_IWM_JNK,2,128,0
@@ -7678,7 +7678,7 @@ GDX_down_up_down_IWM_LQD,2,126,0
 GDX_down_up_down_IWM_LQD,3,126,2
 GDX_up_down_down_IWM_LQD,1,126,10
 GDX_up_down_down_IWM_LQD,2,126,6
-GDX_up_down_down_IWM_LQD,3,126,24
+GDX_up_down_down_IWM_LQD,3,126,25
 GDX_up_up_up_IWM_QQQ,1,128,0
 GDX_up_up_up_IWM_QQQ,2,128,0
 GDX_up_up_up_IWM_QQQ,3,128,0
@@ -7701,8 +7701,8 @@ GDX_down_up_down_IWM_QQQ,1,0,0
 GDX_down_up_down_IWM_QQQ,2,0,0
 GDX_down_up_down_IWM_QQQ,3,0,0
 GDX_up_down_down_IWM_QQQ,1,126,59
-GDX_up_down_down_IWM_QQQ,2,126,25
-GDX_up_down_down_IWM_QQQ,3,126,32
+GDX_up_down_down_IWM_QQQ,2,126,27
+GDX_up_down_down_IWM_QQQ,3,126,34
 GDX_up_up_up_IWM_SLV,1,128,0
 GDX_up_up_up_IWM_SLV,2,128,1
 GDX_up_up_up_IWM_SLV,3,128,0
@@ -7713,8 +7713,8 @@ GDX_up_up_down_IWM_SLV,1,0,0
 GDX_up_up_down_IWM_SLV,2,0,0
 GDX_up_up_down_IWM_SLV,3,0,0
 GDX_up_down_up_IWM_SLV,1,126,18
-GDX_up_down_up_IWM_SLV,2,126,4
-GDX_up_down_up_IWM_SLV,3,126,11
+GDX_up_down_up_IWM_SLV,2,126,6
+GDX_up_down_up_IWM_SLV,3,126,12
 GDX_down_up_up_IWM_SLV,1,0,0
 GDX_down_up_up_IWM_SLV,2,0,0
 GDX_down_up_up_IWM_SLV,3,0,0
@@ -7750,7 +7750,7 @@ GDX_down_up_down_IWM_SPY,2,0,0
 GDX_down_up_down_IWM_SPY,3,0,0
 GDX_up_down_down_IWM_SPY,1,126,40
 GDX_up_down_down_IWM_SPY,2,126,10
-GDX_up_down_down_IWM_SPY,3,126,20
+GDX_up_down_down_IWM_SPY,3,126,22
 GDX_up_up_up_IWM_TIP,1,128,2
 GDX_up_up_up_IWM_TIP,2,128,0
 GDX_up_up_up_IWM_TIP,3,128,0
@@ -7870,7 +7870,7 @@ GDX_down_up_down_IWM_XLF,2,0,0
 GDX_down_up_down_IWM_XLF,3,0,0
 GDX_up_down_down_IWM_XLF,1,126,58
 GDX_up_down_down_IWM_XLF,2,126,18
-GDX_up_down_down_IWM_XLF,3,126,22
+GDX_up_down_down_IWM_XLF,3,126,25
 GDX_up_up_up_IWM_XLK,1,128,0
 GDX_up_up_up_IWM_XLK,2,128,1
 GDX_up_up_up_IWM_XLK,3,128,0
@@ -7893,7 +7893,7 @@ GDX_down_up_down_IWM_XLK,1,0,0
 GDX_down_up_down_IWM_XLK,2,0,0
 GDX_down_up_down_IWM_XLK,3,0,0
 GDX_up_down_down_IWM_XLK,1,126,60
-GDX_up_down_down_IWM_XLK,2,126,25
+GDX_up_down_down_IWM_XLK,2,126,27
 GDX_up_down_down_IWM_XLK,3,126,42
 GDX_up_up_up_IWM_XLU,1,128,0
 GDX_up_up_up_IWM_XLU,2,128,0
@@ -7941,8 +7941,8 @@ GDX_down_up_down_IWM_XLV,1,126,0
 GDX_down_up_down_IWM_XLV,2,126,4
 GDX_down_up_down_IWM_XLV,3,126,2
 GDX_up_down_down_IWM_XLV,1,126,49
-GDX_up_down_down_IWM_XLV,2,126,24
-GDX_up_down_down_IWM_XLV,3,126,33
+GDX_up_down_down_IWM_XLV,2,126,27
+GDX_up_down_down_IWM_XLV,3,126,35
 GDX_up_up_up_JNK_LQD,1,128,3
 GDX_up_up_up_JNK_LQD,2,128,0
 GDX_up_up_up_JNK_LQD,3,128,0
@@ -7990,7 +7990,7 @@ GDX_down_up_down_JNK_QQQ,2,0,0
 GDX_down_up_down_JNK_QQQ,3,0,0
 GDX_up_down_down_JNK_QQQ,1,126,25
 GDX_up_down_down_JNK_QQQ,2,126,7
-GDX_up_down_down_JNK_QQQ,3,126,17
+GDX_up_down_down_JNK_QQQ,3,126,20
 GDX_up_up_up_JNK_SLV,1,128,0
 GDX_up_up_up_JNK_SLV,2,128,0
 GDX_up_up_up_JNK_SLV,3,128,0
@@ -8016,7 +8016,7 @@ GDX_up_down_down_JNK_SLV,1,0,0
 GDX_up_down_down_JNK_SLV,2,0,0
 GDX_up_down_down_JNK_SLV,3,0,0
 GDX_up_up_up_JNK_SPY,1,128,0
-GDX_up_up_up_JNK_SPY,2,128,1
+GDX_up_up_up_JNK_SPY,2,128,0
 GDX_up_up_up_JNK_SPY,3,128,0
 GDX_down_down_down_JNK_SPY,1,128,0
 GDX_down_down_down_JNK_SPY,2,128,0
@@ -8038,7 +8038,7 @@ GDX_down_up_down_JNK_SPY,2,0,0
 GDX_down_up_down_JNK_SPY,3,0,0
 GDX_up_down_down_JNK_SPY,1,126,23
 GDX_up_down_down_JNK_SPY,2,126,10
-GDX_up_down_down_JNK_SPY,3,126,20
+GDX_up_down_down_JNK_SPY,3,126,24
 GDX_up_up_up_JNK_TIP,1,128,6
 GDX_up_up_up_JNK_TIP,2,128,0
 GDX_up_up_up_JNK_TIP,3,128,0
@@ -8050,7 +8050,7 @@ GDX_up_up_down_JNK_TIP,2,126,0
 GDX_up_up_down_JNK_TIP,3,126,0
 GDX_up_down_up_JNK_TIP,1,126,31
 GDX_up_down_up_JNK_TIP,2,126,9
-GDX_up_down_up_JNK_TIP,3,126,16
+GDX_up_down_up_JNK_TIP,3,126,18
 GDX_down_up_up_JNK_TIP,1,126,0
 GDX_down_up_up_JNK_TIP,2,126,8
 GDX_down_up_up_JNK_TIP,3,126,2
@@ -8071,7 +8071,7 @@ GDX_down_down_down_JNK_TLT,2,127,2
 GDX_down_down_down_JNK_TLT,3,127,0
 GDX_up_up_down_JNK_TLT,1,126,0
 GDX_up_up_down_JNK_TLT,2,126,3
-GDX_up_up_down_JNK_TLT,3,126,2
+GDX_up_up_down_JNK_TLT,3,126,0
 GDX_up_down_up_JNK_TLT,1,0,0
 GDX_up_down_up_JNK_TLT,2,0,0
 GDX_up_down_up_JNK_TLT,3,0,0
@@ -8109,7 +8109,7 @@ GDX_down_up_down_JNK_UUP,1,126,0
 GDX_down_up_down_JNK_UUP,2,126,0
 GDX_down_up_down_JNK_UUP,3,126,0
 GDX_up_down_down_JNK_UUP,1,126,2
-GDX_up_down_down_JNK_UUP,2,126,0
+GDX_up_down_down_JNK_UUP,2,126,2
 GDX_up_down_down_JNK_UUP,3,126,14
 GDX_up_up_up_JNK_XLE,1,128,0
 GDX_up_up_up_JNK_XLE,2,128,0
@@ -8128,7 +8128,7 @@ GDX_down_up_up_JNK_XLE,2,126,0
 GDX_down_up_up_JNK_XLE,3,126,0
 GDX_down_down_up_JNK_XLE,1,126,0
 GDX_down_down_up_JNK_XLE,2,126,2
-GDX_down_down_up_JNK_XLE,3,126,0
+GDX_down_down_up_JNK_XLE,3,126,2
 GDX_down_up_down_JNK_XLE,1,126,0
 GDX_down_up_down_JNK_XLE,2,126,0
 GDX_down_up_down_JNK_XLE,3,126,2
@@ -8158,7 +8158,7 @@ GDX_down_up_down_JNK_XLF,2,0,0
 GDX_down_up_down_JNK_XLF,3,0,0
 GDX_up_down_down_JNK_XLF,1,126,52
 GDX_up_down_down_JNK_XLF,2,126,13
-GDX_up_down_down_JNK_XLF,3,126,36
+GDX_up_down_down_JNK_XLF,3,126,38
 GDX_up_up_up_JNK_XLK,1,128,0
 GDX_up_up_up_JNK_XLK,2,128,0
 GDX_up_up_up_JNK_XLK,3,128,0
@@ -8182,7 +8182,7 @@ GDX_down_up_down_JNK_XLK,2,0,0
 GDX_down_up_down_JNK_XLK,3,0,0
 GDX_up_down_down_JNK_XLK,1,126,24
 GDX_up_down_down_JNK_XLK,2,126,15
-GDX_up_down_down_JNK_XLK,3,126,28
+GDX_up_down_down_JNK_XLK,3,126,30
 GDX_up_up_up_JNK_XLU,1,128,0
 GDX_up_up_up_JNK_XLU,2,128,0
 GDX_up_up_up_JNK_XLU,3,128,0
@@ -8206,7 +8206,7 @@ GDX_down_up_down_JNK_XLU,2,126,5
 GDX_down_up_down_JNK_XLU,3,126,4
 GDX_up_down_down_JNK_XLU,1,126,4
 GDX_up_down_down_JNK_XLU,2,126,1
-GDX_up_down_down_JNK_XLU,3,126,26
+GDX_up_down_down_JNK_XLU,3,126,27
 GDX_up_up_up_JNK_XLV,1,128,0
 GDX_up_up_up_JNK_XLV,2,128,0
 GDX_up_up_up_JNK_XLV,3,128,0
@@ -8230,7 +8230,7 @@ GDX_down_up_down_JNK_XLV,2,0,0
 GDX_down_up_down_JNK_XLV,3,0,0
 GDX_up_down_down_JNK_XLV,1,126,28
 GDX_up_down_down_JNK_XLV,2,126,8
-GDX_up_down_down_JNK_XLV,3,126,27
+GDX_up_down_down_JNK_XLV,3,126,28
 GDX_up_up_up_LQD_QQQ,1,128,0
 GDX_up_up_up_LQD_QQQ,2,128,0
 GDX_up_up_up_LQD_QQQ,3,128,0
@@ -8301,7 +8301,7 @@ GDX_down_up_down_LQD_SPY,1,126,0
 GDX_down_up_down_LQD_SPY,2,126,0
 GDX_down_up_down_LQD_SPY,3,126,0
 GDX_up_down_down_LQD_SPY,1,126,24
-GDX_up_down_down_LQD_SPY,2,126,11
+GDX_up_down_down_LQD_SPY,2,126,13
 GDX_up_down_down_LQD_SPY,3,126,36
 GDX_up_up_up_LQD_TIP,1,128,9
 GDX_up_up_up_LQD_TIP,2,128,2
@@ -8350,7 +8350,7 @@ GDX_down_up_down_LQD_TLT,2,0,0
 GDX_down_up_down_LQD_TLT,3,0,0
 GDX_up_down_down_LQD_TLT,1,126,0
 GDX_up_down_down_LQD_TLT,2,126,0
-GDX_up_down_down_LQD_TLT,3,126,0
+GDX_up_down_down_LQD_TLT,3,126,1
 GDX_up_up_up_LQD_UUP,1,126,0
 GDX_up_up_up_LQD_UUP,2,126,0
 GDX_up_up_up_LQD_UUP,3,126,0
@@ -8359,7 +8359,7 @@ GDX_down_down_down_LQD_UUP,2,0,0
 GDX_down_down_down_LQD_UUP,3,0,0
 GDX_up_up_down_LQD_UUP,1,128,9
 GDX_up_up_down_LQD_UUP,2,128,2
-GDX_up_up_down_LQD_UUP,3,128,4
+GDX_up_up_down_LQD_UUP,3,128,2
 GDX_up_down_up_LQD_UUP,1,126,0
 GDX_up_down_up_LQD_UUP,2,126,0
 GDX_up_down_up_LQD_UUP,3,126,1
@@ -8386,7 +8386,7 @@ GDX_up_up_down_LQD_XLE,2,126,4
 GDX_up_up_down_LQD_XLE,3,126,12
 GDX_up_down_up_LQD_XLE,1,126,0
 GDX_up_down_up_LQD_XLE,2,126,0
-GDX_up_down_up_LQD_XLE,3,126,2
+GDX_up_down_up_LQD_XLE,3,126,0
 GDX_down_up_up_LQD_XLE,1,126,0
 GDX_down_up_up_LQD_XLE,2,126,0
 GDX_down_up_up_LQD_XLE,3,126,0
@@ -8445,8 +8445,8 @@ GDX_down_up_down_LQD_XLK,1,126,0
 GDX_down_up_down_LQD_XLK,2,126,2
 GDX_down_up_down_LQD_XLK,3,126,2
 GDX_up_down_down_LQD_XLK,1,126,35
-GDX_up_down_down_LQD_XLK,2,126,19
-GDX_up_down_down_LQD_XLK,3,126,39
+GDX_up_down_down_LQD_XLK,2,126,21
+GDX_up_down_down_LQD_XLK,3,126,41
 GDX_up_up_up_LQD_XLU,1,128,9
 GDX_up_up_up_LQD_XLU,2,128,2
 GDX_up_up_up_LQD_XLU,3,128,0
@@ -8470,7 +8470,7 @@ GDX_down_up_down_LQD_XLU,2,0,0
 GDX_down_up_down_LQD_XLU,3,0,0
 GDX_up_down_down_LQD_XLU,1,126,4
 GDX_up_down_down_LQD_XLU,2,126,4
-GDX_up_down_down_LQD_XLU,3,126,15
+GDX_up_down_down_LQD_XLU,3,126,16
 GDX_up_up_up_LQD_XLV,1,128,0
 GDX_up_up_up_LQD_XLV,2,128,0
 GDX_up_up_up_LQD_XLV,3,128,0
@@ -8494,7 +8494,7 @@ GDX_down_up_down_LQD_XLV,2,126,0
 GDX_down_up_down_LQD_XLV,3,126,0
 GDX_up_down_down_LQD_XLV,1,126,12
 GDX_up_down_down_LQD_XLV,2,126,10
-GDX_up_down_down_LQD_XLV,3,126,33
+GDX_up_down_down_LQD_XLV,3,126,31
 GDX_up_up_up_QQQ_SLV,1,128,0
 GDX_up_up_up_QQQ_SLV,2,128,1
 GDX_up_up_up_QQQ_SLV,3,128,0
@@ -8505,8 +8505,8 @@ GDX_up_up_down_QQQ_SLV,1,0,0
 GDX_up_up_down_QQQ_SLV,2,0,0
 GDX_up_up_down_QQQ_SLV,3,0,0
 GDX_up_down_up_QQQ_SLV,1,126,27
-GDX_up_down_up_QQQ_SLV,2,126,9
-GDX_up_down_up_QQQ_SLV,3,126,26
+GDX_up_down_up_QQQ_SLV,2,126,11
+GDX_up_down_up_QQQ_SLV,3,126,24
 GDX_down_up_up_QQQ_SLV,1,0,0
 GDX_down_up_up_QQQ_SLV,2,0,0
 GDX_down_up_up_QQQ_SLV,3,0,0
@@ -8554,7 +8554,7 @@ GDX_up_up_down_QQQ_TIP,2,126,0
 GDX_up_up_down_QQQ_TIP,3,126,0
 GDX_up_down_up_QQQ_TIP,1,126,66
 GDX_up_down_up_QQQ_TIP,2,126,22
-GDX_up_down_up_QQQ_TIP,3,126,18
+GDX_up_down_up_QQQ_TIP,3,126,19
 GDX_down_up_up_QQQ_TIP,1,126,4
 GDX_down_up_up_QQQ_TIP,2,126,2
 GDX_down_up_up_QQQ_TIP,3,126,0
@@ -8589,8 +8589,8 @@ GDX_down_up_down_QQQ_TLT,1,126,0
 GDX_down_up_down_QQQ_TLT,2,126,0
 GDX_down_up_down_QQQ_TLT,3,126,0
 GDX_up_down_down_QQQ_TLT,1,126,38
-GDX_up_down_down_QQQ_TLT,2,126,12
-GDX_up_down_down_QQQ_TLT,3,126,38
+GDX_up_down_down_QQQ_TLT,2,126,14
+GDX_up_down_down_QQQ_TLT,3,126,40
 GDX_up_up_up_QQQ_UUP,1,126,0
 GDX_up_up_up_QQQ_UUP,2,126,0
 GDX_up_up_up_QQQ_UUP,3,126,0
@@ -8626,7 +8626,7 @@ GDX_up_up_down_QQQ_XLE,2,126,0
 GDX_up_up_down_QQQ_XLE,3,126,2
 GDX_up_down_up_QQQ_XLE,1,126,31
 GDX_up_down_up_QQQ_XLE,2,126,13
-GDX_up_down_up_QQQ_XLE,3,126,5
+GDX_up_down_up_QQQ_XLE,3,126,6
 GDX_down_up_up_QQQ_XLE,1,126,0
 GDX_down_up_up_QQQ_XLE,2,126,0
 GDX_down_up_up_QQQ_XLE,3,126,0
@@ -8742,7 +8742,7 @@ GDX_down_down_down_SLV_SPY,1,128,0
 GDX_down_down_down_SLV_SPY,2,128,0
 GDX_down_down_down_SLV_SPY,3,128,2
 GDX_up_up_down_SLV_SPY,1,126,28
-GDX_up_up_down_SLV_SPY,2,126,9
+GDX_up_up_down_SLV_SPY,2,126,10
 GDX_up_up_down_SLV_SPY,3,126,25
 GDX_up_down_up_SLV_SPY,1,0,0
 GDX_up_down_up_SLV_SPY,2,0,0
@@ -8791,7 +8791,7 @@ GDX_down_down_down_SLV_TLT,2,128,0
 GDX_down_down_down_SLV_TLT,3,128,0
 GDX_up_up_down_SLV_TLT,1,126,0
 GDX_up_up_down_SLV_TLT,2,126,0
-GDX_up_up_down_SLV_TLT,3,126,0
+GDX_up_up_down_SLV_TLT,3,126,2
 GDX_up_down_up_SLV_TLT,1,0,0
 GDX_up_down_up_SLV_TLT,2,0,0
 GDX_up_down_up_SLV_TLT,3,0,0
@@ -8815,7 +8815,7 @@ GDX_down_down_down_SLV_UUP,2,126,0
 GDX_down_down_down_SLV_UUP,3,126,0
 GDX_up_up_down_SLV_UUP,1,128,2
 GDX_up_up_down_SLV_UUP,2,128,0
-GDX_up_up_down_SLV_UUP,3,128,0
+GDX_up_up_down_SLV_UUP,3,128,1
 GDX_up_down_up_SLV_UUP,1,0,0
 GDX_up_down_up_SLV_UUP,2,0,0
 GDX_up_down_up_SLV_UUP,3,0,0
@@ -8886,7 +8886,7 @@ GDX_down_down_down_SLV_XLK,1,127,0
 GDX_down_down_down_SLV_XLK,2,127,0
 GDX_down_down_down_SLV_XLK,3,127,2
 GDX_up_up_down_SLV_XLK,1,126,38
-GDX_up_up_down_SLV_XLK,2,126,6
+GDX_up_up_down_SLV_XLK,2,126,8
 GDX_up_up_down_SLV_XLK,3,126,23
 GDX_up_down_up_SLV_XLK,1,0,0
 GDX_up_down_up_SLV_XLK,2,0,0
@@ -8911,7 +8911,7 @@ GDX_down_down_down_SLV_XLU,2,127,1
 GDX_down_down_down_SLV_XLU,3,127,0
 GDX_up_up_down_SLV_XLU,1,126,2
 GDX_up_up_down_SLV_XLU,2,126,0
-GDX_up_up_down_SLV_XLU,3,126,4
+GDX_up_up_down_SLV_XLU,3,126,6
 GDX_up_down_up_SLV_XLU,1,0,0
 GDX_up_down_up_SLV_XLU,2,0,0
 GDX_up_down_up_SLV_XLU,3,0,0
@@ -8935,7 +8935,7 @@ GDX_down_down_down_SLV_XLV,2,128,0
 GDX_down_down_down_SLV_XLV,3,128,0
 GDX_up_up_down_SLV_XLV,1,126,13
 GDX_up_up_down_SLV_XLV,2,126,11
-GDX_up_up_down_SLV_XLV,3,126,18
+GDX_up_up_down_SLV_XLV,3,126,16
 GDX_up_down_up_SLV_XLV,1,0,0
 GDX_up_down_up_SLV_XLV,2,0,0
 GDX_up_down_up_SLV_XLV,3,0,0
@@ -8956,13 +8956,13 @@ GDX_up_up_up_SPY_TIP,2,128,0
 GDX_up_up_up_SPY_TIP,3,128,0
 GDX_down_down_down_SPY_TIP,1,127,0
 GDX_down_down_down_SPY_TIP,2,127,0
-GDX_down_down_down_SPY_TIP,3,127,1
+GDX_down_down_down_SPY_TIP,3,127,0
 GDX_up_up_down_SPY_TIP,1,126,0
 GDX_up_up_down_SPY_TIP,2,126,0
 GDX_up_up_down_SPY_TIP,3,126,0
 GDX_up_down_up_SPY_TIP,1,126,62
-GDX_up_down_up_SPY_TIP,2,126,16
-GDX_up_down_up_SPY_TIP,3,126,24
+GDX_up_down_up_SPY_TIP,2,126,18
+GDX_up_down_up_SPY_TIP,3,126,28
 GDX_down_up_up_SPY_TIP,1,126,6
 GDX_down_up_up_SPY_TIP,2,126,0
 GDX_down_up_up_SPY_TIP,3,126,0
@@ -8998,7 +8998,7 @@ GDX_down_up_down_SPY_TLT,2,126,0
 GDX_down_up_down_SPY_TLT,3,126,0
 GDX_up_down_down_SPY_TLT,1,126,26
 GDX_up_down_down_SPY_TLT,2,126,9
-GDX_up_down_down_SPY_TLT,3,126,33
+GDX_up_down_down_SPY_TLT,3,126,35
 GDX_up_up_up_SPY_UUP,1,126,0
 GDX_up_up_up_SPY_UUP,2,126,0
 GDX_up_up_up_SPY_UUP,3,126,0
@@ -9021,8 +9021,8 @@ GDX_down_up_down_SPY_UUP,1,0,0
 GDX_down_up_down_SPY_UUP,2,0,0
 GDX_down_up_down_SPY_UUP,3,0,0
 GDX_up_down_down_SPY_UUP,1,126,53
-GDX_up_down_down_SPY_UUP,2,126,15
-GDX_up_down_down_SPY_UUP,3,126,24
+GDX_up_down_down_SPY_UUP,2,126,17
+GDX_up_down_down_SPY_UUP,3,126,25
 GDX_up_up_up_SPY_XLE,1,128,0
 GDX_up_up_up_SPY_XLE,2,128,0
 GDX_up_up_up_SPY_XLE,3,128,0
@@ -9060,7 +9060,7 @@ GDX_up_down_up_SPY_XLF,1,0,0
 GDX_up_down_up_SPY_XLF,2,0,0
 GDX_up_down_up_SPY_XLF,3,0,0
 GDX_down_up_up_SPY_XLF,1,126,0
-GDX_down_up_up_SPY_XLF,2,126,1
+GDX_down_up_up_SPY_XLF,2,126,0
 GDX_down_up_up_SPY_XLF,3,126,0
 GDX_down_down_up_SPY_XLF,1,126,0
 GDX_down_down_up_SPY_XLF,2,126,8
@@ -9117,8 +9117,8 @@ GDX_down_up_down_SPY_XLU,1,126,0
 GDX_down_up_down_SPY_XLU,2,126,7
 GDX_down_up_down_SPY_XLU,3,126,2
 GDX_up_down_down_SPY_XLU,1,126,45
-GDX_up_down_down_SPY_XLU,2,126,8
-GDX_up_down_down_SPY_XLU,3,126,36
+GDX_up_down_down_SPY_XLU,2,126,9
+GDX_up_down_down_SPY_XLU,3,126,38
 GDX_up_up_up_SPY_XLV,1,128,0
 GDX_up_up_up_SPY_XLV,2,128,0
 GDX_up_up_up_SPY_XLV,3,128,0
@@ -9151,7 +9151,7 @@ GDX_down_down_down_TIP_TLT,2,128,0
 GDX_down_down_down_TIP_TLT,3,128,0
 GDX_up_up_down_TIP_TLT,1,126,1
 GDX_up_up_down_TIP_TLT,2,126,16
-GDX_up_up_down_TIP_TLT,3,126,14
+GDX_up_up_down_TIP_TLT,3,126,16
 GDX_up_down_up_TIP_TLT,1,0,0
 GDX_up_down_up_TIP_TLT,2,0,0
 GDX_up_down_up_TIP_TLT,3,0,0
@@ -9166,7 +9166,7 @@ GDX_down_up_down_TIP_TLT,2,0,0
 GDX_down_up_down_TIP_TLT,3,0,0
 GDX_up_down_down_TIP_TLT,1,126,0
 GDX_up_down_down_TIP_TLT,2,126,0
-GDX_up_down_down_TIP_TLT,3,126,2
+GDX_up_down_down_TIP_TLT,3,126,0
 GDX_up_up_up_TIP_UUP,1,126,0
 GDX_up_up_up_TIP_UUP,2,126,0
 GDX_up_up_up_TIP_UUP,3,126,0
@@ -9174,8 +9174,8 @@ GDX_down_down_down_TIP_UUP,1,0,0
 GDX_down_down_down_TIP_UUP,2,0,0
 GDX_down_down_down_TIP_UUP,3,0,0
 GDX_up_up_down_TIP_UUP,1,128,21
-GDX_up_up_down_TIP_UUP,2,128,7
-GDX_up_up_down_TIP_UUP,3,128,6
+GDX_up_up_down_TIP_UUP,2,128,5
+GDX_up_up_down_TIP_UUP,3,128,4
 GDX_up_down_up_TIP_UUP,1,126,0
 GDX_up_down_up_TIP_UUP,2,126,0
 GDX_up_down_up_TIP_UUP,3,126,0
@@ -9202,7 +9202,7 @@ GDX_up_up_down_TIP_XLE,2,126,16
 GDX_up_up_down_TIP_XLE,3,126,20
 GDX_up_down_up_TIP_XLE,1,126,0
 GDX_up_down_up_TIP_XLE,2,126,0
-GDX_up_down_up_TIP_XLE,3,126,2
+GDX_up_down_up_TIP_XLE,3,126,0
 GDX_down_up_up_TIP_XLE,1,126,0
 GDX_down_up_up_TIP_XLE,2,126,8
 GDX_down_up_up_TIP_XLE,3,126,5
@@ -9223,7 +9223,7 @@ GDX_down_down_down_TIP_XLF,2,126,0
 GDX_down_down_down_TIP_XLF,3,126,0
 GDX_up_up_down_TIP_XLF,1,126,52
 GDX_up_up_down_TIP_XLF,2,126,11
-GDX_up_up_down_TIP_XLF,3,126,14
+GDX_up_up_down_TIP_XLF,3,126,15
 GDX_up_down_up_TIP_XLF,1,126,0
 GDX_up_down_up_TIP_XLF,2,126,0
 GDX_up_down_up_TIP_XLF,3,126,0
@@ -9288,14 +9288,14 @@ GDX_up_down_down_TIP_XLU,1,126,0
 GDX_up_down_down_TIP_XLU,2,126,4
 GDX_up_down_down_TIP_XLU,3,126,9
 GDX_up_up_up_TIP_XLV,1,127,2
-GDX_up_up_up_TIP_XLV,2,127,1
+GDX_up_up_up_TIP_XLV,2,127,2
 GDX_up_up_up_TIP_XLV,3,127,0
 GDX_down_down_down_TIP_XLV,1,127,0
 GDX_down_down_down_TIP_XLV,2,127,0
 GDX_down_down_down_TIP_XLV,3,127,0
 GDX_up_up_down_TIP_XLV,1,126,42
 GDX_up_up_down_TIP_XLV,2,126,6
-GDX_up_up_down_TIP_XLV,3,126,7
+GDX_up_up_down_TIP_XLV,3,126,9
 GDX_up_down_up_TIP_XLV,1,126,0
 GDX_up_down_up_TIP_XLV,2,126,0
 GDX_up_down_up_TIP_XLV,3,126,0
@@ -9334,7 +9334,7 @@ GDX_down_up_down_TLT_UUP,2,126,1
 GDX_down_up_down_TLT_UUP,3,126,0
 GDX_up_down_down_TLT_UUP,1,126,0
 GDX_up_down_down_TLT_UUP,2,126,0
-GDX_up_down_down_TLT_UUP,3,126,4
+GDX_up_down_down_TLT_UUP,3,126,6
 GDX_up_up_up_TLT_XLE,1,127,0
 GDX_up_up_up_TLT_XLE,2,127,0
 GDX_up_up_up_TLT_XLE,3,127,0
@@ -9346,7 +9346,7 @@ GDX_up_up_down_TLT_XLE,2,126,2
 GDX_up_up_down_TLT_XLE,3,126,4
 GDX_up_down_up_TLT_XLE,1,126,0
 GDX_up_down_up_TLT_XLE,2,126,0
-GDX_up_down_up_TLT_XLE,3,126,1
+GDX_up_down_up_TLT_XLE,3,126,0
 GDX_down_up_up_TLT_XLE,1,126,0
 GDX_down_up_up_TLT_XLE,2,126,10
 GDX_down_up_up_TLT_XLE,3,126,2
@@ -9382,7 +9382,7 @@ GDX_down_up_down_TLT_XLF,2,126,2
 GDX_down_up_down_TLT_XLF,3,126,3
 GDX_up_down_down_TLT_XLF,1,126,7
 GDX_up_down_down_TLT_XLF,2,126,0
-GDX_up_down_down_TLT_XLF,3,126,9
+GDX_up_down_down_TLT_XLF,3,126,11
 GDX_up_up_up_TLT_XLK,1,127,0
 GDX_up_up_up_TLT_XLK,2,127,0
 GDX_up_up_up_TLT_XLK,3,127,0
@@ -9418,7 +9418,7 @@ GDX_up_up_down_TLT_XLU,2,126,0
 GDX_up_up_down_TLT_XLU,3,126,0
 GDX_up_down_up_TLT_XLU,1,126,0
 GDX_up_down_up_TLT_XLU,2,126,0
-GDX_up_down_up_TLT_XLU,3,126,5
+GDX_up_down_up_TLT_XLU,3,126,3
 GDX_down_up_up_TLT_XLU,1,126,2
 GDX_down_up_up_TLT_XLU,2,126,2
 GDX_down_up_up_TLT_XLU,3,126,0
@@ -9430,7 +9430,7 @@ GDX_down_up_down_TLT_XLU,2,126,4
 GDX_down_up_down_TLT_XLU,3,126,4
 GDX_up_down_down_TLT_XLU,1,126,0
 GDX_up_down_down_TLT_XLU,2,126,4
-GDX_up_down_down_TLT_XLU,3,126,5
+GDX_up_down_down_TLT_XLU,3,126,7
 GDX_up_up_up_TLT_XLV,1,127,0
 GDX_up_up_up_TLT_XLV,2,127,1
 GDX_up_up_up_TLT_XLV,3,127,0
@@ -9538,7 +9538,7 @@ GDX_up_up_down_UUP_XLU,2,126,4
 GDX_up_up_down_UUP_XLU,3,126,1
 GDX_up_down_up_UUP_XLU,1,127,0
 GDX_up_down_up_UUP_XLU,2,127,1
-GDX_up_down_up_UUP_XLU,3,127,4
+GDX_up_down_up_UUP_XLU,3,127,2
 GDX_down_up_up_UUP_XLU,1,126,0
 GDX_down_up_up_UUP_XLU,2,126,0
 GDX_down_up_up_UUP_XLU,3,126,0
@@ -9549,8 +9549,8 @@ GDX_down_up_down_UUP_XLU,1,127,0
 GDX_down_up_down_UUP_XLU,2,127,0
 GDX_down_up_down_UUP_XLU,3,127,0
 GDX_up_down_down_UUP_XLU,1,126,6
-GDX_up_down_down_UUP_XLU,2,126,2
-GDX_up_down_down_UUP_XLU,3,126,8
+GDX_up_down_down_UUP_XLU,2,126,4
+GDX_up_down_down_UUP_XLU,3,126,9
 GDX_up_up_up_UUP_XLV,1,126,0
 GDX_up_up_up_UUP_XLV,2,126,0
 GDX_up_up_up_UUP_XLV,3,126,0
@@ -9573,8 +9573,8 @@ GDX_down_up_down_UUP_XLV,1,127,0
 GDX_down_up_down_UUP_XLV,2,127,0
 GDX_down_up_down_UUP_XLV,3,127,0
 GDX_up_down_down_UUP_XLV,1,126,30
-GDX_up_down_down_UUP_XLV,2,126,4
-GDX_up_down_down_UUP_XLV,3,126,6
+GDX_up_down_down_UUP_XLV,2,126,6
+GDX_up_down_down_UUP_XLV,3,126,8
 GDX_up_up_up_XLE_XLF,1,128,0
 GDX_up_up_up_XLE_XLF,2,128,0
 GDX_up_up_up_XLE_XLF,3,128,0
@@ -9582,7 +9582,7 @@ GDX_down_down_down_XLE_XLF,1,127,0
 GDX_down_down_down_XLE_XLF,2,127,0
 GDX_down_down_down_XLE_XLF,3,127,0
 GDX_up_up_down_XLE_XLF,1,126,3
-GDX_up_up_down_XLE_XLF,2,126,0
+GDX_up_up_down_XLE_XLF,2,126,2
 GDX_up_up_down_XLE_XLF,3,126,7
 GDX_up_down_up_XLE_XLF,1,126,0
 GDX_up_down_up_XLE_XLF,2,126,0
@@ -9606,8 +9606,8 @@ GDX_down_down_down_XLE_XLK,1,126,0
 GDX_down_down_down_XLE_XLK,2,126,0
 GDX_down_down_down_XLE_XLK,3,126,0
 GDX_up_up_down_XLE_XLK,1,126,23
-GDX_up_up_down_XLE_XLK,2,126,1
-GDX_up_up_down_XLE_XLK,3,126,1
+GDX_up_up_down_XLE_XLK,2,126,3
+GDX_up_up_down_XLE_XLK,3,126,3
 GDX_up_down_up_XLE_XLK,1,126,0
 GDX_up_down_up_XLE_XLK,2,126,0
 GDX_up_down_up_XLE_XLK,3,126,2
@@ -9654,7 +9654,7 @@ GDX_down_down_down_XLE_XLV,1,126,0
 GDX_down_down_down_XLE_XLV,2,126,0
 GDX_down_down_down_XLE_XLV,3,126,0
 GDX_up_up_down_XLE_XLV,1,126,1
-GDX_up_up_down_XLE_XLV,2,126,0
+GDX_up_up_down_XLE_XLV,2,126,2
 GDX_up_up_down_XLE_XLV,3,126,0
 GDX_up_down_up_XLE_XLV,1,126,0
 GDX_up_down_up_XLE_XLV,2,126,4
@@ -9717,7 +9717,7 @@ GDX_down_up_down_XLF_XLU,1,126,0
 GDX_down_up_down_XLF_XLU,2,126,7
 GDX_down_up_down_XLF_XLU,3,126,3
 GDX_up_down_down_XLF_XLU,1,126,45
-GDX_up_down_down_XLF_XLU,2,126,5
+GDX_up_down_down_XLF_XLU,2,126,6
 GDX_up_down_down_XLF_XLU,3,126,35
 GDX_up_up_up_XLF_XLV,1,128,0
 GDX_up_up_up_XLF_XLV,2,128,0
@@ -9742,7 +9742,7 @@ GDX_down_up_down_XLF_XLV,2,126,6
 GDX_down_up_down_XLF_XLV,3,126,2
 GDX_up_down_down_XLF_XLV,1,126,56
 GDX_up_down_down_XLF_XLV,2,126,13
-GDX_up_down_down_XLF_XLV,3,126,26
+GDX_up_down_down_XLF_XLV,3,126,24
 GDX_up_up_up_XLK_XLU,1,128,0
 GDX_up_up_up_XLK_XLU,2,128,0
 GDX_up_up_up_XLK_XLU,3,128,0
@@ -9813,9 +9813,9 @@ GDX_down_up_down_XLU_XLV,1,126,0
 GDX_down_up_down_XLU_XLV,2,126,0
 GDX_down_up_down_XLU_XLV,3,126,0
 GDX_up_down_down_XLU_XLV,1,126,19
-GDX_up_down_down_XLU_XLV,2,126,6
+GDX_up_down_down_XLU_XLV,2,126,8
 GDX_up_down_down_XLU_XLV,3,126,33
-GLD_up_up_up_HYG_IWM,1,128,2
+GLD_up_up_up_HYG_IWM,1,128,1
 GLD_up_up_up_HYG_IWM,2,128,1
 GLD_up_up_up_HYG_IWM,3,128,0
 GLD_down_down_down_HYG_IWM,1,127,0
@@ -9840,7 +9840,7 @@ GLD_up_down_down_HYG_IWM,1,126,13
 GLD_up_down_down_HYG_IWM,2,126,8
 GLD_up_down_down_HYG_IWM,3,126,6
 GLD_up_up_up_HYG_JNK,1,128,0
-GLD_up_up_up_HYG_JNK,2,128,1
+GLD_up_up_up_HYG_JNK,2,128,0
 GLD_up_up_up_HYG_JNK,3,128,0
 GLD_down_down_down_HYG_JNK,1,128,0
 GLD_down_down_down_HYG_JNK,2,128,0
@@ -9877,7 +9877,7 @@ GLD_up_down_up_HYG_LQD,2,0,0
 GLD_up_down_up_HYG_LQD,3,0,0
 GLD_down_up_up_HYG_LQD,1,126,2
 GLD_down_up_up_HYG_LQD,2,126,5
-GLD_down_up_up_HYG_LQD,3,126,6
+GLD_down_up_up_HYG_LQD,3,126,4
 GLD_down_down_up_HYG_LQD,1,0,0
 GLD_down_down_up_HYG_LQD,2,0,0
 GLD_down_down_up_HYG_LQD,3,0,0
@@ -9909,10 +9909,10 @@ GLD_down_up_down_HYG_QQQ,1,0,0
 GLD_down_up_down_HYG_QQQ,2,0,0
 GLD_down_up_down_HYG_QQQ,3,0,0
 GLD_up_down_down_HYG_QQQ,1,126,17
-GLD_up_down_down_HYG_QQQ,2,126,13
-GLD_up_down_down_HYG_QQQ,3,126,13
+GLD_up_down_down_HYG_QQQ,2,126,14
+GLD_up_down_down_HYG_QQQ,3,126,15
 GLD_up_up_up_HYG_SLV,1,128,0
-GLD_up_up_up_HYG_SLV,2,128,1
+GLD_up_up_up_HYG_SLV,2,128,0
 GLD_up_up_up_HYG_SLV,3,128,0
 GLD_down_down_down_HYG_SLV,1,128,0
 GLD_down_down_down_HYG_SLV,2,128,0
@@ -9957,7 +9957,7 @@ GLD_down_up_down_HYG_SPY,1,0,0
 GLD_down_up_down_HYG_SPY,2,0,0
 GLD_down_up_down_HYG_SPY,3,0,0
 GLD_up_down_down_HYG_SPY,1,126,16
-GLD_up_down_down_HYG_SPY,2,126,10
+GLD_up_down_down_HYG_SPY,2,126,11
 GLD_up_down_down_HYG_SPY,3,126,8
 GLD_up_up_up_HYG_TIP,1,128,5
 GLD_up_up_up_HYG_TIP,2,128,0
@@ -9973,7 +9973,7 @@ GLD_up_down_up_HYG_TIP,2,126,6
 GLD_up_down_up_HYG_TIP,3,126,13
 GLD_down_up_up_HYG_TIP,1,126,6
 GLD_down_up_up_HYG_TIP,2,126,13
-GLD_down_up_up_HYG_TIP,3,126,4
+GLD_down_up_up_HYG_TIP,3,126,2
 GLD_down_down_up_HYG_TIP,1,0,0
 GLD_down_down_up_HYG_TIP,2,0,0
 GLD_down_down_up_HYG_TIP,3,0,0
@@ -10029,7 +10029,7 @@ GLD_down_up_down_HYG_UUP,1,126,2
 GLD_down_up_down_HYG_UUP,2,126,14
 GLD_down_up_down_HYG_UUP,3,126,0
 GLD_up_down_down_HYG_UUP,1,126,0
-GLD_up_down_down_HYG_UUP,2,126,3
+GLD_up_down_down_HYG_UUP,2,126,5
 GLD_up_down_down_HYG_UUP,3,126,4
 GLD_up_up_up_HYG_XLE,1,128,0
 GLD_up_up_up_HYG_XLE,2,128,0
@@ -10150,8 +10150,8 @@ GLD_down_up_down_HYG_XLV,2,0,0
 GLD_down_up_down_HYG_XLV,3,0,0
 GLD_up_down_down_HYG_XLV,1,126,24
 GLD_up_down_down_HYG_XLV,2,126,20
-GLD_up_down_down_HYG_XLV,3,126,18
-GLD_up_up_up_IWM_JNK,1,128,3
+GLD_up_down_down_HYG_XLV,3,126,20
+GLD_up_up_up_IWM_JNK,1,128,2
 GLD_up_up_up_IWM_JNK,2,128,1
 GLD_up_up_up_IWM_JNK,3,128,0
 GLD_down_down_down_IWM_JNK,1,127,0
@@ -10222,7 +10222,7 @@ GLD_down_up_down_IWM_QQQ,2,0,0
 GLD_down_up_down_IWM_QQQ,3,0,0
 GLD_up_down_down_IWM_QQQ,1,126,29
 GLD_up_down_down_IWM_QQQ,2,126,26
-GLD_up_down_down_IWM_QQQ,3,126,22
+GLD_up_down_down_IWM_QQQ,3,126,24
 GLD_up_up_up_IWM_SLV,1,128,0
 GLD_up_up_up_IWM_SLV,2,128,1
 GLD_up_up_up_IWM_SLV,3,128,0
@@ -10281,7 +10281,7 @@ GLD_up_up_down_IWM_TIP,1,126,0
 GLD_up_up_down_IWM_TIP,2,126,0
 GLD_up_up_down_IWM_TIP,3,126,0
 GLD_up_down_up_IWM_TIP,1,126,17
-GLD_up_down_up_IWM_TIP,2,126,6
+GLD_up_down_up_IWM_TIP,2,126,8
 GLD_up_down_up_IWM_TIP,3,126,2
 GLD_down_up_up_IWM_TIP,1,126,7
 GLD_down_up_up_IWM_TIP,2,126,7
@@ -10389,7 +10389,7 @@ GLD_down_up_down_IWM_XLF,1,0,0
 GLD_down_up_down_IWM_XLF,2,0,0
 GLD_down_up_down_IWM_XLF,3,0,0
 GLD_up_down_down_IWM_XLF,1,126,27
-GLD_up_down_down_IWM_XLF,2,126,9
+GLD_up_down_down_IWM_XLF,2,126,12
 GLD_up_down_down_IWM_XLF,3,126,16
 GLD_up_up_up_IWM_XLK,1,128,0
 GLD_up_up_up_IWM_XLK,2,128,1
@@ -10438,7 +10438,7 @@ GLD_down_up_down_IWM_XLU,2,126,11
 GLD_down_up_down_IWM_XLU,3,126,16
 GLD_up_down_down_IWM_XLU,1,126,8
 GLD_up_down_down_IWM_XLU,2,126,9
-GLD_up_down_down_IWM_XLU,3,126,13
+GLD_up_down_down_IWM_XLU,3,126,14
 GLD_up_up_up_IWM_XLV,1,128,0
 GLD_up_up_up_IWM_XLV,2,128,0
 GLD_up_up_up_IWM_XLV,3,128,0
@@ -10468,7 +10468,7 @@ GLD_up_up_up_JNK_LQD,2,128,0
 GLD_up_up_up_JNK_LQD,3,128,0
 GLD_down_down_down_JNK_LQD,1,128,0
 GLD_down_down_down_JNK_LQD,2,128,0
-GLD_down_down_down_JNK_LQD,3,128,0
+GLD_down_down_down_JNK_LQD,3,128,2
 GLD_up_up_down_JNK_LQD,1,126,0
 GLD_up_up_down_JNK_LQD,2,126,0
 GLD_up_up_down_JNK_LQD,3,126,0
@@ -10509,10 +10509,10 @@ GLD_down_up_down_JNK_QQQ,1,0,0
 GLD_down_up_down_JNK_QQQ,2,0,0
 GLD_down_up_down_JNK_QQQ,3,0,0
 GLD_up_down_down_JNK_QQQ,1,126,18
-GLD_up_down_down_JNK_QQQ,2,126,12
+GLD_up_down_down_JNK_QQQ,2,126,13
 GLD_up_down_down_JNK_QQQ,3,126,17
 GLD_up_up_up_JNK_SLV,1,128,0
-GLD_up_up_up_JNK_SLV,2,128,1
+GLD_up_up_up_JNK_SLV,2,128,0
 GLD_up_up_up_JNK_SLV,3,128,0
 GLD_down_down_down_JNK_SLV,1,128,0
 GLD_down_down_down_JNK_SLV,2,128,0
@@ -10535,7 +10535,7 @@ GLD_down_up_down_JNK_SLV,3,126,0
 GLD_up_down_down_JNK_SLV,1,0,0
 GLD_up_down_down_JNK_SLV,2,0,0
 GLD_up_down_down_JNK_SLV,3,0,0
-GLD_up_up_up_JNK_SPY,1,128,3
+GLD_up_up_up_JNK_SPY,1,128,2
 GLD_up_up_up_JNK_SPY,2,128,1
 GLD_up_up_up_JNK_SPY,3,128,0
 GLD_down_down_down_JNK_SPY,1,127,0
@@ -10648,7 +10648,7 @@ GLD_down_up_up_JNK_XLE,2,126,4
 GLD_down_up_up_JNK_XLE,3,126,0
 GLD_down_down_up_JNK_XLE,1,126,2
 GLD_down_down_up_JNK_XLE,2,126,0
-GLD_down_down_up_JNK_XLE,3,126,0
+GLD_down_down_up_JNK_XLE,3,126,2
 GLD_down_up_down_JNK_XLE,1,126,1
 GLD_down_up_down_JNK_XLE,2,126,3
 GLD_down_up_down_JNK_XLE,3,126,2
@@ -10679,7 +10679,7 @@ GLD_down_up_down_JNK_XLF,3,0,0
 GLD_up_down_down_JNK_XLF,1,126,26
 GLD_up_down_down_JNK_XLF,2,126,7
 GLD_up_down_down_JNK_XLF,3,126,15
-GLD_up_up_up_JNK_XLK,1,128,3
+GLD_up_up_up_JNK_XLK,1,128,2
 GLD_up_up_up_JNK_XLK,2,128,1
 GLD_up_up_up_JNK_XLK,3,128,0
 GLD_down_down_down_JNK_XLK,1,126,0
@@ -10725,9 +10725,9 @@ GLD_down_up_down_JNK_XLU,1,0,0
 GLD_down_up_down_JNK_XLU,2,0,0
 GLD_down_up_down_JNK_XLU,3,0,0
 GLD_up_down_down_JNK_XLU,1,126,3
-GLD_up_down_down_JNK_XLU,2,126,7
-GLD_up_down_down_JNK_XLU,3,126,16
-GLD_up_up_up_JNK_XLV,1,128,1
+GLD_up_down_down_JNK_XLU,2,126,11
+GLD_up_down_down_JNK_XLU,3,126,18
+GLD_up_up_up_JNK_XLV,1,128,0
 GLD_up_up_up_JNK_XLV,2,128,1
 GLD_up_up_up_JNK_XLV,3,128,0
 GLD_down_down_down_JNK_XLV,1,127,0
@@ -10749,7 +10749,7 @@ GLD_down_up_down_JNK_XLV,1,0,0
 GLD_down_up_down_JNK_XLV,2,0,0
 GLD_down_up_down_JNK_XLV,3,0,0
 GLD_up_down_down_JNK_XLV,1,126,20
-GLD_up_down_down_JNK_XLV,2,126,21
+GLD_up_down_down_JNK_XLV,2,126,23
 GLD_up_down_down_JNK_XLV,3,126,26
 GLD_up_up_up_LQD_QQQ,1,128,0
 GLD_up_up_up_LQD_QQQ,2,128,1
@@ -10774,7 +10774,7 @@ GLD_down_up_down_LQD_QQQ,2,0,0
 GLD_down_up_down_LQD_QQQ,3,0,0
 GLD_up_down_down_LQD_QQQ,1,126,6
 GLD_up_down_down_LQD_QQQ,2,126,15
-GLD_up_down_down_LQD_QQQ,3,126,17
+GLD_up_down_down_LQD_QQQ,3,126,18
 GLD_up_up_up_LQD_SLV,1,128,0
 GLD_up_up_up_LQD_SLV,2,128,0
 GLD_up_up_up_LQD_SLV,3,128,0
@@ -10809,7 +10809,7 @@ GLD_up_up_down_LQD_SPY,1,126,6
 GLD_up_up_down_LQD_SPY,2,126,6
 GLD_up_up_down_LQD_SPY,3,126,2
 GLD_up_down_up_LQD_SPY,1,126,0
-GLD_up_down_up_LQD_SPY,2,126,1
+GLD_up_down_up_LQD_SPY,2,126,0
 GLD_up_down_up_LQD_SPY,3,126,0
 GLD_down_up_up_LQD_SPY,1,126,0
 GLD_down_up_up_LQD_SPY,2,126,5
@@ -10965,8 +10965,8 @@ GLD_down_up_down_LQD_XLK,1,0,0
 GLD_down_up_down_LQD_XLK,2,0,0
 GLD_down_up_down_LQD_XLK,3,0,0
 GLD_up_down_down_LQD_XLK,1,126,12
-GLD_up_down_down_LQD_XLK,2,126,12
-GLD_up_down_down_LQD_XLK,3,126,19
+GLD_up_down_down_LQD_XLK,2,126,14
+GLD_up_down_down_LQD_XLK,3,126,20
 GLD_up_up_up_LQD_XLU,1,128,0
 GLD_up_up_up_LQD_XLU,2,128,0
 GLD_up_up_up_LQD_XLU,3,128,0
@@ -10989,7 +10989,7 @@ GLD_down_up_down_LQD_XLU,1,0,0
 GLD_down_up_down_LQD_XLU,2,0,0
 GLD_down_up_down_LQD_XLU,3,0,0
 GLD_up_down_down_LQD_XLU,1,126,0
-GLD_up_down_down_LQD_XLU,2,126,3
+GLD_up_down_down_LQD_XLU,2,126,4
 GLD_up_down_down_LQD_XLU,3,126,1
 GLD_up_up_up_LQD_XLV,1,127,0
 GLD_up_up_up_LQD_XLV,2,127,0
@@ -11013,7 +11013,7 @@ GLD_down_up_down_LQD_XLV,1,0,0
 GLD_down_up_down_LQD_XLV,2,0,0
 GLD_down_up_down_LQD_XLV,3,0,0
 GLD_up_down_down_LQD_XLV,1,126,10
-GLD_up_down_down_LQD_XLV,2,126,26
+GLD_up_down_down_LQD_XLV,2,126,28
 GLD_up_down_down_LQD_XLV,3,126,23
 GLD_up_up_up_QQQ_SLV,1,128,0
 GLD_up_up_up_QQQ_SLV,2,128,1
@@ -11062,7 +11062,7 @@ GLD_down_up_down_QQQ_SPY,2,0,0
 GLD_down_up_down_QQQ_SPY,3,0,0
 GLD_up_down_down_QQQ_SPY,1,127,25
 GLD_up_down_down_QQQ_SPY,2,127,19
-GLD_up_down_down_QQQ_SPY,3,127,23
+GLD_up_down_down_QQQ_SPY,3,127,24
 GLD_up_up_up_QQQ_TIP,1,128,0
 GLD_up_up_up_QQQ_TIP,2,128,0
 GLD_up_up_up_QQQ_TIP,3,128,0
@@ -11109,8 +11109,8 @@ GLD_down_up_down_QQQ_TLT,1,126,0
 GLD_down_up_down_QQQ_TLT,2,126,2
 GLD_down_up_down_QQQ_TLT,3,126,0
 GLD_up_down_down_QQQ_TLT,1,126,4
-GLD_up_down_down_QQQ_TLT,2,126,2
-GLD_up_down_down_QQQ_TLT,3,126,4
+GLD_up_down_down_QQQ_TLT,2,126,4
+GLD_up_down_down_QQQ_TLT,3,126,5
 GLD_up_up_up_QQQ_UUP,1,126,0
 GLD_up_up_up_QQQ_UUP,2,126,0
 GLD_up_up_up_QQQ_UUP,3,126,0
@@ -11205,7 +11205,7 @@ GLD_down_up_down_QQQ_XLK,1,0,0
 GLD_down_up_down_QQQ_XLK,2,0,0
 GLD_down_up_down_QQQ_XLK,3,0,0
 GLD_up_down_down_QQQ_XLK,1,127,24
-GLD_up_down_down_QQQ_XLK,2,127,10
+GLD_up_down_down_QQQ_XLK,2,127,12
 GLD_up_down_down_QQQ_XLK,3,127,12
 GLD_up_up_up_QQQ_XLU,1,127,0
 GLD_up_up_up_QQQ_XLU,2,127,0
@@ -11454,7 +11454,7 @@ GLD_down_down_down_SLV_XLV,1,127,1
 GLD_down_down_down_SLV_XLV,2,127,0
 GLD_down_down_down_SLV_XLV,3,127,0
 GLD_up_up_down_SLV_XLV,1,127,13
-GLD_up_up_down_SLV_XLV,2,127,2
+GLD_up_up_down_SLV_XLV,2,127,4
 GLD_up_up_down_SLV_XLV,3,127,3
 GLD_up_down_up_SLV_XLV,1,0,0
 GLD_up_down_up_SLV_XLV,2,0,0
@@ -11481,7 +11481,7 @@ GLD_up_up_down_SPY_TIP,1,126,0
 GLD_up_up_down_SPY_TIP,2,126,0
 GLD_up_up_down_SPY_TIP,3,126,0
 GLD_up_down_up_SPY_TIP,1,126,30
-GLD_up_down_up_SPY_TIP,2,126,15
+GLD_up_down_up_SPY_TIP,2,126,16
 GLD_up_down_up_SPY_TIP,3,126,12
 GLD_down_up_up_SPY_TIP,1,126,5
 GLD_down_up_up_SPY_TIP,2,126,8
@@ -11589,7 +11589,7 @@ GLD_down_up_down_SPY_XLF,1,0,0
 GLD_down_up_down_SPY_XLF,2,0,0
 GLD_down_up_down_SPY_XLF,3,0,0
 GLD_up_down_down_SPY_XLF,1,126,34
-GLD_up_down_down_SPY_XLF,2,126,8
+GLD_up_down_down_SPY_XLF,2,126,10
 GLD_up_down_down_SPY_XLF,3,126,14
 GLD_up_up_up_SPY_XLK,1,128,1
 GLD_up_up_up_SPY_XLK,2,128,1
@@ -11614,7 +11614,7 @@ GLD_down_up_down_SPY_XLK,2,0,0
 GLD_down_up_down_SPY_XLK,3,0,0
 GLD_up_down_down_SPY_XLK,1,127,29
 GLD_up_down_down_SPY_XLK,2,127,25
-GLD_up_down_down_SPY_XLK,3,127,23
+GLD_up_down_down_SPY_XLK,3,127,25
 GLD_up_up_up_SPY_XLU,1,128,0
 GLD_up_up_up_SPY_XLU,2,128,0
 GLD_up_up_up_SPY_XLU,3,128,0
@@ -11662,7 +11662,7 @@ GLD_down_up_down_SPY_XLV,2,126,2
 GLD_down_up_down_SPY_XLV,3,126,2
 GLD_up_down_down_SPY_XLV,1,126,30
 GLD_up_down_down_SPY_XLV,2,126,26
-GLD_up_down_down_SPY_XLV,3,126,34
+GLD_up_down_down_SPY_XLV,3,126,36
 GLD_up_up_up_TIP_TLT,1,128,0
 GLD_up_up_up_TIP_TLT,2,128,2
 GLD_up_up_up_TIP_TLT,3,128,0
@@ -11670,7 +11670,7 @@ GLD_down_down_down_TIP_TLT,1,128,0
 GLD_down_down_down_TIP_TLT,2,128,0
 GLD_down_down_down_TIP_TLT,3,128,0
 GLD_up_up_down_TIP_TLT,1,126,0
-GLD_up_up_down_TIP_TLT,2,126,5
+GLD_up_up_down_TIP_TLT,2,126,4
 GLD_up_up_down_TIP_TLT,3,126,4
 GLD_up_down_up_TIP_TLT,1,0,0
 GLD_up_down_up_TIP_TLT,2,0,0
@@ -11694,7 +11694,7 @@ GLD_down_down_down_TIP_UUP,1,0,0
 GLD_down_down_down_TIP_UUP,2,0,0
 GLD_down_down_down_TIP_UUP,3,0,0
 GLD_up_up_down_TIP_UUP,1,128,1
-GLD_up_up_down_TIP_UUP,2,128,0
+GLD_up_up_down_TIP_UUP,2,128,2
 GLD_up_up_down_TIP_UUP,3,128,0
 GLD_up_down_up_TIP_UUP,1,126,0
 GLD_up_down_up_TIP_UUP,2,126,0
@@ -11783,8 +11783,8 @@ GLD_down_up_down_TIP_XLK,3,0,0
 GLD_up_down_down_TIP_XLK,1,126,2
 GLD_up_down_down_TIP_XLK,2,126,8
 GLD_up_down_down_TIP_XLK,3,126,4
-GLD_up_up_up_TIP_XLU,1,128,5
-GLD_up_up_up_TIP_XLU,2,128,6
+GLD_up_up_up_TIP_XLU,1,128,6
+GLD_up_up_up_TIP_XLU,2,128,4
 GLD_up_up_up_TIP_XLU,3,128,2
 GLD_down_down_down_TIP_XLU,1,127,0
 GLD_down_down_down_TIP_XLU,2,127,0
@@ -11973,7 +11973,7 @@ GLD_down_up_down_TLT_XLV,1,126,2
 GLD_down_up_down_TLT_XLV,2,126,2
 GLD_down_up_down_TLT_XLV,3,126,0
 GLD_up_down_down_TLT_XLV,1,126,0
-GLD_up_down_down_TLT_XLV,2,126,11
+GLD_up_down_down_TLT_XLV,2,126,13
 GLD_up_down_down_TLT_XLV,3,126,6
 GLD_up_up_up_UUP_XLE,1,126,0
 GLD_up_up_up_UUP_XLE,2,126,0
@@ -12021,7 +12021,7 @@ GLD_down_up_down_UUP_XLF,1,127,0
 GLD_down_up_down_UUP_XLF,2,127,0
 GLD_down_up_down_UUP_XLF,3,127,1
 GLD_up_down_down_UUP_XLF,1,126,13
-GLD_up_down_down_UUP_XLF,2,126,6
+GLD_up_down_down_UUP_XLF,2,126,7
 GLD_up_down_down_UUP_XLF,3,126,7
 GLD_up_up_up_UUP_XLK,1,126,0
 GLD_up_up_up_UUP_XLK,2,126,0
@@ -12093,7 +12093,7 @@ GLD_down_up_down_UUP_XLV,1,127,0
 GLD_down_up_down_UUP_XLV,2,127,0
 GLD_down_up_down_UUP_XLV,3,127,0
 GLD_up_down_down_UUP_XLV,1,126,13
-GLD_up_down_down_UUP_XLV,2,126,6
+GLD_up_down_down_UUP_XLV,2,126,8
 GLD_up_down_down_UUP_XLV,3,126,2
 GLD_up_up_up_XLE_XLF,1,128,0
 GLD_up_up_up_XLE_XLF,2,128,0
@@ -12102,7 +12102,7 @@ GLD_down_down_down_XLE_XLF,1,126,0
 GLD_down_down_down_XLE_XLF,2,126,0
 GLD_down_down_down_XLE_XLF,3,126,0
 GLD_up_up_down_XLE_XLF,1,126,0
-GLD_up_up_down_XLE_XLF,2,126,0
+GLD_up_up_down_XLE_XLF,2,126,2
 GLD_up_up_down_XLE_XLF,3,126,3
 GLD_up_down_up_XLE_XLF,1,126,0
 GLD_up_down_up_XLE_XLF,2,126,0
@@ -12174,7 +12174,7 @@ GLD_down_down_down_XLE_XLV,1,126,0
 GLD_down_down_down_XLE_XLV,2,126,0
 GLD_down_down_down_XLE_XLV,3,126,0
 GLD_up_up_down_XLE_XLV,1,126,2
-GLD_up_up_down_XLE_XLV,2,126,0
+GLD_up_up_down_XLE_XLV,2,126,2
 GLD_up_up_down_XLE_XLV,3,126,0
 GLD_up_down_up_XLE_XLV,1,126,0
 GLD_up_down_up_XLE_XLV,2,126,0
@@ -12237,7 +12237,7 @@ GLD_down_up_down_XLF_XLU,1,126,0
 GLD_down_up_down_XLF_XLU,2,126,10
 GLD_down_up_down_XLF_XLU,3,126,10
 GLD_up_down_down_XLF_XLU,1,126,21
-GLD_up_down_down_XLF_XLU,2,126,10
+GLD_up_down_down_XLF_XLU,2,126,11
 GLD_up_down_down_XLF_XLU,3,126,9
 GLD_up_up_up_XLF_XLV,1,128,0
 GLD_up_up_up_XLF_XLV,2,128,1
@@ -12286,7 +12286,7 @@ GLD_down_up_down_XLK_XLU,2,126,7
 GLD_down_up_down_XLK_XLU,3,126,6
 GLD_up_down_down_XLK_XLU,1,126,13
 GLD_up_down_down_XLK_XLU,2,126,4
-GLD_up_down_down_XLK_XLU,3,126,28
+GLD_up_down_down_XLK_XLU,3,126,29
 GLD_up_up_up_XLK_XLV,1,127,0
 GLD_up_up_up_XLK_XLV,2,127,0
 GLD_up_up_up_XLK_XLV,3,127,0
@@ -12310,7 +12310,7 @@ GLD_down_up_down_XLK_XLV,2,126,2
 GLD_down_up_down_XLK_XLV,3,126,0
 GLD_up_down_down_XLK_XLV,1,126,44
 GLD_up_down_down_XLK_XLV,2,126,34
-GLD_up_down_down_XLK_XLV,3,126,44
+GLD_up_down_down_XLK_XLV,3,126,46
 GLD_up_up_up_XLU_XLV,1,128,0
 GLD_up_up_up_XLU_XLV,2,128,0
 GLD_up_up_up_XLU_XLV,3,128,0
@@ -12333,8 +12333,8 @@ GLD_down_up_down_XLU_XLV,1,126,0
 GLD_down_up_down_XLU_XLV,2,126,0
 GLD_down_up_down_XLU_XLV,3,126,0
 GLD_up_down_down_XLU_XLV,1,126,5
-GLD_up_down_down_XLU_XLV,2,126,5
-GLD_up_down_down_XLU_XLV,3,126,10
+GLD_up_down_down_XLU_XLV,2,126,6
+GLD_up_down_down_XLU_XLV,3,126,12
 HYG_up_up_up_IWM_JNK,1,128,0
 HYG_up_up_up_IWM_JNK,2,128,0
 HYG_up_up_up_IWM_JNK,3,128,0
@@ -12423,7 +12423,7 @@ HYG_down_up_up_IWM_SLV,1,0,0
 HYG_down_up_up_IWM_SLV,2,0,0
 HYG_down_up_up_IWM_SLV,3,0,0
 HYG_down_down_up_IWM_SLV,1,126,1
-HYG_down_down_up_IWM_SLV,2,126,2
+HYG_down_down_up_IWM_SLV,2,126,4
 HYG_down_down_up_IWM_SLV,3,126,6
 HYG_down_up_down_IWM_SLV,1,0,0
 HYG_down_up_down_IWM_SLV,2,0,0
@@ -12432,7 +12432,7 @@ HYG_up_down_down_IWM_SLV,1,0,0
 HYG_up_down_down_IWM_SLV,2,0,0
 HYG_up_down_down_IWM_SLV,3,0,0
 HYG_up_up_up_IWM_SPY,1,128,0
-HYG_up_up_up_IWM_SPY,2,128,1
+HYG_up_up_up_IWM_SPY,2,128,0
 HYG_up_up_up_IWM_SPY,3,128,0
 HYG_down_down_down_IWM_SPY,1,128,0
 HYG_down_down_down_IWM_SPY,2,128,2
@@ -12471,7 +12471,7 @@ HYG_down_up_up_IWM_TIP,1,0,0
 HYG_down_up_up_IWM_TIP,2,0,0
 HYG_down_up_up_IWM_TIP,3,0,0
 HYG_down_down_up_IWM_TIP,1,126,16
-HYG_down_down_up_IWM_TIP,2,126,4
+HYG_down_down_up_IWM_TIP,2,126,6
 HYG_down_down_up_IWM_TIP,3,126,10
 HYG_down_up_down_IWM_TIP,1,126,0
 HYG_down_up_down_IWM_TIP,2,126,0
@@ -12483,7 +12483,7 @@ HYG_up_up_up_IWM_TLT,1,128,0
 HYG_up_up_up_IWM_TLT,2,128,0
 HYG_up_up_up_IWM_TLT,3,128,0
 HYG_down_down_down_IWM_TLT,1,128,0
-HYG_down_down_down_IWM_TLT,2,128,0
+HYG_down_down_down_IWM_TLT,2,128,2
 HYG_down_down_down_IWM_TLT,3,128,0
 HYG_up_up_down_IWM_TLT,1,126,0
 HYG_up_up_down_IWM_TLT,2,126,0
@@ -12672,7 +12672,7 @@ HYG_up_down_down_JNK_LQD,1,0,0
 HYG_up_down_down_JNK_LQD,2,0,0
 HYG_up_down_down_JNK_LQD,3,0,0
 HYG_up_up_up_JNK_QQQ,1,128,0
-HYG_up_up_up_JNK_QQQ,2,128,1
+HYG_up_up_up_JNK_QQQ,2,128,0
 HYG_up_up_up_JNK_QQQ,3,128,0
 HYG_down_down_down_JNK_QQQ,1,128,2
 HYG_down_down_down_JNK_QQQ,2,128,2
@@ -12720,7 +12720,7 @@ HYG_up_down_down_JNK_SLV,1,0,0
 HYG_up_down_down_JNK_SLV,2,0,0
 HYG_up_down_down_JNK_SLV,3,0,0
 HYG_up_up_up_JNK_SPY,1,128,0
-HYG_up_up_up_JNK_SPY,2,128,1
+HYG_up_up_up_JNK_SPY,2,128,0
 HYG_up_up_up_JNK_SPY,3,128,0
 HYG_down_down_down_JNK_SPY,1,128,0
 HYG_down_down_down_JNK_SPY,2,128,2
@@ -12795,7 +12795,7 @@ HYG_up_up_up_JNK_UUP,1,127,0
 HYG_up_up_up_JNK_UUP,2,127,0
 HYG_up_up_up_JNK_UUP,3,127,0
 HYG_down_down_down_JNK_UUP,1,126,1
-HYG_down_down_down_JNK_UUP,2,126,2
+HYG_down_down_down_JNK_UUP,2,126,4
 HYG_down_down_down_JNK_UUP,3,126,4
 HYG_up_up_down_JNK_UUP,1,128,0
 HYG_up_up_down_JNK_UUP,2,128,0
@@ -12831,8 +12831,8 @@ HYG_down_up_up_JNK_XLE,1,0,0
 HYG_down_up_up_JNK_XLE,2,0,0
 HYG_down_up_up_JNK_XLE,3,0,0
 HYG_down_down_up_JNK_XLE,1,127,0
-HYG_down_down_up_JNK_XLE,2,127,0
-HYG_down_down_up_JNK_XLE,3,127,0
+HYG_down_down_up_JNK_XLE,2,127,1
+HYG_down_down_up_JNK_XLE,3,127,2
 HYG_down_up_down_JNK_XLE,1,0,0
 HYG_down_up_down_JNK_XLE,2,0,0
 HYG_down_up_down_JNK_XLE,3,0,0
@@ -12843,7 +12843,7 @@ HYG_up_up_up_JNK_XLF,1,128,0
 HYG_up_up_up_JNK_XLF,2,128,0
 HYG_up_up_up_JNK_XLF,3,128,0
 HYG_down_down_down_JNK_XLF,1,128,3
-HYG_down_down_down_JNK_XLF,2,128,0
+HYG_down_down_down_JNK_XLF,2,128,1
 HYG_down_down_down_JNK_XLF,3,128,2
 HYG_up_up_down_JNK_XLF,1,126,0
 HYG_up_up_down_JNK_XLF,2,126,0
@@ -12864,7 +12864,7 @@ HYG_up_down_down_JNK_XLF,1,0,0
 HYG_up_down_down_JNK_XLF,2,0,0
 HYG_up_down_down_JNK_XLF,3,0,0
 HYG_up_up_up_JNK_XLK,1,128,0
-HYG_up_up_up_JNK_XLK,2,128,1
+HYG_up_up_up_JNK_XLK,2,128,0
 HYG_up_up_up_JNK_XLK,3,128,0
 HYG_down_down_down_JNK_XLK,1,128,3
 HYG_down_down_down_JNK_XLK,2,128,2
@@ -12891,7 +12891,7 @@ HYG_up_up_up_JNK_XLU,1,128,0
 HYG_up_up_up_JNK_XLU,2,128,0
 HYG_up_up_up_JNK_XLU,3,128,0
 HYG_down_down_down_JNK_XLU,1,128,0
-HYG_down_down_down_JNK_XLU,2,128,0
+HYG_down_down_down_JNK_XLU,2,128,2
 HYG_down_down_down_JNK_XLU,3,128,0
 HYG_up_up_down_JNK_XLU,1,126,0
 HYG_up_up_down_JNK_XLU,2,126,0
@@ -12916,7 +12916,7 @@ HYG_up_up_up_JNK_XLV,2,128,0
 HYG_up_up_up_JNK_XLV,3,128,0
 HYG_down_down_down_JNK_XLV,1,128,1
 HYG_down_down_down_JNK_XLV,2,128,2
-HYG_down_down_down_JNK_XLV,3,128,1
+HYG_down_down_down_JNK_XLV,3,128,2
 HYG_up_up_down_JNK_XLV,1,126,0
 HYG_up_up_down_JNK_XLV,2,126,0
 HYG_up_up_down_JNK_XLV,3,126,1
@@ -12987,7 +12987,7 @@ HYG_up_up_up_LQD_SPY,1,128,0
 HYG_up_up_up_LQD_SPY,2,128,0
 HYG_up_up_up_LQD_SPY,3,128,0
 HYG_down_down_down_LQD_SPY,1,128,0
-HYG_down_down_down_LQD_SPY,2,128,0
+HYG_down_down_down_LQD_SPY,2,128,2
 HYG_down_down_down_LQD_SPY,3,128,1
 HYG_up_up_down_LQD_SPY,1,126,0
 HYG_up_up_down_LQD_SPY,2,126,0
@@ -13131,7 +13131,7 @@ HYG_up_up_up_LQD_XLK,1,128,0
 HYG_up_up_up_LQD_XLK,2,128,0
 HYG_up_up_up_LQD_XLK,3,128,0
 HYG_down_down_down_LQD_XLK,1,128,1
-HYG_down_down_down_LQD_XLK,2,128,0
+HYG_down_down_down_LQD_XLK,2,128,2
 HYG_down_down_down_LQD_XLK,3,128,2
 HYG_up_up_down_LQD_XLK,1,0,0
 HYG_up_up_down_LQD_XLK,2,0,0
@@ -13216,7 +13216,7 @@ HYG_down_up_up_QQQ_SLV,2,0,0
 HYG_down_up_up_QQQ_SLV,3,0,0
 HYG_down_down_up_QQQ_SLV,1,126,4
 HYG_down_down_up_QQQ_SLV,2,126,2
-HYG_down_down_up_QQQ_SLV,3,126,9
+HYG_down_down_up_QQQ_SLV,3,126,10
 HYG_down_up_down_QQQ_SLV,1,0,0
 HYG_down_up_down_QQQ_SLV,2,0,0
 HYG_down_up_down_QQQ_SLV,3,0,0
@@ -13244,7 +13244,7 @@ HYG_down_down_up_QQQ_SPY,3,0,0
 HYG_down_up_down_QQQ_SPY,1,0,0
 HYG_down_up_down_QQQ_SPY,2,0,0
 HYG_down_up_down_QQQ_SPY,3,0,0
-HYG_up_down_down_QQQ_SPY,1,126,15
+HYG_up_down_down_QQQ_SPY,1,126,16
 HYG_up_down_down_QQQ_SPY,2,126,20
 HYG_up_down_down_QQQ_SPY,3,126,18
 HYG_up_up_up_QQQ_TIP,1,128,0
@@ -13275,7 +13275,7 @@ HYG_up_up_up_QQQ_TLT,1,128,0
 HYG_up_up_up_QQQ_TLT,2,128,0
 HYG_up_up_up_QQQ_TLT,3,128,0
 HYG_down_down_down_QQQ_TLT,1,127,0
-HYG_down_down_down_QQQ_TLT,2,127,0
+HYG_down_down_down_QQQ_TLT,2,127,1
 HYG_down_down_down_QQQ_TLT,3,127,2
 HYG_up_up_down_QQQ_TLT,1,126,0
 HYG_up_up_down_QQQ_TLT,2,126,0
@@ -13368,7 +13368,7 @@ HYG_up_down_down_QQQ_XLF,1,0,0
 HYG_up_down_down_QQQ_XLF,2,0,0
 HYG_up_down_down_QQQ_XLF,3,0,0
 HYG_up_up_up_QQQ_XLK,1,128,0
-HYG_up_up_up_QQQ_XLK,2,128,1
+HYG_up_up_up_QQQ_XLK,2,128,0
 HYG_up_up_up_QQQ_XLK,3,128,0
 HYG_down_down_down_QQQ_XLK,1,128,2
 HYG_down_down_down_QQQ_XLK,2,128,2
@@ -13388,7 +13388,7 @@ HYG_down_down_up_QQQ_XLK,3,0,0
 HYG_down_up_down_QQQ_XLK,1,0,0
 HYG_down_up_down_QQQ_XLK,2,0,0
 HYG_down_up_down_QQQ_XLK,3,0,0
-HYG_up_down_down_QQQ_XLK,1,126,13
+HYG_up_down_down_QQQ_XLK,1,126,14
 HYG_up_down_down_QQQ_XLK,2,126,15
 HYG_up_down_down_QQQ_XLK,3,126,18
 HYG_up_up_up_QQQ_XLU,1,128,0
@@ -13459,7 +13459,7 @@ HYG_down_down_up_SLV_SPY,2,0,0
 HYG_down_down_up_SLV_SPY,3,0,0
 HYG_down_up_down_SLV_SPY,1,126,6
 HYG_down_up_down_SLV_SPY,2,126,6
-HYG_down_up_down_SLV_SPY,3,126,11
+HYG_down_up_down_SLV_SPY,3,126,12
 HYG_up_down_down_SLV_SPY,1,0,0
 HYG_up_down_down_SLV_SPY,2,0,0
 HYG_up_down_down_SLV_SPY,3,0,0
@@ -13476,7 +13476,7 @@ HYG_up_down_up_SLV_TIP,1,126,4
 HYG_up_down_up_SLV_TIP,2,126,2
 HYG_up_down_up_SLV_TIP,3,126,0
 HYG_down_up_up_SLV_TIP,1,126,16
-HYG_down_up_up_SLV_TIP,2,126,8
+HYG_down_up_up_SLV_TIP,2,126,9
 HYG_down_up_up_SLV_TIP,3,126,22
 HYG_down_down_up_SLV_TIP,1,0,0
 HYG_down_down_up_SLV_TIP,2,0,0
@@ -13531,7 +13531,7 @@ HYG_down_down_up_SLV_UUP,2,128,1
 HYG_down_down_up_SLV_UUP,3,128,0
 HYG_down_up_down_SLV_UUP,1,126,0
 HYG_down_up_down_SLV_UUP,2,126,5
-HYG_down_up_down_SLV_UUP,3,126,3
+HYG_down_up_down_SLV_UUP,3,126,5
 HYG_up_down_down_SLV_UUP,1,0,0
 HYG_up_down_down_SLV_UUP,2,0,0
 HYG_up_down_down_SLV_UUP,3,0,0
@@ -13548,18 +13548,18 @@ HYG_up_down_up_SLV_XLE,1,126,0
 HYG_up_down_up_SLV_XLE,2,126,1
 HYG_up_down_up_SLV_XLE,3,126,0
 HYG_down_up_up_SLV_XLE,1,126,0
-HYG_down_up_up_SLV_XLE,2,126,4
-HYG_down_up_up_SLV_XLE,3,126,1
+HYG_down_up_up_SLV_XLE,2,126,6
+HYG_down_up_up_SLV_XLE,3,126,3
 HYG_down_down_up_SLV_XLE,1,126,0
 HYG_down_down_up_SLV_XLE,2,126,0
-HYG_down_down_up_SLV_XLE,3,126,0
+HYG_down_down_up_SLV_XLE,3,126,2
 HYG_down_up_down_SLV_XLE,1,126,0
 HYG_down_up_down_SLV_XLE,2,126,0
 HYG_down_up_down_SLV_XLE,3,126,0
 HYG_up_down_down_SLV_XLE,1,0,0
 HYG_up_down_down_SLV_XLE,2,0,0
 HYG_up_down_down_SLV_XLE,3,0,0
-HYG_up_up_up_SLV_XLF,1,128,1
+HYG_up_up_up_SLV_XLF,1,128,0
 HYG_up_up_up_SLV_XLF,2,128,1
 HYG_up_up_up_SLV_XLF,3,128,0
 HYG_down_down_down_SLV_XLF,1,127,0
@@ -13627,7 +13627,7 @@ HYG_down_down_up_SLV_XLU,2,126,0
 HYG_down_down_up_SLV_XLU,3,126,2
 HYG_down_up_down_SLV_XLU,1,126,0
 HYG_down_up_down_SLV_XLU,2,126,4
-HYG_down_up_down_SLV_XLU,3,126,18
+HYG_down_up_down_SLV_XLU,3,126,20
 HYG_up_down_down_SLV_XLU,1,0,0
 HYG_up_down_down_SLV_XLU,2,0,0
 HYG_up_down_down_SLV_XLU,3,0,0
@@ -13650,8 +13650,8 @@ HYG_down_down_up_SLV_XLV,1,126,2
 HYG_down_down_up_SLV_XLV,2,126,2
 HYG_down_down_up_SLV_XLV,3,126,0
 HYG_down_up_down_SLV_XLV,1,126,1
-HYG_down_up_down_SLV_XLV,2,126,9
-HYG_down_up_down_SLV_XLV,3,126,21
+HYG_down_up_down_SLV_XLV,2,126,11
+HYG_down_up_down_SLV_XLV,3,126,22
 HYG_up_down_down_SLV_XLV,1,0,0
 HYG_up_down_down_SLV_XLV,2,0,0
 HYG_up_down_down_SLV_XLV,3,0,0
@@ -13803,7 +13803,7 @@ HYG_up_up_up_SPY_XLU,1,128,0
 HYG_up_up_up_SPY_XLU,2,128,0
 HYG_up_up_up_SPY_XLU,3,128,0
 HYG_down_down_down_SPY_XLU,1,127,0
-HYG_down_down_down_SPY_XLU,2,127,1
+HYG_down_down_down_SPY_XLU,2,127,2
 HYG_down_down_down_SPY_XLU,3,127,4
 HYG_up_up_down_SPY_XLU,1,126,0
 HYG_up_up_down_SPY_XLU,2,126,0
@@ -13879,7 +13879,7 @@ HYG_down_down_down_TIP_UUP,2,0,0
 HYG_down_down_down_TIP_UUP,3,0,0
 HYG_up_up_down_TIP_UUP,1,128,5
 HYG_up_up_down_TIP_UUP,2,128,8
-HYG_up_up_down_TIP_UUP,3,128,2
+HYG_up_up_down_TIP_UUP,3,128,0
 HYG_up_down_up_TIP_UUP,1,126,0
 HYG_up_down_up_TIP_UUP,2,126,0
 HYG_up_down_up_TIP_UUP,3,126,0
@@ -13890,7 +13890,7 @@ HYG_down_down_up_TIP_UUP,1,128,0
 HYG_down_down_up_TIP_UUP,2,128,0
 HYG_down_down_up_TIP_UUP,3,128,0
 HYG_down_up_down_TIP_UUP,1,126,2
-HYG_down_up_down_TIP_UUP,2,126,0
+HYG_down_up_down_TIP_UUP,2,126,2
 HYG_down_up_down_TIP_UUP,3,126,2
 HYG_up_down_down_TIP_UUP,1,0,0
 HYG_up_down_down_TIP_UUP,2,0,0
@@ -13908,7 +13908,7 @@ HYG_up_down_up_TIP_XLE,1,126,0
 HYG_up_down_up_TIP_XLE,2,126,0
 HYG_up_down_up_TIP_XLE,3,126,0
 HYG_down_up_up_TIP_XLE,1,126,0
-HYG_down_up_up_TIP_XLE,2,126,6
+HYG_down_up_up_TIP_XLE,2,126,8
 HYG_down_up_up_TIP_XLE,3,126,11
 HYG_down_down_up_TIP_XLE,1,126,0
 HYG_down_down_up_TIP_XLE,2,126,0
@@ -13921,7 +13921,7 @@ HYG_up_down_down_TIP_XLE,2,0,0
 HYG_up_down_down_TIP_XLE,3,0,0
 HYG_up_up_up_TIP_XLF,1,128,2
 HYG_up_up_up_TIP_XLF,2,128,2
-HYG_up_up_up_TIP_XLF,3,128,2
+HYG_up_up_up_TIP_XLF,3,128,0
 HYG_down_down_down_TIP_XLF,1,127,0
 HYG_down_down_down_TIP_XLF,2,127,0
 HYG_down_down_down_TIP_XLF,3,127,0
@@ -13969,7 +13969,7 @@ HYG_up_down_down_TIP_XLK,2,0,0
 HYG_up_down_down_TIP_XLK,3,0,0
 HYG_up_up_up_TIP_XLU,1,128,5
 HYG_up_up_up_TIP_XLU,2,128,0
-HYG_up_up_up_TIP_XLU,3,128,2
+HYG_up_up_up_TIP_XLU,3,128,0
 HYG_down_down_down_TIP_XLU,1,127,0
 HYG_down_down_down_TIP_XLU,2,127,0
 HYG_down_down_down_TIP_XLU,3,127,0
@@ -13992,7 +13992,7 @@ HYG_up_down_down_TIP_XLU,1,0,0
 HYG_up_down_down_TIP_XLU,2,0,0
 HYG_up_down_down_TIP_XLU,3,0,0
 HYG_up_up_up_TIP_XLV,1,128,2
-HYG_up_up_up_TIP_XLV,2,128,2
+HYG_up_up_up_TIP_XLV,2,128,4
 HYG_up_up_up_TIP_XLV,3,128,0
 HYG_down_down_down_TIP_XLV,1,127,1
 HYG_down_down_down_TIP_XLV,2,127,2
@@ -14023,7 +14023,7 @@ HYG_down_down_down_TLT_UUP,2,126,0
 HYG_down_down_down_TLT_UUP,3,126,8
 HYG_up_up_down_TLT_UUP,1,128,0
 HYG_up_up_down_TLT_UUP,2,128,0
-HYG_up_up_down_TLT_UUP,3,128,2
+HYG_up_up_down_TLT_UUP,3,128,0
 HYG_up_down_up_TLT_UUP,1,126,0
 HYG_up_down_up_TLT_UUP,2,126,0
 HYG_up_down_up_TLT_UUP,3,126,0
@@ -14122,7 +14122,7 @@ HYG_up_up_down_TLT_XLU,2,126,0
 HYG_up_up_down_TLT_XLU,3,126,0
 HYG_up_down_up_TLT_XLU,1,126,0
 HYG_up_down_up_TLT_XLU,2,126,0
-HYG_up_down_up_TLT_XLU,3,126,2
+HYG_up_down_up_TLT_XLU,3,126,0
 HYG_down_up_up_TLT_XLU,1,126,3
 HYG_down_up_up_TLT_XLU,2,126,2
 HYG_down_up_up_TLT_XLU,3,126,1
@@ -14139,7 +14139,7 @@ HYG_up_up_up_TLT_XLV,1,128,0
 HYG_up_up_up_TLT_XLV,2,128,2
 HYG_up_up_up_TLT_XLV,3,128,0
 HYG_down_down_down_TLT_XLV,1,127,0
-HYG_down_down_down_TLT_XLV,2,127,2
+HYG_down_down_down_TLT_XLV,2,127,4
 HYG_down_down_down_TLT_XLV,3,127,3
 HYG_up_up_down_TLT_XLV,1,126,2
 HYG_up_up_down_TLT_XLV,2,126,0
@@ -14173,7 +14173,7 @@ HYG_up_down_up_UUP_XLE,2,127,0
 HYG_up_down_up_UUP_XLE,3,127,0
 HYG_down_up_up_UUP_XLE,1,126,0
 HYG_down_up_up_UUP_XLE,2,126,2
-HYG_down_up_up_UUP_XLE,3,126,0
+HYG_down_up_up_UUP_XLE,3,126,2
 HYG_down_down_up_UUP_XLE,1,0,0
 HYG_down_down_up_UUP_XLE,2,0,0
 HYG_down_down_up_UUP_XLE,3,0,0
@@ -14182,13 +14182,13 @@ HYG_down_up_down_UUP_XLE,2,127,0
 HYG_down_up_down_UUP_XLE,3,127,0
 HYG_up_down_down_UUP_XLE,1,126,0
 HYG_up_down_down_UUP_XLE,2,126,4
-HYG_up_down_down_UUP_XLE,3,126,7
+HYG_up_down_down_UUP_XLE,3,126,6
 HYG_up_up_up_UUP_XLF,1,126,0
 HYG_up_up_up_UUP_XLF,2,126,0
 HYG_up_up_up_UUP_XLF,3,126,0
 HYG_down_down_down_UUP_XLF,1,126,8
-HYG_down_down_down_UUP_XLF,2,126,3
-HYG_down_down_down_UUP_XLF,3,126,1
+HYG_down_down_down_UUP_XLF,2,126,5
+HYG_down_down_down_UUP_XLF,3,126,2
 HYG_up_up_down_UUP_XLF,1,0,0
 HYG_up_up_down_UUP_XLF,2,0,0
 HYG_up_up_down_UUP_XLF,3,0,0
@@ -14235,8 +14235,8 @@ HYG_up_up_up_UUP_XLU,1,126,0
 HYG_up_up_up_UUP_XLU,2,126,0
 HYG_up_up_up_UUP_XLU,3,126,0
 HYG_down_down_down_UUP_XLU,1,126,0
-HYG_down_down_down_UUP_XLU,2,126,4
-HYG_down_down_down_UUP_XLU,3,126,8
+HYG_down_down_down_UUP_XLU,2,126,6
+HYG_down_down_down_UUP_XLU,3,126,10
 HYG_up_up_down_UUP_XLU,1,0,0
 HYG_up_up_down_UUP_XLU,2,0,0
 HYG_up_up_down_UUP_XLU,3,0,0
@@ -14259,7 +14259,7 @@ HYG_up_up_up_UUP_XLV,1,126,0
 HYG_up_up_up_UUP_XLV,2,126,0
 HYG_up_up_up_UUP_XLV,3,126,0
 HYG_down_down_down_UUP_XLV,1,126,7
-HYG_down_down_down_UUP_XLV,2,126,4
+HYG_down_down_down_UUP_XLV,2,126,6
 HYG_down_down_down_UUP_XLV,3,126,4
 HYG_up_up_down_UUP_XLV,1,126,0
 HYG_up_up_down_UUP_XLV,2,126,0
@@ -14365,7 +14365,7 @@ HYG_up_down_up_XLE_XLV,2,126,6
 HYG_up_down_up_XLE_XLV,3,126,2
 HYG_down_up_up_XLE_XLV,1,126,0
 HYG_down_up_up_XLE_XLV,2,126,0
-HYG_down_up_up_XLE_XLV,3,126,3
+HYG_down_up_up_XLE_XLV,3,126,5
 HYG_down_down_up_XLE_XLV,1,0,0
 HYG_down_down_up_XLE_XLV,2,0,0
 HYG_down_down_up_XLE_XLV,3,0,0
@@ -14644,7 +14644,7 @@ IWM_up_up_up_JNK_TLT,2,128,0
 IWM_up_up_up_JNK_TLT,3,128,0
 IWM_down_down_down_JNK_TLT,1,128,0
 IWM_down_down_down_JNK_TLT,2,128,2
-IWM_down_down_down_JNK_TLT,3,128,0
+IWM_down_down_down_JNK_TLT,3,128,2
 IWM_up_up_down_JNK_TLT,1,126,0
 IWM_up_up_down_JNK_TLT,2,126,0
 IWM_up_up_down_JNK_TLT,3,126,0
@@ -14763,7 +14763,7 @@ IWM_up_up_up_JNK_XLU,1,128,0
 IWM_up_up_up_JNK_XLU,2,128,0
 IWM_up_up_up_JNK_XLU,3,128,0
 IWM_down_down_down_JNK_XLU,1,128,0
-IWM_down_down_down_JNK_XLU,2,128,0
+IWM_down_down_down_JNK_XLU,2,128,2
 IWM_down_down_down_JNK_XLU,3,128,0
 IWM_up_up_down_JNK_XLU,1,126,0
 IWM_up_up_down_JNK_XLU,2,126,2
@@ -14848,7 +14848,7 @@ IWM_down_up_up_LQD_SLV,2,126,5
 IWM_down_up_up_LQD_SLV,3,126,3
 IWM_down_down_up_LQD_SLV,1,126,0
 IWM_down_down_up_LQD_SLV,2,126,11
-IWM_down_down_up_LQD_SLV,3,126,6
+IWM_down_down_up_LQD_SLV,3,126,8
 IWM_down_up_down_LQD_SLV,1,126,0
 IWM_down_up_down_LQD_SLV,2,126,8
 IWM_down_up_down_LQD_SLV,3,126,1
@@ -14931,7 +14931,7 @@ IWM_up_up_up_LQD_UUP,1,126,0
 IWM_up_up_up_LQD_UUP,2,126,0
 IWM_up_up_up_LQD_UUP,3,126,0
 IWM_down_down_down_LQD_UUP,1,126,8
-IWM_down_down_down_LQD_UUP,2,126,6
+IWM_down_down_down_LQD_UUP,2,126,7
 IWM_down_down_down_LQD_UUP,3,126,6
 IWM_up_up_down_LQD_UUP,1,127,0
 IWM_up_up_down_LQD_UUP,2,127,1
@@ -14967,7 +14967,7 @@ IWM_down_up_up_LQD_XLE,1,126,0
 IWM_down_up_up_LQD_XLE,2,126,4
 IWM_down_up_up_LQD_XLE,3,126,0
 IWM_down_down_up_LQD_XLE,1,126,0
-IWM_down_down_up_LQD_XLE,2,126,4
+IWM_down_down_up_LQD_XLE,2,126,6
 IWM_down_down_up_LQD_XLE,3,126,0
 IWM_down_up_down_LQD_XLE,1,126,2
 IWM_down_up_down_LQD_XLE,2,126,9
@@ -15027,8 +15027,8 @@ IWM_up_up_up_LQD_XLU,1,128,0
 IWM_up_up_up_LQD_XLU,2,128,0
 IWM_up_up_up_LQD_XLU,3,128,0
 IWM_down_down_down_LQD_XLU,1,127,1
-IWM_down_down_down_LQD_XLU,2,127,0
-IWM_down_down_down_LQD_XLU,3,127,1
+IWM_down_down_down_LQD_XLU,2,127,2
+IWM_down_down_down_LQD_XLU,3,127,2
 IWM_up_up_down_LQD_XLU,1,126,0
 IWM_up_up_down_LQD_XLU,2,126,0
 IWM_up_up_down_LQD_XLU,3,126,1
@@ -15051,8 +15051,8 @@ IWM_up_up_up_LQD_XLV,1,128,0
 IWM_up_up_up_LQD_XLV,2,128,2
 IWM_up_up_up_LQD_XLV,3,128,2
 IWM_down_down_down_LQD_XLV,1,127,4
-IWM_down_down_down_LQD_XLV,2,127,4
-IWM_down_down_down_LQD_XLV,3,127,4
+IWM_down_down_down_LQD_XLV,2,127,5
+IWM_down_down_down_LQD_XLV,3,127,5
 IWM_up_up_down_LQD_XLV,1,126,0
 IWM_up_up_down_LQD_XLV,2,126,0
 IWM_up_up_down_LQD_XLV,3,126,0
@@ -15088,7 +15088,7 @@ IWM_down_up_up_QQQ_SLV,2,0,0
 IWM_down_up_up_QQQ_SLV,3,0,0
 IWM_down_down_up_QQQ_SLV,1,126,11
 IWM_down_down_up_QQQ_SLV,2,126,10
-IWM_down_down_up_QQQ_SLV,3,126,7
+IWM_down_down_up_QQQ_SLV,3,126,8
 IWM_down_up_down_QQQ_SLV,1,0,0
 IWM_down_up_down_QQQ_SLV,2,0,0
 IWM_down_up_down_QQQ_SLV,3,0,0
@@ -15145,9 +15145,9 @@ IWM_up_down_down_QQQ_TIP,2,0,0
 IWM_up_down_down_QQQ_TIP,3,0,0
 IWM_up_up_up_QQQ_TLT,1,128,0
 IWM_up_up_up_QQQ_TLT,2,128,0
-IWM_up_up_up_QQQ_TLT,3,128,1
+IWM_up_up_up_QQQ_TLT,3,128,0
 IWM_down_down_down_QQQ_TLT,1,127,0
-IWM_down_down_down_QQQ_TLT,2,127,0
+IWM_down_down_down_QQQ_TLT,2,127,1
 IWM_down_down_down_QQQ_TLT,3,127,3
 IWM_up_up_down_QQQ_TLT,1,127,0
 IWM_up_up_down_QQQ_TLT,2,127,0
@@ -15267,7 +15267,7 @@ IWM_up_up_up_QQQ_XLU,1,128,0
 IWM_up_up_up_QQQ_XLU,2,128,0
 IWM_up_up_up_QQQ_XLU,3,128,0
 IWM_down_down_down_QQQ_XLU,1,127,0
-IWM_down_down_down_QQQ_XLU,2,127,2
+IWM_down_down_down_QQQ_XLU,2,127,3
 IWM_down_down_down_QQQ_XLU,3,127,2
 IWM_up_up_down_QQQ_XLU,1,126,0
 IWM_up_up_down_QQQ_XLU,2,126,0
@@ -15331,7 +15331,7 @@ IWM_down_down_up_SLV_SPY,2,0,0
 IWM_down_down_up_SLV_SPY,3,0,0
 IWM_down_up_down_SLV_SPY,1,126,11
 IWM_down_up_down_SLV_SPY,2,126,6
-IWM_down_up_down_SLV_SPY,3,126,4
+IWM_down_up_down_SLV_SPY,3,126,5
 IWM_up_down_down_SLV_SPY,1,0,0
 IWM_up_down_down_SLV_SPY,2,0,0
 IWM_up_down_down_SLV_SPY,3,0,0
@@ -15544,7 +15544,7 @@ IWM_down_up_up_SPY_TIP,2,0,0
 IWM_down_up_up_SPY_TIP,3,0,0
 IWM_down_down_up_SPY_TIP,1,126,9
 IWM_down_down_up_SPY_TIP,2,126,2
-IWM_down_down_up_SPY_TIP,3,126,0
+IWM_down_down_up_SPY_TIP,3,126,1
 IWM_down_up_down_SPY_TIP,1,0,0
 IWM_down_up_down_SPY_TIP,2,0,0
 IWM_down_up_down_SPY_TIP,3,0,0
@@ -15553,7 +15553,7 @@ IWM_up_down_down_SPY_TIP,2,0,0
 IWM_up_down_down_SPY_TIP,3,0,0
 IWM_up_up_up_SPY_TLT,1,128,0
 IWM_up_up_up_SPY_TLT,2,128,0
-IWM_up_up_up_SPY_TLT,3,128,1
+IWM_up_up_up_SPY_TLT,3,128,0
 IWM_down_down_down_SPY_TLT,1,127,0
 IWM_down_down_down_SPY_TLT,2,127,1
 IWM_down_down_down_SPY_TLT,3,127,0
@@ -15640,7 +15640,7 @@ IWM_down_up_up_SPY_XLF,2,0,0
 IWM_down_up_up_SPY_XLF,3,0,0
 IWM_down_down_up_SPY_XLF,1,126,0
 IWM_down_down_up_SPY_XLF,2,126,5
-IWM_down_down_up_SPY_XLF,3,126,1
+IWM_down_down_up_SPY_XLF,3,126,2
 IWM_down_up_down_SPY_XLF,1,0,0
 IWM_down_up_down_SPY_XLF,2,0,0
 IWM_down_up_down_SPY_XLF,3,0,0
@@ -15700,7 +15700,7 @@ IWM_up_up_up_SPY_XLV,2,128,0
 IWM_up_up_up_SPY_XLV,3,128,0
 IWM_down_down_down_SPY_XLV,1,128,0
 IWM_down_down_down_SPY_XLV,2,128,5
-IWM_down_down_down_SPY_XLV,3,128,5
+IWM_down_down_down_SPY_XLV,3,128,6
 IWM_up_up_down_SPY_XLV,1,126,0
 IWM_up_up_down_SPY_XLV,2,126,0
 IWM_up_up_down_SPY_XLV,3,126,0
@@ -15743,7 +15743,7 @@ IWM_down_up_down_TIP_TLT,3,0,0
 IWM_up_down_down_TIP_TLT,1,126,0
 IWM_up_down_down_TIP_TLT,2,126,0
 IWM_up_down_down_TIP_TLT,3,126,0
-IWM_up_up_up_TIP_UUP,1,126,2
+IWM_up_up_up_TIP_UUP,1,126,0
 IWM_up_up_up_TIP_UUP,2,126,0
 IWM_up_up_up_TIP_UUP,3,126,0
 IWM_down_down_down_TIP_UUP,1,0,0
@@ -15767,7 +15767,7 @@ IWM_down_up_down_TIP_UUP,3,126,6
 IWM_up_down_down_TIP_UUP,1,126,0
 IWM_up_down_down_TIP_UUP,2,126,0
 IWM_up_down_down_TIP_UUP,3,126,0
-IWM_up_up_up_TIP_XLE,1,127,1
+IWM_up_up_up_TIP_XLE,1,127,0
 IWM_up_up_up_TIP_XLE,2,127,0
 IWM_up_up_up_TIP_XLE,3,127,0
 IWM_down_down_down_TIP_XLE,1,126,0
@@ -15835,7 +15835,7 @@ IWM_down_down_up_TIP_XLK,2,0,0
 IWM_down_down_up_TIP_XLK,3,0,0
 IWM_down_up_down_TIP_XLK,1,126,13
 IWM_down_up_down_TIP_XLK,2,126,10
-IWM_down_up_down_TIP_XLK,3,126,2
+IWM_down_up_down_TIP_XLK,3,126,4
 IWM_up_down_down_TIP_XLK,1,0,0
 IWM_up_down_down_TIP_XLK,2,0,0
 IWM_up_down_down_TIP_XLK,3,0,0
@@ -15863,7 +15863,7 @@ IWM_down_up_down_TIP_XLU,3,126,0
 IWM_up_down_down_TIP_XLU,1,126,0
 IWM_up_down_down_TIP_XLU,2,126,6
 IWM_up_down_down_TIP_XLU,3,126,2
-IWM_up_up_up_TIP_XLV,1,128,3
+IWM_up_up_up_TIP_XLV,1,128,2
 IWM_up_up_up_TIP_XLV,2,128,2
 IWM_up_up_up_TIP_XLV,3,128,0
 IWM_down_down_down_TIP_XLV,1,127,0
@@ -15891,7 +15891,7 @@ IWM_up_up_up_TLT_UUP,1,126,0
 IWM_up_up_up_TLT_UUP,2,126,0
 IWM_up_up_up_TLT_UUP,3,126,0
 IWM_down_down_down_TLT_UUP,1,126,3
-IWM_down_down_down_TLT_UUP,2,126,4
+IWM_down_down_down_TLT_UUP,2,126,6
 IWM_down_down_down_TLT_UUP,3,126,12
 IWM_up_up_down_TLT_UUP,1,126,0
 IWM_up_up_down_TLT_UUP,2,126,0
@@ -15961,7 +15961,7 @@ IWM_up_down_down_TLT_XLF,2,0,0
 IWM_up_down_down_TLT_XLF,3,0,0
 IWM_up_up_up_TLT_XLK,1,128,0
 IWM_up_up_up_TLT_XLK,2,128,0
-IWM_up_up_up_TLT_XLK,3,128,1
+IWM_up_up_up_TLT_XLK,3,128,0
 IWM_down_down_down_TLT_XLK,1,127,0
 IWM_down_down_down_TLT_XLK,2,127,0
 IWM_down_down_down_TLT_XLK,3,127,0
@@ -16009,7 +16009,7 @@ IWM_up_down_down_TLT_XLU,2,126,2
 IWM_up_down_down_TLT_XLU,3,126,0
 IWM_up_up_up_TLT_XLV,1,127,0
 IWM_up_up_up_TLT_XLV,2,127,0
-IWM_up_up_up_TLT_XLV,3,127,3
+IWM_up_up_up_TLT_XLV,3,127,2
 IWM_down_down_down_TLT_XLV,1,127,0
 IWM_down_down_down_TLT_XLV,2,127,3
 IWM_down_down_down_TLT_XLV,3,127,3
@@ -16107,7 +16107,7 @@ IWM_up_up_up_UUP_XLU,1,126,0
 IWM_up_up_up_UUP_XLU,2,126,0
 IWM_up_up_up_UUP_XLU,3,126,0
 IWM_down_down_down_UUP_XLU,1,126,6
-IWM_down_down_down_UUP_XLU,2,126,4
+IWM_down_down_down_UUP_XLU,2,126,6
 IWM_down_down_down_UUP_XLU,3,126,4
 IWM_up_up_down_UUP_XLU,1,126,2
 IWM_up_up_down_UUP_XLU,2,126,5
@@ -16131,8 +16131,8 @@ IWM_up_up_up_UUP_XLV,1,126,2
 IWM_up_up_up_UUP_XLV,2,126,0
 IWM_up_up_up_UUP_XLV,3,126,0
 IWM_down_down_down_UUP_XLV,1,126,13
-IWM_down_down_down_UUP_XLV,2,126,7
-IWM_down_down_down_UUP_XLV,3,126,3
+IWM_down_down_down_UUP_XLV,2,126,8
+IWM_down_down_down_UUP_XLV,3,126,5
 IWM_up_up_down_UUP_XLV,1,126,0
 IWM_up_up_down_UUP_XLV,2,126,0
 IWM_up_up_down_UUP_XLV,3,126,0
@@ -16155,7 +16155,7 @@ IWM_up_up_up_XLE_XLF,1,128,0
 IWM_up_up_up_XLE_XLF,2,128,0
 IWM_up_up_up_XLE_XLF,3,128,0
 IWM_down_down_down_XLE_XLF,1,128,0
-IWM_down_down_down_XLE_XLF,2,128,6
+IWM_down_down_down_XLE_XLF,2,128,5
 IWM_down_down_down_XLE_XLF,3,128,3
 IWM_up_up_down_XLE_XLF,1,0,0
 IWM_up_up_down_XLE_XLF,2,0,0
@@ -16164,14 +16164,14 @@ IWM_up_down_up_XLE_XLF,1,126,0
 IWM_up_down_up_XLE_XLF,2,126,0
 IWM_up_down_up_XLE_XLF,3,126,0
 IWM_down_up_up_XLE_XLF,1,126,0
-IWM_down_up_up_XLE_XLF,2,126,10
+IWM_down_up_up_XLE_XLF,2,126,11
 IWM_down_up_up_XLE_XLF,3,126,0
 IWM_down_down_up_XLE_XLF,1,0,0
 IWM_down_down_up_XLE_XLF,2,0,0
 IWM_down_down_up_XLE_XLF,3,0,0
 IWM_down_up_down_XLE_XLF,1,126,0
 IWM_down_up_down_XLE_XLF,2,126,2
-IWM_down_up_down_XLE_XLF,3,126,1
+IWM_down_up_down_XLE_XLF,3,126,2
 IWM_up_down_down_XLE_XLF,1,0,0
 IWM_up_down_down_XLE_XLF,2,0,0
 IWM_up_down_down_XLE_XLF,3,0,0
@@ -16300,7 +16300,7 @@ IWM_up_up_up_XLF_XLV,2,128,0
 IWM_up_up_up_XLF_XLV,3,128,0
 IWM_down_down_down_XLF_XLV,1,128,2
 IWM_down_down_down_XLF_XLV,2,128,4
-IWM_down_down_down_XLF_XLV,3,128,7
+IWM_down_down_down_XLF_XLV,3,128,8
 IWM_up_up_down_XLF_XLV,1,126,0
 IWM_up_up_down_XLF_XLV,2,126,2
 IWM_up_up_down_XLF_XLV,3,126,6
@@ -16420,7 +16420,7 @@ JNK_up_up_up_LQD_SLV,2,128,0
 JNK_up_up_up_LQD_SLV,3,128,0
 JNK_down_down_down_LQD_SLV,1,127,0
 JNK_down_down_down_LQD_SLV,2,127,0
-JNK_down_down_down_LQD_SLV,3,127,1
+JNK_down_down_down_LQD_SLV,3,127,2
 JNK_up_up_down_LQD_SLV,1,126,0
 JNK_up_up_down_LQD_SLV,2,126,0
 JNK_up_up_down_LQD_SLV,3,126,2
@@ -16443,7 +16443,7 @@ JNK_up_up_up_LQD_SPY,1,128,0
 JNK_up_up_up_LQD_SPY,2,128,0
 JNK_up_up_up_LQD_SPY,3,128,0
 JNK_down_down_down_LQD_SPY,1,128,0
-JNK_down_down_down_LQD_SPY,2,128,1
+JNK_down_down_down_LQD_SPY,2,128,2
 JNK_down_down_down_LQD_SPY,3,128,1
 JNK_up_up_down_LQD_SPY,1,126,2
 JNK_up_up_down_LQD_SPY,2,126,2
@@ -16516,7 +16516,7 @@ JNK_up_up_up_LQD_UUP,2,126,0
 JNK_up_up_up_LQD_UUP,3,126,0
 JNK_down_down_down_LQD_UUP,1,126,2
 JNK_down_down_down_LQD_UUP,2,126,2
-JNK_down_down_down_LQD_UUP,3,126,8
+JNK_down_down_down_LQD_UUP,3,126,9
 JNK_up_up_down_LQD_UUP,1,128,1
 JNK_up_up_down_LQD_UUP,2,128,0
 JNK_up_up_down_LQD_UUP,3,128,0
@@ -16563,7 +16563,7 @@ JNK_up_up_up_LQD_XLF,1,128,0
 JNK_up_up_up_LQD_XLF,2,128,0
 JNK_up_up_up_LQD_XLF,3,128,0
 JNK_down_down_down_LQD_XLF,1,128,0
-JNK_down_down_down_LQD_XLF,2,128,0
+JNK_down_down_down_LQD_XLF,2,128,1
 JNK_down_down_down_LQD_XLF,3,128,0
 JNK_up_up_down_LQD_XLF,1,126,2
 JNK_up_up_down_LQD_XLF,2,126,0
@@ -16755,7 +16755,7 @@ JNK_up_up_up_QQQ_UUP,1,126,0
 JNK_up_up_up_QQQ_UUP,2,126,0
 JNK_up_up_up_QQQ_UUP,3,126,0
 JNK_down_down_down_QQQ_UUP,1,126,8
-JNK_down_down_down_QQQ_UUP,2,126,6
+JNK_down_down_down_QQQ_UUP,2,126,8
 JNK_down_down_down_QQQ_UUP,3,126,6
 JNK_up_up_down_QQQ_UUP,1,128,0
 JNK_up_up_down_QQQ_UUP,2,128,0
@@ -16824,7 +16824,7 @@ JNK_up_down_down_QQQ_XLF,1,0,0
 JNK_up_down_down_QQQ_XLF,2,0,0
 JNK_up_down_down_QQQ_XLF,3,0,0
 JNK_up_up_up_QQQ_XLK,1,128,0
-JNK_up_up_up_QQQ_XLK,2,128,1
+JNK_up_up_up_QQQ_XLK,2,128,0
 JNK_up_up_up_QQQ_XLK,3,128,0
 JNK_down_down_down_QQQ_XLK,1,128,3
 JNK_down_down_down_QQQ_XLK,2,128,2
@@ -16851,7 +16851,7 @@ JNK_up_up_up_QQQ_XLU,1,128,0
 JNK_up_up_up_QQQ_XLU,2,128,0
 JNK_up_up_up_QQQ_XLU,3,128,0
 JNK_down_down_down_QQQ_XLU,1,127,0
-JNK_down_down_down_QQQ_XLU,2,127,1
+JNK_down_down_down_QQQ_XLU,2,127,2
 JNK_down_down_down_QQQ_XLU,3,127,2
 JNK_up_up_down_QQQ_XLU,1,126,0
 JNK_up_up_down_QQQ_XLU,2,126,0
@@ -16895,7 +16895,7 @@ JNK_down_up_down_QQQ_XLV,3,126,0
 JNK_up_down_down_QQQ_XLV,1,0,0
 JNK_up_down_down_QQQ_XLV,2,0,0
 JNK_up_down_down_QQQ_XLV,3,0,0
-JNK_up_up_up_SLV_SPY,1,128,1
+JNK_up_up_up_SLV_SPY,1,128,0
 JNK_up_up_up_SLV_SPY,2,128,1
 JNK_up_up_up_SLV_SPY,3,128,0
 JNK_down_down_down_SLV_SPY,1,127,0
@@ -16932,8 +16932,8 @@ JNK_up_down_up_SLV_TIP,1,126,5
 JNK_up_down_up_SLV_TIP,2,126,9
 JNK_up_down_up_SLV_TIP,3,126,2
 JNK_down_up_up_SLV_TIP,1,126,22
-JNK_down_up_up_SLV_TIP,2,126,4
-JNK_down_up_up_SLV_TIP,3,126,18
+JNK_down_up_up_SLV_TIP,2,126,6
+JNK_down_up_up_SLV_TIP,3,126,19
 JNK_down_down_up_SLV_TIP,1,0,0
 JNK_down_down_up_SLV_TIP,2,0,0
 JNK_down_down_up_SLV_TIP,3,0,0
@@ -16986,7 +16986,7 @@ JNK_down_down_up_SLV_UUP,1,128,0
 JNK_down_down_up_SLV_UUP,2,128,1
 JNK_down_down_up_SLV_UUP,3,128,0
 JNK_down_up_down_SLV_UUP,1,126,4
-JNK_down_up_down_SLV_UUP,2,126,1
+JNK_down_up_down_SLV_UUP,2,126,3
 JNK_down_up_down_SLV_UUP,3,126,6
 JNK_up_down_down_SLV_UUP,1,0,0
 JNK_up_down_down_SLV_UUP,2,0,0
@@ -17004,7 +17004,7 @@ JNK_up_down_up_SLV_XLE,1,126,2
 JNK_up_down_up_SLV_XLE,2,126,0
 JNK_up_down_up_SLV_XLE,3,126,0
 JNK_down_up_up_SLV_XLE,1,126,2
-JNK_down_up_up_SLV_XLE,2,126,6
+JNK_down_up_up_SLV_XLE,2,126,7
 JNK_down_up_up_SLV_XLE,3,126,3
 JNK_down_down_up_SLV_XLE,1,126,0
 JNK_down_down_up_SLV_XLE,2,126,0
@@ -17083,7 +17083,7 @@ JNK_down_down_up_SLV_XLU,2,126,0
 JNK_down_down_up_SLV_XLU,3,126,0
 JNK_down_up_down_SLV_XLU,1,126,0
 JNK_down_up_down_SLV_XLU,2,126,1
-JNK_down_up_down_SLV_XLU,3,126,20
+JNK_down_up_down_SLV_XLU,3,126,22
 JNK_up_down_down_SLV_XLU,1,0,0
 JNK_up_down_down_SLV_XLU,2,0,0
 JNK_up_down_down_SLV_XLU,3,0,0
@@ -17106,8 +17106,8 @@ JNK_down_down_up_SLV_XLV,1,126,2
 JNK_down_down_up_SLV_XLV,2,126,1
 JNK_down_down_up_SLV_XLV,3,126,0
 JNK_down_up_down_SLV_XLV,1,126,3
-JNK_down_up_down_SLV_XLV,2,126,7
-JNK_down_up_down_SLV_XLV,3,126,17
+JNK_down_up_down_SLV_XLV,2,126,9
+JNK_down_up_down_SLV_XLV,3,126,16
 JNK_up_down_down_SLV_XLV,1,0,0
 JNK_up_down_down_SLV_XLV,2,0,0
 JNK_up_down_down_SLV_XLV,3,0,0
@@ -17140,7 +17140,7 @@ JNK_up_up_up_SPY_TLT,2,128,0
 JNK_up_up_up_SPY_TLT,3,128,0
 JNK_down_down_down_SPY_TLT,1,128,0
 JNK_down_down_down_SPY_TLT,2,128,2
-JNK_down_down_down_SPY_TLT,3,128,0
+JNK_down_down_down_SPY_TLT,3,128,1
 JNK_up_up_down_SPY_TLT,1,126,0
 JNK_up_up_down_SPY_TLT,2,126,0
 JNK_up_up_down_SPY_TLT,3,126,0
@@ -17259,7 +17259,7 @@ JNK_up_up_up_SPY_XLU,1,128,0
 JNK_up_up_up_SPY_XLU,2,128,0
 JNK_up_up_up_SPY_XLU,3,128,0
 JNK_down_down_down_SPY_XLU,1,127,0
-JNK_down_down_down_SPY_XLU,2,127,0
+JNK_down_down_down_SPY_XLU,2,127,2
 JNK_down_down_down_SPY_XLU,3,127,2
 JNK_up_up_down_SPY_XLU,1,126,0
 JNK_up_up_down_SPY_XLU,2,126,0
@@ -17442,8 +17442,8 @@ JNK_down_down_up_TIP_XLU,1,126,0
 JNK_down_down_up_TIP_XLU,2,126,0
 JNK_down_down_up_TIP_XLU,3,126,0
 JNK_down_up_down_TIP_XLU,1,126,0
-JNK_down_up_down_TIP_XLU,2,126,2
-JNK_down_up_down_TIP_XLU,3,126,4
+JNK_down_up_down_TIP_XLU,2,126,3
+JNK_down_up_down_TIP_XLU,3,126,6
 JNK_up_down_down_TIP_XLU,1,0,0
 JNK_up_down_down_TIP_XLU,2,0,0
 JNK_up_down_down_TIP_XLU,3,0,0
@@ -17467,7 +17467,7 @@ JNK_down_down_up_TIP_XLV,2,126,2
 JNK_down_down_up_TIP_XLV,3,126,2
 JNK_down_up_down_TIP_XLV,1,126,7
 JNK_down_up_down_TIP_XLV,2,126,7
-JNK_down_up_down_TIP_XLV,3,126,2
+JNK_down_up_down_TIP_XLV,3,126,4
 JNK_up_down_down_TIP_XLV,1,0,0
 JNK_up_down_down_TIP_XLV,2,0,0
 JNK_up_down_down_TIP_XLV,3,0,0
@@ -17595,7 +17595,7 @@ JNK_up_up_up_TLT_XLV,1,128,0
 JNK_up_up_up_TLT_XLV,2,128,3
 JNK_up_up_up_TLT_XLV,3,128,0
 JNK_down_down_down_TLT_XLV,1,127,0
-JNK_down_down_down_TLT_XLV,2,127,3
+JNK_down_down_down_TLT_XLV,2,127,4
 JNK_down_down_down_TLT_XLV,3,127,3
 JNK_up_up_down_TLT_XLV,1,126,2
 JNK_up_up_down_TLT_XLV,2,126,0
@@ -17643,7 +17643,7 @@ JNK_up_up_up_UUP_XLF,1,126,0
 JNK_up_up_up_UUP_XLF,2,126,0
 JNK_up_up_up_UUP_XLF,3,126,0
 JNK_down_down_down_UUP_XLF,1,126,7
-JNK_down_down_down_UUP_XLF,2,126,1
+JNK_down_down_down_UUP_XLF,2,126,3
 JNK_down_down_down_UUP_XLF,3,126,6
 JNK_up_up_down_UUP_XLF,1,0,0
 JNK_up_up_down_UUP_XLF,2,0,0
@@ -17691,7 +17691,7 @@ JNK_up_up_up_UUP_XLU,1,126,0
 JNK_up_up_up_UUP_XLU,2,126,0
 JNK_up_up_up_UUP_XLU,3,126,0
 JNK_down_down_down_UUP_XLU,1,126,2
-JNK_down_down_down_UUP_XLU,2,126,6
+JNK_down_down_down_UUP_XLU,2,126,8
 JNK_down_down_down_UUP_XLU,3,126,9
 JNK_up_up_down_UUP_XLU,1,0,0
 JNK_up_up_down_UUP_XLU,2,0,0
@@ -17760,7 +17760,7 @@ JNK_up_down_down_XLE_XLF,1,0,0
 JNK_up_down_down_XLE_XLF,2,0,0
 JNK_up_down_down_XLE_XLF,3,0,0
 JNK_up_up_up_XLE_XLK,1,128,0
-JNK_up_up_up_XLE_XLK,2,128,1
+JNK_up_up_up_XLE_XLK,2,128,0
 JNK_up_up_up_XLE_XLK,3,128,0
 JNK_down_down_down_XLE_XLK,1,126,2
 JNK_down_down_down_XLE_XLK,2,126,2
@@ -17992,7 +17992,7 @@ LQD_down_up_up_QQQ_SLV,2,126,0
 LQD_down_up_up_QQQ_SLV,3,126,0
 LQD_down_down_up_QQQ_SLV,1,126,8
 LQD_down_down_up_QQQ_SLV,2,126,4
-LQD_down_down_up_QQQ_SLV,3,126,20
+LQD_down_down_up_QQQ_SLV,3,126,22
 LQD_down_up_down_QQQ_SLV,1,126,0
 LQD_down_up_down_QQQ_SLV,2,126,0
 LQD_down_up_down_QQQ_SLV,3,126,0
@@ -18123,7 +18123,7 @@ LQD_up_up_up_QQQ_XLF,1,128,0
 LQD_up_up_up_QQQ_XLF,2,128,0
 LQD_up_up_up_QQQ_XLF,3,128,0
 LQD_down_down_down_QQQ_XLF,1,127,1
-LQD_down_down_down_QQQ_XLF,2,127,1
+LQD_down_down_down_QQQ_XLF,2,127,2
 LQD_down_down_down_QQQ_XLF,3,127,2
 LQD_up_up_down_QQQ_XLF,1,126,0
 LQD_up_up_down_QQQ_XLF,2,126,0
@@ -18195,8 +18195,8 @@ LQD_up_up_up_QQQ_XLV,1,128,0
 LQD_up_up_up_QQQ_XLV,2,128,5
 LQD_up_up_up_QQQ_XLV,3,128,2
 LQD_down_down_down_QQQ_XLV,1,127,5
-LQD_down_down_down_QQQ_XLV,2,127,13
-LQD_down_down_down_QQQ_XLV,3,127,10
+LQD_down_down_down_QQQ_XLV,2,127,15
+LQD_down_down_down_QQQ_XLV,3,127,11
 LQD_up_up_down_QQQ_XLV,1,126,0
 LQD_up_up_down_QQQ_XLV,2,126,0
 LQD_up_up_down_QQQ_XLV,3,126,0
@@ -18207,7 +18207,7 @@ LQD_down_up_up_QQQ_XLV,1,126,0
 LQD_down_up_up_QQQ_XLV,2,126,0
 LQD_down_up_up_QQQ_XLV,3,126,0
 LQD_down_down_up_QQQ_XLV,1,126,0
-LQD_down_down_up_QQQ_XLV,2,126,0
+LQD_down_down_up_QQQ_XLV,2,126,1
 LQD_down_down_up_QQQ_XLV,3,126,0
 LQD_down_up_down_QQQ_XLV,1,126,0
 LQD_down_up_down_QQQ_XLV,2,126,0
@@ -18234,8 +18234,8 @@ LQD_down_down_up_SLV_SPY,1,126,0
 LQD_down_down_up_SLV_SPY,2,126,0
 LQD_down_down_up_SLV_SPY,3,126,0
 LQD_down_up_down_SLV_SPY,1,126,4
-LQD_down_up_down_SLV_SPY,2,126,17
-LQD_down_up_down_SLV_SPY,3,126,18
+LQD_down_up_down_SLV_SPY,2,126,19
+LQD_down_up_down_SLV_SPY,3,126,19
 LQD_up_down_down_SLV_SPY,1,126,0
 LQD_up_down_down_SLV_SPY,2,126,5
 LQD_up_down_down_SLV_SPY,3,126,4
@@ -18378,8 +18378,8 @@ LQD_down_down_up_SLV_XLK,1,126,0
 LQD_down_down_up_SLV_XLK,2,126,0
 LQD_down_down_up_SLV_XLK,3,126,0
 LQD_down_up_down_SLV_XLK,1,126,15
-LQD_down_up_down_SLV_XLK,2,126,7
-LQD_down_up_down_SLV_XLK,3,126,16
+LQD_down_up_down_SLV_XLK,2,126,8
+LQD_down_up_down_SLV_XLK,3,126,18
 LQD_up_down_down_SLV_XLK,1,126,2
 LQD_up_down_down_SLV_XLK,2,126,8
 LQD_up_down_down_SLV_XLK,3,126,0
@@ -18403,7 +18403,7 @@ LQD_down_down_up_SLV_XLU,2,126,0
 LQD_down_down_up_SLV_XLU,3,126,0
 LQD_down_up_down_SLV_XLU,1,126,0
 LQD_down_up_down_SLV_XLU,2,126,7
-LQD_down_up_down_SLV_XLU,3,126,13
+LQD_down_up_down_SLV_XLU,3,126,15
 LQD_up_down_down_SLV_XLU,1,0,0
 LQD_up_down_down_SLV_XLU,2,0,0
 LQD_up_down_down_SLV_XLU,3,0,0
@@ -18520,7 +18520,7 @@ LQD_down_up_up_SPY_XLE,2,126,0
 LQD_down_up_up_SPY_XLE,3,126,0
 LQD_down_down_up_SPY_XLE,1,126,2
 LQD_down_down_up_SPY_XLE,2,126,4
-LQD_down_down_up_SPY_XLE,3,126,5
+LQD_down_down_up_SPY_XLE,3,126,7
 LQD_down_up_down_SPY_XLE,1,126,0
 LQD_down_up_down_SPY_XLE,2,126,2
 LQD_down_up_down_SPY_XLE,3,126,0
@@ -18531,7 +18531,7 @@ LQD_up_up_up_SPY_XLF,1,128,0
 LQD_up_up_up_SPY_XLF,2,128,0
 LQD_up_up_up_SPY_XLF,3,128,0
 LQD_down_down_down_SPY_XLF,1,128,0
-LQD_down_down_down_SPY_XLF,2,128,0
+LQD_down_down_down_SPY_XLF,2,128,2
 LQD_down_down_down_SPY_XLF,3,128,0
 LQD_up_up_down_SPY_XLF,1,0,0
 LQD_up_up_down_SPY_XLF,2,0,0
@@ -18579,7 +18579,7 @@ LQD_up_up_up_SPY_XLU,1,128,0
 LQD_up_up_up_SPY_XLU,2,128,0
 LQD_up_up_up_SPY_XLU,3,128,0
 LQD_down_down_down_SPY_XLU,1,127,0
-LQD_down_down_down_SPY_XLU,2,127,1
+LQD_down_down_down_SPY_XLU,2,127,3
 LQD_down_down_down_SPY_XLU,3,127,2
 LQD_up_up_down_SPY_XLU,1,126,0
 LQD_up_up_down_SPY_XLU,2,126,0
@@ -18603,7 +18603,7 @@ LQD_up_up_up_SPY_XLV,1,128,0
 LQD_up_up_up_SPY_XLV,2,128,2
 LQD_up_up_up_SPY_XLV,3,128,2
 LQD_down_down_down_SPY_XLV,1,127,2
-LQD_down_down_down_SPY_XLV,2,127,6
+LQD_down_down_down_SPY_XLV,2,127,7
 LQD_down_down_down_SPY_XLV,3,127,6
 LQD_up_up_down_SPY_XLV,1,126,0
 LQD_up_up_down_SPY_XLV,2,126,0
@@ -18796,10 +18796,10 @@ LQD_up_up_up_TLT_UUP,2,126,0
 LQD_up_up_up_TLT_UUP,3,126,0
 LQD_down_down_down_TLT_UUP,1,126,0
 LQD_down_down_down_TLT_UUP,2,126,0
-LQD_down_down_down_TLT_UUP,3,126,0
+LQD_down_down_down_TLT_UUP,3,126,2
 LQD_up_up_down_TLT_UUP,1,128,0
 LQD_up_up_down_TLT_UUP,2,128,1
-LQD_up_up_down_TLT_UUP,3,128,2
+LQD_up_up_down_TLT_UUP,3,128,0
 LQD_up_down_up_TLT_UUP,1,0,0
 LQD_up_down_up_TLT_UUP,2,0,0
 LQD_up_down_up_TLT_UUP,3,0,0
@@ -18868,7 +18868,7 @@ LQD_up_up_up_TLT_XLK,2,128,0
 LQD_up_up_up_TLT_XLK,3,128,1
 LQD_down_down_down_TLT_XLK,1,127,4
 LQD_down_down_down_TLT_XLK,2,127,0
-LQD_down_down_down_TLT_XLK,3,127,0
+LQD_down_down_down_TLT_XLK,3,127,2
 LQD_up_up_down_TLT_XLK,1,126,0
 LQD_up_up_down_TLT_XLK,2,126,6
 LQD_up_up_down_TLT_XLK,3,126,2
@@ -18915,7 +18915,7 @@ LQD_up_up_up_TLT_XLV,1,128,0
 LQD_up_up_up_TLT_XLV,2,128,2
 LQD_up_up_up_TLT_XLV,3,128,1
 LQD_down_down_down_TLT_XLV,1,128,0
-LQD_down_down_down_TLT_XLV,2,128,0
+LQD_down_down_down_TLT_XLV,2,128,1
 LQD_down_down_down_TLT_XLV,3,128,2
 LQD_up_up_down_TLT_XLV,1,126,1
 LQD_up_up_down_TLT_XLV,2,126,0
@@ -19011,7 +19011,7 @@ LQD_up_up_up_UUP_XLU,1,126,0
 LQD_up_up_up_UUP_XLU,2,126,2
 LQD_up_up_up_UUP_XLU,3,126,2
 LQD_down_down_down_UUP_XLU,1,126,4
-LQD_down_down_down_UUP_XLU,2,126,2
+LQD_down_down_down_UUP_XLU,2,126,4
 LQD_down_down_down_UUP_XLU,3,126,8
 LQD_up_up_down_UUP_XLU,1,0,0
 LQD_up_up_down_UUP_XLU,2,0,0
@@ -19098,7 +19098,7 @@ LQD_down_down_up_XLE_XLK,1,126,0
 LQD_down_down_up_XLE_XLK,2,126,2
 LQD_down_down_up_XLE_XLK,3,126,2
 LQD_down_up_down_XLE_XLK,1,126,2
-LQD_down_up_down_XLE_XLK,2,126,12
+LQD_down_up_down_XLE_XLK,2,126,13
 LQD_down_up_down_XLE_XLK,3,126,5
 LQD_up_down_down_XLE_XLK,1,126,8
 LQD_up_down_down_XLE_XLK,2,126,4
@@ -19155,7 +19155,7 @@ LQD_up_up_up_XLF_XLK,1,128,0
 LQD_up_up_up_XLF_XLK,2,128,0
 LQD_up_up_up_XLF_XLK,3,128,2
 LQD_down_down_down_XLF_XLK,1,126,0
-LQD_down_down_down_XLF_XLK,2,126,1
+LQD_down_down_down_XLF_XLK,2,126,2
 LQD_down_down_down_XLF_XLK,3,126,5
 LQD_up_up_down_XLF_XLK,1,126,0
 LQD_up_up_down_XLF_XLK,2,126,2
@@ -19204,7 +19204,7 @@ LQD_up_up_up_XLF_XLV,2,128,2
 LQD_up_up_up_XLF_XLV,3,128,2
 LQD_down_down_down_XLF_XLV,1,127,13
 LQD_down_down_down_XLF_XLV,2,127,4
-LQD_down_down_down_XLF_XLV,3,127,5
+LQD_down_down_down_XLF_XLV,3,127,6
 LQD_up_up_down_XLF_XLV,1,0,0
 LQD_up_up_down_XLF_XLV,2,0,0
 LQD_up_up_down_XLF_XLV,3,0,0
@@ -19227,7 +19227,7 @@ LQD_up_up_up_XLK_XLU,1,128,0
 LQD_up_up_up_XLK_XLU,2,128,0
 LQD_up_up_up_XLK_XLU,3,128,0
 LQD_down_down_down_XLK_XLU,1,126,0
-LQD_down_down_down_XLK_XLU,2,126,0
+LQD_down_down_down_XLK_XLU,2,126,2
 LQD_down_down_down_XLK_XLU,3,126,2
 LQD_up_up_down_XLK_XLU,1,126,0
 LQD_up_up_down_XLK_XLU,2,126,0
@@ -19275,7 +19275,7 @@ LQD_up_up_up_XLU_XLV,1,128,0
 LQD_up_up_up_XLU_XLV,2,128,4
 LQD_up_up_up_XLU_XLV,3,128,2
 LQD_down_down_down_XLU_XLV,1,127,0
-LQD_down_down_down_XLU_XLV,2,127,0
+LQD_down_down_down_XLU_XLV,2,127,2
 LQD_down_down_down_XLU_XLV,3,127,4
 LQD_up_up_down_XLU_XLV,1,126,0
 LQD_up_up_down_XLU_XLV,2,126,0
@@ -19315,7 +19315,7 @@ QQQ_down_down_up_SLV_SPY,2,0,0
 QQQ_down_down_up_SLV_SPY,3,0,0
 QQQ_down_up_down_SLV_SPY,1,127,10
 QQQ_down_up_down_SLV_SPY,2,127,18
-QQQ_down_up_down_SLV_SPY,3,127,15
+QQQ_down_up_down_SLV_SPY,3,127,16
 QQQ_up_down_down_SLV_SPY,1,0,0
 QQQ_up_down_down_SLV_SPY,2,0,0
 QQQ_up_down_down_SLV_SPY,3,0,0
@@ -19483,7 +19483,7 @@ QQQ_down_down_up_SLV_XLU,2,126,9
 QQQ_down_down_up_SLV_XLU,3,126,8
 QQQ_down_up_down_SLV_XLU,1,126,6
 QQQ_down_up_down_SLV_XLU,2,126,3
-QQQ_down_up_down_SLV_XLU,3,126,32
+QQQ_down_up_down_SLV_XLU,3,126,34
 QQQ_up_down_down_SLV_XLU,1,126,2
 QQQ_up_down_down_SLV_XLU,2,126,1
 QQQ_up_down_down_SLV_XLU,3,126,0
@@ -19599,7 +19599,7 @@ QQQ_down_up_up_SPY_XLE,1,0,0
 QQQ_down_up_up_SPY_XLE,2,0,0
 QQQ_down_up_up_SPY_XLE,3,0,0
 QQQ_down_down_up_SPY_XLE,1,127,1
-QQQ_down_down_up_SPY_XLE,2,127,5
+QQQ_down_down_up_SPY_XLE,2,127,7
 QQQ_down_down_up_SPY_XLE,3,127,11
 QQQ_down_up_down_SPY_XLE,1,0,0
 QQQ_down_up_down_SPY_XLE,2,0,0
@@ -19611,7 +19611,7 @@ QQQ_up_up_up_SPY_XLF,1,128,0
 QQQ_up_up_up_SPY_XLF,2,128,0
 QQQ_up_up_up_SPY_XLF,3,128,0
 QQQ_down_down_down_SPY_XLF,1,128,0
-QQQ_down_down_down_SPY_XLF,2,128,2
+QQQ_down_down_down_SPY_XLF,2,128,3
 QQQ_down_down_down_SPY_XLF,3,128,4
 QQQ_up_up_down_SPY_XLF,1,126,1
 QQQ_up_up_down_SPY_XLF,2,126,0
@@ -19684,7 +19684,7 @@ QQQ_up_up_up_SPY_XLV,2,128,0
 QQQ_up_up_up_SPY_XLV,3,128,0
 QQQ_down_down_down_SPY_XLV,1,128,4
 QQQ_down_down_down_SPY_XLV,2,128,7
-QQQ_down_down_down_SPY_XLV,3,128,9
+QQQ_down_down_down_SPY_XLV,3,128,11
 QQQ_up_up_down_SPY_XLV,1,126,0
 QQQ_up_up_down_SPY_XLV,2,126,0
 QQQ_up_up_down_SPY_XLV,3,126,0
@@ -19734,20 +19734,20 @@ QQQ_down_down_down_TIP_UUP,1,0,0
 QQQ_down_down_down_TIP_UUP,2,0,0
 QQQ_down_down_down_TIP_UUP,3,0,0
 QQQ_up_up_down_TIP_UUP,1,127,4
-QQQ_up_up_down_TIP_UUP,2,127,7
-QQQ_up_up_down_TIP_UUP,3,127,2
+QQQ_up_up_down_TIP_UUP,2,127,6
+QQQ_up_up_down_TIP_UUP,3,127,0
 QQQ_up_down_up_TIP_UUP,1,126,0
 QQQ_up_down_up_TIP_UUP,2,126,0
 QQQ_up_down_up_TIP_UUP,3,126,0
 QQQ_down_up_up_TIP_UUP,1,126,8
 QQQ_down_up_up_TIP_UUP,2,126,9
-QQQ_down_up_up_TIP_UUP,3,126,8
+QQQ_down_up_up_TIP_UUP,3,126,6
 QQQ_down_down_up_TIP_UUP,1,127,0
 QQQ_down_down_up_TIP_UUP,2,127,0
 QQQ_down_down_up_TIP_UUP,3,127,0
 QQQ_down_up_down_TIP_UUP,1,126,8
 QQQ_down_up_down_TIP_UUP,2,126,0
-QQQ_down_up_down_TIP_UUP,3,126,4
+QQQ_down_up_down_TIP_UUP,3,126,5
 QQQ_up_down_down_TIP_UUP,1,0,0
 QQQ_up_down_down_TIP_UUP,2,0,0
 QQQ_up_down_down_TIP_UUP,3,0,0
@@ -19848,7 +19848,7 @@ QQQ_up_down_down_TIP_XLU,1,126,0
 QQQ_up_down_down_TIP_XLU,2,126,0
 QQQ_up_down_down_TIP_XLU,3,126,0
 QQQ_up_up_up_TIP_XLV,1,127,0
-QQQ_up_up_up_TIP_XLV,2,127,2
+QQQ_up_up_up_TIP_XLV,2,127,4
 QQQ_up_up_up_TIP_XLV,3,127,0
 QQQ_down_down_down_TIP_XLV,1,126,0
 QQQ_down_down_down_TIP_XLV,2,126,9
@@ -19879,7 +19879,7 @@ QQQ_down_down_down_TLT_UUP,2,0,0
 QQQ_down_down_down_TLT_UUP,3,0,0
 QQQ_up_up_down_TLT_UUP,1,126,0
 QQQ_up_up_down_TLT_UUP,2,126,0
-QQQ_up_up_down_TLT_UUP,3,126,2
+QQQ_up_up_down_TLT_UUP,3,126,0
 QQQ_up_down_up_TLT_UUP,1,126,0
 QQQ_up_down_up_TLT_UUP,2,126,0
 QQQ_up_down_up_TLT_UUP,3,126,0
@@ -19897,7 +19897,7 @@ QQQ_up_down_down_TLT_UUP,2,126,0
 QQQ_up_down_down_TLT_UUP,3,126,0
 QQQ_up_up_up_TLT_XLE,1,126,0
 QQQ_up_up_up_TLT_XLE,2,126,0
-QQQ_up_up_up_TLT_XLE,3,126,1
+QQQ_up_up_up_TLT_XLE,3,126,0
 QQQ_down_down_down_TLT_XLE,1,126,0
 QQQ_down_down_down_TLT_XLE,2,126,0
 QQQ_down_down_down_TLT_XLE,3,126,0
@@ -19911,7 +19911,7 @@ QQQ_down_up_up_TLT_XLE,1,126,1
 QQQ_down_up_up_TLT_XLE,2,126,6
 QQQ_down_up_up_TLT_XLE,3,126,0
 QQQ_down_down_up_TLT_XLE,1,126,8
-QQQ_down_down_up_TLT_XLE,2,126,5
+QQQ_down_down_up_TLT_XLE,2,126,7
 QQQ_down_down_up_TLT_XLE,3,126,8
 QQQ_down_up_down_TLT_XLE,1,126,7
 QQQ_down_up_down_TLT_XLE,2,126,8
@@ -19923,7 +19923,7 @@ QQQ_up_up_up_TLT_XLF,1,127,0
 QQQ_up_up_up_TLT_XLF,2,127,0
 QQQ_up_up_up_TLT_XLF,3,127,0
 QQQ_down_down_down_TLT_XLF,1,126,0
-QQQ_down_down_down_TLT_XLF,2,126,1
+QQQ_down_down_down_TLT_XLF,2,126,2
 QQQ_down_down_down_TLT_XLF,3,126,2
 QQQ_up_up_down_TLT_XLF,1,126,0
 QQQ_up_up_down_TLT_XLF,2,126,0
@@ -19948,7 +19948,7 @@ QQQ_up_up_up_TLT_XLK,2,128,0
 QQQ_up_up_up_TLT_XLK,3,128,1
 QQQ_down_down_down_TLT_XLK,1,127,1
 QQQ_down_down_down_TLT_XLK,2,127,0
-QQQ_down_down_down_TLT_XLK,3,127,1
+QQQ_down_down_down_TLT_XLK,3,127,2
 QQQ_up_up_down_TLT_XLK,1,0,0
 QQQ_up_up_down_TLT_XLK,2,0,0
 QQQ_up_up_down_TLT_XLK,3,0,0
@@ -20044,7 +20044,7 @@ QQQ_up_up_up_UUP_XLF,2,126,0
 QQQ_up_up_up_UUP_XLF,3,126,0
 QQQ_down_down_down_UUP_XLF,1,126,10
 QQQ_down_down_down_UUP_XLF,2,126,5
-QQQ_down_down_down_UUP_XLF,3,126,2
+QQQ_down_down_down_UUP_XLF,3,126,4
 QQQ_up_up_down_UUP_XLF,1,126,0
 QQQ_up_up_down_UUP_XLF,2,126,1
 QQQ_up_up_down_UUP_XLF,3,126,2
@@ -20092,7 +20092,7 @@ QQQ_up_up_up_UUP_XLU,2,126,0
 QQQ_up_up_up_UUP_XLU,3,126,0
 QQQ_down_down_down_UUP_XLU,1,126,3
 QQQ_down_down_down_UUP_XLU,2,126,4
-QQQ_down_down_down_UUP_XLU,3,126,7
+QQQ_down_down_down_UUP_XLU,3,126,8
 QQQ_up_up_down_UUP_XLU,1,126,2
 QQQ_up_up_down_UUP_XLU,2,126,0
 QQQ_up_up_down_UUP_XLU,3,126,0
@@ -20116,7 +20116,7 @@ QQQ_up_up_up_UUP_XLV,2,126,0
 QQQ_up_up_up_UUP_XLV,3,126,0
 QQQ_down_down_down_UUP_XLV,1,126,26
 QQQ_down_down_down_UUP_XLV,2,126,24
-QQQ_down_down_down_UUP_XLV,3,126,5
+QQQ_down_down_down_UUP_XLV,3,126,7
 QQQ_up_up_down_UUP_XLV,1,126,0
 QQQ_up_up_down_UUP_XLV,2,126,0
 QQQ_up_up_down_UUP_XLV,3,126,0
@@ -20203,7 +20203,7 @@ QQQ_down_down_up_XLE_XLU,2,0,0
 QQQ_down_down_up_XLE_XLU,3,0,0
 QQQ_down_up_down_XLE_XLU,1,126,0
 QQQ_down_up_down_XLE_XLU,2,126,6
-QQQ_down_up_down_XLE_XLU,3,126,5
+QQQ_down_up_down_XLE_XLU,3,126,7
 QQQ_up_down_down_XLE_XLU,1,126,0
 QQQ_up_down_down_XLE_XLU,2,126,0
 QQQ_up_down_down_XLE_XLU,3,126,0
@@ -20235,7 +20235,7 @@ QQQ_up_up_up_XLF_XLK,1,128,0
 QQQ_up_up_up_XLF_XLK,2,128,0
 QQQ_up_up_up_XLF_XLK,3,128,0
 QQQ_down_down_down_XLF_XLK,1,128,0
-QQQ_down_down_down_XLF_XLK,2,128,2
+QQQ_down_down_down_XLF_XLK,2,128,3
 QQQ_down_down_down_XLF_XLK,3,128,2
 QQQ_up_up_down_XLF_XLK,1,0,0
 QQQ_up_up_down_XLF_XLK,2,0,0
@@ -20283,7 +20283,7 @@ QQQ_up_up_up_XLF_XLV,1,128,0
 QQQ_up_up_up_XLF_XLV,2,128,0
 QQQ_up_up_up_XLF_XLV,3,128,0
 QQQ_down_down_down_XLF_XLV,1,127,3
-QQQ_down_down_down_XLF_XLV,2,127,4
+QQQ_down_down_down_XLF_XLV,2,127,5
 QQQ_down_down_down_XLF_XLV,3,127,9
 QQQ_up_up_down_XLF_XLV,1,126,0
 QQQ_up_up_down_XLF_XLV,2,126,0
@@ -20355,7 +20355,7 @@ QQQ_up_up_up_XLU_XLV,1,128,0
 QQQ_up_up_up_XLU_XLV,2,128,0
 QQQ_up_up_up_XLU_XLV,3,128,0
 QQQ_down_down_down_XLU_XLV,1,127,2
-QQQ_down_down_down_XLU_XLV,2,127,4
+QQQ_down_down_down_XLU_XLV,2,127,5
 QQQ_down_down_down_XLU_XLV,3,127,11
 QQQ_up_up_down_XLU_XLV,1,126,0
 QQQ_up_up_down_XLU_XLV,2,126,0
@@ -20386,7 +20386,7 @@ SLV_up_up_down_SPY_TIP,2,126,0
 SLV_up_up_down_SPY_TIP,3,126,1
 SLV_up_down_up_SPY_TIP,1,126,36
 SLV_up_down_up_SPY_TIP,2,126,11
-SLV_up_down_up_SPY_TIP,3,126,13
+SLV_up_down_up_SPY_TIP,3,126,15
 SLV_down_up_up_SPY_TIP,1,126,7
 SLV_down_up_up_SPY_TIP,2,126,2
 SLV_down_up_up_SPY_TIP,3,126,0
@@ -20445,7 +20445,7 @@ SLV_down_up_down_SPY_UUP,1,0,0
 SLV_down_up_down_SPY_UUP,2,0,0
 SLV_down_up_down_SPY_UUP,3,0,0
 SLV_up_down_down_SPY_UUP,1,126,26
-SLV_up_down_down_SPY_UUP,2,126,2
+SLV_up_down_down_SPY_UUP,2,126,4
 SLV_up_down_down_SPY_UUP,3,126,10
 SLV_up_up_up_SPY_XLE,1,128,0
 SLV_up_up_up_SPY_XLE,2,128,1
@@ -20542,7 +20542,7 @@ SLV_down_up_down_SPY_XLU,2,0,0
 SLV_down_up_down_SPY_XLU,3,0,0
 SLV_up_down_down_SPY_XLU,1,126,0
 SLV_up_down_down_SPY_XLU,2,126,3
-SLV_up_down_down_SPY_XLU,3,126,15
+SLV_up_down_down_SPY_XLU,3,126,16
 SLV_up_up_up_SPY_XLV,1,128,0
 SLV_up_up_up_SPY_XLV,2,128,1
 SLV_up_up_up_SPY_XLV,3,128,0
@@ -20598,7 +20598,7 @@ SLV_down_down_down_TIP_UUP,1,0,0
 SLV_down_down_down_TIP_UUP,2,0,0
 SLV_down_down_down_TIP_UUP,3,0,0
 SLV_up_up_down_TIP_UUP,1,128,8
-SLV_up_up_down_TIP_UUP,2,128,0
+SLV_up_up_down_TIP_UUP,2,128,1
 SLV_up_up_down_TIP_UUP,3,128,0
 SLV_up_down_up_TIP_UUP,1,126,0
 SLV_up_down_up_TIP_UUP,2,126,0
@@ -20646,7 +20646,7 @@ SLV_down_down_down_TIP_XLF,1,126,0
 SLV_down_down_down_TIP_XLF,2,126,0
 SLV_down_down_down_TIP_XLF,3,126,0
 SLV_up_up_down_TIP_XLF,1,126,29
-SLV_up_up_down_TIP_XLF,2,126,9
+SLV_up_up_down_TIP_XLF,2,126,11
 SLV_up_up_down_TIP_XLF,3,126,10
 SLV_up_down_up_TIP_XLF,1,126,0
 SLV_up_down_up_TIP_XLF,2,126,0
@@ -20670,7 +20670,7 @@ SLV_down_down_down_TIP_XLK,1,126,0
 SLV_down_down_down_TIP_XLK,2,126,0
 SLV_down_down_down_TIP_XLK,3,126,0
 SLV_up_up_down_TIP_XLK,1,126,39
-SLV_up_up_down_TIP_XLK,2,126,9
+SLV_up_up_down_TIP_XLK,2,126,11
 SLV_up_up_down_TIP_XLK,3,126,20
 SLV_up_down_up_TIP_XLK,1,126,0
 SLV_up_down_up_TIP_XLK,2,126,0
@@ -20688,7 +20688,7 @@ SLV_up_down_down_TIP_XLK,1,126,0
 SLV_up_down_down_TIP_XLK,2,126,0
 SLV_up_down_down_TIP_XLK,3,126,2
 SLV_up_up_up_TIP_XLU,1,127,3
-SLV_up_up_up_TIP_XLU,2,127,2
+SLV_up_up_up_TIP_XLU,2,127,3
 SLV_up_up_up_TIP_XLU,3,127,0
 SLV_down_down_down_TIP_XLU,1,126,0
 SLV_down_down_down_TIP_XLU,2,126,0
@@ -20718,7 +20718,7 @@ SLV_down_down_down_TIP_XLV,1,126,0
 SLV_down_down_down_TIP_XLV,2,126,0
 SLV_down_down_down_TIP_XLV,3,126,2
 SLV_up_up_down_TIP_XLV,1,126,20
-SLV_up_up_down_TIP_XLV,2,126,4
+SLV_up_up_down_TIP_XLV,2,126,6
 SLV_up_up_down_TIP_XLV,3,126,11
 SLV_up_down_up_TIP_XLV,1,126,0
 SLV_up_down_up_TIP_XLV,2,126,0
@@ -20758,7 +20758,7 @@ SLV_down_up_down_TLT_UUP,2,0,0
 SLV_down_up_down_TLT_UUP,3,0,0
 SLV_up_down_down_TLT_UUP,1,126,0
 SLV_up_down_down_TLT_UUP,2,126,0
-SLV_up_down_down_TLT_UUP,3,126,0
+SLV_up_down_down_TLT_UUP,3,126,2
 SLV_up_up_up_TLT_XLE,1,126,0
 SLV_up_up_up_TLT_XLE,2,126,0
 SLV_up_up_up_TLT_XLE,3,126,0
@@ -20974,7 +20974,7 @@ SLV_down_up_down_UUP_XLU,2,127,0
 SLV_down_up_down_UUP_XLU,3,127,0
 SLV_up_down_down_UUP_XLU,1,126,4
 SLV_up_down_down_UUP_XLU,2,126,0
-SLV_up_down_down_UUP_XLU,3,126,4
+SLV_up_down_down_UUP_XLU,3,126,7
 SLV_up_up_up_UUP_XLV,1,126,0
 SLV_up_up_up_UUP_XLV,2,126,0
 SLV_up_up_up_UUP_XLV,3,126,0
@@ -20997,7 +20997,7 @@ SLV_down_up_down_UUP_XLV,1,127,0
 SLV_down_up_down_UUP_XLV,2,127,0
 SLV_down_up_down_UUP_XLV,3,127,0
 SLV_up_down_down_UUP_XLV,1,126,20
-SLV_up_down_down_UUP_XLV,2,126,2
+SLV_up_down_down_UUP_XLV,2,126,4
 SLV_up_down_down_UUP_XLV,3,126,4
 SLV_up_up_up_XLE_XLF,1,127,0
 SLV_up_up_up_XLE_XLF,2,127,0
@@ -21118,7 +21118,7 @@ SLV_down_up_down_XLF_XLK,2,126,11
 SLV_down_up_down_XLF_XLK,3,126,0
 SLV_up_down_down_XLF_XLK,1,126,26
 SLV_up_down_down_XLF_XLK,2,126,11
-SLV_up_down_down_XLF_XLK,3,126,17
+SLV_up_down_down_XLF_XLK,3,126,15
 SLV_up_up_up_XLF_XLU,1,128,0
 SLV_up_up_up_XLF_XLU,2,128,1
 SLV_up_up_up_XLF_XLU,3,128,0
@@ -21142,7 +21142,7 @@ SLV_down_up_down_XLF_XLU,2,126,4
 SLV_down_up_down_XLF_XLU,3,126,4
 SLV_up_down_down_XLF_XLU,1,126,10
 SLV_up_down_down_XLF_XLU,2,126,0
-SLV_up_down_down_XLF_XLU,3,126,8
+SLV_up_down_down_XLF_XLU,3,126,10
 SLV_up_up_up_XLF_XLV,1,128,0
 SLV_up_up_up_XLF_XLV,2,128,0
 SLV_up_up_up_XLF_XLV,3,128,0
@@ -21190,7 +21190,7 @@ SLV_down_up_down_XLK_XLU,2,126,0
 SLV_down_up_down_XLK_XLU,3,126,0
 SLV_up_down_down_XLK_XLU,1,126,4
 SLV_up_down_down_XLK_XLU,2,126,5
-SLV_up_down_down_XLK_XLU,3,126,36
+SLV_up_down_down_XLK_XLU,3,126,37
 SLV_up_up_up_XLK_XLV,1,127,0
 SLV_up_up_up_XLK_XLV,2,127,0
 SLV_up_up_up_XLK_XLV,3,127,0
@@ -21237,7 +21237,7 @@ SLV_down_up_down_XLU_XLV,1,126,0
 SLV_down_up_down_XLU_XLV,2,126,0
 SLV_down_up_down_XLU_XLV,3,126,0
 SLV_up_down_down_XLU_XLV,1,126,0
-SLV_up_down_down_XLU_XLV,2,126,4
+SLV_up_down_down_XLU_XLV,2,126,6
 SLV_up_down_down_XLU_XLV,3,126,23
 SPY_up_up_up_TIP_TLT,1,128,0
 SPY_up_up_up_TIP_TLT,2,128,0
@@ -21245,7 +21245,7 @@ SPY_up_up_up_TIP_TLT,3,128,0
 SPY_down_down_down_TIP_TLT,1,128,0
 SPY_down_down_down_TIP_TLT,2,128,0
 SPY_down_down_down_TIP_TLT,3,128,0
-SPY_up_up_down_TIP_TLT,1,126,5
+SPY_up_up_down_TIP_TLT,1,126,4
 SPY_up_up_down_TIP_TLT,2,126,10
 SPY_up_up_down_TIP_TLT,3,126,2
 SPY_up_down_up_TIP_TLT,1,0,0
@@ -21270,7 +21270,7 @@ SPY_down_down_down_TIP_UUP,1,0,0
 SPY_down_down_down_TIP_UUP,2,0,0
 SPY_down_down_down_TIP_UUP,3,0,0
 SPY_up_up_down_TIP_UUP,1,127,0
-SPY_up_up_down_TIP_UUP,2,127,4
+SPY_up_up_down_TIP_UUP,2,127,3
 SPY_up_up_down_TIP_UUP,3,127,0
 SPY_up_down_up_TIP_UUP,1,126,0
 SPY_up_down_up_TIP_UUP,2,126,0
@@ -21300,7 +21300,7 @@ SPY_up_down_up_TIP_XLE,1,126,0
 SPY_up_down_up_TIP_XLE,2,126,0
 SPY_up_down_up_TIP_XLE,3,126,0
 SPY_down_up_up_TIP_XLE,1,126,5
-SPY_down_up_up_TIP_XLE,2,126,7
+SPY_down_up_up_TIP_XLE,2,126,8
 SPY_down_up_up_TIP_XLE,3,126,9
 SPY_down_down_up_TIP_XLE,1,126,2
 SPY_down_down_up_TIP_XLE,2,126,4
@@ -21331,7 +21331,7 @@ SPY_down_down_up_TIP_XLF,2,0,0
 SPY_down_down_up_TIP_XLF,3,0,0
 SPY_down_up_down_TIP_XLF,1,126,15
 SPY_down_up_down_TIP_XLF,2,126,4
-SPY_down_up_down_TIP_XLF,3,126,3
+SPY_down_up_down_TIP_XLF,3,126,4
 SPY_up_down_down_TIP_XLF,1,0,0
 SPY_up_down_down_TIP_XLF,2,0,0
 SPY_up_down_down_TIP_XLF,3,0,0
@@ -21379,7 +21379,7 @@ SPY_down_down_up_TIP_XLU,2,126,2
 SPY_down_down_up_TIP_XLU,3,126,0
 SPY_down_up_down_TIP_XLU,1,126,2
 SPY_down_up_down_TIP_XLU,2,126,0
-SPY_down_up_down_TIP_XLU,3,126,5
+SPY_down_up_down_TIP_XLU,3,126,7
 SPY_up_down_down_TIP_XLU,1,126,0
 SPY_up_down_down_TIP_XLU,2,126,0
 SPY_up_down_down_TIP_XLU,3,126,0
@@ -21402,7 +21402,7 @@ SPY_down_down_up_TIP_XLV,1,122,0
 SPY_down_down_up_TIP_XLV,2,122,4
 SPY_down_down_up_TIP_XLV,3,122,2
 SPY_down_up_down_TIP_XLV,1,126,19
-SPY_down_up_down_TIP_XLV,2,126,8
+SPY_down_up_down_TIP_XLV,2,126,10
 SPY_down_up_down_TIP_XLV,3,126,4
 SPY_up_down_down_TIP_XLV,1,126,0
 SPY_up_down_down_TIP_XLV,2,126,2
@@ -21483,8 +21483,8 @@ SPY_up_up_up_TLT_XLK,1,128,1
 SPY_up_up_up_TLT_XLK,2,128,3
 SPY_up_up_up_TLT_XLK,3,128,0
 SPY_down_down_down_TLT_XLK,1,127,0
-SPY_down_down_down_TLT_XLK,2,127,1
-SPY_down_down_down_TLT_XLK,3,127,3
+SPY_down_down_down_TLT_XLK,2,127,3
+SPY_down_down_down_TLT_XLK,3,127,4
 SPY_up_up_down_TLT_XLK,1,0,0
 SPY_up_up_down_TLT_XLK,2,0,0
 SPY_up_up_down_TLT_XLK,3,0,0
@@ -21627,7 +21627,7 @@ SPY_up_up_up_UUP_XLU,1,126,0
 SPY_up_up_up_UUP_XLU,2,126,0
 SPY_up_up_up_UUP_XLU,3,126,0
 SPY_down_down_down_UUP_XLU,1,126,5
-SPY_down_down_down_UUP_XLU,2,126,6
+SPY_down_down_down_UUP_XLU,2,126,8
 SPY_down_down_down_UUP_XLU,3,126,16
 SPY_up_up_down_UUP_XLU,1,126,0
 SPY_up_up_down_UUP_XLU,2,126,4
@@ -21714,7 +21714,7 @@ SPY_down_down_up_XLE_XLK,1,0,0
 SPY_down_down_up_XLE_XLK,2,0,0
 SPY_down_down_up_XLE_XLK,3,0,0
 SPY_down_up_down_XLE_XLK,1,126,0
-SPY_down_up_down_XLE_XLK,2,126,5
+SPY_down_up_down_XLE_XLK,2,126,7
 SPY_down_up_down_XLE_XLK,3,126,6
 SPY_up_down_down_XLE_XLK,1,0,0
 SPY_up_down_down_XLE_XLK,2,0,0
@@ -21739,7 +21739,7 @@ SPY_down_down_up_XLE_XLU,2,0,0
 SPY_down_down_up_XLE_XLU,3,0,0
 SPY_down_up_down_XLE_XLU,1,126,0
 SPY_down_up_down_XLE_XLU,2,126,1
-SPY_down_up_down_XLE_XLU,3,126,3
+SPY_down_up_down_XLE_XLU,3,126,4
 SPY_up_down_down_XLE_XLU,1,126,0
 SPY_up_down_down_XLE_XLU,2,126,0
 SPY_up_down_down_XLE_XLU,3,126,0
@@ -21820,7 +21820,7 @@ SPY_up_up_up_XLF_XLV,2,128,0
 SPY_up_up_up_XLF_XLV,3,128,0
 SPY_down_down_down_XLF_XLV,1,128,2
 SPY_down_down_down_XLF_XLV,2,128,4
-SPY_down_down_down_XLF_XLV,3,128,7
+SPY_down_down_down_XLF_XLV,3,128,8
 SPY_up_up_down_XLF_XLV,1,126,0
 SPY_up_up_down_XLF_XLV,2,126,0
 SPY_up_up_down_XLF_XLV,3,126,0
@@ -21868,7 +21868,7 @@ SPY_up_up_up_XLK_XLV,2,128,0
 SPY_up_up_up_XLK_XLV,3,128,0
 SPY_down_down_down_XLK_XLV,1,128,4
 SPY_down_down_down_XLK_XLV,2,128,6
-SPY_down_down_down_XLK_XLV,3,128,9
+SPY_down_down_down_XLK_XLV,3,128,10
 SPY_up_up_down_XLK_XLV,1,126,0
 SPY_up_up_down_XLK_XLV,2,126,0
 SPY_up_up_down_XLK_XLV,3,126,0
@@ -21892,7 +21892,7 @@ SPY_up_up_up_XLU_XLV,2,128,0
 SPY_up_up_up_XLU_XLV,3,128,0
 SPY_down_down_down_XLU_XLV,1,127,0
 SPY_down_down_down_XLU_XLV,2,127,3
-SPY_down_down_down_XLU_XLV,3,127,3
+SPY_down_down_down_XLU_XLV,3,127,5
 SPY_up_up_down_XLU_XLV,1,126,0
 SPY_up_up_down_XLU_XLV,2,126,0
 SPY_up_up_down_XLU_XLV,3,126,0
@@ -22090,7 +22090,7 @@ TIP_up_up_down_UUP_XLF,2,126,1
 TIP_up_up_down_UUP_XLF,3,126,4
 TIP_up_down_up_UUP_XLF,1,127,0
 TIP_up_down_up_UUP_XLF,2,127,0
-TIP_up_down_up_UUP_XLF,3,127,2
+TIP_up_down_up_UUP_XLF,3,127,1
 TIP_down_up_up_UUP_XLF,1,126,0
 TIP_down_up_up_UUP_XLF,2,126,0
 TIP_down_up_up_UUP_XLF,3,126,0
@@ -22101,7 +22101,7 @@ TIP_down_up_down_UUP_XLF,1,127,0
 TIP_down_up_down_UUP_XLF,2,127,0
 TIP_down_up_down_UUP_XLF,3,127,2
 TIP_up_down_down_UUP_XLF,1,126,6
-TIP_up_down_down_UUP_XLF,2,126,2
+TIP_up_down_down_UUP_XLF,2,126,4
 TIP_up_down_down_UUP_XLF,3,126,6
 TIP_up_up_up_UUP_XLK,1,126,0
 TIP_up_up_up_UUP_XLK,2,126,0
@@ -22113,8 +22113,8 @@ TIP_up_up_down_UUP_XLK,1,126,13
 TIP_up_up_down_UUP_XLK,2,126,16
 TIP_up_up_down_UUP_XLK,3,126,7
 TIP_up_down_up_UUP_XLK,1,127,8
-TIP_up_down_up_UUP_XLK,2,127,10
-TIP_up_down_up_UUP_XLK,3,127,4
+TIP_up_down_up_UUP_XLK,2,127,8
+TIP_up_down_up_UUP_XLK,3,127,2
 TIP_down_up_up_UUP_XLK,1,126,0
 TIP_down_up_up_UUP_XLK,2,126,0
 TIP_down_up_up_UUP_XLK,3,126,0
@@ -22126,7 +22126,7 @@ TIP_down_up_down_UUP_XLK,2,126,0
 TIP_down_up_down_UUP_XLK,3,126,0
 TIP_up_down_down_UUP_XLK,1,126,7
 TIP_up_down_down_UUP_XLK,2,126,0
-TIP_up_down_down_UUP_XLK,3,126,0
+TIP_up_down_down_UUP_XLK,3,126,2
 TIP_up_up_up_UUP_XLU,1,126,0
 TIP_up_up_up_UUP_XLU,2,126,0
 TIP_up_up_up_UUP_XLU,3,126,0
@@ -22138,7 +22138,7 @@ TIP_up_up_down_UUP_XLU,2,0,0
 TIP_up_up_down_UUP_XLU,3,0,0
 TIP_up_down_up_UUP_XLU,1,127,6
 TIP_up_down_up_UUP_XLU,2,127,4
-TIP_up_down_up_UUP_XLU,3,127,4
+TIP_up_down_up_UUP_XLU,3,127,2
 TIP_down_up_up_UUP_XLU,1,126,0
 TIP_down_up_up_UUP_XLU,2,126,0
 TIP_down_up_up_UUP_XLU,3,126,0
@@ -22152,7 +22152,7 @@ TIP_up_down_down_UUP_XLU,1,126,0
 TIP_up_down_down_UUP_XLU,2,126,0
 TIP_up_down_down_UUP_XLU,3,126,0
 TIP_up_up_up_UUP_XLV,1,126,2
-TIP_up_up_up_UUP_XLV,2,126,0
+TIP_up_up_up_UUP_XLV,2,126,2
 TIP_up_up_up_UUP_XLV,3,126,0
 TIP_down_down_down_UUP_XLV,1,0,0
 TIP_down_down_down_UUP_XLV,2,0,0
@@ -22162,7 +22162,7 @@ TIP_up_up_down_UUP_XLV,2,126,0
 TIP_up_up_down_UUP_XLV,3,126,0
 TIP_up_down_up_UUP_XLV,1,127,0
 TIP_up_down_up_UUP_XLV,2,127,4
-TIP_up_down_up_UUP_XLV,3,127,4
+TIP_up_down_up_UUP_XLV,3,127,2
 TIP_down_up_up_UUP_XLV,1,126,0
 TIP_down_up_up_UUP_XLV,2,126,0
 TIP_down_up_up_UUP_XLV,3,126,0
@@ -22199,7 +22199,7 @@ TIP_down_up_down_XLE_XLF,3,126,0
 TIP_up_down_down_XLE_XLF,1,126,4
 TIP_up_down_down_XLE_XLF,2,126,2
 TIP_up_down_down_XLE_XLF,3,126,0
-TIP_up_up_up_XLE_XLK,1,127,1
+TIP_up_up_up_XLE_XLK,1,127,0
 TIP_up_up_up_XLE_XLK,2,127,0
 TIP_up_up_up_XLE_XLK,3,127,0
 TIP_down_down_down_XLE_XLK,1,126,0
@@ -22271,7 +22271,7 @@ TIP_down_up_down_XLE_XLV,3,126,2
 TIP_up_down_down_XLE_XLV,1,126,2
 TIP_up_down_down_XLE_XLV,2,126,4
 TIP_up_down_down_XLE_XLV,3,126,0
-TIP_up_up_up_XLF_XLK,1,128,1
+TIP_up_up_up_XLF_XLK,1,128,0
 TIP_up_up_up_XLF_XLK,2,128,1
 TIP_up_up_up_XLF_XLK,3,128,0
 TIP_down_down_down_XLF_XLK,1,126,0
@@ -22367,8 +22367,8 @@ TIP_down_up_down_XLK_XLU,3,126,0
 TIP_up_down_down_XLK_XLU,1,0,0
 TIP_up_down_down_XLK_XLU,2,0,0
 TIP_up_down_down_XLK_XLU,3,0,0
-TIP_up_up_up_XLK_XLV,1,127,1
-TIP_up_up_up_XLK_XLV,2,127,3
+TIP_up_up_up_XLK_XLV,1,127,0
+TIP_up_up_up_XLK_XLV,2,127,4
 TIP_up_up_up_XLK_XLV,3,127,0
 TIP_down_down_down_XLK_XLV,1,126,0
 TIP_down_down_down_XLK_XLV,2,126,3
@@ -22391,7 +22391,7 @@ TIP_down_up_down_XLK_XLV,3,126,0
 TIP_up_down_down_XLK_XLV,1,126,13
 TIP_up_down_down_XLK_XLV,2,126,13
 TIP_up_down_down_XLK_XLV,3,126,13
-TIP_up_up_up_XLU_XLV,1,128,5
+TIP_up_up_up_XLU_XLV,1,128,4
 TIP_up_up_up_XLU_XLV,2,128,5
 TIP_up_up_up_XLU_XLV,3,128,0
 TIP_down_down_down_XLU_XLV,1,127,0
@@ -22413,7 +22413,7 @@ TIP_down_up_down_XLU_XLV,1,126,0
 TIP_down_up_down_XLU_XLV,2,126,0
 TIP_down_up_down_XLU_XLV,3,126,0
 TIP_up_down_down_XLU_XLV,1,126,0
-TIP_up_down_down_XLU_XLV,2,126,2
+TIP_up_down_down_XLU_XLV,2,126,3
 TIP_up_down_down_XLU_XLV,3,126,0
 TLT_up_up_up_UUP_XLE,1,126,0
 TLT_up_up_up_UUP_XLE,2,126,0
@@ -22491,7 +22491,7 @@ TLT_up_up_up_UUP_XLU,1,126,2
 TLT_up_up_up_UUP_XLU,2,126,0
 TLT_up_up_up_UUP_XLU,3,126,0
 TLT_down_down_down_UUP_XLU,1,126,0
-TLT_down_down_down_UUP_XLU,2,126,2
+TLT_down_down_down_UUP_XLU,2,126,4
 TLT_down_down_down_UUP_XLU,3,126,8
 TLT_up_up_down_UUP_XLU,1,0,0
 TLT_up_up_down_UUP_XLU,2,0,0
@@ -22516,7 +22516,7 @@ TLT_up_up_up_UUP_XLV,2,126,0
 TLT_up_up_up_UUP_XLV,3,126,0
 TLT_down_down_down_UUP_XLV,1,126,0
 TLT_down_down_down_UUP_XLV,2,126,16
-TLT_down_down_down_UUP_XLV,3,126,22
+TLT_down_down_down_UUP_XLV,3,126,24
 TLT_up_up_down_UUP_XLV,1,126,2
 TLT_up_up_down_UUP_XLV,2,126,4
 TLT_up_up_down_UUP_XLV,3,126,2
@@ -22578,7 +22578,7 @@ TLT_down_down_up_XLE_XLK,1,126,0
 TLT_down_down_up_XLE_XLK,2,126,0
 TLT_down_down_up_XLE_XLK,3,126,0
 TLT_down_up_down_XLE_XLK,1,126,8
-TLT_down_up_down_XLE_XLK,2,126,5
+TLT_down_up_down_XLE_XLK,2,126,7
 TLT_down_up_down_XLE_XLK,3,126,3
 TLT_up_down_down_XLE_XLK,1,126,14
 TLT_up_down_down_XLE_XLK,2,126,9
@@ -22636,7 +22636,7 @@ TLT_up_up_up_XLF_XLK,2,127,2
 TLT_up_up_up_XLF_XLK,3,127,0
 TLT_down_down_down_XLF_XLK,1,126,4
 TLT_down_down_down_XLF_XLK,2,126,0
-TLT_down_down_down_XLF_XLK,3,126,2
+TLT_down_down_down_XLF_XLK,3,126,4
 TLT_up_up_down_XLF_XLK,1,126,0
 TLT_up_up_down_XLF_XLK,2,126,0
 TLT_up_up_down_XLF_XLK,3,126,0
@@ -22683,7 +22683,7 @@ TLT_up_up_up_XLF_XLV,1,128,0
 TLT_up_up_up_XLF_XLV,2,128,2
 TLT_up_up_up_XLF_XLV,3,128,0
 TLT_down_down_down_XLF_XLV,1,127,4
-TLT_down_down_down_XLF_XLV,2,127,1
+TLT_down_down_down_XLF_XLV,2,127,2
 TLT_down_down_down_XLF_XLV,3,127,2
 TLT_up_up_down_XLF_XLV,1,0,0
 TLT_up_up_down_XLF_XLV,2,0,0
@@ -22708,7 +22708,7 @@ TLT_up_up_up_XLK_XLU,2,127,0
 TLT_up_up_up_XLK_XLU,3,127,0
 TLT_down_down_down_XLK_XLU,1,126,0
 TLT_down_down_down_XLK_XLU,2,126,4
-TLT_down_down_down_XLK_XLU,3,126,6
+TLT_down_down_down_XLK_XLU,3,126,7
 TLT_up_up_down_XLK_XLU,1,126,0
 TLT_up_up_down_XLK_XLU,2,126,1
 TLT_up_up_down_XLK_XLU,3,126,2
@@ -22756,7 +22756,7 @@ TLT_up_up_up_XLU_XLV,2,128,6
 TLT_up_up_up_XLU_XLV,3,128,2
 TLT_down_down_down_XLU_XLV,1,127,0
 TLT_down_down_down_XLU_XLV,2,127,1
-TLT_down_down_down_XLU_XLV,3,127,0
+TLT_down_down_down_XLU_XLV,3,127,1
 TLT_up_up_down_XLU_XLV,1,126,1
 TLT_up_up_down_XLU_XLV,2,126,0
 TLT_up_up_down_XLU_XLV,3,126,0
@@ -22812,11 +22812,11 @@ UUP_up_down_up_XLE_XLK,1,126,0
 UUP_up_down_up_XLE_XLK,2,126,1
 UUP_up_down_up_XLE_XLK,3,126,0
 UUP_down_up_up_XLE_XLK,1,126,0
-UUP_down_up_up_XLE_XLK,2,126,1
+UUP_down_up_up_XLE_XLK,2,126,0
 UUP_down_up_up_XLE_XLK,3,126,0
 UUP_down_down_up_XLE_XLK,1,126,0
 UUP_down_down_up_XLE_XLK,2,126,8
-UUP_down_down_up_XLE_XLK,3,126,10
+UUP_down_down_up_XLE_XLK,3,126,8
 UUP_down_up_down_XLE_XLK,1,126,24
 UUP_down_up_down_XLE_XLK,2,126,8
 UUP_down_up_down_XLE_XLK,3,126,16
@@ -22866,7 +22866,7 @@ UUP_down_down_up_XLE_XLV,1,126,0
 UUP_down_down_up_XLE_XLV,2,126,6
 UUP_down_down_up_XLE_XLV,3,126,2
 UUP_down_up_down_XLE_XLV,1,126,0
-UUP_down_up_down_XLE_XLV,2,126,2
+UUP_down_up_down_XLE_XLV,2,126,4
 UUP_down_up_down_XLE_XLV,3,126,2
 UUP_up_down_down_XLE_XLV,1,126,0
 UUP_up_down_down_XLE_XLV,2,126,0
@@ -22924,7 +22924,7 @@ UUP_up_up_up_XLF_XLV,2,126,0
 UUP_up_up_up_XLF_XLV,3,126,0
 UUP_down_down_down_XLF_XLV,1,126,21
 UUP_down_down_down_XLF_XLV,2,126,6
-UUP_down_down_down_XLF_XLV,3,126,4
+UUP_down_down_down_XLF_XLV,3,126,6
 UUP_up_up_down_XLF_XLV,1,126,0
 UUP_up_up_down_XLF_XLV,2,126,2
 UUP_up_up_down_XLF_XLV,3,126,4
@@ -23061,8 +23061,8 @@ XLE_down_up_down_XLF_XLU,1,126,0
 XLE_down_up_down_XLF_XLU,2,126,0
 XLE_down_up_down_XLF_XLU,3,126,0
 XLE_up_down_down_XLF_XLU,1,126,2
-XLE_up_down_down_XLF_XLU,2,126,0
-XLE_up_down_down_XLF_XLU,3,126,0
+XLE_up_down_down_XLF_XLU,2,126,2
+XLE_up_down_down_XLF_XLU,3,126,1
 XLE_up_up_up_XLF_XLV,1,128,0
 XLE_up_up_up_XLF_XLV,2,128,0
 XLE_up_up_up_XLF_XLV,3,128,0
@@ -23140,7 +23140,7 @@ XLE_up_up_up_XLU_XLV,2,128,0
 XLE_up_up_up_XLU_XLV,3,128,0
 XLE_down_down_down_XLU_XLV,1,126,2
 XLE_down_down_down_XLU_XLV,2,126,8
-XLE_down_down_down_XLU_XLV,3,126,7
+XLE_down_down_down_XLU_XLV,3,126,6
 XLE_up_up_down_XLU_XLV,1,126,0
 XLE_up_up_down_XLU_XLV,2,126,2
 XLE_up_up_down_XLU_XLV,3,126,1
@@ -23188,7 +23188,7 @@ XLF_up_up_up_XLK_XLV,2,128,0
 XLF_up_up_up_XLK_XLV,3,128,0
 XLF_down_down_down_XLK_XLV,1,127,3
 XLF_down_down_down_XLK_XLV,2,127,4
-XLF_down_down_down_XLK_XLV,3,127,12
+XLF_down_down_down_XLK_XLV,3,127,13
 XLF_up_up_down_XLK_XLV,1,126,0
 XLF_up_up_down_XLK_XLV,2,126,0
 XLF_up_up_down_XLK_XLV,3,126,0
@@ -23212,7 +23212,7 @@ XLF_up_up_up_XLU_XLV,2,128,0
 XLF_up_up_up_XLU_XLV,3,128,0
 XLF_down_down_down_XLU_XLV,1,128,0
 XLF_down_down_down_XLU_XLV,2,128,4
-XLF_down_down_down_XLU_XLV,3,128,4
+XLF_down_down_down_XLU_XLV,3,128,6
 XLF_up_up_down_XLU_XLV,1,126,0
 XLF_up_up_down_XLU_XLV,2,126,2
 XLF_up_up_down_XLU_XLV,3,126,0
