@@ -13,6 +13,12 @@ venv/
 # Local-only credentials / config
 *.local
 
+# v4: extended ETF backup is not part of active modeling data
+04_结果/备份/
+
+# v4: regenerable combined panel (rebuilt by build_v4_panel.py)
+01_数据/processed_returns/v4_etf19_panel.csv
+
 # Regenerable raw fund data (large, can be re-downloaded)
 04_结果/最新成果/数据/数据_原始/profunds/adj_close_nasdaq/*.json
 04_结果/最新成果/数据/数据_原始/profunds/historical_nav.csv

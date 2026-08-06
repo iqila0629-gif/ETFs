@@ -1,5 +1,11 @@
 # 关键 CSV 文件用途与结构说明
 
+> v4 更新（2026-08-06）：正式建模只使用原始 19 支 ETF，扩展 ETF 已备份停用。
+> 新增 v4 文件：`01_数据/processed_returns/v4_etf19_panel.csv`、
+> `01_数据/processed_returns/v4_external_panel.csv`、
+> `04_结果/v4_中间结果/v4_threshold_sensitivity.csv`、
+> `04_结果/v4_中间结果/v4_19etf_baseline_pass.csv`。
+
 > 更新日期：2026-08-03
 > 当前正式口径：全历史 Average ≥ ±0.2% 且冻结期 Average ≥ ±0.2%、冻结期方向准确率 ≥ 55%
 
