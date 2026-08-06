@@ -194,7 +194,7 @@ def build_company_workbook(
     ws2.column_dimensions["A"].width = 12
     for c in range(2, len(etf_headers) + 1):
         ws2.column_dimensions[get_column_letter(c)].width = 12
-    ws2.freeze_panes = f"B{ds}"
+    ws2.freeze_panes = "B14"
 
     wb.save(out_path)
     print("saved:", out_path)
