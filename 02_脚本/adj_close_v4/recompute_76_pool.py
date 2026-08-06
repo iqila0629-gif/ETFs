@@ -16,15 +16,7 @@ def load_cleaned_76_master() -> pd.DataFrame:
     if "date" in panel.columns:
         panel = panel.rename(columns={"date": "Date"})
     ext57 = pd.read_csv(config.PROCESSED / "combined_extended_etf_returns_adj.csv", skiprows=12)
-    external = pd.read_csv(config.EXTERNAL_DAILY, parse_dates=["Date"])
-    external = external[
-        ["Date"]
-        + [
-            c
-            for c in external.columns
-            if c.startswith(("VIX", "TNX", "Credit", "JNK", "USD", "Sect", "Yld", "Stk"))
-        ]
-    ]
+    external = pd.read_csv(config.V4_EXTERNAL_PANEL, parse_dates=["Date"])
     for df in (panel, ext57):
         df["Date"] = pd.to_datetime(df["Date"])
     ext57_cols = [c for c in ext57.columns if c != "Date"]
