@@ -47,7 +47,9 @@ def main() -> None:
     all_etfs = {c for c in master.columns if c not in fund_set and c not in non_fund}
     dates = master["Date"].to_numpy()
 
-    best_path = config.V4_OUT / "v4_allmethods_best_strategy.csv"
+    best_path = config.V4_OUT / "v4_final20_best_strategy.csv"
+    if not best_path.exists():
+        best_path = config.V4_OUT / "v4_allmethods_best_strategy.csv"
     if not best_path.exists():
         best_path = config.V4_OUT / "v4_phase3_best_strategy.csv"
     best = pd.read_csv(best_path, keep_default_na=False)
@@ -68,7 +70,7 @@ def main() -> None:
     pool["etf_tokens"] = pool["condition"].apply(
         lambda c: {t for t in str(c).split("_") if t in all_known_tokens}
     )
-    pool = pool[pool["etf_tokens"].apply(lambda s: s <= config.ORIGINAL19)]
+    pool = pool[pool["etf_tokens"].apply(lambda s: s <= config.V4_UNIVERSE)]
     pool = pool[
         pool["full_trades"].ge(MIN_CAND_FULL) & pool["frozen_trades"].ge(MIN_CAND_FROZEN)
     ]

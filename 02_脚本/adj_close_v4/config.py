@@ -17,6 +17,8 @@ ORIGINAL19 = {
     "SPY", "QQQ", "IWM", "TLT", "TIP", "EEM", "LQD", "HYG", "UUP",
     "SLV", "JNK", "GLD", "GDX", "XLV", "XLU", "XLE", "XLF", "XLK", "FXY",
 }
+ADDED_ETFS = {"XLC"}
+V4_UNIVERSE = ORIGINAL19 | ADDED_ETFS
 
 MONEY_FUNDS = {"MPIXX", "MPSXX"}
 
@@ -28,6 +30,7 @@ FUND_PANEL = EVENT_INPUTS / "panel_fund_returns_adj.csv"
 ETF19_PANEL = EVENT_INPUTS / "panel_etf_returns_adj.csv"
 EXTERNAL_DAILY = EVENT_INPUTS / "external_daily.csv"
 V4_ETF19_PANEL = PROCESSED / "v4_etf19_panel.csv"
+V4_ETF20_PANEL = PROCESSED / "v4_etf20_panel.csv"
 V4_EXTERNAL_PANEL = PROCESSED / "v4_external_panel.csv"
 
 V3_PASS = MIDDLE / "全部ETF特有" / "v3_dual_criteria_pass.csv"

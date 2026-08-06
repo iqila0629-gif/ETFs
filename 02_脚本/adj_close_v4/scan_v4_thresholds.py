@@ -18,7 +18,8 @@ MIN_FROZEN_HIT = 0.55
 
 
 def load_master() -> pd.DataFrame:
-    panel = pd.read_csv(config.V4_ETF19_PANEL)
+    panel_path = config.V4_ETF20_PANEL if config.V4_ETF20_PANEL.exists() else config.V4_ETF19_PANEL
+    panel = pd.read_csv(panel_path)
     if "date" in panel.columns:
         panel = panel.rename(columns={"date": "Date"})
     external = pd.read_csv(config.V4_EXTERNAL_PANEL, parse_dates=["Date"])

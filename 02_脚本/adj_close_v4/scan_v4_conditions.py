@@ -80,7 +80,7 @@ def build_self_conditions() -> list[str]:
 
 def build_etf_conditions() -> list[str]:
     out = []
-    for etf in sorted(config.ORIGINAL19):
+    for etf in sorted(config.V4_UNIVERSE):
         for suffix in ["up", "down", "big_up", "big_down", "gt2", "lt-2"]:
             out.append(f"{etf}_{suffix}")
     return out

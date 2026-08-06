@@ -45,7 +45,8 @@ def fund_group(ticker: str) -> str:
 
 
 def load_master() -> tuple[pd.DataFrame, list[str], np.ndarray, np.ndarray]:
-    panel = pd.read_csv(config.V4_ETF19_PANEL)
+    panel_path = config.V4_ETF20_PANEL if config.V4_ETF20_PANEL.exists() else config.V4_ETF19_PANEL
+    panel = pd.read_csv(panel_path)
     if "date" in panel.columns:
         panel = panel.rename(columns={"date": "Date"})
     external = pd.read_csv(config.V4_EXTERNAL_PANEL, parse_dates=["Date"])
@@ -116,7 +117,7 @@ def main() -> None:
     limit = int(sys.argv[1]) if len(sys.argv) > 1 else None
 
     master, fund_cols, dates, fund_arr = load_master()
-    etf_cols = sorted(config.ORIGINAL19)
+    etf_cols = sorted(config.V4_UNIVERSE)
     targets = {h: build_target(fund_arr, h) for h in HORIZONS}
     all_tickers = fund_cols
     etf_data = {c: master[c].to_numpy(dtype=float) for c in etf_cols}

@@ -66,15 +66,27 @@ def main() -> None:
     panel.to_csv(config.V4_ETF19_PANEL, index=False)
     external.to_csv(config.V4_EXTERNAL_PANEL, index=False)
 
+    xlc_raw = pd.read_csv(config.BACKUP_EXT_DIR / "XLC.csv")
+    xlc_raw["Date"] = pd.to_datetime(xlc_raw["Date"])
+    xlc_raw = xlc_raw.sort_values("Date").reset_index(drop=True)
+    xlc_ret = xlc_raw["Adj Close"].pct_change() * 100
+    xlc_ret = xlc_ret.clip(-config.ETF_RETURN_CLIP, config.ETF_RETURN_CLIP)
+    xlc_panel = pd.DataFrame({"Date": xlc_raw["Date"], "XLC": xlc_ret})
+    panel20 = panel.merge(xlc_panel, on="Date", how="left")
+    panel20.to_csv(config.V4_ETF20_PANEL, index=False)
+
     fund_cols = set(fund.columns[1:])
     etf_cols = [c for c in panel.columns if c not in fund_cols and c != "Date"]
-    outside = [c for c in etf_cols if c not in config.ORIGINAL19]
+    etf_cols20 = [c for c in panel20.columns if c not in fund_cols and c != "Date"]
+    outside = [c for c in etf_cols20 if c not in config.V4_UNIVERSE]
     print(f"v4 panel rows: {len(panel)}, range {panel['Date'].iloc[0].date()} .. {panel['Date'].iloc[-1].date()}")
     print(f"etf cols: {len(etf_cols)} -> {sorted(etf_cols)}")
+    print(f"v4_etf20 cols: {len(etf_cols20)} -> {sorted(etf_cols20)}")
     print(f"clipped fund outliers: {fund_outliers}, ETF outliers: {etf_outliers}")
     print("note: VIX_Chg%/TNX_ChgBp and derived external columns recomputed from raw levels")
     print(f"outside original19: {outside}")
     print(f"saved: {config.V4_ETF19_PANEL}")
+    print(f"saved: {config.V4_ETF20_PANEL}")
     print(f"saved: {config.V4_EXTERNAL_PANEL}")
 
 

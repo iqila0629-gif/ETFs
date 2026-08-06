@@ -4,9 +4,9 @@
 v4 更新（2026-08-06）
 ====================
 
-v4 起正式预测只使用上司指定的原始 19 支 ETF：
-SPY QQQ IWM TLT TIP EEM LQD HYG UUP SLV JNK GLD GDX XLV XLU XLE XLF XLK FXY。
-扩展 57 支 ETF 已备份到 04_结果/备份/扩展ETF_仅备份/，不再作为建模输入。
+v4 起正式预测使用上司指定的原始 19 支 ETF + XLC：
+SPY QQQ IWM TLT TIP EEM LQD HYG UUP SLV JNK GLD GDX XLV XLU XLE XLF XLK FXY XLC。
+扩展 57 支 ETF 已备份到 04_结果/备份/扩展ETF_仅备份/，除 XLC 外不再作为建模输入。
 v4 中间结果位于 04_结果/v4_中间结果/，包含门槛敏感性表和推荐门槛下的正式信号。
 
 一、这是什么
