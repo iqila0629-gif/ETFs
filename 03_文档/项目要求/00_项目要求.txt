@@ -1,0 +1,28 @@
+https://www.profunds.com/
+
+这个网页中找到Mutual Funds，下载全部基金的所有历史数据，并借助ETF列表（我稍后给）或者用ETF DataBase（https://etfdb.com）作为工具。通过历史数据，去预计profund基金将来的回报率，这个将来可以是一天后，也可以是两天后，只要是未来的都行。平均回报率达到0.2% 一天或以上或 低于 -0. 2％ 一天或以下的都算作有效的。
+
+常用的ETF列表是：
+SPY
+QQQ
+IWM
+TLT
+TIP
+EEM
+LQD
+HYG
+UUP
+SLV
+JNK
+GLD
+GDX
+XLV
+XLU
+XLE
+XLF
+XLK
+FXY
+
+你可以使用，但不限于此。
+
+思路是，假设SPY今天涨了，QQQ今天涨了，用历史数据预测profund 的基因明天怎么样，是涨还是跌，涨跌平均回报是多少。

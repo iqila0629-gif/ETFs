@@ -1,0 +1,37 @@
+ETF 列表说明
+============
+
+共 76 支 ETF，全部参与双条件穷举扫描。
+
+原始 19 支（项目指定）
+----------------------
+SPY QQQ IWM TLT TIP EEM LQD HYG UUP SLV JNK GLD GDX
+XLV XLU XLE XLF XLK FXY
+
+扩展 57 支（Adj Close 完整日线）
+-------------------------------
+AGG BIL BND CEW COPX DBC EDV EUO FLRN FXA FXB FXC FXE
+GDXJ GOVZ IAU IEF IEI LTPZ MBB MUB OIH PFF PST SCHP SHV
+SHY SIL SMH SOXX SPTL STIP TBF TBT TLH TMF TMV UDN ULE
+USO VCIT VCLT VGIT VGLT VGSH VMBS WIP XBI XLB XLC XLP
+XLY XME XOP YCL YCS ZROZ
+
+使用结果
+--------
+76 支 ETF 全部至少进入一个正式信号；
+其中 64 支进入每基金最佳策略；
+
+三个版本
+--------
+1. 全部ETF：76 支全部参与。
+2. 精简ETF：数据驱动选出 27 支：
+   XLC、GOVZ、XLK、STIP、TIP、MUB、GDXJ、YCL、FXY、IEF、SPTL、SOXX、IWM、
+   XLV、TBF、TMF、JNK、WIP、XLY、SHY、XLF、SHV、ULE、IEI、GLD、SLV、USO。
+3. 原始ETF：仅使用指定的原始 19 支：
+   SPY、QQQ、IWM、TLT、TIP、EEM、LQD、HYG、UUP、SLV、JNK、GLD、GDX、
+   XLV、XLU、XLE、XLF、XLK、FXY。
+
+数据位置
+--------
+原始文件在 数据/数据_原始/etfs 与 etfs_extended/。
+处理后回报在 数据/数据_处理后合并/。

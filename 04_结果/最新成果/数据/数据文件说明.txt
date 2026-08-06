@@ -1,0 +1,41 @@
+数据文件说明
+============
+
+版本：2026-08-05，Adj Close / Adjusted NAV（总回报口径）。
+
+数据_原始/
+----------
+etfs/
+  原始 19 支 ETF Yahoo 日线 CSV，含 Adj Close。
+
+etfs_extended/
+  扩展 57 支 ETF Yahoo v8 完整日线 CSV，含 Adj Close。
+
+profunds/
+  historical_nav.csv：ProFunds 原始 NAV。
+  adj_close_nasdaq/：129 支基金 Adjusted Close JSON。
+
+external_daily.csv
+  VIX/TNX 外部数据。
+
+基金名称映射.xlsx
+  ProFunds 代码到名称的映射，正式交付时用于“基金名字（代码）”展示。
+
+数据_处理后合并/
+----------------
+合并_基金Adj净值.xlsx
+  129 支基金 Adjusted NAV 合并表（13 行格式）。
+
+合并_基金Adj日回报.xlsx
+  129 支基金 Adj Close 日回报合并表（13 行格式，百分数）。
+
+合并_ETF日回报_原始19支.xlsx / 合并_ETF日回报_扩展57支.xlsx
+  ETF Adj Close 日回报合并表（13 行格式，百分数）。
+
+外部数据_VIX_TNX_未经处理.xlsx
+  与 external_daily.csv 相同，仅做日期对齐，未按公司格式统计。
+
+读取提醒
+--------
+所有 Excel 均含“说明”Sheet1 +“数据”Sheet2。
+13 行格式文件的统计头使用 Excel 公式，读取数据时从第13行列名开始。

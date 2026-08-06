@@ -1,0 +1,27 @@
+# OS / editor noise
+Thumbs.db
+.DS_Store
+*.tmp
+*.log
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Local-only credentials / config
+*.local
+
+# Regenerable raw fund data (large, can be re-downloaded)
+04_结果/最新成果/数据/数据_原始/profunds/adj_close_nasdaq/*.json
+04_结果/最新成果/数据/数据_原始/profunds/historical_nav.csv
+
+# Duplicated panels and heavy intermediate scans
+01_数据/event_study_inputs/panel_fund_returns_adj.csv
+01_数据/event_study_inputs/panel_etf_returns_adj.csv
+04_结果/最新成果/中间文档/通用/文件/panel_fund_returns_adj.csv
+04_结果/最新成果/中间文档/通用/文件/panel_etf_returns_adj.csv
+04_结果/最新成果/中间文档/通用/文件/pair_strict_pass.csv
+04_结果/最新成果/中间文档/通用/文件/pair_frozen_pass.csv
+04_结果/最新成果/中间文档/通用/文件/v3_candidates_stats.csv

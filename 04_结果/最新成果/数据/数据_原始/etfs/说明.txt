@@ -1,0 +1,8 @@
+etfs 说明
+=========
+
+原始19支ETF的Yahoo完整日线：
+SPY、QQQ、IWM、TLT、TIP、EEM、LQD、HYG、UUP、SLV、
+JNK、GLD、GDX、XLV、XLU、XLE、XLF、XLK、FXY。
+
+每份文件包含：Date、Open、High、Low、Close、Volume、Adj Close。

@@ -1,0 +1,261 @@
+中间文档说明
+============
+
+本文件逐项说明 中间文档/ 下每个脚本和底稿的内容。
+如果是表格，还会说明每行和每列的含义。
+
+通用口径说明
+------------
+
+全历史：从数据起始到最新日期的全部交易记录。
+冻结期：2025-2026 年。
+Average：触发日实际回报的平均值，单位 %。
+命中率：方向预测正确的比例。
+
+条件命名规则：
+- ETF_up / ETF_down：ETF 当日上涨 / 下跌。
+- ETF_big_up / big_down：ETF 当日涨跌超过或等于 1%。
+- ETF_gt2 / ETF_lt-2：ETF 当日涨超 2% / 跌超 2%。
+- ETF_bin_0_0.5：ETF 当日涨 0-0.5%。
+- A_up_B_down：A 涨且 B 跌。
+- ext_vix_chg_ge5：VIX 当日变化不低于 5。
+- self_3down：基金自身连续三日下跌。
+
+一、通用/脚本/
+-------------
+
+1. build_adj_close_tables.py
+   输入：ETF 与基金的 Adj Close / Adjusted NAV 原始数据。
+   处理：计算日回报，生成 Adj Close 口径的合并表和建模面板。
+   输出：
+   - 基金/ETF 合并日回报表
+   - panel_fund_returns_adj.csv
+   - panel_etf_returns_adj.csv
+
+2. run_v3.py
+   输入：旧候选池 dual_criteria_candidates.csv、Adj Close 主表。
+   处理：把所有旧候选在 Adj Close 口径下重新统计，
+   并按全历史/冻结期双口径筛选。
+   输出：
+   - v3_candidates_stats.csv：全部候选统计
+   - v3_dual_criteria_pass.csv：第一层通过信号
+
+3. expand_pair_scan.py
+   输入：76 支 ETF 与 129 支基金的 Adj Close 主表。
+   处理：76 支 ETF 两两组合，共 2,850 对，每对 4 种方向，
+   每个方向 1/2/3 日窗口，对每支基金逐一统计。
+   输出：
+   - pair_candidates_stats.csv：全部双条件候选
+   - pair_strict_pass.csv：严格通过
+   - pair_frozen_pass.csv：冻结期通过
+
+4. build_v3_delivery.py
+   输入：v3_dual_criteria_pass.csv、pair_strict_pass.csv。
+   处理：合并去重，按每支基金选择最佳策略，
+   生成正式信号、公司宽表、逐日明细、ETF统计和覆盖表。
+   输出：全部ETF版本的关键成果。
+
+5. verify_v3_delivery.py
+   处理：只读校验三个版本的最佳策略、宽表、信号重复键。
+   输出：校验结果。
+
+6. phase9_dual_criteria_pipeline.py
+   输入：早期主模型、专项、优化扫描、缺口补充候选。
+   处理：统一计算全历史/冻结期统计并筛选。
+   输出：早期候选池和通过信号。
+
+7. generate_daily_tables.py
+   处理：把逐基金触发记录写成公司 13 行格式宽表。
+   输出：公司格式日频宽表。
+
+8. generate_predictions.py
+   处理：把单条策略写成公司 13 行格式预测文件。
+   用途：早期单信号预测底稿；正式成果中不直接展示。
+
+9. scan_magnitude_bins.py
+   处理：对每支 ETF 按 8 档幅度分档，统计各档对基金次日回报的影响。
+   输出：幅度分档扫描统计。
+
+10. rebuild_adj_merged_xlsx.py
+   处理：把 Adj Close 合并 CSV 重建为 Excel。
+   输出：带公式的公司 13 行格式 Excel。
+
+二、通用/文件/
+-------------
+
+以下文件都是 CSV 底稿，未做中文列名转换。
+
+1. v3_candidates_stats.csv
+   行数：17,779
+   每行：第一层全部候选信号中的一个。
+   列：
+   - full_avg：全历史平均回报（%）
+   - full_trades：全历史交易数
+   - full_hit：全历史命中率
+   - frozen_avg：冻结期平均回报（%）
+   - frozen_trades：冻结期交易数
+   - frozen_hit：冻结期命中率
+   - ticker：基金代码
+   - fund_group：基金类型（long/ultra_long/inverse）
+   - source：信号来源
+   - condition：触发条件
+   - horizon：预测窗口（1/2/3/5日）
+   - dual_pass：是否双口径通过
+
+2. pair_strict_pass.csv
+   行数：47,848
+   每行：76 支 ETF 双条件穷举中严格通过的一个信号。
+   列：full_avg、full_trades、full_hit、frozen_avg、frozen_trades、
+   frozen_hit、ticker、fund_group、source、condition、horizon、
+   strict_pass、frozen_pass。
+   strict_pass：是否全历史+冻结期+命中率全部通过。
+   frozen_pass：是否只满足冻结期口径。
+
+3. pair_frozen_pass.csv
+   行数：67,196
+   每行：双条件穷举中冻结期口径通过的一个信号。
+   列与 pair_strict_pass.csv 相同。
+   用途：只用于未覆盖基金评估，不进入正式名单。
+
+4. panel_fund_returns_adj.csv
+   行数：7,344
+   每行：一个交易日，日期升序。
+   每列：一支基金。
+   值：基金 Adj Close 日回报，小数，0.01 = 1%。
+
+5. panel_etf_returns_adj.csv
+   行数：7,691
+   每行：一个交易日，日期升序。
+   每列：一支 ETF。
+   值：ETF Adj Close 日回报，百分数。
+
+6. 基金名称映射.csv
+   行数：129
+   每行：一支基金。
+   列：
+   - ticker：基金代码
+   - name：基金名称
+
+三、全部ETF特有/
+----------------
+
+1. v3_dual_criteria_pass.csv
+   行数：1,041
+   每行：第一层候选在 Adj Close 口径下双口径通过的一个信号。
+   列：full_avg、full_trades、full_hit、frozen_avg、frozen_trades、
+   frozen_hit、ticker、fund_group、source、condition、horizon、dual_pass。
+   注意：该文件可能包含相同 ticker+condition+horizon 的重复来源行，
+   最终正式信号池会先去重。
+
+2. v3_summary.csv
+   行数：73
+   每行：第一层通过信号中，每支基金的一条最佳策略。
+   列与 v3_dual_criteria_pass.csv 相同。
+   注意：这代表第一层单条件池的结果，不是最终 76 支全池 119 条最佳策略。
+
+3. v3_strategy_mapping.csv
+   行数：73
+   内容与 v3_summary.csv 相同，用于保留“策略映射”这一口径。
+   列含义与 v3_summary.csv 一致。
+
+四、精简ETF特有/
+----------------
+
+1. run_etf_streamline.py
+   处理：在现有正式信号池上枚举 ETF 子集，重新选择每支基金的最佳策略。
+   方法：空集正向贪心、76 支反向淘汰、200 次随机重启。
+   输出：etf_subset_scan.csv、etf_pareto.csv、
+   etf_streamlined_options.csv、etf_streamlined_list.csv。
+
+2. build_streamlined_delivery.py
+   处理：根据选中的 ETF 子集生成精简版正式信号、最佳策略、宽表、
+   ETF统计、覆盖表等关键成果。
+
+3. etf_subset_scan.csv
+   行数：282
+   每行：一个被评估的 ETF 子集。
+   列：
+   - subset_bits：子集的位掩码，内部标识
+   - etf_count：子集中 ETF 数量
+   - covered_funds：覆盖基金数
+   - available_signals：该子集可用的正式信号数
+   - uncovered_funds：未覆盖基金数
+   - median_full_hit：全历史命中率中位数
+   - min_full_hit：全历史命中率最低值
+   - median_frozen_hit：冻结期命中率中位数
+   - min_frozen_hit：冻结期命中率最低值
+   - median_full_avg_abs：全历史 Average 绝对值中位数
+   - median_frozen_avg_abs：冻结期 Average 绝对值中位数
+   - median_frozen_trades：冻结期交易数中位数
+   - best_tickers：该子集下每支基金最佳策略对应的基金列表
+   - best_conditions：每支基金最佳策略条件列表
+   - best_horizons：每支基金最佳策略窗口列表
+   - avg_min：全历史与冻结期 Average 中位数的较小值
+
+4. etf_pareto.csv
+   行数：23
+   每行：某个覆盖基金数下，ETF 数量最少的最优子集。
+   列与 etf_subset_scan.csv 相同。
+
+5. etf_streamlined_options.csv
+   行数：22
+   每行：覆盖 119 支基金时，某个 ETF 数量下 Average 最优的可选子集。
+   列与 etf_subset_scan.csv 相同，额外包含：
+   - etf_list：该子集包含的 ETF 代码列表
+
+6. etf_streamlined_list.csv
+   行数：27
+   每行：最终精简版选中的一支 ETF。
+   列：
+   - ETF：ETF 代码
+
+五、原始ETF特有/
+----------------
+
+1. v1_adj_pass.csv
+   行数：147
+   每行：原始 19 支 ETF 旧候选池在正式口径下的一个通过信号。
+   列：full_avg、full_trades、full_hit、frozen_avg、frozen_trades、
+   frozen_hit、ticker、fund_group、source、condition、horizon、dual_pass。
+
+2. original19_pair_strict_pass.csv
+   行数：2,848
+   每行：原始 19 支 ETF 双条件穷举中严格通过的一个信号。
+   列：full_avg、full_trades、full_hit、frozen_avg、frozen_trades、
+   frozen_hit、ticker、fund_group、source、condition、horizon、
+   original_pass、strict_pass、frozen_pass。
+   original_pass：是否只满足全历史 Average 原口径。
+   strict_pass：是否满足正式双口径。
+   frozen_pass：是否满足冻结期口径。
+
+3. scan_original19_pair.py
+   处理：只对原始 19 支 ETF 做两两双条件穷举。
+   输出：原始 19 支双条件候选与通过表。
+
+4. build_original19_standard.py
+   处理：合并 v1_adj_pass.csv 与 original19_pair_strict_pass.csv，
+   去重后生成原始 ETF 版本的关键成果。
+   输出：原始ETF版本正式信号、最佳策略、公司宽表、覆盖表等。
+
+六、运行顺序
+-----------
+
+1. build_adj_close_tables.py：准备 Adj Close 数据。
+2. phase9_dual_criteria_pipeline.py：生成早期候选池。
+3. run_v3.py：第一层候选 Adj Close 重算。
+4. expand_pair_scan.py：76 支 ETF 双条件穷举。
+5. build_v3_delivery.py：生成全部ETF版本成果。
+6. run_etf_streamline.py + build_streamlined_delivery.py：
+   生成精简ETF版本成果。
+7. scan_original19_pair.py + build_original19_standard.py：
+   生成原始ETF版本成果。
+8. verify_v3_delivery.py：最终校验。
+
+七、底稿与正式成果的关系
+------------------------
+
+- 通用/文件 与 全部ETF特有 是全部ETF版本的推导底稿。
+- 精简ETF特有 是精简ETF版本的推导底稿。
+- 原始ETF特有 是原始ETF版本的推导底稿。
+- 正式成果位于 全部ETF/成果、精简ETF/成果、原始ETF/成果，
+  以及根目录 最新成果说明.txt 和 预测逻辑.txt。

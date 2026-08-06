@@ -1,0 +1,338 @@
+中间文档：从穷举到正式交付的完整流程
+========================================
+
+本文件说明是如何通过中间文档从原始数据一步步得到最终结果的。
+
+本流程描述的是“全部ETF”版本；精简ETF和原始ETF版本复用同一个正式信号池，
+按各自 ETF 子集重新选出可用信号和每基金最佳策略。
+
+整体流程
+--------
+
+```text
+原始数据
+  │  build_adj_close_tables.py
+  ▼
+Adj Close 合并表 / 建模面板
+  │
+  ├── 第一层：单条件/外部/自身/幅度分档候选池
+  │        phase9_dual_criteria_pipeline.py + run_v3.py
+  │        输出：v3_candidates_stats.csv → v3_dual_criteria_pass.csv
+  │
+  ├── 第二层：76 支 ETF 两两双条件穷举
+  │        expand_pair_scan.py
+  │        输出：pair_candidates_stats.csv → pair_strict_pass.csv
+  │
+  ├── 合并去重：v3 通过信号 + 双条件严格通过信号
+  │        输出：v3_正式信号_全量.csv（48,854 个，119 支基金）
+  │
+  ├── 每基金最佳策略：每支基金选 1 条
+  │        输出：v3_每基金最佳策略.csv（119 条）
+  │
+  ├── 整合交付表
+  │        输出：公司格式宽表、逐日明细、ETF 统计、覆盖表
+  │
+  ├── 未覆盖评估：8 支非货币基金候选重算与分档
+  │
+  └── 校验：verify_v3_delivery.py
+```
+
+一、原始数据与 Adj Close 处理
+-----------------------------
+
+输入：
+- `raw_data/etfs/`：原始 19 支 ETF Yahoo 日线，含 Adj Close。
+- `raw_data/etfs_extended_full/`：扩展 57 支 ETF Yahoo v8 完整日线，含 Adj Close。
+- `raw_data/profunds/adj_close_nasdaq/`：129 支基金 Adjusted Close JSON。
+- `raw_data/profunds/historical_nav.csv`：ProFunds 原始 NAV。
+- `analysis_results/event_study/external_daily.csv`：VIX/TNX 外部数据。
+
+处理逻辑：
+1. 从 ETF 的 Adj Close 计算日回报。
+2. 从基金 Adjusted Close 计算 Adjusted NAV 与日回报。
+3. 把基金回报转成小数面板，ETF 回报保留百分数面板。
+4. 按日期把基金面板、19 支 ETF、57 支扩展 ETF、外部数据合并成主表 master。
+
+输出：
+- `processed_returns/combined_profunds_adj_nav.csv`
+- `processed_returns/combined_profunds_adj_returns.csv`
+- `processed_returns/combined_etf_returns_adj.csv`
+- `processed_returns/combined_extended_etf_returns_adj.csv`
+- `analysis_results/event_study/panel_fund_returns_adj.csv`（基金回报为小数）
+- `analysis_results/event_study/panel_etf_returns_adj.csv`（ETF 回报为百分数）
+
+对应脚本：
+- `build_adj_close_tables.py`
+
+二、第一层：单条件/外部/自身/幅度分档穷举
+-----------------------------------------
+
+候选构造：
+- 76 支 ETF 各自的涨、跌、大涨大跌、涨跌超过 2%、幅度分档。
+- VIX 水平与变化、VIX 5 日变化、美债利率变化。
+- 基金自身涨跌、大涨大跌、连续三日同向。
+- 旧阶段留下的少量双条件/一致性条件，也统一放进候选池重算。
+
+统计逻辑（每个候选都做）：
+1. 用 ETF/外部/自身条件生成当日触发掩码。
+2. 取该基金未来 1/2/3/5 日回报；多日取未来 N 日日平均。
+3. 只保留目标回报可用的日期，防止用未来缺失数据。
+4. 对每个触发日只用它之前的历史事件做决策（expanding walk-forward）：
+   - 累计事件数、上涨/下跌次数、上涨/下跌平均回报。
+   - 条件成立且 p_up >= 52%、avg_up >= 0.15% → predict_up。
+   - 条件成立且 p_down >= 52%、avg_down <= -0.15% → predict_down。
+   - 主模型来源使用更严格门槛：p >= 55%、avg >= 0.2%。
+5. 统计全历史与冻结期 2025-2026 的 Average、交易数、命中率。
+
+输出：
+- `v3_candidates_stats.csv`：17,779 个候选的统一统计。
+- `v3_dual_criteria_pass.csv`：通过双口径 + 命中率门槛的信号，
+  1,041 行、73 支基金；其中重复键 35 个，去重后 1,006 个信号。
+
+对应脚本：
+- `phase9_dual_criteria_pipeline.py`
+- `run_v3.py`
+
+三、第二层：76 支 ETF 两两双条件穷举
+------------------------------------
+
+为什么加入这一层：
+- 单条件层只能覆盖 73 支基金。
+- 双条件能表达“A 涨且 B 跌”等更细的市场状态，可补上大量单条件找不到的基金。
+
+候选规模：
+- 76 支 ETF 两两组合：2,850 对。
+- 每对 4 种方向：双涨、双跌、一涨一跌、一跌一涨。
+- 每方向 1/2/3 日窗口。
+- 共 34,200 个条件定义；每个条件对 129 支基金统计，
+  约 441 万条基金-条件组合。
+
+统计逻辑：
+- 与第一层相同，但多日窗口严格要求未来 N 天全部有数据才参与统计。
+- 先用事件数、上涨/下跌概率和平均回报做 expanding walk-forward 决策。
+- 再按全历史与冻结期两套口径统计。
+
+输出：
+- `pair_candidates_stats.csv`：全部双条件候选统计，约 514MB。
+- `pair_strict_pass.csv`：严格版通过，
+  47,848 个信号、115 支基金。
+- `pair_frozen_pass.csv`：冻结期通过版，
+  67,196 个信号、116 支基金；只用于未覆盖评估，不进正式名单。
+
+对应脚本：
+- `expand_pair_scan.py`
+
+四、合并去重：正式信号池
+-----------------------
+
+合并规则：
+1. 取第一层去重后的 v3 通过信号（1,006 个）。
+2. 取第二层双条件严格通过信号（47,848 个）。
+3. 按 `ticker + condition + horizon` 去重，保留统计更优的一条。
+
+结果：
+- 正式信号池：48,854 个。
+- 覆盖基金：119 支。
+- 其中 4 支基金只靠第一层外部/自身信号覆盖；
+  46 支基金是双条件层新增覆盖；
+  两层的交集基金同时有更多候选信号。
+
+输出：
+- `全部ETF/成果/v3_正式信号_全量.csv`
+
+对应脚本：
+- `build_v3_delivery.py`
+
+五、每基金最佳策略
+-----------------
+
+筛选逻辑：
+1. 对每支基金，从该基金全部正式信号中挑选 1 条。
+2. 优先级：
+   - 第一：`|full_avg|` 最大。
+   - 第二：`frozen_hit` 最高。
+   - 第三：`full_hit` 最高。
+3. 根据 `full_avg` 正负决定 predict_up / predict_down。
+
+结果：
+- 119 支基金各 1 条最佳策略。
+- 每条都必须满足：
+  - 全历史：`|Average| >= 0.2%`、交易数 `>= 50`、命中率 `> 55%`。
+  - 冻结期：`|Average| >= 0.2%`、交易数 `>= 10`、命中率 `>= 55%`。
+
+输出：
+- `全部ETF/成果/v3_每基金最佳策略.csv`
+
+对应脚本：
+- `build_v3_delivery.py`
+
+六、整合交付表
+-------------
+
+从最佳策略和全信号池生成四类交付内容：
+
+1. 公司格式最佳策略宽表
+   - 每列一支基金，每行一个交易日。
+   - 值 = 该基金最佳策略触发日的实际回报，未触发留空。
+   - 输出：`v3_公司格式_最佳策略_全历史.csv`、`_冻结期.csv`。
+
+2. 信号逐日明细
+   - 每行一次最佳策略触发，含预测回报和实际回报。
+   - 输出：`全部ETF/成果/v3_信号逐日明细_最佳策略.csv`。
+
+3. 全信号 R4 合并宽表
+   - 每支基金使用该基金全部正式信号。
+   - 同一基金同一天触发多个信号时，只保留 `|full_avg|` 最大的信号，
+     不叠加、不平均、不做多数投票。
+   - 输出：`全部ETF/成果/v3_公司格式_全信号_全历史.csv`、`_冻结期.csv`。
+
+对应脚本：
+- `build_v3_delivery.py`
+- `generate_daily_tables.py`：宽表公司 13 行格式。
+
+七、ETF 使用统计
+---------------
+
+统计逻辑：
+1. 从每个正式信号的条件里解析出使用的 ETF。
+2. 分别统计：
+   - 全信号中每个 ETF 出现的信号数和覆盖基金数。
+   - 最佳策略中每个 ETF 出现的信号数和覆盖基金数。
+3. 按全信号使用次数降序排列。
+
+结果：
+- 76 支 ETF 全部至少进入一个正式信号。
+- 64 支进入最佳策略。
+
+输出：
+- `全部ETF/成果/v3_ETF使用统计.csv`
+
+八、覆盖情况
+-----------
+
+对 129 支基金逐支标注：
+- `covered = True`：有最佳策略。
+- `covered = False` 且 `reason = money_fund`：MPIXX、MPSXX，货币基金，不参与。
+- `covered = False` 且 `reason = not_qualified`：非货币基金，未达标。
+
+结果：
+- 覆盖：119 支。
+- 未覆盖非货币基金：8 支。
+- 货币基金：2 支。
+
+输出：
+- `全部ETF/成果/v3_覆盖情况.csv`
+
+九、未覆盖基金评估
+-----------------
+
+对象：
+- BRPIX、FDPIX、FDPSX、GVPSX、RDPIX、RDPSX、RTPIX、RTPSX。
+
+做法：
+1. 从 `v3_candidates_stats.csv` 和 `pair_candidates_stats.csv` 中
+   提取这 8 支基金的全部候选，按基金分组重算。
+2. 按冻结期达标情况分三档：
+   - 第一档：冻结期 `|Average| >= 0.2%`、交易数 `>= 10`、命中率 `>= 55%`。
+   - 第二档：冻结期 `|Average| >= 0.2%`，但样本小于 10。
+   - 第三档：冻结期未达标。
+3. 每档对每支基金保留最接近该档位的 1 条候选。
+
+结果：
+- 8 支基金都能找到冻结期已达标候选；
+- 但全历史命中率或全历史 Average 未达到正式门槛，因此不进正式名单。
+
+输出：
+- `未覆盖基金评估/v3_未覆盖_全部候选重算.csv`
+- `未覆盖基金评估/v3_未覆盖_第一档_冻结期已达标.csv`
+- `未覆盖基金评估/v3_未覆盖_第二档_冻结期达标样本小.csv`
+- `未覆盖基金评估/v3_未覆盖_第三档_冻结期未达标.csv`
+- `未覆盖基金评估/情况说明.txt`
+
+对应脚本：
+- `build_v3_delivery.py`
+
+十、校验
+---------
+
+校验内容：
+1. 119 条最佳策略的统计与逐日明细是否一致。
+2. 正式信号是否有重复键。
+3. 最佳策略全历史/冻结期宽表是否全部达标。
+4. 未覆盖分档基金数是否一致。
+
+校验结果：
+- 最佳策略统计与逐日明细最大偏差：0。
+- 不一致条数：0。
+- 正式信号重复键：0。
+- 最佳策略宽表：119/119 达标。
+
+对应脚本：
+- `verify_v3_delivery.py`
+
+十一、脚本与文件对应关系
+-----------------------
+
+```text
+build_adj_close_tables.py
+  → 原始数据 → Adj Close 合并表/面板
+
+phase9_dual_criteria_pipeline.py
+  → 早期候选池统一统计
+
+run_v3.py
+  → 第一层候选 Adj Close 重算 → v3_dual_criteria_pass.csv
+
+expand_pair_scan.py
+  → 第二层双条件穷举 → pair_candidates_stats.csv / pair_strict_pass.csv
+
+build_v3_delivery.py
+  → 合并、最佳策略、整合表、未覆盖评估
+
+verify_v3_delivery.py
+  → 只读校验
+
+generate_predictions.py / generate_daily_tables.py
+  → 公司 13 行格式输出
+
+scan_magnitude_bins.py
+  → 幅度分档候选扫描
+
+rebuild_adj_merged_xlsx.py
+  → 后续把合并表转成 Excel 时使用
+```
+
+底稿文件：
+
+```text
+v3_candidates_stats.csv      第一层全部候选统计
+v3_dual_criteria_pass.csv   第一层通过信号
+pair_candidates_stats.csv   第二层全部双条件候选（514MB，未复制进最新成果）
+pair_strict_pass.csv        第二层严格通过信号
+pair_frozen_pass.csv        第二层冻结期通过信号（未覆盖评估用）
+panel_fund_returns_adj.csv  基金建模面板
+panel_etf_returns_adj.csv   ETF 建模面板
+基金名称映射.csv             代码到名称映射
+```
+
+十二、流程闭环说明
+-----------------
+
+从原始数据到最终成果的每一步都有输入、处理逻辑和输出：
+
+```text
+原始数据
+  → Adj Close 合并表与面板
+  → 第一层单条件候选穷举
+  → 第二层双条件候选穷举
+  → 双口径 + 命中率筛选
+  → 合并去重形成正式信号池
+  → 每基金最佳策略
+  → 公司宽表 / 逐日明细 / ETF 统计 / 覆盖表
+  → 未覆盖基金评估
+  → 校验
+  → 待正式交付转换
+```
+
+每一层都能用对应脚本重跑，每个输出文件都能向上追溯到上一层输入，
+因此流程没有断点。
