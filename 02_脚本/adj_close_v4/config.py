@@ -28,6 +28,7 @@ V4_EXTERNAL_PANEL = PROCESSED / "v4_external_panel.csv"
 
 V3_PASS = MIDDLE / "全部ETF特有" / "v3_dual_criteria_pass.csv"
 PAIR_STRICT = MIDDLE / "通用" / "文件" / "pair_strict_pass.csv"
+V3_CANDIDATES_STATS = MIDDLE / "通用" / "文件" / "v3_candidates_stats.csv"
 
 THRESHOLD_GRID_FULL = [50, 80, 100, 120]
 THRESHOLD_GRID_FROZEN = [10, 15, 20, 30]
