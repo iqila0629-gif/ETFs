@@ -180,7 +180,14 @@ def formal_pass(stats: dict) -> bool:
     )
 
 
-def greedy_complement_sequence(cands: list[dict]) -> list[dict]:
+def marginal_avg(rec: dict, current: set) -> float | None:
+    dates = rec["dates"] - current
+    if not dates:
+        return None
+    return float(np.mean([rec["returns"][d] for d in dates]))
+
+
+def greedy_complement_sequence(cands: list[dict], marginal_floor: float | None = None) -> list[dict]:
     anchor = max(cands, key=lambda s: s["strength"] * np.sqrt(s["full_trades"]))
     seq = [anchor]
     current = set(anchor["dates"])
@@ -190,8 +197,17 @@ def greedy_complement_sequence(cands: list[dict]) -> list[dict]:
         for c in cands:
             if c in seq:
                 continue
-            gain = len(c["dates"] - current)
-            if gain > best_gain or (gain == best_gain and best is not None and c["strength"] > best["strength"]):
+            dates = c["dates"] - current
+            if not dates:
+                continue
+            ma = marginal_avg(c, current)
+            if marginal_floor is not None and (ma is None or abs(ma) < marginal_floor):
+                continue
+            gain = len(dates)
+            if (
+                gain > best_gain
+                or (gain == best_gain and best is not None and abs(ma or 0.0) > abs(marginal_avg(best, current) or 0.0))
+            ):
                 best = c
                 best_gain = gain
         if best is None or best_gain <= 0:
@@ -205,7 +221,16 @@ def main() -> None:
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     config.V4_OUT.mkdir(parents=True, exist_ok=True)
     complement_mode = "--complement" in sys.argv
-    suffix = "_complement" if complement_mode else "_density"
+    marginal_floor = None
+    if "--avgfloor" in sys.argv:
+        idx = sys.argv.index("--avgfloor")
+        marginal_floor = float(sys.argv[idx + 1])
+    if complement_mode and marginal_floor is not None:
+        suffix = f"_complement_m{int(marginal_floor * 100)}"
+    elif complement_mode:
+        suffix = "_complement"
+    else:
+        suffix = "_density"
 
     master = s4.load_master()
     fund_cols = list(pd.read_csv(config.FUND_PANEL).columns[1:])
@@ -255,7 +280,7 @@ def main() -> None:
             if not cands_tier:
                 continue
             if complement_mode:
-                sequence = greedy_complement_sequence(cands_tier)
+                sequence = greedy_complement_sequence(cands_tier, marginal_floor)
                 for k in range(MIN_STRATEGIES, min(len(sequence), MAX_STRATEGIES) + 1):
                     trial = sequence[:k]
                     merged = merge_stats(trial)
