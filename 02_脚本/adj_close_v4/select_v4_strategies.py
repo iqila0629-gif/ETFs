@@ -180,9 +180,32 @@ def formal_pass(stats: dict) -> bool:
     )
 
 
+def greedy_complement_sequence(cands: list[dict]) -> list[dict]:
+    anchor = max(cands, key=lambda s: s["strength"] * np.sqrt(s["full_trades"]))
+    seq = [anchor]
+    current = set(anchor["dates"])
+    for _ in range(MAX_STRATEGIES - 1):
+        best = None
+        best_gain = -1
+        for c in cands:
+            if c in seq:
+                continue
+            gain = len(c["dates"] - current)
+            if gain > best_gain or (gain == best_gain and best is not None and c["strength"] > best["strength"]):
+                best = c
+                best_gain = gain
+        if best is None or best_gain <= 0:
+            break
+        seq.append(best)
+        current |= best["dates"]
+    return seq
+
+
 def main() -> None:
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     config.V4_OUT.mkdir(parents=True, exist_ok=True)
+    complement_mode = "--complement" in sys.argv
+    suffix = "_complement" if complement_mode else "_density"
 
     master = s4.load_master()
     fund_cols = list(pd.read_csv(config.FUND_PANEL).columns[1:])
@@ -231,20 +254,31 @@ def main() -> None:
             ]
             if not cands_tier:
                 continue
-            score_order = sorted(cands_tier, key=lambda s: (-s["strength"] * np.sqrt(s["full_trades"]), s["condition"]))
-            trades_order = sorted(cands_tier, key=lambda s: (-s["full_trades"], s["condition"]))
-            frozen_order = sorted(cands_tier, key=lambda s: (-s["frozen_trades"], s["condition"]))
-            for order in [score_order, trades_order, frozen_order]:
-                for k in range(MIN_STRATEGIES, MAX_STRATEGIES + 1):
-                    trial = order[:k]
+            if complement_mode:
+                sequence = greedy_complement_sequence(cands_tier)
+                for k in range(MIN_STRATEGIES, min(len(sequence), MAX_STRATEGIES) + 1):
+                    trial = sequence[:k]
                     merged = merge_stats(trial)
                     if constraints_ok(merged, baseline, dfull, dfrozen):
                         selected = trial
                         selected_stats = merged
                         density_tier = (dfull, dfrozen)
                         break
-                if selected is not None:
-                    break
+            else:
+                score_order = sorted(cands_tier, key=lambda s: (-s["strength"] * np.sqrt(s["full_trades"]), s["condition"]))
+                trades_order = sorted(cands_tier, key=lambda s: (-s["full_trades"], s["condition"]))
+                frozen_order = sorted(cands_tier, key=lambda s: (-s["frozen_trades"], s["condition"]))
+                for order in [score_order, trades_order, frozen_order]:
+                    for k in range(MIN_STRATEGIES, MAX_STRATEGIES + 1):
+                        trial = order[:k]
+                        merged = merge_stats(trial)
+                        if constraints_ok(merged, baseline, dfull, dfrozen):
+                            selected = trial
+                            selected_stats = merged
+                            density_tier = (dfull, dfrozen)
+                            break
+                    if selected is not None:
+                        break
             if selected is not None:
                 break
         if selected is None:
@@ -312,9 +346,9 @@ def main() -> None:
     mapping = pd.DataFrame(mapping_rows)
     selection = pd.DataFrame(selection_rows)
     comparison = pd.DataFrame(comparison_rows)
-    mapping.to_csv(config.V4_OUT / "v4_strategy_mapping_density.csv", index=False)
-    selection.to_csv(config.V4_OUT / "v4_strategy_selection_density.csv", index=False)
-    comparison.to_csv(config.V4_OUT / "v4_conflict_rule_comparison_density.csv", index=False)
+    mapping.to_csv(config.V4_OUT / f"v4_strategy_mapping{suffix}.csv", index=False)
+    selection.to_csv(config.V4_OUT / f"v4_strategy_selection{suffix}.csv", index=False)
+    comparison.to_csv(config.V4_OUT / f"v4_conflict_rule_comparison{suffix}.csv", index=False)
     print("covered funds:", len(covered_tickers))
     print("selection constraints met:", int(selection["constraints_met"].sum()), "/", len(selection))
     print("avg strategies per fund:", round(selection["n_strategies"].mean(), 2))
