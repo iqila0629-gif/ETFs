@@ -225,7 +225,19 @@ def main() -> None:
     if "--avgfloor" in sys.argv:
         idx = sys.argv.index("--avgfloor")
         marginal_floor = float(sys.argv[idx + 1])
-    if complement_mode and marginal_floor is not None:
+    density_tiers = DENSITY_TIERS
+    if "--tiers" in sys.argv:
+        idx = sys.argv.index("--tiers")
+        density_tiers = [
+            tuple(int(x) for x in part.split(","))
+            for part in sys.argv[idx + 1].split(";")
+        ]
+    relax_count = "--maxk" in sys.argv
+    max_k = int(sys.argv[sys.argv.index("--maxk") + 1]) if relax_count else MAX_STRATEGIES
+    if "--tag" in sys.argv:
+        idx = sys.argv.index("--tag")
+        suffix = sys.argv[idx + 1]
+    elif complement_mode and marginal_floor is not None:
         suffix = f"_complement_m{int(marginal_floor * 100)}"
     elif complement_mode:
         suffix = "_complement"
@@ -272,7 +284,7 @@ def main() -> None:
         selected = None
         selected_stats = None
         density_tier = None
-        for dfull, dfrozen in DENSITY_TIERS:
+        for dfull, dfrozen in density_tiers:
             cands_tier = [
                 c for c in cands
                 if c["full_trades"] >= dfull and c["frozen_trades"] >= dfrozen
@@ -281,28 +293,33 @@ def main() -> None:
                 continue
             if complement_mode:
                 sequence = greedy_complement_sequence(cands_tier, marginal_floor)
-                for k in range(MIN_STRATEGIES, min(len(sequence), MAX_STRATEGIES) + 1):
+                best_found = None
+                for k in range(MIN_STRATEGIES, min(len(sequence), max_k) + 1):
                     trial = sequence[:k]
                     merged = merge_stats(trial)
                     if constraints_ok(merged, baseline, dfull, dfrozen):
-                        selected = trial
-                        selected_stats = merged
-                        density_tier = (dfull, dfrozen)
-                        break
+                        best_found = (trial, merged)
+                        if not relax_count:
+                            break
+                if best_found is not None:
+                    selected, selected_stats = best_found
+                    density_tier = (dfull, dfrozen)
             else:
                 score_order = sorted(cands_tier, key=lambda s: (-s["strength"] * np.sqrt(s["full_trades"]), s["condition"]))
                 trades_order = sorted(cands_tier, key=lambda s: (-s["full_trades"], s["condition"]))
                 frozen_order = sorted(cands_tier, key=lambda s: (-s["frozen_trades"], s["condition"]))
                 for order in [score_order, trades_order, frozen_order]:
-                    for k in range(MIN_STRATEGIES, MAX_STRATEGIES + 1):
+                    best_found = None
+                    for k in range(MIN_STRATEGIES, min(len(order), max_k) + 1):
                         trial = order[:k]
                         merged = merge_stats(trial)
                         if constraints_ok(merged, baseline, dfull, dfrozen):
-                            selected = trial
-                            selected_stats = merged
-                            density_tier = (dfull, dfrozen)
-                            break
-                    if selected is not None:
+                            best_found = (trial, merged)
+                            if not relax_count:
+                                break
+                    if best_found is not None:
+                        selected, selected_stats = best_found
+                        density_tier = (dfull, dfrozen)
                         break
             if selected is not None:
                 break
