@@ -3,6 +3,7 @@ Thumbs.db
 .DS_Store
 *.tmp
 *.log
+~$*
 
 # Python
 __pycache__/
@@ -23,6 +24,7 @@ venv/
 04_结果/v4_中间结果/v4_allmethods_combined_pass.csv
 04_结果/v4_中间结果/v4_with_*_combined_pass.csv
 04_结果/v4_中间结果/v4_final20_combined_pass.csv
+04_结果/v4_中间结果/v4_final20_v2_combined_pass.csv
 
 # Regenerable raw fund data (large, can be re-downloaded)
 04_结果/最新成果/数据/数据_原始/profunds/adj_close_nasdaq/*.json

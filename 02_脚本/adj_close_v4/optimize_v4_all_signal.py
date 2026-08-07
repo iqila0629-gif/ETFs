@@ -37,7 +37,7 @@ def main() -> None:
     all_etfs = {c for c in master.columns if c not in fund_set and c not in non_fund}
     dates = master["Date"].to_numpy()
 
-    pool = pd.read_csv(config.V4_OUT / "v4_final20_combined_pass.csv", keep_default_na=False)
+    pool = pd.read_csv(config.V4_FINAL20_COMBINED_PASS, keep_default_na=False)
     pool["full_avg"] = pd.to_numeric(pool["full_avg"], errors="coerce")
     pool = pool.drop_duplicates(["ticker", "condition", "horizon"], keep="first")
     target_cache: dict[tuple[str, int, bool], np.ndarray] = {}

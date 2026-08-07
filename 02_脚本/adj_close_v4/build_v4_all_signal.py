@@ -134,7 +134,7 @@ def main() -> None:
     dates_all = sorted(pd.to_datetime(dates), reverse=True)
     dates_frozen = [d for d in dates_all if d >= pd.Timestamp(CUTOFF)]
 
-    pool = pd.read_csv(config.V4_OUT / "v4_final20_combined_pass.csv", keep_default_na=False)
+    pool = pd.read_csv(config.V4_FINAL20_COMBINED_PASS, keep_default_na=False)
     pool = pool.drop_duplicates(["ticker", "condition", "horizon"], keep="first")
     name_map = pd.read_csv(config.MIDDLE / "通用" / "文件" / "基金名称映射.csv", keep_default_na=False)
     name_by_ticker = dict(zip(name_map["ticker"], name_map["name"]))

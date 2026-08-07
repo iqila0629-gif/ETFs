@@ -113,7 +113,7 @@ def build_company_workbook(
             "【策略命名规则】",
             "单条件：SPY_up / SPY_down / SPY_big_up / SPY_big_down / SPY_gt2 / SPY_lt-2 / SPY_bin_1_2。",
             "双条件：EEM_down_GDX_up 表示 EEM 跌且 GDX 涨。",
-            "三条件：FXY_up_up_down_GDX_QQQ 表示 FXY 涨、GDX 涨、QQQ 跌。",
+            "三条件：FXY_up_GDX_up_QQQ_down 表示 FXY 涨、GDX 涨、QQQ 跌，全部为且的关系。",
             "复合条件：combo_QQQ_down__self_big_down 表示 QQQ 跌且基金自身大跌。",
             "外部条件：ext_vix_chg_ge5 表示 VIX 当日变化 >=5%；ext_vix_close_ge25 表示 VIX 收盘 >=25。",
             "自身条件：self_3down 表示基金自身连续3日下跌。",
@@ -281,7 +281,7 @@ def main() -> None:
             "每支基金最多 3-5 条策略；策略合并口径为同日取 |全历史 Average| 最大者。",
             "【行列含义】数据 Sheet：每行一条策略。",
             "列含义：基金名称（代码）、策略序号、触发条件、预测窗口（日）、全历史平均回报（%）、全历史交易数、全历史命中率、冻结期平均回报（%）、冻结期交易数、冻结期命中率。",
-            "策略命名规则：单条件如 SPY_up；双条件如 EEM_down_GDX_up；三条件如 FXY_up_up_down_GDX_QQQ；复合条件如 combo_QQQ_down__self_big_down；外部条件如 ext_vix_chg_ge5；自身条件如 self_3down。",
+            "策略命名规则：单条件如 SPY_up；双条件如 EEM_down_GDX_up；三条件如 FXY_up_GDX_up_QQQ_down；复合条件如 combo_QQQ_down__self_big_down；外部条件如 ext_vix_chg_ge5；自身条件如 self_3down。",
         ],
     )
     ws2 = wb.create_sheet("数据")

@@ -143,7 +143,10 @@ def main() -> None:
                 & ((B > 0) if sb == 1 else (B < 0))
                 & ((C > 0) if sc == 1 else (C < 0))
             )
-            condition = f"{a}_{pattern_name}_{b}_{c}"
+            def sw(s: int) -> str:
+                return "up" if s == 1 else "down"
+
+            condition = f"{a}_{sw(sa)}_{b}_{sw(sb)}_{c}_{sw(sc)}"
             for horizon in HORIZONS:
                 target = targets[horizon]
                 valid = mask[:, None] & np.isfinite(target)
@@ -219,8 +222,8 @@ def main() -> None:
 
     stats_df = pd.DataFrame(summary_rows)
     pass_df = pd.DataFrame(pass_rows)
-    stats_path = config.V4_OUT / "v4_triple_scan_stats.csv"
-    pass_path = config.V4_OUT / "v4_triple_pass.csv"
+    stats_path = config.V4_TRIPLE_SCAN_STATS
+    pass_path = config.V4_TRIPLE_PASS
     if len(stats_df):
         stats_df.to_csv(stats_path, index=False)
     if len(pass_df):

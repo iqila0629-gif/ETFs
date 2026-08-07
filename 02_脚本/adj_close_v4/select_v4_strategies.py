@@ -38,6 +38,18 @@ def build_unified_mask(master: pd.DataFrame, condition: str, ticker: str, all_et
         except Exception:
             return s4.build_condition_mask(master, condition, ticker, all_etfs)
     tokens = condition.split("_")
+    if (
+        len(tokens) == 6
+        and tokens[0] in all_etfs
+        and tokens[2] in all_etfs
+        and tokens[4] in all_etfs
+        and set(tokens[1::2]) <= {"up", "down"}
+    ):
+        a, sa, b, sb, c, scc = tokens
+        ma = master[a] > 0 if sa == "up" else master[a] < 0
+        mb = master[b] > 0 if sb == "up" else master[b] < 0
+        mc = master[c] > 0 if scc == "up" else master[c] < 0
+        return ma & mb & mc
     if len(tokens) >= 6 and set(tokens[1:-2]) <= {"up", "down"}:
         a = tokens[0]
         pattern = "_".join(tokens[1:-2])
@@ -252,7 +264,7 @@ def main() -> None:
     all_etfs = {c for c in master.columns if c not in fund_set and c not in non_fund}
     dates = master["Date"].to_numpy()
 
-    pool = pd.read_csv(config.V4_OUT / "v4_final20_combined_pass.csv", keep_default_na=False)
+    pool = pd.read_csv(config.V4_FINAL20_COMBINED_PASS, keep_default_na=False)
     keep_cols = ["ticker", "fund_group", "source", "condition", "horizon",
                  "full_avg", "full_trades", "full_hit",
                  "frozen_avg", "frozen_trades", "frozen_hit"]

@@ -37,6 +37,11 @@ V3_PASS = MIDDLE / "全部ETF特有" / "v3_dual_criteria_pass.csv"
 PAIR_STRICT = MIDDLE / "通用" / "文件" / "pair_strict_pass.csv"
 V3_CANDIDATES_STATS = MIDDLE / "通用" / "文件" / "v3_candidates_stats.csv"
 
+V4_TRIPLE_PASS = V4_OUT / "v4_triple_pass_v2.csv"
+V4_TRIPLE_SCAN_STATS = V4_OUT / "v4_triple_scan_stats_v2.csv"
+V4_FINAL20_COMBINED_PASS = V4_OUT / "v4_final20_v2_combined_pass.csv"
+V4_FINAL20_BEST = V4_OUT / "v4_final20_v2_best_strategy.csv"
+
 THRESHOLD_GRID_FULL = [50, 80, 100, 120]
 THRESHOLD_GRID_FROZEN = [10, 15, 20, 30]
 RECOMMENDED_FULL_TRADES = 120

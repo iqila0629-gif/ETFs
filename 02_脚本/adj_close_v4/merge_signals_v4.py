@@ -47,7 +47,9 @@ def main() -> None:
     all_etfs = {c for c in master.columns if c not in fund_set and c not in non_fund}
     dates = master["Date"].to_numpy()
 
-    best_path = config.V4_OUT / "v4_final20_best_strategy.csv"
+    best_path = config.V4_FINAL20_BEST
+    if not best_path.exists():
+        best_path = config.V4_OUT / "v4_final20_best_strategy.csv"
     if not best_path.exists():
         best_path = config.V4_OUT / "v4_allmethods_best_strategy.csv"
     if not best_path.exists():
