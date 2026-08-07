@@ -95,18 +95,32 @@ def build_company_workbook(
     wb = Workbook()
     ws_note = wb.active
     ws_note.title = "说明"
+    ds = 14 + max_strat
+    de = ds + len(dates_desc) - 1
     write_note_sheet(
         ws_note,
         [
             f"版本：{title}",
-            "基金名下一行一条策略并用填充标注；数据区日期格子按当天生效策略填色，格子内为触发日对应窗口的实际回报（%）。",
-            "ETF外部示例：20 支 ETF + VIX/TNX 外部数据；ETF 名下方标注相关策略，触发策略的日期格子填色。",
-            "同一天多条策略触发时按 |全历史 Average| 最大者着色；颜色为基金/ETF 内部调色。",
+            "【行列含义】基金数据 Sheet：",
+            "1-12行：公司13行统计头（第1行空白；第2-10行=Hit Ratio/Up Count/Down Count/Average/Max/Min/Count/Std/Sum；第11-12行空白）。",
+            "第13行：列名；A列=日期，其余列=基金名称（代码）。",
+            f"第14-{13 + max_strat}行：策略色块行，每行一条策略并填色。",
+            f"第{ds}行起：数据行，日期降序；基金列中日期格子按当天生效策略填色，格子内=触发日对应窗口的实际回报（%），空白=未触发。",
+            "【行列含义】ETF外部示例 Sheet：",
+            "第13行：A列=日期，其余列=20支ETF + VIX_Chg% + TNX_ChgBp。",
+            f"第14-{13 + max_strat}行：ETF相关策略色块行。",
+            f"第{ds}行起：数据行；ETF列中触发策略的日期格子填色。",
+            "【策略命名规则】",
+            "单条件：SPY_up / SPY_down / SPY_big_up / SPY_big_down / SPY_gt2 / SPY_lt-2 / SPY_bin_1_2。",
+            "双条件：EEM_down_GDX_up 表示 EEM 跌且 GDX 涨。",
+            "三条件：FXY_up_up_down_GDX_QQQ 表示 FXY 涨、GDX 涨、QQQ 跌。",
+            "复合条件：combo_QQQ_down__self_big_down 表示 QQQ 跌且基金自身大跌。",
+            "外部条件：ext_vix_chg_ge5 表示 VIX 当日变化 >=5%；ext_vix_close_ge25 表示 VIX 收盘 >=25。",
+            "自身条件：self_3down 表示基金自身连续3日下跌。",
+            "预测窗口：horizon=N 表示未来 N 个交易日，多日回报取未来 N 日日平均。",
+            "同日多策略触发：按 |全历史 Average| 最大者着色；颜色为基金/ETF 内部调色。",
         ],
     )
-
-    ds = 14 + max_strat
-    de = ds + len(dates_desc) - 1
     headers = ["日期"] + [fund_labels[t] for t in fund_order]
     ws = wb.create_sheet("基金数据")
     write_stats_header(ws, headers, max_strat, ds, de)
@@ -204,7 +218,11 @@ def main() -> None:
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     config.V4_OUT.mkdir(parents=True, exist_ok=True)
     suffix = sys.argv[1] if len(sys.argv) > 1 else ""
-    delivery = config.RESULT_ROOT / f"v4_正式交付{suffix}"
+    outdir = None
+    if "--outdir" in sys.argv:
+        idx = sys.argv.index("--outdir")
+        outdir = sys.argv[idx + 1]
+    delivery = config.RESULT_ROOT / outdir if outdir else config.RESULT_ROOT / f"v4_正式交付{suffix}"
     delivery.mkdir(parents=True, exist_ok=True)
 
     master = s4.load_master()
@@ -257,7 +275,15 @@ def main() -> None:
     wb = Workbook()
     ws = wb.active
     ws.title = "说明"
-    write_note_sheet(ws, ["每支基金最多 3-5 条策略；策略合并口径为同日取 |全历史 Average| 最大者。"])
+    write_note_sheet(
+        ws,
+        [
+            "每支基金最多 3-5 条策略；策略合并口径为同日取 |全历史 Average| 最大者。",
+            "【行列含义】数据 Sheet：每行一条策略。",
+            "列含义：基金名称（代码）、策略序号、触发条件、预测窗口（日）、全历史平均回报（%）、全历史交易数、全历史命中率、冻结期平均回报（%）、冻结期交易数、冻结期命中率。",
+            "策略命名规则：单条件如 SPY_up；双条件如 EEM_down_GDX_up；三条件如 FXY_up_up_down_GDX_QQQ；复合条件如 combo_QQQ_down__self_big_down；外部条件如 ext_vix_chg_ge5；自身条件如 self_3down。",
+        ],
+    )
     ws2 = wb.create_sheet("数据")
     headers = ["基金名称（代码）", "策略序号", "触发条件", "预测窗口（日）", "全历史平均回报（%）",
                "全历史交易数", "全历史命中率", "冻结期平均回报（%）", "冻结期交易数", "冻结期命中率"]
@@ -288,7 +314,15 @@ def main() -> None:
     wb3 = Workbook()
     ws3 = wb3.active
     ws3.title = "说明"
-    write_note_sheet(ws3, ["最佳策略逐日明细：日期为触发日，实际回报为该策略对应窗口回报。"])
+    write_note_sheet(
+        ws3,
+        [
+            "最佳策略逐日明细：日期为触发日，实际回报为该策略对应窗口回报。",
+            "【行列含义】数据 Sheet：每行一次触发。",
+            "列含义：基金名称（代码）、触发条件、预测窗口（日）、日期、实际回报（%）。",
+            "日期格式：MM/DD/YYYY，降序。",
+        ],
+    )
     ws4 = wb3.create_sheet("数据")
     headers4 = ["基金名称（代码）", "触发条件", "预测窗口（日）", "日期", "实际回报（%）"]
     ws4.append(headers4)
