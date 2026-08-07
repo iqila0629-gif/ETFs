@@ -13,6 +13,7 @@ from openpyxl.utils import get_column_letter
 
 import config
 import scan_v4_thresholds as s4
+import scan_v4_conditions as sc
 from select_v4_strategies import signal_trades
 
 
@@ -90,6 +91,8 @@ def build_company_workbook(
     master: pd.DataFrame,
     all_etfs: set[str],
     etf_related: dict[str, list[tuple[str, str]]],
+    ext_columns: list[str],
+    ext_related: dict[str, list[tuple[str, str]]],
     title: str,
 ) -> None:
     wb = Workbook()
@@ -107,9 +110,9 @@ def build_company_workbook(
             f"第14-{13 + max_strat}行：策略色块行，每行一条策略并填色。",
             f"第{ds}行起：数据行，日期降序；基金列中日期格子按当天生效策略填色，格子内=触发日对应窗口的实际回报（%），空白=未触发。",
             "【行列含义】ETF外部示例 Sheet：",
-            "第13行：A列=日期，其余列=20支ETF + VIX_Chg% + TNX_ChgBp。",
-            f"第14-{13 + max_strat}行：ETF相关策略色块行。",
-            f"第{ds}行起：数据行；ETF列中触发策略的日期格子填色。",
+            "第13行：A列=日期，其余列=20支ETF + 相关外部数据列（VIX/TNX/派生指标等）。",
+            f"第14-{13 + max_strat}行：ETF/外部列相关策略色块行。",
+            f"第{ds}行起：数据行；ETF/外部列中触发策略的日期格子填色。",
             "【策略命名规则】",
             "单条件：SPY_up / SPY_down / SPY_big_up / SPY_big_down / SPY_gt2 / SPY_lt-2 / SPY_bin_1_2。",
             "双条件：EEM_down_GDX_up 表示 EEM 跌且 GDX 涨。",
@@ -163,7 +166,7 @@ def build_company_workbook(
         ws.column_dimensions[get_column_letter(c)].width = 24
     ws.freeze_panes = f"B{ds}"
 
-    etf_headers = ["日期"] + etf_cols + ["VIX_Chg%", "TNX_ChgBp"]
+    etf_headers = ["日期"] + etf_cols + ext_columns
     ws2 = wb.create_sheet("ETF外部示例")
     write_stats_header(ws2, etf_headers, max_strat, ds, de)
     for c_idx, code in enumerate(etf_cols, start=2):
@@ -172,9 +175,15 @@ def build_company_workbook(
             ws2.cell(row=14 + j, column=c_idx, value=cond).fill = PatternFill(
                 "solid", fgColor=fund_color(code, j)
             )
+    for c_idx, col in enumerate(ext_columns, start=2 + len(etf_cols)):
+        rel = ext_related.get(col, [])
+        for j, (_, cond) in enumerate(rel):
+            ws2.cell(row=14 + j, column=c_idx, value=cond).fill = PatternFill(
+                "solid", fgColor=fund_color(col, j)
+            )
     ext_map = {
-        "VIX_Chg%": dict(zip(pd.to_datetime(master["Date"]), master["VIX_Chg%"])),
-        "TNX_ChgBp": dict(zip(pd.to_datetime(master["Date"]), master["TNX_ChgBp"])),
+        col: dict(zip(pd.to_datetime(master["Date"]), master[col]))
+        for col in ext_columns
     }
     etf_value_map = {
         code: dict(zip(pd.to_datetime(master["Date"]), master[code])) for code in etf_cols
@@ -184,7 +193,7 @@ def build_company_workbook(
         for code in etf_cols:
             val = etf_value_map[code].get(d)
             row.append("" if val is None or pd.isna(val) else round(float(val), 4))
-        for col in ["VIX_Chg%", "TNX_ChgBp"]:
+        for col in ext_columns:
             val = ext_map[col].get(d)
             row.append("" if val is None or pd.isna(val) else round(float(val), 4))
         ws2.append(row)
@@ -202,6 +211,18 @@ def build_company_workbook(
                     best = (rec, j)
             if best:
                 cell.fill = PatternFill("solid", fgColor=fund_color(code, best[1]))
+        for c_idx, col in enumerate(ext_columns, start=2 + len(etf_cols)):
+            cell = ws2.cell(row=r, column=c_idx)
+            cell.border = border
+            if cell.value in (None, ""):
+                continue
+            best = None
+            for j, (t, cond) in enumerate(ext_related.get(col, [])):
+                rec = next((x for x in trade_data[t] if x["condition"] == cond), None)
+                if rec is not None and d in rec["dates"] and (best is None or rec["strength"] > best[0]["strength"]):
+                    best = (rec, j)
+            if best:
+                cell.fill = PatternFill("solid", fgColor=fund_color(col, best[1]))
         for c_idx in range(2 + len(etf_cols), len(etf_headers) + 1):
             ws2.cell(row=r, column=c_idx).border = border
     style_header_block(ws2, len(etf_headers), max_strat)
@@ -244,6 +265,14 @@ def main() -> None:
     target_cache: dict[tuple[str, int, bool], np.ndarray] = {}
     trade_data: dict[str, list[dict]] = {}
     etf_related: dict[str, list[tuple[str, str]]] = {c: [] for c in all_etfs}
+    ext_related: dict[str, list[tuple[str, str]]] = {}
+
+    def ext_part_to_col(part: str) -> str | None:
+        for safe, col in sc.EXTERNAL_COLS.items():
+            if part.startswith(f"ext_{safe}_"):
+                return col
+        return None
+
     for ticker, grp in mapping.groupby("ticker", sort=True):
         recs = []
         for r in grp.sort_values("strategy_no").itertuples(index=False):
@@ -256,20 +285,36 @@ def main() -> None:
                 tokens = {t for t in str(r.condition).split("_") if t in all_etfs}
                 for code in tokens:
                     etf_related[code].append((ticker, str(r.condition)))
+                parts = (
+                    str(r.condition).split("__")
+                    if "__" in str(r.condition)
+                    else [str(r.condition)]
+                )
+                for part in parts:
+                    col = ext_part_to_col(part)
+                    if col is not None:
+                        ext_related.setdefault(col, []).append((ticker, str(r.condition)))
         trade_data[ticker] = recs
     max_strat = mapping.groupby("ticker").size().max()
     etf_cols = sorted(all_etfs)
+    ext_order = [
+        "VIX_Close", "VIX_Chg%", "VIX_5dChg", "VIX_20dVol",
+        "TNX_Yield", "TNX_ChgBp", "CreditSpread", "JNKSpread",
+        "StkBonCorr", "USDGoldRatio", "SectRotation", "VIX_TNX_Ratio",
+        "YldCurveProxy",
+    ]
+    ext_columns = [c for c in ext_order if c in ext_related or c in ("VIX_Chg%", "TNX_ChgBp")]
     print("funds", len(fund_order), "max strategies", max_strat, "etfs", len(etf_cols), flush=True)
 
     build_company_workbook(
         delivery / "v4_公司格式_最佳策略_全历史.xlsx",
         dates_all, fund_order, fund_labels, trade_data, max_strat,
-        etf_cols, master, all_etfs, etf_related, "最佳策略 · 全历史",
+        etf_cols, master, all_etfs, etf_related, ext_columns, ext_related, "最佳策略 · 全历史",
     )
     build_company_workbook(
         delivery / "v4_公司格式_最佳策略_冻结期.xlsx",
         dates_frozen, fund_order, fund_labels, trade_data, max_strat,
-        etf_cols, master, all_etfs, etf_related, "最佳策略 · 冻结期 2025-2026",
+        etf_cols, master, all_etfs, etf_related, ext_columns, ext_related, "最佳策略 · 冻结期 2025-2026",
     )
 
     wb = Workbook()
