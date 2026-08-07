@@ -37,7 +37,7 @@ def fund_color(ticker: str, idx: int) -> str:
 
 
 def write_note_sheet(ws, lines: list[str]) -> None:
-    ws["A1"] = "v4 正式交付说明"
+    ws["A1"] = "正式交付说明"
     ws["A1"].font = title_font
     for i, line in enumerate(lines, start=3):
         ws.cell(row=i, column=1, value=line)
