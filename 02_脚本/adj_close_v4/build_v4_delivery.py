@@ -203,7 +203,8 @@ def build_company_workbook(
 def main() -> None:
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     config.V4_OUT.mkdir(parents=True, exist_ok=True)
-    delivery = config.RESULT_ROOT / "v4_正式交付"
+    suffix = sys.argv[1] if len(sys.argv) > 1 else ""
+    delivery = config.RESULT_ROOT / f"v4_正式交付{suffix}"
     delivery.mkdir(parents=True, exist_ok=True)
 
     master = s4.load_master()
@@ -216,7 +217,7 @@ def main() -> None:
     dates_all = sorted(pd.to_datetime(dates), reverse=True)
     dates_frozen = [d for d in dates_all if d >= pd.Timestamp(CUTOFF)]
 
-    mapping = pd.read_csv(config.V4_OUT / "v4_strategy_mapping.csv", keep_default_na=False)
+    mapping = pd.read_csv(config.V4_OUT / f"v4_strategy_mapping{suffix}.csv", keep_default_na=False)
     name_map = pd.read_csv(config.MIDDLE / "通用" / "文件" / "基金名称映射.csv", keep_default_na=False)
     name_by_ticker = dict(zip(name_map["ticker"], name_map["name"]))
     fund_order = sorted(mapping["ticker"].unique())

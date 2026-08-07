@@ -18,6 +18,7 @@ FROZEN_MIN = config.RECOMMENDED_FROZEN_TRADES
 MAX_STRATEGIES = 5
 MIN_STRATEGIES = 3
 CANDIDATE_LIMIT = 60
+DENSITY_TIERS = [(200, 40), (160, 35), (120, 30)]
 TRIPLE_PATTERNS = {
     "up_up_up": (1, 1, 1),
     "down_down_down": (-1, -1, -1),
@@ -156,14 +157,14 @@ def rule_stats(selected: list[dict], rule: str) -> dict | None:
     }
 
 
-def constraints_ok(merged: dict, baseline: dict) -> bool:
+def constraints_ok(merged: dict, baseline: dict, density_full: int, density_frozen: int) -> bool:
     return bool(
         abs(merged["full_avg"]) >= max(0.9 * abs(baseline["full_avg"]), 0.2)
         and merged["full_hit"] >= baseline["full_hit"] - 0.03
-        and merged["full_trades"] >= FULL_MIN
+        and merged["full_trades"] >= density_full
         and abs(merged["frozen_avg"]) >= max(0.9 * abs(baseline["frozen_avg"]), 0.2)
         and merged["frozen_hit"] >= baseline["frozen_hit"] - 0.03
-        and merged["frozen_trades"] >= FROZEN_MIN
+        and merged["frozen_trades"] >= density_frozen
     )
 
 
@@ -218,26 +219,38 @@ def main() -> None:
         if not cands:
             continue
         baseline = merge_stats(cands)
-        score_order = sorted(cands, key=lambda s: (-s["strength"] * np.sqrt(s["full_trades"]), s["condition"]))
-        trades_order = sorted(cands, key=lambda s: (-s["full_trades"], s["condition"]))
-        frozen_order = sorted(cands, key=lambda s: (-s["frozen_trades"], s["condition"]))
-        orders = [score_order, trades_order, frozen_order]
+        score_order_all = sorted(cands, key=lambda s: (-s["strength"] * np.sqrt(s["full_trades"]), s["condition"]))
 
         selected = None
         selected_stats = None
-        for order in orders:
-            for k in range(MIN_STRATEGIES, MAX_STRATEGIES + 1):
-                trial = order[:k]
-                merged = merge_stats(trial)
-                if constraints_ok(merged, baseline):
-                    selected = trial
-                    selected_stats = merged
+        density_tier = None
+        for dfull, dfrozen in DENSITY_TIERS:
+            cands_tier = [
+                c for c in cands
+                if c["full_trades"] >= dfull and c["frozen_trades"] >= dfrozen
+            ]
+            if not cands_tier:
+                continue
+            score_order = sorted(cands_tier, key=lambda s: (-s["strength"] * np.sqrt(s["full_trades"]), s["condition"]))
+            trades_order = sorted(cands_tier, key=lambda s: (-s["full_trades"], s["condition"]))
+            frozen_order = sorted(cands_tier, key=lambda s: (-s["frozen_trades"], s["condition"]))
+            for order in [score_order, trades_order, frozen_order]:
+                for k in range(MIN_STRATEGIES, MAX_STRATEGIES + 1):
+                    trial = order[:k]
+                    merged = merge_stats(trial)
+                    if constraints_ok(merged, baseline, dfull, dfrozen):
+                        selected = trial
+                        selected_stats = merged
+                        density_tier = (dfull, dfrozen)
+                        break
+                if selected is not None:
                     break
             if selected is not None:
                 break
         if selected is None:
-            selected = [score_order[0]]
+            selected = [score_order_all[0]]
             selected_stats = merge_stats(selected)
+            density_tier = (FULL_MIN, FROZEN_MIN)
             met = formal_pass(selected_stats)
         else:
             met = True
@@ -257,6 +270,8 @@ def main() -> None:
                     "frozen_avg": s["frozen_avg"],
                     "frozen_trades": s["frozen_trades"],
                     "frozen_hit": s["frozen_hit"],
+                    "density_full": density_tier[0],
+                    "density_frozen": density_tier[1],
                 }
             )
         selection_rows.append(
@@ -276,6 +291,8 @@ def main() -> None:
                 "sel_frozen_avg": selected_stats["frozen_avg"],
                 "sel_frozen_trades": selected_stats["frozen_trades"],
                 "sel_frozen_hit": selected_stats["frozen_hit"],
+                "density_full_req": density_tier[0],
+                "density_frozen_req": density_tier[1],
             }
         )
         for rule in ["R4_strongest", "majority_vote", "priority_score", "weighted"]:
@@ -295,9 +312,9 @@ def main() -> None:
     mapping = pd.DataFrame(mapping_rows)
     selection = pd.DataFrame(selection_rows)
     comparison = pd.DataFrame(comparison_rows)
-    mapping.to_csv(config.V4_OUT / "v4_strategy_mapping.csv", index=False)
-    selection.to_csv(config.V4_OUT / "v4_strategy_selection.csv", index=False)
-    comparison.to_csv(config.V4_OUT / "v4_conflict_rule_comparison.csv", index=False)
+    mapping.to_csv(config.V4_OUT / "v4_strategy_mapping_density.csv", index=False)
+    selection.to_csv(config.V4_OUT / "v4_strategy_selection_density.csv", index=False)
+    comparison.to_csv(config.V4_OUT / "v4_conflict_rule_comparison_density.csv", index=False)
     print("covered funds:", len(covered_tickers))
     print("selection constraints met:", int(selection["constraints_met"].sum()), "/", len(selection))
     print("avg strategies per fund:", round(selection["n_strategies"].mean(), 2))
