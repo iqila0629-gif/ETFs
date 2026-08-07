@@ -14,6 +14,9 @@ venv/
 # Local-only credentials / config
 *.local
 
+# v4: delivery package prepared for compression / sending
+最新结果/
+
 # v4: extended ETF backup is not part of active modeling data
 04_结果/备份/
 
