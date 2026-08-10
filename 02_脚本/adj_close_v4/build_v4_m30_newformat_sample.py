@@ -357,12 +357,12 @@ def main() -> None:
         base_headers += [""]
     for e in ETF_ALL:
         base_headers += [f"{e}回报"]
-        if e in ("GDX", "XLC"):
-            base_headers += [""]
+    base_headers += [""]
     for e in EXT_RAW_COLS:
         base_headers += [e]
     base_headers += ["VIX回报"]
     base_headers += EXT_COLS_USED
+    base_headers += [""]
 
     col_idx = 2
     blank_cols: set[int] = set()
@@ -392,8 +392,7 @@ def main() -> None:
         blank_cols.add(col_idx); col_idx += 1
     for e in ETF_ALL:
         etf_return_col[e] = get_column_letter(col_idx); col_idx += 1
-        if e in ("GDX", "XLC"):
-            blank_cols.add(col_idx); col_idx += 1
+    blank_cols.add(col_idx); col_idx += 1
     ext_price_col = {}
     ext_return_col = {}
     for e in EXT_RAW_COLS:
@@ -402,6 +401,7 @@ def main() -> None:
     ext_col = {}
     for e in EXT_COLS_USED:
         ext_col[e] = get_column_letter(col_idx); col_idx += 1
+    blank_cols.add(col_idx); col_idx += 1
     colmap = {**fund_return_col, **etf_return_col, **ext_col}
 
     per_fund = {t: list(strat[t]["condition"]) for t in FUNDS}
@@ -431,7 +431,7 @@ def main() -> None:
             "   VIX_Close 的回报率公式相同；VIX_Chg% 为外部涨跌幅列，可与计算值核对。",
             "   ETF 原始数据列为 Open/High/Low/Close/Adj Close/Volume，回报率由 Adj Close 计算；",
             "   第14行为区块名称行（如EEM），第15行为列头；ETF列头不重复ETF名。",
-            "   表内按区块排列：基金区、每支ETF、ETF区结束后均用空白列分隔；外部 VIX→回报。",
+            "   表内按区块排列：基金区、每支ETF、ETF区、VIX区结束后均用空白列分隔。",
             "   所有回报率均以百分比显示并保留4位小数（公式 ROUND 到4位，显示格式 0.0000%）。",
             "3. 策略公式",
             "   =IF(条件, 该基金次日实际回报, \"\")",
@@ -536,14 +536,14 @@ def main() -> None:
             row.append("")
         for e in ETF_ALL:
             row.append("")
-            if e in ("GDX", "XLC"):
-                row.append("")
+        row.append("")
         for e in EXT_RAW_COLS:
             row.append(round(ext_val[e].get(d, float("nan")), 4))
         for e in EXT_RAW_COLS:
             row.append("")
         for e in EXT_COLS_USED:
             row.append(round(ext_val[e].get(d, float("nan")), 4))
+        row.append("")
         ws.append(row)
         for pcol, rcol in zip(price_cols, ret_cols):
             if i < len(dates_all) - 1:
