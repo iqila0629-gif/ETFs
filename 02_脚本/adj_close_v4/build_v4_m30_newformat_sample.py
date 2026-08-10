@@ -311,14 +311,23 @@ def load_fund_adj(ticker: str) -> dict:
     return out
 
 
-def load_etf_adj(ticker: str) -> dict:
+def load_etf_ohlc(ticker: str) -> dict:
     if ticker == "XLC":
         p = config.RESULT_ROOT / "最新成果" / "数据" / "数据_原始" / "etfs_extended" / "XLC.csv"
     else:
         p = config.RESULT_ROOT / "最新成果" / "数据" / "数据_原始" / "etfs" / f"{ticker}_historical.csv"
     df = pd.read_csv(p)
     df["Date"] = pd.to_datetime(df["Date"], format="%m/%d/%Y")
-    return dict(zip(df["Date"], df["Adj Close"]))
+    out = {}
+    for rec in df.to_dict("records"):
+        out[rec["Date"]] = {
+            "open": float(rec["Open"]),
+            "high": float(rec["High"]),
+            "low": float(rec["Low"]),
+            "close": float(rec["Close"]),
+            "adj": float(rec["Adj Close"]),
+        }
+    return out
 
 
 def main() -> None:
@@ -340,7 +349,7 @@ def main() -> None:
     for t in FUNDS:
         base_headers += [f"{fund_label[t]} Adj Close", f"{fund_label[t]}回报"]
     for e in ETF_ALL:
-        base_headers += [f"{e} Adj Close", f"{e}回报"]
+        base_headers += [f"{e} Open", f"{e} High", f"{e} Low", f"{e} Close", f"{e} Adj Close", f"{e}回报"]
     for e in EXT_RAW_COLS:
         base_headers += [e, "VIX回报"]
     base_headers += EXT_COLS_USED
@@ -351,10 +360,18 @@ def main() -> None:
     for t in FUNDS:
         fund_price_col[t] = get_column_letter(col_idx); col_idx += 1
         fund_return_col[t] = get_column_letter(col_idx); col_idx += 1
-    etf_price_col = {}
+    etf_open_col = {}
+    etf_high_col = {}
+    etf_low_col = {}
+    etf_close_col = {}
+    etf_adj_col = {}
     etf_return_col = {}
     for e in ETF_ALL:
-        etf_price_col[e] = get_column_letter(col_idx); col_idx += 1
+        etf_open_col[e] = get_column_letter(col_idx); col_idx += 1
+        etf_high_col[e] = get_column_letter(col_idx); col_idx += 1
+        etf_low_col[e] = get_column_letter(col_idx); col_idx += 1
+        etf_close_col[e] = get_column_letter(col_idx); col_idx += 1
+        etf_adj_col[e] = get_column_letter(col_idx); col_idx += 1
         etf_return_col[e] = get_column_letter(col_idx); col_idx += 1
     ext_price_col = {}
     ext_return_col = {}
@@ -391,6 +408,8 @@ def main() -> None:
             "   B15 是今日 Adj Close，B16 是前一交易日 Adj Close；",
             "   COUNT 判断两天价格都存在才计算当日回报率，否则留空，避免 #DIV/0!。",
             "   VIX_Close 的回报率公式相同；VIX_Chg% 为外部涨跌幅列，可与计算值核对。",
+            "   ETF 原始数据列为 Open/High/Low/Close/Adj Close，回报率由 Adj Close 计算；",
+            "   所有回报率均以百分比显示并保留4位小数。",
             "3. 策略公式",
             "   =IF(条件, 该基金次日实际回报, \"\")",
             "   条件引用回报率列和阈值参数；满足条件时显示次日实际回报（日期降序，次日=上一行）。",
@@ -431,7 +450,7 @@ def main() -> None:
         ws[f"{col}10"] = f"=SUM({col}{ds}:{col}{de})"
 
     fund_adj = {t: load_fund_adj(t) for t in FUNDS}
-    etf_adj = {e: load_etf_adj(e) for e in ETF_ALL}
+    etf_ohlc = {e: load_etf_ohlc(e) for e in ETF_ALL}
     ext_val = {e: dict(zip(pd.to_datetime(master["Date"]), master[e])) for e in EXT_RAW_COLS + EXT_COLS_USED}
 
     merged_idx = {}
@@ -466,7 +485,7 @@ def main() -> None:
             if len(values) > 2:
                 strategy_thr_refs[c_idx].append(f"${col}$11")
 
-    price_cols = [fund_price_col[t] for t in FUNDS] + [etf_price_col[e] for e in ETF_ALL] + [ext_price_col[e] for e in EXT_RAW_COLS]
+    price_cols = [fund_price_col[t] for t in FUNDS] + [etf_adj_col[e] for e in ETF_ALL] + [ext_price_col[e] for e in EXT_RAW_COLS]
     ret_cols = [fund_return_col[t] for t in FUNDS] + [etf_return_col[e] for e in ETF_ALL] + [ext_return_col[e] for e in EXT_RAW_COLS]
 
     for i, d in enumerate(dates_all):
@@ -476,7 +495,12 @@ def main() -> None:
             row.append(round(fund_adj[t].get(d, float("nan")), 4))
             row.append("")
         for e in ETF_ALL:
-            row.append(round(etf_adj[e].get(d, float("nan")), 4))
+            rec = etf_ohlc[e].get(d, {})
+            row.append(round(rec.get("open", float("nan")), 4))
+            row.append(round(rec.get("high", float("nan")), 4))
+            row.append(round(rec.get("low", float("nan")), 4))
+            row.append(round(rec.get("close", float("nan")), 4))
+            row.append(round(rec.get("adj", float("nan")), 4))
             row.append("")
         for e in EXT_RAW_COLS:
             row.append(round(ext_val[e].get(d, float("nan")), 4))
@@ -505,6 +529,19 @@ def main() -> None:
             for col in reversed(cols[:-1]):
                 expr = f"IF({col}{r}<>\"\",{col}{r},{expr})"
             ws.cell(row=r, column=merged_idx[t], value=f"={expr}")
+
+    pct_cols = (
+        list(fund_return_col.values())
+        + list(etf_return_col.values())
+        + list(ext_return_col.values())
+        + list(ext_col.values())
+    )
+    for t in FUNDS:
+        pct_cols += [get_column_letter(c) for c in strat_cols[t]]
+        pct_cols.append(get_column_letter(merged_idx[t]))
+    for r in range(ds, de + 1):
+        for col in pct_cols:
+            ws[f"{col}{r}"].number_format = "0.0000"
 
     for r in range(2, 11):
         ws.cell(row=r, column=1).font = head_font
