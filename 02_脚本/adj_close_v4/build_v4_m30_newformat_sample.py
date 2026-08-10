@@ -25,7 +25,6 @@ WINDOW_DAYS = 60
 thin = Side(style="thin", color="BFBFBF")
 border = Border(left=thin, right=thin, top=thin, bottom=thin)
 header_fill = PatternFill("solid", fgColor="F2F2F2")
-param_fill = PatternFill("solid", fgColor="FFF2CC")
 title_font = Font(name="Arial", size=14, bold=True)
 head_font = Font(name="Arial", size=9, bold=True)
 body_font = Font(name="Arial", size=9)
@@ -408,8 +407,8 @@ def main() -> None:
             parts = condition_parts(condition, colmap)
             values = [part_threshold(p) for p in parts]
             col = get_column_letter(c_idx)
-            ws.cell(row=11, column=c_idx, value=values[0]).fill = param_fill
-            ws.cell(row=12, column=c_idx, value=values[1] if len(values) > 1 else values[0]).fill = param_fill
+            ws.cell(row=11, column=c_idx, value=values[0])
+            ws.cell(row=12, column=c_idx, value=values[1] if len(values) > 1 else values[0])
             ws.cell(row=11, column=c_idx).font = body_font
             ws.cell(row=12, column=c_idx).font = body_font
             strategy_thr_refs[c_idx] = [f"${col}$11"] + [f"${col}$12"] * (len(parts) - 1)
