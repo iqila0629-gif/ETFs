@@ -30,37 +30,34 @@ title_font = Font(name="Arial", size=14, bold=True)
 head_font = Font(name="Arial", size=9, bold=True)
 body_font = Font(name="Arial", size=9)
 
-THR = {}
-
-
-def etf_cond_expr(tokens: list[str], row: int, colmap: dict[str, str]) -> str:
+def etf_cond_expr(tokens: list[str], row: int, colmap: dict[str, str], thr_ref: str) -> str:
     etf = tokens[0]
     suffix = "_".join(tokens[1:])
     col = colmap[etf]
     if suffix == "up":
-        return f"{col}{row}>{THR['etf_updown']}"
+        return f"{col}{row}>{thr_ref}"
     if suffix == "down":
-        return f"{col}{row}<{THR['etf_updown']}"
+        return f"{col}{row}<{thr_ref}"
     if suffix == "big_up":
-        return f"{col}{row}>={THR['etf_big_up']}"
+        return f"{col}{row}>={thr_ref}"
     if suffix == "big_down":
-        return f"{col}{row}<={THR['etf_big_down']}"
+        return f"{col}{row}<={thr_ref}"
     if suffix == "gt2":
-        return f"{col}{row}>{THR['etf_gt2']}"
+        return f"{col}{row}>{thr_ref}"
     if suffix == "lt-2":
-        return f"{col}{row}<{THR['etf_lt2']}"
+        return f"{col}{row}<{thr_ref}"
     if suffix.startswith("bin_"):
         band = suffix[4:]
         if band == "gt2":
-            return f"{col}{row}>{THR['etf_gt2']}"
+            return f"{col}{row}>{thr_ref}"
         if band == "lt-2":
-            return f"{col}{row}<{THR['etf_lt2']}"
+            return f"{col}{row}<{thr_ref}"
         lo, hi = (float(x) for x in band.split("_"))
         return f"AND({col}{row}>{lo},{col}{row}<={hi})"
     raise ValueError(suffix)
 
 
-def ext_cond_expr(part: str, row: int, colmap: dict[str, str]) -> str:
+def ext_cond_expr(part: str, row: int, colmap: dict[str, str], thr_ref: str) -> str:
     import scan_v4_conditions as sc
     for safe, col_name in sc.EXTERNAL_COLS.items():
         prefix = f"ext_{safe}_"
@@ -68,60 +65,104 @@ def ext_cond_expr(part: str, row: int, colmap: dict[str, str]) -> str:
             op = part[len(prefix):]
             col = colmap[col_name]
             if op == "up":
-                return f"{col}{row}>{THR['ext_updown']}"
+                return f"{col}{row}>{thr_ref}"
             if op == "down":
-                return f"{col}{row}<{THR['ext_updown']}"
-            threshold = float(op[2:].replace("_", "."))
+                return f"{col}{row}<{thr_ref}"
             if op.startswith("ge"):
-                return f"{col}{row}>={threshold}"
-            return f"{col}{row}<={threshold}"
+                return f"{col}{row}>={thr_ref}"
+            return f"{col}{row}<={thr_ref}"
     raise ValueError(part)
 
 
-def self_cond_expr(suffix: str, fund_col: str, row: int) -> str:
+def self_cond_expr(suffix: str, fund_col: str, row: int, thr_ref: str) -> str:
     if suffix == "up":
-        return f"{fund_col}{row}>{THR['etf_updown']}"
+        return f"{fund_col}{row}>{thr_ref}"
     if suffix == "down":
-        return f"{fund_col}{row}<{THR['etf_updown']}"
+        return f"{fund_col}{row}<{thr_ref}"
     if suffix == "big_up":
-        return f"{fund_col}{row}>={THR['fund_big_up']}"
+        return f"{fund_col}{row}>={thr_ref}"
     if suffix == "big_down":
-        return f"{fund_col}{row}<={THR['fund_big_down']}"
+        return f"{fund_col}{row}<={thr_ref}"
     if suffix in ("3up", "3down", "5up", "5down"):
         n = int(suffix[0])
         sign = ">" if suffix.endswith("up") else "<"
-        parts = [f"{fund_col}{row - k}{sign}{THR['etf_updown']}" for k in range(n)]
+        parts = [f"{fund_col}{row - k}{sign}{thr_ref}" for k in range(n)]
         return "AND(" + ",".join(parts) + ")"
     raise ValueError(suffix)
 
 
-def part_expr(part: str, ticker: str, row: int, colmap: dict[str, str], fund_col: str) -> str:
+def part_expr(part: str, ticker: str, row: int, colmap: dict[str, str], fund_col: str, thr_ref: str) -> str:
     if part.startswith("ext_"):
-        return ext_cond_expr(part, row, colmap)
+        return ext_cond_expr(part, row, colmap, thr_ref)
     if part.startswith("self_"):
-        return self_cond_expr(part.removeprefix("self_"), fund_col, row)
-    return etf_cond_expr(part.split("_"), row, colmap)
+        return self_cond_expr(part.removeprefix("self_"), fund_col, row, thr_ref)
+    return etf_cond_expr(part.split("_"), row, colmap, thr_ref)
 
 
-def condition_expr(condition: str, ticker: str, row: int, colmap: dict[str, str], fund_col: str) -> str:
+def condition_parts(condition: str, colmap: dict[str, str]) -> list[str]:
     if condition.startswith("combo_"):
-        parts = condition[len("combo_"):].split("__")
-        return "AND(" + ",".join(part_expr(p, ticker, row, colmap, fund_col) for p in parts) + ")"
+        return condition[len("combo_"):].split("__")
     if condition.startswith("ext_") or condition.startswith("self_"):
-        return part_expr(condition, ticker, row, colmap, fund_col)
+        return [condition]
     tokens = condition.split("_")
     if len(tokens) == 6 and tokens[0] in colmap and tokens[2] in colmap and tokens[4] in colmap:
-        a, da, b, db, c, dc = tokens
-        ea = ">" if da == "up" else "<"
-        eb = ">" if db == "up" else "<"
-        ec = ">" if dc == "up" else "<"
-        return f"AND({colmap[a]}{row}{ea}{THR['etf_updown']},{colmap[b]}{row}{eb}{THR['etf_updown']},{colmap[c]}{row}{ec}{THR['etf_updown']})"
+        return ["_".join(tokens[0:2]), "_".join(tokens[2:4]), "_".join(tokens[4:6])]
     if len(tokens) == 4 and tokens[0] in colmap and tokens[2] in colmap:
-        a, da, b, db = tokens
-        ea = ">" if da == "up" else "<"
-        eb = ">" if db == "up" else "<"
-        return f"AND({colmap[a]}{row}{ea}{THR['etf_updown']},{colmap[b]}{row}{eb}{THR['etf_updown']})"
-    return etf_cond_expr(tokens, row, colmap)
+        return ["_".join(tokens[0:2]), "_".join(tokens[2:4])]
+    return [condition]
+
+
+def part_threshold(part: str) -> float:
+    if part.startswith("ext_"):
+        import scan_v4_conditions as sc
+        for safe, col_name in sc.EXTERNAL_COLS.items():
+            prefix = f"ext_{safe}_"
+            if part.startswith(prefix):
+                op = part[len(prefix):]
+                if op in ("up", "down"):
+                    return 0.0
+                return float(op[2:].replace("_", "."))
+        raise ValueError(part)
+    if part.startswith("self_"):
+        suffix = part.removeprefix("self_")
+        if suffix in ("up", "down", "3up", "3down", "5up", "5down"):
+            return 0.0
+        if suffix == "big_up":
+            return 2.0
+        if suffix == "big_down":
+            return -2.0
+        raise ValueError(suffix)
+    tokens = part.split("_")
+    suffix = "_".join(tokens[1:])
+    if suffix in ("up", "down"):
+        return 0.0
+    if suffix == "big_up":
+        return 1.0
+    if suffix == "big_down":
+        return -1.0
+    if suffix == "gt2":
+        return 2.0
+    if suffix == "lt-2":
+        return -2.0
+    raise ValueError(suffix)
+
+
+def condition_expr(
+    condition: str,
+    ticker: str,
+    row: int,
+    colmap: dict[str, str],
+    fund_col: str,
+    thr_refs: list[str],
+) -> str:
+    parts = condition_parts(condition, colmap)
+    exprs = [
+        part_expr(p, ticker, row, colmap, fund_col, ref)
+        for p, ref in zip(parts, thr_refs)
+    ]
+    if len(exprs) == 1:
+        return exprs[0]
+    return "AND(" + ",".join(exprs) + ")"
 
 
 def etf_label(tokens: list[str]) -> str:
@@ -312,7 +353,7 @@ def main() -> None:
             "   =IF(策略1<>\"\",策略1,IF(策略2<>\"\",策略2,策略3))",
             "   同一天多条策略触发时，历史 |Average| 最大的策略生效；全部未触发则留空。",
             "5. 阈值参数",
-            "   第11/12行为阈值参数区，修改第12行数值可调整条件阈值，公式自动更新。",
+            "   每个策略列正上方的第11/12行是该策略条件阈值，修改数字可调整条件，公式自动更新。",
         ],
         start=3,
     ):
@@ -341,29 +382,6 @@ def main() -> None:
         ws[f"{col}9"] = f"=STDEV({col}{ds}:{col}{de})"
         ws[f"{col}10"] = f"=SUM({col}{ds}:{col}{de})"
 
-    # threshold parameter block in rows 11-12
-    param_start = n_cols + 2
-    params = [
-        ("ETF/基金 涨跌阈值", 0, "etf_updown"),
-        ("ETF 大涨阈值", 1, "etf_big_up"),
-        ("ETF 大跌阈值", -1, "etf_big_down"),
-        ("ETF >2% 阈值", 2, "etf_gt2"),
-        ("ETF <-2% 阈值", -2, "etf_lt2"),
-        ("基金 大涨阈值", 2, "fund_big_up"),
-        ("基金 大跌阈值", -2, "fund_big_down"),
-        ("外部 涨跌阈值", 0, "ext_updown"),
-    ]
-    ws.cell(row=11, column=n_cols + 1, value="阈值参数（修改第12行数值可调整条件）").font = head_font
-    for j, (label, value, key) in enumerate(params):
-        c = param_start + j
-        col = get_column_letter(c)
-        ws.cell(row=11, column=c, value=label).font = body_font
-        ws.cell(row=11, column=c).fill = param_fill
-        cell = ws.cell(row=12, column=c, value=value)
-        cell.fill = param_fill
-        cell.font = body_font
-        THR[key] = f"${col}$12"
-
     fund_adj = {t: load_fund_adj(t) for t in FUNDS}
     etf_adj = {e: load_etf_adj(e) for e in ETF_ALL}
     ext_val = {e: dict(zip(pd.to_datetime(master["Date"]), master[e])) for e in EXT_COLS_USED}
@@ -383,6 +401,18 @@ def main() -> None:
             cur += 1
         strat_cols[t] = cols
         cur += 1
+
+    strategy_thr_refs: dict[int, list[str]] = {}
+    for t in FUNDS:
+        for c_idx, condition in zip(strat_cols[t], per_fund[t]):
+            parts = condition_parts(condition, colmap)
+            values = [part_threshold(p) for p in parts]
+            col = get_column_letter(c_idx)
+            ws.cell(row=11, column=c_idx, value=values[0]).fill = param_fill
+            ws.cell(row=12, column=c_idx, value=values[1] if len(values) > 1 else values[0]).fill = param_fill
+            ws.cell(row=11, column=c_idx).font = body_font
+            ws.cell(row=12, column=c_idx).font = body_font
+            strategy_thr_refs[c_idx] = [f"${col}$11"] + [f"${col}$12"] * (len(parts) - 1)
 
     price_cols = [fund_price_col[t] for t in FUNDS] + [etf_price_col[e] for e in ETF_ALL]
     ret_cols = [fund_return_col[t] for t in FUNDS] + [etf_return_col[e] for e in ETF_ALL]
@@ -413,7 +443,7 @@ def main() -> None:
                 if i == 0:
                     ws.cell(row=r, column=c_idx, value="")
                 else:
-                    cond = condition_expr(condition, t, r, colmap, fund_col)
+                    cond = condition_expr(condition, t, r, colmap, fund_col, strategy_thr_refs[c_idx])
                     ws.cell(row=r, column=c_idx, value=f"=IF({cond},{fund_col}{r - 1},\"\")")
             cols = [get_column_letter(c) for c in strat_cols[t]]
             expr = f"{cols[-1]}{r}"
@@ -442,7 +472,7 @@ def main() -> None:
 
     out_dir = config.RESULT_ROOT / "示例审批"
     out_dir.mkdir(parents=True, exist_ok=True)
-    out_path = out_dir / "两基金_m30新版式示例_公式说明版_修正.xlsx"
+    out_path = out_dir / "两基金_m30新版式示例_公式说明版.xlsx"
     if os.environ.get("SAMPLE_OUT"):
         out_path = pathlib.Path(os.environ["SAMPLE_OUT"])
     wb.save(out_path)
