@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import pathlib
+import json
 import sys
 
 import numpy as np
@@ -218,6 +219,27 @@ def s4_load_ext_cols():
     return sc.EXTERNAL_COLS
 
 
+def load_fund_adj(ticker: str) -> dict:
+    p = config.RESULT_ROOT / "最新成果" / "数据" / "数据_原始" / "profunds" / "adj_close_nasdaq" / f"{ticker}.json"
+    data = json.loads(p.read_text(encoding="utf-8-sig"))
+    rows = data["data"]["tradesTable"]["rows"]
+    out = {}
+    for r in rows:
+        d = pd.to_datetime(r["date"], format="%m/%d/%Y")
+        out[d] = float(r["adjustedClose"])
+    return out
+
+
+def load_etf_adj(ticker: str) -> dict:
+    if ticker == "XLC":
+        p = config.RESULT_ROOT / "最新成果" / "数据" / "数据_原始" / "etfs_extended" / "XLC.csv"
+    else:
+        p = config.RESULT_ROOT / "最新成果" / "数据" / "数据_原始" / "etfs" / f"{ticker}_historical.csv"
+    df = pd.read_csv(p)
+    df["Date"] = pd.to_datetime(df["Date"], format="%m/%d/%Y")
+    return dict(zip(df["Date"], df["Adj Close"]))
+
+
 def main() -> None:
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     master = s4.load_master()
@@ -234,12 +256,28 @@ def main() -> None:
 
     etf_cols_used = ["EEM", "GLD", "HYG", "TIP", "XLF", "FXY", "GDX", "XLC"]
     ext_cols_used = ["VIX_Chg%"]
-    base_headers = [f"{fund_label[t]}回报" for t in FUNDS] + etf_cols_used + ext_cols_used
-    colmap = {
-        "UOPIX": "B", "ULPIX": "C",
-        "EEM": "D", "GLD": "E", "HYG": "F", "TIP": "G", "XLF": "H",
-        "FXY": "I", "GDX": "J", "XLC": "K", "VIX_Chg%": "L",
-    }
+    base_headers = []
+    for t in FUNDS:
+        base_headers += [f"{fund_label[t]} Adj Close", f"{fund_label[t]}回报"]
+    for e in etf_cols_used:
+        base_headers += [f"{e} Adj Close", f"{e}回报"]
+    base_headers += ext_cols_used
+
+    col_idx = 2
+    fund_price_col = {}
+    fund_return_col = {}
+    for t in FUNDS:
+        fund_price_col[t] = get_column_letter(col_idx); col_idx += 1
+        fund_return_col[t] = get_column_letter(col_idx); col_idx += 1
+    etf_price_col = {}
+    etf_return_col = {}
+    for e in etf_cols_used:
+        etf_price_col[e] = get_column_letter(col_idx); col_idx += 1
+        etf_return_col[e] = get_column_letter(col_idx); col_idx += 1
+    ext_col = {}
+    for e in ext_cols_used:
+        ext_col[e] = get_column_letter(col_idx); col_idx += 1
+    colmap = {**fund_return_col, **etf_return_col, **ext_col}
 
     wb = Workbook()
     ws_note = wb.active
@@ -250,7 +288,8 @@ def main() -> None:
         [
             "用途：审批新版式，确认后再全量生成 m30。",
             "版式：最左侧为基础数据，每支基金前为单独策略列，最后一列为合并效果。",
-            "策略列/合并列全部是 Excel 公式，引用左侧基础数据计算。",
+            "最左侧先放原始 Adj Close，旁边回报率列用 Excel 公式从 Adj Close 计算。",
+            "策略列/合并列引用回报率列计算，全部为 Excel 公式。",
             "日期格式：YYYY/MM/DD，按公司格式降序。",
             "策略名写清阈值，并统一标注“买基金第二天”。",
             "示例基金：" + "、".join(fund_label[t] for t in FUNDS) + "，最近 60 个交易日。",
@@ -291,8 +330,8 @@ def main() -> None:
         ws[f"{col}9"] = f"=STDEV({col}{ds}:{col}{de})"
         ws[f"{col}10"] = f"=SUM({col}{ds}:{col}{de})"
 
-    fund_ret = {t: dict(zip(pd.to_datetime(fund_panel["Date"]), fund_panel[t] * 100)) for t in FUNDS}
-    etf_ret = {e: dict(zip(pd.to_datetime(master["Date"]), master[e])) for e in etf_cols_used}
+    fund_adj = {t: load_fund_adj(t) for t in FUNDS}
+    etf_adj = {e: load_etf_adj(e) for e in etf_cols_used}
     ext_val = {e: dict(zip(pd.to_datetime(master["Date"]), master[e])) for e in ext_cols_used}
 
     # column indices of merged columns
@@ -320,13 +359,24 @@ def main() -> None:
     for i, d in enumerate(dates_all):
         r = ds + i
         row = [d.strftime("%Y/%m/%d")]
-        row.append(round(fund_ret["UOPIX"].get(d, float("nan")), 4))
-        row.append(round(fund_ret["ULPIX"].get(d, float("nan")), 4))
+        for t in FUNDS:
+            row.append(round(fund_adj[t].get(d, float("nan")), 4))
         for e in etf_cols_used:
-            row.append(round(etf_ret[e].get(d, float("nan")), 4))
+            row.append(round(etf_adj[e].get(d, float("nan")), 4))
         for e in ext_cols_used:
             row.append(round(ext_val[e].get(d, float("nan")), 4))
         ws.append(row)
+        # return formulas from Adj Close (same-day return = today / previous trading day - 1)
+        price_cols = [fund_price_col[t] for t in FUNDS] + [etf_price_col[e] for e in etf_cols_used]
+        ret_cols = [fund_return_col[t] for t in FUNDS] + [etf_return_col[e] for e in etf_cols_used]
+        for pcol, rcol in zip(price_cols, ret_cols):
+            if i < len(dates_all) - 1:
+                ws[f"{rcol}{r}"] = (
+                    f"=IF(AND(ISNUMBER({pcol}{r}),ISNUMBER({pcol}{r + 1})),"
+                    f"({pcol}{r}/{pcol}{r + 1}-1)*100,\"\")"
+                )
+            else:
+                ws[f"{rcol}{r}"] = ""
         # strategy formulas
         for t in FUNDS:
             fund_col = colmap[t]
@@ -377,7 +427,7 @@ def main() -> None:
 
     out_dir = config.RESULT_ROOT / "示例审批"
     out_dir.mkdir(parents=True, exist_ok=True)
-    out_path = out_dir / "两基金_m30新版式示例_名字版.xlsx"
+    out_path = out_dir / "两基金_m30新版式示例_AdjClose公式版.xlsx"
     wb.save(out_path)
     print("saved:", out_path)
     print("cols:", n_cols, "data rows:", len(dates_all))
