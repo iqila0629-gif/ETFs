@@ -412,13 +412,13 @@ def main() -> None:
             "   Up Count = COUNTIF(该列数据区, \">0\")；Down Count = COUNTIF(该列数据区, \"<0\")；",
             "   Average = AVERAGE(该列数据区)；Max/Min/Count/Std/Sum 对应 MAX/MIN/COUNT/STDEV/SUM。",
             "2. 回报率公式",
-            "   =IF(COUNT(B15:B16)=2,(B15/B16-1)*100,\"\")",
+            "   =IF(COUNT(B15:B16)=2,ROUND((B15/B16-1)*100,4),\"\")",
             "   B15 是今日 Adj Close，B16 是前一交易日 Adj Close；",
             "   COUNT 判断两天价格都存在才计算当日回报率，否则留空，避免 #DIV/0!。",
             "   VIX_Close 的回报率公式相同；VIX_Chg% 为外部涨跌幅列，可与计算值核对。",
             "   ETF 原始数据列为 Open/High/Low/Close/Adj Close，回报率由 Adj Close 计算；",
             "   表内按区块排列：基金原始价→基金回报；ETF 原始 OHLC→ETF 回报；外部 VIX→回报。",
-            "   所有回报率均以百分比显示并保留4位小数。",
+            "   所有回报率均以百分比显示并保留4位小数（公式 ROUND 到4位，显示格式 0.0000%）。",
             "3. 策略公式",
             "   =IF(条件, 该基金次日实际回报, \"\")",
             "   条件引用回报率列和阈值参数；满足条件时显示次日实际回报（日期降序，次日=上一行）。",
@@ -524,7 +524,7 @@ def main() -> None:
             if i < len(dates_all) - 1:
                 ws[f"{rcol}{r}"] = (
                     f"=IF(COUNT({pcol}{r}:{pcol}{r + 1})=2,"
-                    f"({pcol}{r}/{pcol}{r + 1}-1)*100,\"\")"
+                    f"ROUND(({pcol}{r}/{pcol}{r + 1}-1)*100,4),\"\")"
                 )
             else:
                 ws[f"{rcol}{r}"] = ""
@@ -553,7 +553,7 @@ def main() -> None:
         pct_cols.append(get_column_letter(merged_idx[t]))
     for r in range(ds, de + 1):
         for col in pct_cols:
-            ws[f"{col}{r}"].number_format = "0.0000"
+            ws[f"{col}{r}"].number_format = '0.0000"%"'
 
     for r in range(2, 11):
         ws.cell(row=r, column=1).font = head_font
