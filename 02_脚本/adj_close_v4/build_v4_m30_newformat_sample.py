@@ -348,11 +348,15 @@ def main() -> None:
 
     base_headers = []
     for t in FUNDS:
-        base_headers += [f"{fund_label[t]} Adj Close", f"{fund_label[t]}回报"]
+        base_headers += [f"{fund_label[t]} Adj Close"]
+    for t in FUNDS:
+        base_headers += [f"{fund_label[t]}回报"]
     base_headers += [""]
     for e in ETF_ALL:
-        base_headers += [f"{e} Open", f"{e} High", f"{e} Low", f"{e} Close", f"{e} Adj Close", f"{e} Volume", f"{e}回报"]
+        base_headers += [f"{e} Open", f"{e} High", f"{e} Low", f"{e} Close", f"{e} Adj Close", f"{e} Volume"]
         base_headers += [""]
+    for e in ETF_ALL:
+        base_headers += [f"{e}回报"]
     for e in EXT_RAW_COLS:
         base_headers += [e]
     base_headers += ["VIX回报"]
@@ -364,6 +368,7 @@ def main() -> None:
     fund_return_col = {}
     for t in FUNDS:
         fund_price_col[t] = get_column_letter(col_idx); col_idx += 1
+    for t in FUNDS:
         fund_return_col[t] = get_column_letter(col_idx); col_idx += 1
     blank_cols.add(col_idx); col_idx += 1
     etf_open_col = {}
@@ -380,8 +385,9 @@ def main() -> None:
         etf_close_col[e] = get_column_letter(col_idx); col_idx += 1
         etf_adj_col[e] = get_column_letter(col_idx); col_idx += 1
         etf_volume_col[e] = get_column_letter(col_idx); col_idx += 1
-        etf_return_col[e] = get_column_letter(col_idx); col_idx += 1
         blank_cols.add(col_idx); col_idx += 1
+    for e in ETF_ALL:
+        etf_return_col[e] = get_column_letter(col_idx); col_idx += 1
     ext_price_col = {}
     ext_return_col = {}
     for e in EXT_RAW_COLS:
@@ -505,6 +511,7 @@ def main() -> None:
         row = [d.strftime("%Y/%m/%d")]
         for t in FUNDS:
             row.append(round(fund_adj[t].get(d, float("nan")), 4))
+        for t in FUNDS:
             row.append("")
         row.append("")
         for e in ETF_ALL:
@@ -516,9 +523,11 @@ def main() -> None:
             row.append(round(rec.get("adj", float("nan")), 4))
             row.append(rec.get("volume", float("nan")))
             row.append("")
+        for e in ETF_ALL:
             row.append("")
         for e in EXT_RAW_COLS:
             row.append(round(ext_val[e].get(d, float("nan")), 4))
+        for e in EXT_RAW_COLS:
             row.append("")
         for e in EXT_COLS_USED:
             row.append(round(ext_val[e].get(d, float("nan")), 4))
