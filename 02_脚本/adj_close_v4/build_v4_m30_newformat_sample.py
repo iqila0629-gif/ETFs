@@ -286,13 +286,11 @@ def main() -> None:
     ws_note["A1"].font = title_font
     for i, line in enumerate(
         [
-            "用途：审批新版式，确认后再全量生成 m30。",
-            "版式：最左侧为基础数据，每支基金前为单独策略列，最后一列为合并效果。",
-            "最左侧先放原始 Adj Close，旁边回报率列用 Excel 公式从 Adj Close 计算。",
-            "策略列/合并列引用回报率列计算，全部为 Excel 公式。",
-            "日期格式：YYYY/MM/DD，按公司格式降序。",
-            "策略名写清阈值，并统一标注“买基金第二天”。",
-            "示例基金：" + "、".join(fund_label[t] for t in FUNDS) + "，最近 60 个交易日。",
+            "统计头公式：Hit Ratio=Up/(Up+Down)，Up/Down=COUNTIF(数据区,\">0\"或\"<0\")，Average=AVERAGE(数据区) 等。",
+            "回报率公式：=(今日AdjClose/前一交易日AdjClose-1)*100；",
+            "ISNUMBER 用于判断两个 Adj Close 都是数字才计算，避免空白导致 #DIV/0!。",
+            "策略公式：=IF(条件, 基金次日回报, \"\")；条件引用回报率列，满足则显示次日实际回报，否则留空。",
+            "合并公式：同日多条策略触发时，按 |全历史Average| 最大者取值；未触发留空。",
         ],
         start=3,
     ):
@@ -427,7 +425,7 @@ def main() -> None:
 
     out_dir = config.RESULT_ROOT / "示例审批"
     out_dir.mkdir(parents=True, exist_ok=True)
-    out_path = out_dir / "两基金_m30新版式示例_AdjClose公式版.xlsx"
+    out_path = out_dir / "两基金_m30新版式示例_公式说明版.xlsx"
     wb.save(out_path)
     print("saved:", out_path)
     print("cols:", n_cols, "data rows:", len(dates_all))
