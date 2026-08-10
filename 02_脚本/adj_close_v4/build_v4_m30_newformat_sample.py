@@ -347,11 +347,16 @@ def main() -> None:
 
     base_headers = []
     for t in FUNDS:
-        base_headers += [f"{fund_label[t]} Adj Close", f"{fund_label[t]}回报"]
+        base_headers += [f"{fund_label[t]} Adj Close"]
+    for t in FUNDS:
+        base_headers += [f"{fund_label[t]}回报"]
     for e in ETF_ALL:
-        base_headers += [f"{e} Open", f"{e} High", f"{e} Low", f"{e} Close", f"{e} Adj Close", f"{e}回报"]
+        base_headers += [f"{e} Open", f"{e} High", f"{e} Low", f"{e} Close", f"{e} Adj Close"]
+    for e in ETF_ALL:
+        base_headers += [f"{e}回报"]
     for e in EXT_RAW_COLS:
-        base_headers += [e, "VIX回报"]
+        base_headers += [e]
+    base_headers += ["VIX回报"]
     base_headers += EXT_COLS_USED
 
     col_idx = 2
@@ -359,6 +364,7 @@ def main() -> None:
     fund_return_col = {}
     for t in FUNDS:
         fund_price_col[t] = get_column_letter(col_idx); col_idx += 1
+    for t in FUNDS:
         fund_return_col[t] = get_column_letter(col_idx); col_idx += 1
     etf_open_col = {}
     etf_high_col = {}
@@ -372,11 +378,13 @@ def main() -> None:
         etf_low_col[e] = get_column_letter(col_idx); col_idx += 1
         etf_close_col[e] = get_column_letter(col_idx); col_idx += 1
         etf_adj_col[e] = get_column_letter(col_idx); col_idx += 1
+    for e in ETF_ALL:
         etf_return_col[e] = get_column_letter(col_idx); col_idx += 1
     ext_price_col = {}
     ext_return_col = {}
     for e in EXT_RAW_COLS:
         ext_price_col[e] = get_column_letter(col_idx); col_idx += 1
+    for e in EXT_RAW_COLS:
         ext_return_col[e] = get_column_letter(col_idx); col_idx += 1
     ext_col = {}
     for e in EXT_COLS_USED:
@@ -409,6 +417,7 @@ def main() -> None:
             "   COUNT 判断两天价格都存在才计算当日回报率，否则留空，避免 #DIV/0!。",
             "   VIX_Close 的回报率公式相同；VIX_Chg% 为外部涨跌幅列，可与计算值核对。",
             "   ETF 原始数据列为 Open/High/Low/Close/Adj Close，回报率由 Adj Close 计算；",
+            "   表内按区块排列：基金原始价→基金回报；ETF 原始 OHLC→ETF 回报；外部 VIX→回报。",
             "   所有回报率均以百分比显示并保留4位小数。",
             "3. 策略公式",
             "   =IF(条件, 该基金次日实际回报, \"\")",
@@ -493,6 +502,7 @@ def main() -> None:
         row = [d.strftime("%Y/%m/%d")]
         for t in FUNDS:
             row.append(round(fund_adj[t].get(d, float("nan")), 4))
+        for t in FUNDS:
             row.append("")
         for e in ETF_ALL:
             rec = etf_ohlc[e].get(d, {})
@@ -501,9 +511,11 @@ def main() -> None:
             row.append(round(rec.get("low", float("nan")), 4))
             row.append(round(rec.get("close", float("nan")), 4))
             row.append(round(rec.get("adj", float("nan")), 4))
+        for e in ETF_ALL:
             row.append("")
         for e in EXT_RAW_COLS:
             row.append(round(ext_val[e].get(d, float("nan")), 4))
+        for e in EXT_RAW_COLS:
             row.append("")
         for e in EXT_COLS_USED:
             row.append(round(ext_val[e].get(d, float("nan")), 4))
