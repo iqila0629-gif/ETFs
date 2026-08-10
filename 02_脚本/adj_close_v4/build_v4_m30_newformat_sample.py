@@ -591,10 +591,10 @@ def main() -> None:
             cell.border = border
             cell.fill = header_fill
             cell.alignment = Alignment(wrap_text=True, vertical="top")
-    for row in (13, 14):
+    for row in (14, 15):
         for c in range(1, n_cols + 1):
             ws.cell(row=row, column=c).alignment = Alignment(
-                horizontal="center", vertical="center", wrap_text=(row == 14)
+                horizontal="center", vertical="center", wrap_text=True
             )
     ws.row_dimensions[14].height = 47
     ws.row_dimensions[15].height = 47
