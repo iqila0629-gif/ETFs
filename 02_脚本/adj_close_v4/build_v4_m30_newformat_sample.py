@@ -326,6 +326,7 @@ def load_etf_ohlc(ticker: str) -> dict:
             "low": float(rec["Low"]),
             "close": float(rec["Close"]),
             "adj": float(rec["Adj Close"]),
+            "volume": float(pd.to_numeric(rec["Volume"], errors="coerce")),
         }
     return out
 
@@ -347,30 +348,30 @@ def main() -> None:
 
     base_headers = []
     for t in FUNDS:
-        base_headers += [f"{fund_label[t]} Adj Close"]
-    for t in FUNDS:
-        base_headers += [f"{fund_label[t]}回报"]
+        base_headers += [f"{fund_label[t]} Adj Close", f"{fund_label[t]}回报"]
+    base_headers += [""]
     for e in ETF_ALL:
-        base_headers += [f"{e} Open", f"{e} High", f"{e} Low", f"{e} Close", f"{e} Adj Close"]
-    for e in ETF_ALL:
-        base_headers += [f"{e}回报"]
+        base_headers += [f"{e} Open", f"{e} High", f"{e} Low", f"{e} Close", f"{e} Adj Close", f"{e} Volume", f"{e}回报"]
+        base_headers += [""]
     for e in EXT_RAW_COLS:
         base_headers += [e]
     base_headers += ["VIX回报"]
     base_headers += EXT_COLS_USED
 
     col_idx = 2
+    blank_cols: set[int] = set()
     fund_price_col = {}
     fund_return_col = {}
     for t in FUNDS:
         fund_price_col[t] = get_column_letter(col_idx); col_idx += 1
-    for t in FUNDS:
         fund_return_col[t] = get_column_letter(col_idx); col_idx += 1
+    blank_cols.add(col_idx); col_idx += 1
     etf_open_col = {}
     etf_high_col = {}
     etf_low_col = {}
     etf_close_col = {}
     etf_adj_col = {}
+    etf_volume_col = {}
     etf_return_col = {}
     for e in ETF_ALL:
         etf_open_col[e] = get_column_letter(col_idx); col_idx += 1
@@ -378,13 +379,13 @@ def main() -> None:
         etf_low_col[e] = get_column_letter(col_idx); col_idx += 1
         etf_close_col[e] = get_column_letter(col_idx); col_idx += 1
         etf_adj_col[e] = get_column_letter(col_idx); col_idx += 1
-    for e in ETF_ALL:
+        etf_volume_col[e] = get_column_letter(col_idx); col_idx += 1
         etf_return_col[e] = get_column_letter(col_idx); col_idx += 1
+        blank_cols.add(col_idx); col_idx += 1
     ext_price_col = {}
     ext_return_col = {}
     for e in EXT_RAW_COLS:
         ext_price_col[e] = get_column_letter(col_idx); col_idx += 1
-    for e in EXT_RAW_COLS:
         ext_return_col[e] = get_column_letter(col_idx); col_idx += 1
     ext_col = {}
     for e in EXT_COLS_USED:
@@ -416,8 +417,8 @@ def main() -> None:
             "   B15 是今日 Adj Close，B16 是前一交易日 Adj Close；",
             "   COUNT 判断两天价格都存在才计算当日回报率，否则留空，避免 #DIV/0!。",
             "   VIX_Close 的回报率公式相同；VIX_Chg% 为外部涨跌幅列，可与计算值核对。",
-            "   ETF 原始数据列为 Open/High/Low/Close/Adj Close，回报率由 Adj Close 计算；",
-            "   表内按区块排列：基金原始价→基金回报；ETF 原始 OHLC→ETF 回报；外部 VIX→回报。",
+            "   ETF 原始数据列为 Open/High/Low/Close/Adj Close/Volume，回报率由 Adj Close 计算；",
+            "   表内按区块排列：基金区、每支ETF、ETF区结束后均用空白列分隔；外部 VIX→回报。",
             "   所有回报率均以百分比显示并保留4位小数（公式 ROUND 到4位，显示格式 0.0000%）。",
             "3. 策略公式",
             "   =IF(条件, 该基金次日实际回报, \"\")",
@@ -447,6 +448,8 @@ def main() -> None:
     de = ds + len(dates_all) - 1
 
     for c_idx in range(2, n_cols + 1):
+        if c_idx in blank_cols:
+            continue
         col = get_column_letter(c_idx)
         ws[f"{col}2"] = f"={col}3/({col}3+{col}4)"
         ws[f"{col}3"] = f'=COUNTIF({col}{ds}:{col}{de},">0")'
@@ -502,8 +505,8 @@ def main() -> None:
         row = [d.strftime("%Y/%m/%d")]
         for t in FUNDS:
             row.append(round(fund_adj[t].get(d, float("nan")), 4))
-        for t in FUNDS:
             row.append("")
+        row.append("")
         for e in ETF_ALL:
             rec = etf_ohlc[e].get(d, {})
             row.append(round(rec.get("open", float("nan")), 4))
@@ -511,11 +514,11 @@ def main() -> None:
             row.append(round(rec.get("low", float("nan")), 4))
             row.append(round(rec.get("close", float("nan")), 4))
             row.append(round(rec.get("adj", float("nan")), 4))
-        for e in ETF_ALL:
+            row.append(rec.get("volume", float("nan")))
+            row.append("")
             row.append("")
         for e in EXT_RAW_COLS:
             row.append(round(ext_val[e].get(d, float("nan")), 4))
-        for e in EXT_RAW_COLS:
             row.append("")
         for e in EXT_COLS_USED:
             row.append(round(ext_val[e].get(d, float("nan")), 4))
@@ -560,6 +563,8 @@ def main() -> None:
         for c in range(2, n_cols + 1):
             ws.cell(row=r, column=c).font = body_font
     for c in range(1, n_cols + 1):
+        if c in blank_cols:
+            continue
         cell = ws.cell(row=14, column=c)
         cell.font = head_font
         cell.border = border
@@ -567,11 +572,13 @@ def main() -> None:
         cell.alignment = Alignment(wrap_text=True, vertical="top")
     for r in range(ds, de + 1):
         for c in range(1, n_cols + 1):
+            if c in blank_cols:
+                continue
             ws.cell(row=r, column=c).border = border
             ws.cell(row=r, column=c).font = body_font
     ws.column_dimensions["A"].width = 12
     for c in range(2, n_cols + 1):
-        ws.column_dimensions[get_column_letter(c)].width = 16
+        ws.column_dimensions[get_column_letter(c)].width = 3 if c in blank_cols else 16
     ws.freeze_panes = "B15"
 
     out_dir = config.RESULT_ROOT / "示例审批"
