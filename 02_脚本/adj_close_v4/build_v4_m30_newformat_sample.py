@@ -353,7 +353,7 @@ def main() -> None:
         base_headers += [f"{fund_label[t]}回报"]
     base_headers += [""]
     for e in ETF_ALL:
-        base_headers += [f"{e} Open", f"{e} High", f"{e} Low", f"{e} Close", f"{e} Adj Close", f"{e} Volume"]
+        base_headers += ["Open", "High", "Low", "Close", "Adj Close", "Volume"]
         base_headers += [""]
     for e in ETF_ALL:
         base_headers += [f"{e}回报"]
@@ -378,7 +378,9 @@ def main() -> None:
     etf_adj_col = {}
     etf_volume_col = {}
     etf_return_col = {}
+    etf_block_start = {}
     for e in ETF_ALL:
+        etf_block_start[e] = col_idx
         etf_open_col[e] = get_column_letter(col_idx); col_idx += 1
         etf_high_col[e] = get_column_letter(col_idx); col_idx += 1
         etf_low_col[e] = get_column_letter(col_idx); col_idx += 1
@@ -419,11 +421,12 @@ def main() -> None:
             "   Up Count = COUNTIF(该列数据区, \">0\")；Down Count = COUNTIF(该列数据区, \"<0\")；",
             "   Average = AVERAGE(该列数据区)；Max/Min/Count/Std/Sum 对应 MAX/MIN/COUNT/STDEV/SUM。",
             "2. 回报率公式",
-            "   =IF(COUNT(B15:B16)=2,ROUND((B15/B16-1)*100,4),\"\")",
-            "   B15 是今日 Adj Close，B16 是前一交易日 Adj Close；",
+            "   =IF(COUNT(B16:B17)=2,ROUND((B16/B17-1)*100,4),\"\")",
+            "   B16 是今日 Adj Close，B17 是前一交易日 Adj Close；",
             "   COUNT 判断两天价格都存在才计算当日回报率，否则留空，避免 #DIV/0!。",
             "   VIX_Close 的回报率公式相同；VIX_Chg% 为外部涨跌幅列，可与计算值核对。",
             "   ETF 原始数据列为 Open/High/Low/Close/Adj Close/Volume，回报率由 Adj Close 计算；",
+            "   第14行为区块名称行（如EEM），第15行为列头；ETF列头不重复ETF名。",
             "   表内按区块排列：基金区、每支ETF、ETF区结束后均用空白列分隔；外部 VIX→回报。",
             "   所有回报率均以百分比显示并保留4位小数（公式 ROUND 到4位，显示格式 0.0000%）。",
             "3. 策略公式",
@@ -449,8 +452,9 @@ def main() -> None:
     ws.append([])
     ws.append([])
     ws.append([])
+    ws.append([])
     ws.append(headers)
-    ds = 15
+    ds = 16
     de = ds + len(dates_all) - 1
 
     for c_idx in range(2, n_cols + 1):
@@ -502,6 +506,9 @@ def main() -> None:
             strategy_thr_refs[c_idx] = [f"${col}$12", f"${col}$13"]
             if len(values) > 2:
                 strategy_thr_refs[c_idx].append(f"${col}$11")
+
+    for e in ETF_ALL:
+        ws.cell(row=14, column=etf_block_start[e] + 2, value=e)
 
     price_cols = [fund_price_col[t] for t in FUNDS] + [etf_adj_col[e] for e in ETF_ALL] + [ext_price_col[e] for e in EXT_RAW_COLS]
     ret_cols = [fund_return_col[t] for t in FUNDS] + [etf_return_col[e] for e in ETF_ALL] + [ext_return_col[e] for e in EXT_RAW_COLS]
@@ -571,24 +578,21 @@ def main() -> None:
         ws.cell(row=r, column=1).font = head_font
         for c in range(2, n_cols + 1):
             ws.cell(row=r, column=c).font = body_font
-    for c in range(1, n_cols + 1):
-        if c in blank_cols:
-            continue
-        cell = ws.cell(row=14, column=c)
-        cell.font = head_font
-        cell.border = border
-        cell.fill = header_fill
-        cell.alignment = Alignment(wrap_text=True, vertical="top")
+    for row in (14, 15):
+        for c in range(1, n_cols + 1):
+            cell = ws.cell(row=row, column=c)
+            cell.font = head_font
+            cell.border = border
+            cell.fill = header_fill
+            cell.alignment = Alignment(wrap_text=True, vertical="top")
     for r in range(ds, de + 1):
         for c in range(1, n_cols + 1):
-            if c in blank_cols:
-                continue
             ws.cell(row=r, column=c).border = border
             ws.cell(row=r, column=c).font = body_font
     ws.column_dimensions["A"].width = 12
     for c in range(2, n_cols + 1):
-        ws.column_dimensions[get_column_letter(c)].width = 3 if c in blank_cols else 16
-    ws.freeze_panes = "B15"
+        ws.column_dimensions[get_column_letter(c)].width = 16
+    ws.freeze_panes = "B16"
 
     out_dir = config.RESULT_ROOT / "示例审批"
     out_dir.mkdir(parents=True, exist_ok=True)
