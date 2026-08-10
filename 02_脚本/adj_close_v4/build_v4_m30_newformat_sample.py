@@ -357,6 +357,8 @@ def main() -> None:
         base_headers += [""]
     for e in ETF_ALL:
         base_headers += [f"{e}回报"]
+        if e in ("GDX", "XLC"):
+            base_headers += [""]
     for e in EXT_RAW_COLS:
         base_headers += [e]
     base_headers += ["VIX回报"]
@@ -390,6 +392,8 @@ def main() -> None:
         blank_cols.add(col_idx); col_idx += 1
     for e in ETF_ALL:
         etf_return_col[e] = get_column_letter(col_idx); col_idx += 1
+        if e in ("GDX", "XLC"):
+            blank_cols.add(col_idx); col_idx += 1
     ext_price_col = {}
     ext_return_col = {}
     for e in EXT_RAW_COLS:
@@ -532,6 +536,8 @@ def main() -> None:
             row.append("")
         for e in ETF_ALL:
             row.append("")
+            if e in ("GDX", "XLC"):
+                row.append("")
         for e in EXT_RAW_COLS:
             row.append(round(ext_val[e].get(d, float("nan")), 4))
         for e in EXT_RAW_COLS:
@@ -585,6 +591,13 @@ def main() -> None:
             cell.border = border
             cell.fill = header_fill
             cell.alignment = Alignment(wrap_text=True, vertical="top")
+    for row in (13, 14):
+        for c in range(1, n_cols + 1):
+            ws.cell(row=row, column=c).alignment = Alignment(
+                horizontal="center", vertical="center", wrap_text=(row == 14)
+            )
+    ws.row_dimensions[14].height = 47
+    ws.row_dimensions[15].height = 47
     for r in range(ds, de + 1):
         for c in range(1, n_cols + 1):
             ws.cell(row=r, column=c).border = border
