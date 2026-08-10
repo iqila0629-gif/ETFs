@@ -249,7 +249,10 @@ def main() -> None:
     dates_all = sorted(dates_all, reverse=True)
 
     mapping = pd.read_csv(config.V4_OUT / "v4_strategy_mapping_m30_v2.csv", keep_default_na=False)
-    strat = {t: mapping[mapping["ticker"] == t].sort_values("strategy_no") for t in FUNDS}
+    strat = {t: mapping[mapping["ticker"] == t].copy() for t in FUNDS}
+    for t in FUNDS:
+        strat[t]["full_avg"] = pd.to_numeric(strat[t]["full_avg"], errors="coerce")
+        strat[t] = strat[t].sort_values("full_avg", key=lambda s: s.abs(), ascending=False)
     name_map = pd.read_csv(config.MIDDLE / "通用" / "文件" / "基金名称映射.csv", keep_default_na=False)
     name_by_ticker = dict(zip(name_map["ticker"], name_map["name"]))
     fund_label = {t: f"{name_by_ticker.get(t, t)}（{t}）" for t in FUNDS}
@@ -286,11 +289,22 @@ def main() -> None:
     ws_note["A1"].font = title_font
     for i, line in enumerate(
         [
-            "统计头公式：Hit Ratio=Up/(Up+Down)，Up/Down=COUNTIF(数据区,\">0\"或\"<0\")，Average=AVERAGE(数据区) 等。",
-            "回报率公式：=(今日AdjClose/前一交易日AdjClose-1)*100；",
-            "ISNUMBER 用于判断两个 Adj Close 都是数字才计算，避免空白导致 #DIV/0!。",
-            "策略公式：=IF(条件, 基金次日回报, \"\")；条件引用回报率列，满足则显示次日实际回报，否则留空。",
-            "合并公式：同日多条策略触发时，按 |全历史Average| 最大者取值；未触发留空。",
+            "公式说明：",
+            "1. 统计头公式（第2-10行）",
+            "   Hit Ratio = Up Count / (Up Count + Down Count)；",
+            "   Up Count = COUNTIF(该列数据区, \">0\")；Down Count = COUNTIF(该列数据区, \"<0\")；",
+            "   Average = AVERAGE(该列数据区)；Max/Min/Count/Std/Sum 对应 MAX/MIN/COUNT/STDEV/SUM。",
+            "2. 回报率公式",
+            "   =IF(COUNT(B14:B15)=2,(B14/B15-1)*100,\"\")",
+            "   含义：B14 是今日 Adj Close，B15 是前一交易日 Adj Close；",
+            "   COUNT 判断两天价格是否都存在（都是数字时=2），存在才计算当日回报率，否则留空，避免 #DIV/0!。",
+            "3. 策略公式",
+            "   =IF(条件, 基金次日回报, \"\")",
+            "   条件引用回报率列；满足条件时显示基金次日实际回报（日期降序，次日=上一行），否则留空。",
+            "4. 合并公式",
+            "   策略列按 |全历史Average| 从高到低排列，合并列取第一个非空策略：",
+            "   =IF(策略1<>\"\",策略1,IF(策略2<>\"\",策略2,策略3))",
+            "   含义：同一天多条策略触发时，历史 |Average| 最大的策略生效；全部未触发则留空。",
         ],
         start=3,
     ):
@@ -349,11 +363,6 @@ def main() -> None:
         strat_cols[t] = cols
         cur += 1  # merged
 
-    weights = {
-        "UOPIX": [0.549579, 0.299732, 0.323835],
-        "ULPIX": [0.408167, 0.318680, 0.510996],
-    }
-
     for i, d in enumerate(dates_all):
         r = ds + i
         row = [d.strftime("%Y/%m/%d")]
@@ -370,7 +379,7 @@ def main() -> None:
         for pcol, rcol in zip(price_cols, ret_cols):
             if i < len(dates_all) - 1:
                 ws[f"{rcol}{r}"] = (
-                    f"=IF(AND(ISNUMBER({pcol}{r}),ISNUMBER({pcol}{r + 1})),"
+                    f"=IF(COUNT({pcol}{r}:{pcol}{r + 1})=2,"
                     f"({pcol}{r}/{pcol}{r + 1}-1)*100,\"\")"
                 )
             else:
@@ -388,21 +397,11 @@ def main() -> None:
             # merged formula
             m_col = get_column_letter(merged_idx[t])
             cols = [get_column_letter(c) for c in strat_cols[t]]
-            ws_weights = weights[t]
             n = len(cols)
-            nested = ""
-            for j in range(n):
-                col = cols[j]
-                others = [k for k in range(n) if k != j]
-                max_expr = "MAX(" + ",".join(
-                    f"IF(ISNUMBER({cols[k]}{r}),{ws_weights[k]},-1)" for k in others
-                ) + ")"
-                cmp = ">=" if j == 0 else ">"
-                cond = f"AND(ISNUMBER({col}{r}),{ws_weights[j]}{cmp}{max_expr})"
-                nested += f"IF({cond},{col}{r},"
-            nested += "\"\""
-            nested += ")" * n
-            ws.cell(row=r, column=merged_idx[t], value=f"={nested}")
+            expr = f"{cols[-1]}{r}"
+            for col in reversed(cols[:-1]):
+                expr = f"IF({col}{r}<>\"\",{col}{r},{expr})"
+            ws.cell(row=r, column=merged_idx[t], value=f"={expr}")
 
     for r in range(2, 11):
         ws.cell(row=r, column=1).font = head_font
