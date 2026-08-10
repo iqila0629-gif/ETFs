@@ -19,6 +19,7 @@ import scan_v4_thresholds as s4
 STAT_NAMES = ["Hit Ratio", "Up Count", "Down Count", "Average", "Max", "Min", "Count", "Std", "Sum"]
 FUNDS = ["UOPIX", "ULPIX"]
 ETF_ALL = ["EEM", "GLD", "HYG", "TIP", "XLF", "FXY", "GDX", "XLC"]
+EXT_RAW_COLS = ["VIX_Close"]
 EXT_COLS_USED = ["VIX_Chg%"]
 WINDOW_DAYS = 60
 
@@ -340,6 +341,8 @@ def main() -> None:
         base_headers += [f"{fund_label[t]} Adj Close", f"{fund_label[t]}回报"]
     for e in ETF_ALL:
         base_headers += [f"{e} Adj Close", f"{e}回报"]
+    for e in EXT_RAW_COLS:
+        base_headers += [e, "VIX回报"]
     base_headers += EXT_COLS_USED
 
     col_idx = 2
@@ -353,6 +356,11 @@ def main() -> None:
     for e in ETF_ALL:
         etf_price_col[e] = get_column_letter(col_idx); col_idx += 1
         etf_return_col[e] = get_column_letter(col_idx); col_idx += 1
+    ext_price_col = {}
+    ext_return_col = {}
+    for e in EXT_RAW_COLS:
+        ext_price_col[e] = get_column_letter(col_idx); col_idx += 1
+        ext_return_col[e] = get_column_letter(col_idx); col_idx += 1
     ext_col = {}
     for e in EXT_COLS_USED:
         ext_col[e] = get_column_letter(col_idx); col_idx += 1
@@ -382,6 +390,7 @@ def main() -> None:
             "   =IF(COUNT(B14:B15)=2,(B14/B15-1)*100,\"\")",
             "   B14 是今日 Adj Close，B15 是前一交易日 Adj Close；",
             "   COUNT 判断两天价格都存在才计算当日回报率，否则留空，避免 #DIV/0!。",
+            "   VIX_Close 的回报率公式相同；VIX_Chg% 为外部涨跌幅列，可与计算值核对。",
             "3. 策略公式",
             "   =IF(条件, 该基金次日实际回报, \"\")",
             "   条件引用回报率列和阈值参数；满足条件时显示次日实际回报（日期降序，次日=上一行）。",
@@ -421,7 +430,7 @@ def main() -> None:
 
     fund_adj = {t: load_fund_adj(t) for t in FUNDS}
     etf_adj = {e: load_etf_adj(e) for e in ETF_ALL}
-    ext_val = {e: dict(zip(pd.to_datetime(master["Date"]), master[e])) for e in EXT_COLS_USED}
+    ext_val = {e: dict(zip(pd.to_datetime(master["Date"]), master[e])) for e in EXT_RAW_COLS + EXT_COLS_USED}
 
     merged_idx = {}
     cur = 2 + len(base_headers)
@@ -451,8 +460,8 @@ def main() -> None:
             ws.cell(row=12, column=c_idx).font = body_font
             strategy_thr_refs[c_idx] = [f"${col}$11"] + [f"${col}$12"] * (len(parts) - 1)
 
-    price_cols = [fund_price_col[t] for t in FUNDS] + [etf_price_col[e] for e in ETF_ALL]
-    ret_cols = [fund_return_col[t] for t in FUNDS] + [etf_return_col[e] for e in ETF_ALL]
+    price_cols = [fund_price_col[t] for t in FUNDS] + [etf_price_col[e] for e in ETF_ALL] + [ext_price_col[e] for e in EXT_RAW_COLS]
+    ret_cols = [fund_return_col[t] for t in FUNDS] + [etf_return_col[e] for e in ETF_ALL] + [ext_return_col[e] for e in EXT_RAW_COLS]
 
     for i, d in enumerate(dates_all):
         r = ds + i
@@ -462,6 +471,9 @@ def main() -> None:
             row.append("")
         for e in ETF_ALL:
             row.append(round(etf_adj[e].get(d, float("nan")), 4))
+            row.append("")
+        for e in EXT_RAW_COLS:
+            row.append(round(ext_val[e].get(d, float("nan")), 4))
             row.append("")
         for e in EXT_COLS_USED:
             row.append(round(ext_val[e].get(d, float("nan")), 4))
