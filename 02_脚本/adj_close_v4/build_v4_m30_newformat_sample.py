@@ -228,10 +228,13 @@ def main() -> None:
 
     mapping = pd.read_csv(config.V4_OUT / "v4_strategy_mapping_m30_v2.csv", keep_default_na=False)
     strat = {t: mapping[mapping["ticker"] == t].sort_values("strategy_no") for t in FUNDS}
+    name_map = pd.read_csv(config.MIDDLE / "通用" / "文件" / "基金名称映射.csv", keep_default_na=False)
+    name_by_ticker = dict(zip(name_map["ticker"], name_map["name"]))
+    fund_label = {t: f"{name_by_ticker.get(t, t)}（{t}）" for t in FUNDS}
 
     etf_cols_used = ["EEM", "GLD", "HYG", "TIP", "XLF", "FXY", "GDX", "XLC"]
     ext_cols_used = ["VIX_Chg%"]
-    base_headers = ["UOPIX回报", "ULPIX回报"] + etf_cols_used + ext_cols_used
+    base_headers = [f"{fund_label[t]}回报" for t in FUNDS] + etf_cols_used + ext_cols_used
     colmap = {
         "UOPIX": "B", "ULPIX": "C",
         "EEM": "D", "GLD": "E", "HYG": "F", "TIP": "G", "XLF": "H",
@@ -250,7 +253,7 @@ def main() -> None:
             "策略列/合并列全部是 Excel 公式，引用左侧基础数据计算。",
             "日期格式：YYYY/MM/DD，按公司格式降序。",
             "策略名写清阈值，并统一标注“买基金第二天”。",
-            "示例只含 UOPIX、ULPIX 两支基金，最近 60 个交易日。",
+            "示例基金：" + "、".join(fund_label[t] for t in FUNDS) + "，最近 60 个交易日。",
         ],
         start=3,
     ):
@@ -264,7 +267,7 @@ def main() -> None:
     for t in FUNDS:
         for c in per_fund[t]:
             headers.append(condition_label(c))
-        headers.append(f"{t}合并效果")
+        headers.append(f"{fund_label[t]}合并效果")
     n_cols = len(headers)
 
     ws.append([])
@@ -374,7 +377,7 @@ def main() -> None:
 
     out_dir = config.RESULT_ROOT / "示例审批"
     out_dir.mkdir(parents=True, exist_ok=True)
-    out_path = out_dir / "两基金_m30新版式示例_精简版.xlsx"
+    out_path = out_dir / "两基金_m30新版式示例_名字版.xlsx"
     wb.save(out_path)
     print("saved:", out_path)
     print("cols:", n_cols, "data rows:", len(dates_all))
