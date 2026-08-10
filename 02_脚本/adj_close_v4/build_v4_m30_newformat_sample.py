@@ -409,7 +409,7 @@ def main() -> None:
     for t in FUNDS:
         for c in per_fund[t]:
             headers.append(condition_label(c))
-        headers.append(f"{fund_label[t]}合并效果")
+        headers.append("合并效果")
     n_cols = len(headers)
 
     wb = Workbook()
@@ -513,6 +513,16 @@ def main() -> None:
 
     for e in ETF_ALL:
         ws.cell(row=14, column=etf_block_start[e] + 2, value=e)
+    for t in FUNDS:
+        cols = [get_column_letter(c) for c in strat_cols[t]]
+        m_col = get_column_letter(merged_idx[t])
+        base = fund_label[t]
+        if t == "UOPIX":
+            labels = [base.replace("100", str(100 + i)) for i in range(len(cols) + 1)]
+        else:
+            labels = [base] * (len(cols) + 1)
+        for col_letter, label in zip(cols + [m_col], labels):
+            ws[f"{col_letter}14"] = label
 
     price_cols = [fund_price_col[t] for t in FUNDS] + [etf_adj_col[e] for e in ETF_ALL] + [ext_price_col[e] for e in EXT_RAW_COLS]
     ret_cols = [fund_return_col[t] for t in FUNDS] + [etf_return_col[e] for e in ETF_ALL] + [ext_return_col[e] for e in EXT_RAW_COLS]
@@ -579,6 +589,17 @@ def main() -> None:
     for r in range(ds, de + 1):
         for col in pct_cols:
             ws[f"{col}{r}"].number_format = '0.0000"%"'
+
+    for c in range(2, n_cols + 1):
+        if c in blank_cols:
+            continue
+        ws.cell(row=2, column=c).number_format = "0.00%"
+        for r in (5, 6, 7):
+            ws.cell(row=r, column=c).number_format = '0.0000"%"'
+    for t in FUNDS:
+        for c_idx in strat_cols[t]:
+            for r in (11, 12, 13):
+                ws.cell(row=r, column=c_idx).number_format = 'General"%"'
 
     for r in range(2, 11):
         ws.cell(row=r, column=1).font = head_font
