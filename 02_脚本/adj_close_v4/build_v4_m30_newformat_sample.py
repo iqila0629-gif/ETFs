@@ -387,8 +387,8 @@ def main() -> None:
             "   Up Count = COUNTIF(该列数据区, \">0\")；Down Count = COUNTIF(该列数据区, \"<0\")；",
             "   Average = AVERAGE(该列数据区)；Max/Min/Count/Std/Sum 对应 MAX/MIN/COUNT/STDEV/SUM。",
             "2. 回报率公式",
-            "   =IF(COUNT(B14:B15)=2,(B14/B15-1)*100,\"\")",
-            "   B14 是今日 Adj Close，B15 是前一交易日 Adj Close；",
+            "   =IF(COUNT(B15:B16)=2,(B15/B16-1)*100,\"\")",
+            "   B15 是今日 Adj Close，B16 是前一交易日 Adj Close；",
             "   COUNT 判断两天价格都存在才计算当日回报率，否则留空，避免 #DIV/0!。",
             "   VIX_Close 的回报率公式相同；VIX_Chg% 为外部涨跌幅列，可与计算值核对。",
             "3. 策略公式",
@@ -399,7 +399,8 @@ def main() -> None:
             "   =IF(策略1<>\"\",策略1,IF(策略2<>\"\",策略2,策略3))",
             "   同一天多条策略触发时，历史 |Average| 最大的策略生效；全部未触发则留空。",
             "5. 阈值参数",
-            "   每个策略列正上方的第11/12行是该策略条件阈值，修改数字可调整条件，公式自动更新。",
+            "   每个策略列正上方的第11/12/13行是该策略条件阈值：二条件用12/13行，三条件额外用11行；",
+            "   修改数字可调整条件，公式自动更新。",
         ],
         start=3,
     ):
@@ -412,8 +413,9 @@ def main() -> None:
         ws.cell(row=i, column=1, value=label)
     ws.append([])
     ws.append([])
+    ws.append([])
     ws.append(headers)
-    ds = 14
+    ds = 15
     de = ds + len(dates_all) - 1
 
     for c_idx in range(2, n_cols + 1):
@@ -454,11 +456,15 @@ def main() -> None:
             parts = condition_parts(condition, colmap)
             values = [part_threshold(p) for p in parts]
             col = get_column_letter(c_idx)
-            ws.cell(row=11, column=c_idx, value=values[0])
-            ws.cell(row=12, column=c_idx, value=values[1] if len(values) > 1 else values[0])
-            ws.cell(row=11, column=c_idx).font = body_font
-            ws.cell(row=12, column=c_idx).font = body_font
-            strategy_thr_refs[c_idx] = [f"${col}$11"] + [f"${col}$12"] * (len(parts) - 1)
+            ws.cell(row=12, column=c_idx, value=values[0])
+            ws.cell(row=13, column=c_idx, value=values[1] if len(values) > 1 else "")
+            if len(values) > 2:
+                ws.cell(row=11, column=c_idx, value=values[2])
+            for r in (11, 12, 13):
+                ws.cell(row=r, column=c_idx).font = body_font
+            strategy_thr_refs[c_idx] = [f"${col}$12", f"${col}$13"]
+            if len(values) > 2:
+                strategy_thr_refs[c_idx].append(f"${col}$11")
 
     price_cols = [fund_price_col[t] for t in FUNDS] + [etf_price_col[e] for e in ETF_ALL] + [ext_price_col[e] for e in EXT_RAW_COLS]
     ret_cols = [fund_return_col[t] for t in FUNDS] + [etf_return_col[e] for e in ETF_ALL] + [ext_return_col[e] for e in EXT_RAW_COLS]
@@ -505,7 +511,7 @@ def main() -> None:
         for c in range(2, n_cols + 1):
             ws.cell(row=r, column=c).font = body_font
     for c in range(1, n_cols + 1):
-        cell = ws.cell(row=13, column=c)
+        cell = ws.cell(row=14, column=c)
         cell.font = head_font
         cell.border = border
         cell.fill = header_fill
@@ -517,7 +523,7 @@ def main() -> None:
     ws.column_dimensions["A"].width = 12
     for c in range(2, n_cols + 1):
         ws.column_dimensions[get_column_letter(c)].width = 16
-    ws.freeze_panes = "B14"
+    ws.freeze_panes = "B15"
 
     out_dir = config.RESULT_ROOT / "示例审批"
     out_dir.mkdir(parents=True, exist_ok=True)
