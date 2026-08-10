@@ -136,34 +136,54 @@ def etf_label(tokens: list[str]) -> str:
 
 
 def ext_label(part: str) -> str:
+    short = {
+        "VIX_Close": "VIX收盘",
+        "VIX_Chg%": "VIX",
+        "VIX_5dChg": "VIX5d",
+        "VIX_20dVol": "VIX20d",
+        "TNX_Yield": "TNX",
+        "TNX_ChgBp": "TNXbp",
+        "CreditSpread": "信用利差",
+        "JNKSpread": "高收益利差",
+        "StkBonCorr": "股债相关",
+        "USDGoldRatio": "美元/黄金",
+        "SectRotation": "板块轮动",
+        "VIX_TNX_Ratio": "VIX/TNX",
+        "YldCurveProxy": "收益率曲线",
+    }
     for safe, col_name in s4_load_ext_cols().items():
         prefix = f"ext_{safe}_"
         if part.startswith(prefix):
             op = part[len(prefix):]
+            name = short.get(col_name, col_name)
             if op == "up":
-                return f"{col_name}当日变化>0"
+                return f"{name}>0"
             if op == "down":
-                return f"{col_name}当日变化<0"
+                return f"{name}<0"
             threshold = float(op[2:].replace("_", "."))
             if op.startswith("ge"):
-                return f"{col_name}>=+{threshold}"
-            return f"{col_name}<=-{abs(threshold)}"
+                return f"{name}>={threshold}%"
+            return f"{name}<={threshold}%"
     return part
 
 
 def self_label(suffix: str) -> str:
     if suffix == "up":
-        return "基金自身涨(>0)"
+        return "基金>0"
     if suffix == "down":
-        return "基金自身跌(<0)"
+        return "基金<0"
     if suffix == "big_up":
-        return "基金自身大涨(>=2%)"
+        return "基金>=2%"
     if suffix == "big_down":
-        return "基金自身大跌(<=-2%)"
-    if suffix in ("3up", "3down"):
-        return "基金自身连续3日同向"
-    if suffix in ("5up", "5down"):
-        return "基金自身连续5日同向"
+        return "基金<=-2%"
+    if suffix == "3up":
+        return "基金连涨3日"
+    if suffix == "3down":
+        return "基金连跌3日"
+    if suffix == "5up":
+        return "基金连涨5日"
+    if suffix == "5down":
+        return "基金连跌5日"
     return suffix
 
 
@@ -354,7 +374,7 @@ def main() -> None:
 
     out_dir = config.RESULT_ROOT / "示例审批"
     out_dir.mkdir(parents=True, exist_ok=True)
-    out_path = out_dir / "两基金_m30新版式示例.xlsx"
+    out_path = out_dir / "两基金_m30新版式示例_精简版.xlsx"
     wb.save(out_path)
     print("saved:", out_path)
     print("cols:", n_cols, "data rows:", len(dates_all))
