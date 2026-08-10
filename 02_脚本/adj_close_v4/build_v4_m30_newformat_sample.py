@@ -164,6 +164,7 @@ def condition_expr(
     return "AND(" + ",".join(exprs) + ")"
 
 
+# 隐藏辅助版保留作备份，正式采用固定列顺序的合并公式。
 def _q(value: str) -> str:
     return f'"{value}"'
 
@@ -385,14 +386,11 @@ def main() -> None:
             "   =IF(条件, 该基金次日实际回报, \"\")",
             "   条件引用回报率列和阈值参数；满足条件时显示次日实际回报（日期降序，次日=上一行）。",
             "4. 合并公式",
-            "   合并列按隐藏辅助的 |Average| 优先级取第一个非空策略（公式形如）：",
+            "   策略列按 |全历史Average| 从高到低排列，合并列取第一个非空策略：",
             "   =IF(策略1<>\"\",策略1,IF(策略2<>\"\",策略2,策略3))",
             "   同一天多条策略触发时，历史 |Average| 最大的策略生效；全部未触发则留空。",
             "5. 阈值参数",
             "   每个策略列正上方的第11/12行是该策略条件阈值，修改数字可调整条件，公式自动更新。",
-            "6. 合并优先级隐藏辅助",
-            "   合并列正上方第12行为白色隐藏辅助，按各策略列统计头 |Average| 生成优先级顺序；",
-            "   改阈值后 Average 重算，优先级和合并结果自动更新。",
         ],
         start=3,
     ):
@@ -453,13 +451,6 @@ def main() -> None:
             ws.cell(row=12, column=c_idx).font = body_font
             strategy_thr_refs[c_idx] = [f"${col}$11"] + [f"${col}$12"] * (len(parts) - 1)
 
-    for t in FUNDS:
-        m_col = get_column_letter(merged_idx[t])
-        cols = [get_column_letter(c) for c in strat_cols[t]]
-        if len(cols) == 3:
-            ws[f"{m_col}12"] = "=" + priority_order_expr(cols)
-            ws[f"{m_col}12"].font = Font(name="Arial", size=9, color="FFFFFF")
-
     price_cols = [fund_price_col[t] for t in FUNDS] + [etf_price_col[e] for e in ETF_ALL]
     ret_cols = [fund_return_col[t] for t in FUNDS] + [etf_return_col[e] for e in ETF_ALL]
 
@@ -492,13 +483,9 @@ def main() -> None:
                     cond = condition_expr(condition, t, r, colmap, fund_col, strategy_thr_refs[c_idx])
                     ws.cell(row=r, column=c_idx, value=f"=IF({cond},{fund_col}{r - 1},\"\")")
             cols = [get_column_letter(c) for c in strat_cols[t]]
-            m_col = get_column_letter(merged_idx[t])
-            if len(cols) == 3:
-                expr = priority_merge_expr(cols, m_col, r)
-            else:
-                expr = f"{cols[-1]}{r}"
-                for col in reversed(cols[:-1]):
-                    expr = f"IF({col}{r}<>\"\",{col}{r},{expr})"
+            expr = f"{cols[-1]}{r}"
+            for col in reversed(cols[:-1]):
+                expr = f"IF({col}{r}<>\"\",{col}{r},{expr})"
             ws.cell(row=r, column=merged_idx[t], value=f"={expr}")
 
     for r in range(2, 11):
@@ -522,7 +509,7 @@ def main() -> None:
 
     out_dir = config.RESULT_ROOT / "示例审批"
     out_dir.mkdir(parents=True, exist_ok=True)
-    out_path = out_dir / "两基金_m30新版式示例_公式说明版_隐藏辅助版.xlsx"
+    out_path = out_dir / "两基金_m30新版式示例_公式说明版.xlsx"
     if os.environ.get("SAMPLE_OUT"):
         out_path = pathlib.Path(os.environ["SAMPLE_OUT"])
     wb.save(out_path)
