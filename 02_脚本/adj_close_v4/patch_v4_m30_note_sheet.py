@@ -15,6 +15,7 @@ NOTE_LINES = [
     "   Hit Ratio = Up Count / (Up Count + Down Count)；",
     "   Up Count = COUNTIF(该列数据区, \">0\")；Down Count = COUNTIF(该列数据区, \"<0\")；",
     "   Average = AVERAGE(该列数据区)；Max/Min/Count/Std/Sum 对应 MAX/MIN/COUNT/STDEV/SUM。",
+    "   统计公式均加 IFERROR，空列或无数据时不显示 #DIV/0!。",
     "2. 回报率公式",
     "   =IF(COUNT(B16:B17)=2,ROUND((B16/B17-1)*100,4),\"\")",
     "   B16 是今日 Adj Close，B17 是前一交易日 Adj Close；",
@@ -27,6 +28,7 @@ NOTE_LINES = [
     "3. 策略公式",
     "   =IF(条件, 该基金次日实际回报, \"\")",
     "   条件引用回报率列和阈值参数；满足条件时显示次日实际回报（日期降序，次日=上一行）。",
+    "   horizon>1 时取未来 N 日平均回报，目标公式带 IFERROR，基金无历史数据时留空。",
     "4. 合并公式",
     "   策略列按 |全历史Average| 从高到低排列，合并列取第一个非空策略：",
     "   =IF(策略1<>\"\",策略1,IF(策略2<>\"\",策略2,策略3))",
@@ -40,8 +42,9 @@ NOTE_LINES = [
 def patch(path: pathlib.Path) -> None:
     wb = load_workbook(path)
     ws = wb.worksheets[0]
+    title = ws["A1"].value or "全量 m30 新版式"
     ws.delete_rows(1, ws.max_row)
-    ws["A1"] = "全量 m30 新版式"
+    ws["A1"] = title
     ws["A1"].font = Font(name="Arial", size=14, bold=True)
     for i, line in enumerate(NOTE_LINES, start=3):
         ws.cell(row=i, column=1, value=line)
@@ -58,8 +61,8 @@ def main() -> None:
     else:
         root = pathlib.Path(__file__).resolve().parents[2] / "04_结果" / "v4_正式版_m30_新版式"
         paths = [
-            root / "v4_m30新版式_全历史.xlsx",
-            root / "v4_m30新版式_冻结期.xlsx",
+            root / "全历史.xlsx",
+            root / "25-26年.xlsx",
         ]
     for p in paths:
         if p.exists():

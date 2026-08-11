@@ -51,6 +51,7 @@ def build_workbook(
     dates_desc: list[pd.Timestamp],
     mapping: pd.DataFrame,
     master: pd.DataFrame,
+    title: str,
 ) -> None:
     name_map = pd.read_csv(config.MIDDLE / "通用" / "文件" / "基金名称映射.csv", keep_default_na=False)
     name_by_ticker = dict(zip(name_map["ticker"], name_map["name"]))
@@ -132,7 +133,7 @@ def build_workbook(
     wb = Workbook()
     ws_note = wb.active
     ws_note.title = "说明"
-    ws_note["A1"] = "全量 m30 新版式"
+    ws_note["A1"] = title
     ws_note["A1"].font = Font(name="Arial", size=14, bold=True)
     note_lines = [
         "公式说明：",
@@ -140,6 +141,7 @@ def build_workbook(
         "   Hit Ratio = Up Count / (Up Count + Down Count)；",
         "   Up Count = COUNTIF(该列数据区, \">0\")；Down Count = COUNTIF(该列数据区, \"<0\")；",
         "   Average = AVERAGE(该列数据区)；Max/Min/Count/Std/Sum 对应 MAX/MIN/COUNT/STDEV/SUM。",
+        "   统计公式均加 IFERROR，空列或无数据时不显示 #DIV/0!。",
         "2. 回报率公式",
         "   =IF(COUNT(B16:B17)=2,ROUND((B16/B17-1)*100,4),\"\")",
         "   B16 是今日 Adj Close，B17 是前一交易日 Adj Close；",
@@ -152,6 +154,7 @@ def build_workbook(
         "3. 策略公式",
         "   =IF(条件, 该基金次日实际回报, \"\")",
         "   条件引用回报率列和阈值参数；满足条件时显示次日实际回报（日期降序，次日=上一行）。",
+        "   horizon>1 时取未来 N 日平均回报，目标公式带 IFERROR，基金无历史数据时留空。",
         "4. 合并公式",
         "   策略列按 |全历史Average| 从高到低排列，合并列取第一个非空策略：",
         "   =IF(策略1<>\"\",策略1,IF(策略2<>\"\",策略2,策略3))",
@@ -338,8 +341,8 @@ def main() -> None:
     dates_frozen = [d for d in dates_all if d >= pd.Timestamp(CUTOFF)]
     out_dir = config.RESULT_ROOT / "v4_正式版_m30_新版式"
     out_dir.mkdir(parents=True, exist_ok=True)
-    build_workbook(out_dir / "v4_m30新版式_全历史.xlsx", dates_all, mapping, master)
-    build_workbook(out_dir / "v4_m30新版式_冻结期.xlsx", dates_frozen, mapping, master)
+    build_workbook(out_dir / "全历史.xlsx", dates_all, mapping, master, "基金全历史")
+    build_workbook(out_dir / "25-26年.xlsx", dates_frozen, mapping, master, "25-26年")
 
 
 if __name__ == "__main__":
