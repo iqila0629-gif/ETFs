@@ -482,15 +482,15 @@ def main() -> None:
         if c_idx in blank_cols:
             continue
         col = get_column_letter(c_idx)
-        ws[f"{col}2"] = f"={col}3/({col}3+{col}4)"
+        ws[f"{col}2"] = f'=IFERROR({col}3/({col}3+{col}4),"")'
         ws[f"{col}3"] = f'=COUNTIF({col}{ds}:{col}{de},">0")'
         ws[f"{col}4"] = f'=COUNTIF({col}{ds}:{col}{de},"<0")'
-        ws[f"{col}5"] = f"=AVERAGE({col}{ds}:{col}{de})"
-        ws[f"{col}6"] = f"=MAX({col}{ds}:{col}{de})"
-        ws[f"{col}7"] = f"=MIN({col}{ds}:{col}{de})"
+        ws[f"{col}5"] = f'=IFERROR(AVERAGE({col}{ds}:{col}{de}),"")'
+        ws[f"{col}6"] = f'=IFERROR(MAX({col}{ds}:{col}{de}),"")'
+        ws[f"{col}7"] = f'=IFERROR(MIN({col}{ds}:{col}{de}),"")'
         ws[f"{col}8"] = f"=COUNT({col}{ds}:{col}{de})"
-        ws[f"{col}9"] = f"=STDEV({col}{ds}:{col}{de})"
-        ws[f"{col}10"] = f"=SUM({col}{ds}:{col}{de})"
+        ws[f"{col}9"] = f'=IFERROR(STDEV({col}{ds}:{col}{de}),"")'
+        ws[f"{col}10"] = f'=IFERROR(SUM({col}{ds}:{col}{de}),"")'
 
     fund_adj = {t: load_fund_adj(t) for t in FUNDS}
     etf_ohlc = {e: load_etf_ohlc(e) for e in ETF_ALL}
