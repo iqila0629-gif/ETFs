@@ -652,6 +652,7 @@ def main() -> None:
     out_path = out_dir / "两基金_m30新版式示例_公式说明版.xlsx"
     if os.environ.get("SAMPLE_OUT"):
         out_path = pathlib.Path(os.environ["SAMPLE_OUT"])
+    wb.calculation.fullCalcOnLoad = True
     wb.save(out_path)
     print("saved:", out_path)
     print("cols:", n_cols, "data rows:", len(dates_all))

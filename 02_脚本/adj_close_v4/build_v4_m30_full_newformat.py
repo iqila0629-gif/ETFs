@@ -308,6 +308,7 @@ def build_workbook(
     ws.freeze_panes = "B16"
 
     import os
+    wb.calculation.fullCalcOnLoad = True
     wb.save(out_path)
     print("saved:", out_path, "cols", n_cols, "rows", len(dates_desc))
 
