@@ -141,7 +141,6 @@ def build_workbook(
         "   Hit Ratio = Up Count / (Up Count + Down Count)；",
         "   Up Count = COUNTIF(该列数据区, \">0\")；Down Count = COUNTIF(该列数据区, \"<0\")；",
         "   Average = AVERAGE(该列数据区)；Max/Min/Count/Std/Sum 对应 MAX/MIN/COUNT/STDEV/SUM。",
-        "   统计公式均加 IFERROR，空列或无数据时不显示 #DIV/0!。",
         "2. 回报率公式",
         "   =IF(COUNT(B16:B17)=2,ROUND((B16/B17-1)*100,4),\"\")",
         "   B16 是今日 Adj Close，B17 是前一交易日 Adj Close；",
@@ -181,15 +180,15 @@ def build_workbook(
         if c_idx in blank_cols:
             continue
         col = get_column_letter(c_idx)
-        ws[f"{col}2"] = f'=IFERROR({col}3/({col}3+{col}4),"")'
+        ws[f"{col}2"] = f"={col}3/({col}3+{col}4)"
         ws[f"{col}3"] = f'=COUNTIF({col}{ds}:{col}{de},">0")'
         ws[f"{col}4"] = f'=COUNTIF({col}{ds}:{col}{de},"<0")'
-        ws[f"{col}5"] = f'=IFERROR(AVERAGE({col}{ds}:{col}{de}),"")'
-        ws[f"{col}6"] = f'=IFERROR(MAX({col}{ds}:{col}{de}),"")'
-        ws[f"{col}7"] = f'=IFERROR(MIN({col}{ds}:{col}{de}),"")'
+        ws[f"{col}5"] = f"=AVERAGE({col}{ds}:{col}{de})"
+        ws[f"{col}6"] = f"=MAX({col}{ds}:{col}{de})"
+        ws[f"{col}7"] = f"=MIN({col}{ds}:{col}{de})"
         ws[f"{col}8"] = f"=COUNT({col}{ds}:{col}{de})"
-        ws[f"{col}9"] = f'=IFERROR(STDEV({col}{ds}:{col}{de}),"")'
-        ws[f"{col}10"] = f'=IFERROR(SUM({col}{ds}:{col}{de}),"")'
+        ws[f"{col}9"] = f"=STDEV({col}{ds}:{col}{de})"
+        ws[f"{col}10"] = f"=SUM({col}{ds}:{col}{de})"
 
     fund_adj = {t: sample.load_fund_adj(t) for t in fund_order}
     etf_ohlc = {e: sample.load_etf_ohlc(e) for e in etf_all}

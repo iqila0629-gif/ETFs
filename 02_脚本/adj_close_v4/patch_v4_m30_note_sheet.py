@@ -15,7 +15,6 @@ NOTE_LINES = [
     "   Hit Ratio = Up Count / (Up Count + Down Count)；",
     "   Up Count = COUNTIF(该列数据区, \">0\")；Down Count = COUNTIF(该列数据区, \"<0\")；",
     "   Average = AVERAGE(该列数据区)；Max/Min/Count/Std/Sum 对应 MAX/MIN/COUNT/STDEV/SUM。",
-    "   统计公式均加 IFERROR，空列或无数据时不显示 #DIV/0!。",
     "2. 回报率公式",
     "   =IF(COUNT(B16:B17)=2,ROUND((B16/B17-1)*100,4),\"\")",
     "   B16 是今日 Adj Close，B17 是前一交易日 Adj Close；",
@@ -42,6 +41,7 @@ NOTE_LINES = [
 def patch(path: pathlib.Path) -> None:
     wb = load_workbook(path)
     ws = wb.worksheets[0]
+    data = wb.worksheets[1]
     title = ws["A1"].value or "全量 m30 新版式"
     ws.delete_rows(1, ws.max_row)
     ws["A1"] = title
@@ -49,6 +49,19 @@ def patch(path: pathlib.Path) -> None:
     for i, line in enumerate(NOTE_LINES, start=3):
         ws.cell(row=i, column=1, value=line)
     ws.column_dimensions["A"].width = 120
+    ds = 16
+    de = data.max_row
+    for c in range(2, data.max_column + 1):
+        header = data.cell(row=15, column=c).value
+        if header in (None, ""):
+            continue
+        col = data.cell(row=15, column=c).column_letter
+        data[f"{col}2"] = f"={col}3/({col}3+{col}4)"
+        data[f"{col}5"] = f"=AVERAGE({col}{ds}:{col}{de})"
+        data[f"{col}6"] = f"=MAX({col}{ds}:{col}{de})"
+        data[f"{col}7"] = f"=MIN({col}{ds}:{col}{de})"
+        data[f"{col}9"] = f"=STDEV({col}{ds}:{col}{de})"
+        data[f"{col}10"] = f"=SUM({col}{ds}:{col}{de})"
     wb.calculation.fullCalcOnLoad = True
     wb.save(path)
     print("patched:", path)
