@@ -105,6 +105,14 @@ def condition_parts(condition: str, colmap: dict[str, str]) -> list[str]:
     if condition.startswith("ext_") or condition.startswith("self_"):
         return [condition]
     tokens = condition.split("_")
+    if (
+        len(tokens) == 6
+        and tokens[0] in colmap
+        and tokens[4] in colmap
+        and tokens[5] in colmap
+        and set(tokens[1:4]) <= {"up", "down"}
+    ):
+        return [f"{tokens[0]}_{tokens[1]}", f"{tokens[4]}_{tokens[2]}", f"{tokens[5]}_{tokens[3]}"]
     if len(tokens) == 6 and tokens[0] in colmap and tokens[2] in colmap and tokens[4] in colmap:
         return ["_".join(tokens[0:2]), "_".join(tokens[2:4]), "_".join(tokens[4:6])]
     if len(tokens) == 4 and tokens[0] in colmap and tokens[2] in colmap:
@@ -291,6 +299,15 @@ def condition_label(condition: str) -> str:
     if condition.startswith("self_"):
         return self_label(condition.removeprefix("self_")) + "，买基金第二天"
     tokens = condition.split("_")
+    if (
+        len(tokens) == 6
+        and tokens[0].isupper()
+        and tokens[4].isupper()
+        and tokens[5].isupper()
+        and set(tokens[1:4]) <= {"up", "down"}
+    ):
+        labels = [etf_label([tokens[0], tokens[1]]), etf_label([tokens[4], tokens[2]]), etf_label([tokens[5], tokens[3]])]
+        return " 且 ".join(labels) + "，买基金第二天"
     if len(tokens) == 6:
         labels = [etf_label([tokens[0], tokens[1]]), etf_label([tokens[2], tokens[3]]), etf_label([tokens[4], tokens[5]])]
         return " 且 ".join(labels) + "，买基金第二天"

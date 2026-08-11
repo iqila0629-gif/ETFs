@@ -17,6 +17,9 @@ venv/
 # v4: delivery package prepared for compression / sending
 最新结果/
 
+# v4: regenerable final new-format workbooks (large, rebuilt by script)
+04_结果/v4_正式版_m30_新版式/
+
 # v4: extended ETF backup is not part of active modeling data
 04_结果/备份/
 
