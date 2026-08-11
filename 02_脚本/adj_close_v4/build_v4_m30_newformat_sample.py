@@ -612,17 +612,19 @@ def main() -> None:
             cell.border = border
             cell.fill = header_fill
             cell.alignment = Alignment(wrap_text=True, vertical="top")
-    for row in (14, 15):
-        for c in range(1, n_cols + 1):
-            ws.cell(row=row, column=c).alignment = Alignment(
-                horizontal="center", vertical="center", wrap_text=True
-            )
     ws.row_dimensions[14].height = 47
     ws.row_dimensions[15].height = 47
     for r in range(ds, de + 1):
         for c in range(1, n_cols + 1):
             ws.cell(row=r, column=c).border = border
             ws.cell(row=r, column=c).font = body_font
+    for r in range(2, de + 1):
+        for c in range(1, n_cols + 1):
+            ws.cell(row=r, column=c).alignment = Alignment(
+                horizontal="center",
+                vertical="center",
+                wrap_text=(r in (14, 15)),
+            )
     ws.column_dimensions["A"].width = 12
     for c in range(2, n_cols + 1):
         ws.column_dimensions[get_column_letter(c)].width = 16
