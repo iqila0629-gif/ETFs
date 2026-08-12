@@ -8,7 +8,7 @@ import numpy as np
 import pandas as pd
 from openpyxl import Workbook
 from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
-from openpyxl.utils import get_column_letter
+from openpyxl.utils import column_index_from_string, get_column_letter
 
 import config
 import scan_v4_conditions as sc
@@ -178,6 +178,21 @@ def build_workbook(
         col_idx += 1
     n_cols = len(headers)
 
+    pct_stat_idx: set[int] = set()
+    for col in fund_return_col.values():
+        pct_stat_idx.add(column_index_from_string(col))
+    for col in etf_return_col.values():
+        pct_stat_idx.add(column_index_from_string(col))
+    for name in ("VIX回报", "VIX_Chg%", "VIX_5dChg", "VIX_20dVol", "TNX回报"):
+        pct_stat_idx.add(chg_idx[name])
+    for name in ("CreditSpread", "JNKSpread", "USDGoldRatio", "SectRotation", "YldCurveProxy"):
+        pct_stat_idx.add(derived_idx[name])
+    for t in fund_order:
+        pct_stat_idx.update(strat_cols[t])
+        pct_stat_idx.add(merged_idx[t])
+    bp_stat_idx = {chg_idx["TNX_ChgBp"]}
+    vol_stat_idx = {column_index_from_string(col) for col in etf_volume_col.values()}
+
     wb = Workbook()
     ws_note = wb.active
     ws_note.title = "说明"
@@ -210,6 +225,8 @@ def build_workbook(
         "5. 阈值参数",
         "   每个策略列正上方的第11/12/13行是该策略条件阈值：二条件用12/13行，三条件额外用11行；",
         "   修改数字可调整条件，公式自动更新。",
+        "6. 基金基础数据 Sheet",
+        "   与“数据”Sheet 严格同一行对齐（如 8/4 在两个 Sheet 均为第16行），包含全部基金 Adj Close 与回报；回报由同表 Adj Close 公式计算。",
     ]
     for i, line in enumerate(note_lines, start=3):
         ws_note.cell(row=i, column=1, value=line)
@@ -402,8 +419,16 @@ def build_workbook(
         if c in blank_cols:
             continue
         ws.cell(row=2, column=c).number_format = "0.00%"
+        if c in pct_stat_idx:
+            stat_fmt = '0.0000"%"'
+        elif c in bp_stat_idx:
+            stat_fmt = '0.00"bp"'
+        elif c in vol_stat_idx:
+            stat_fmt = "#,##0"
+        else:
+            stat_fmt = "0.0000"
         for r in (5, 6, 7):
-            ws.cell(row=r, column=c).number_format = '0.0000"%"'
+            ws.cell(row=r, column=c).number_format = stat_fmt
     for t in fund_order:
         for c_idx in strat_cols[t]:
             for r in (11, 12, 13):
@@ -437,6 +462,77 @@ def build_workbook(
     for c in range(2, n_cols + 1):
         ws.column_dimensions[get_column_letter(c)].width = 16
     ws.freeze_panes = "B16"
+
+    # 基金基础数据 sheet：与“数据”Sheet 同一行对齐
+    ws_fund = wb.create_sheet("基金基础数据")
+    fund_n = len(fund_order)
+    fund_headers = []
+    for t in fund_order:
+        fund_headers.append(f"{fund_labels[t]} Adj Close")
+    for t in fund_order:
+        fund_headers.append(f"{fund_labels[t]}回报")
+    fund_cols = fund_n * 2
+    ws_fund.append([])
+    for i, label in enumerate(STAT_NAMES, start=2):
+        ws_fund.cell(row=i, column=1, value=label)
+    for _ in range(4):
+        ws_fund.append([])
+    ws_fund.append(["日期"] + fund_headers)
+    for c_idx in range(2, fund_cols + 2):
+        col = get_column_letter(c_idx)
+        ws_fund[f"{col}2"] = f"={col}3/({col}3+{col}4)"
+        ws_fund[f"{col}3"] = f'=COUNTIF({col}{ds}:{col}{de},">0")'
+        ws_fund[f"{col}4"] = f'=COUNTIF({col}{ds}:{col}{de},"<0")'
+        ws_fund[f"{col}5"] = f"=AVERAGE({col}{ds}:{col}{de})"
+        ws_fund[f"{col}6"] = f"=MAX({col}{ds}:{col}{de})"
+        ws_fund[f"{col}7"] = f"=MIN({col}{ds}:{col}{de})"
+        ws_fund[f"{col}8"] = f"=COUNT({col}{ds}:{col}{de})"
+        ws_fund[f"{col}9"] = f"=STDEV({col}{ds}:{col}{de})"
+        ws_fund[f"{col}10"] = f"=SUM({col}{ds}:{col}{de})"
+        ws_fund[f"{col}2"].number_format = "0.00%"
+        stat_fmt = '0.0000"%"' if c_idx > fund_n + 1 else "0.0000"
+        for r in (5, 6, 7):
+            ws_fund[f"{col}{r}"].number_format = stat_fmt
+    for i, d in enumerate(dates_desc):
+        r = ds + i
+        row = [d.strftime("%Y/%m/%d")]
+        for t in fund_order:
+            row.append(round(fund_adj[t].get(d, float("nan")), 4))
+        for t in fund_order:
+            row.append("")
+        ws_fund.append(row)
+        for k, t in enumerate(fund_order):
+            pcol = get_column_letter(2 + k)
+            rcol = get_column_letter(2 + fund_n + k)
+            ws_fund[f"{pcol}{r}"].number_format = "0.0000"
+            if i < len(dates_desc) - 1:
+                ws_fund[f"{rcol}{r}"] = (
+                    f"=IF(COUNT({pcol}{r}:{pcol}{r + 1})=2,"
+                    f"ROUND(({pcol}{r}/{pcol}{r + 1}-1)*100,4),\"\")"
+                )
+            else:
+                ws_fund[f"{rcol}{r}"] = ""
+            ws_fund[f"{rcol}{r}"].number_format = '0.0000"%"'
+    for r in range(2, 11):
+        ws_fund.cell(row=r, column=1).font = head_font
+        for c in range(2, fund_cols + 2):
+            ws_fund.cell(row=r, column=c).font = body_font
+    for c in range(1, fund_cols + 2):
+        cell = ws_fund.cell(row=15, column=c)
+        cell.font = head_font
+        cell.border = border
+        cell.fill = header_fill
+        cell.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+    ws_fund.row_dimensions[15].height = 47
+    for r in range(ds, de + 1):
+        for c in range(1, fund_cols + 2):
+            ws_fund.cell(row=r, column=c).border = border
+            ws_fund.cell(row=r, column=c).font = body_font
+            ws_fund.cell(row=r, column=c).alignment = Alignment(horizontal="center", vertical="center")
+    ws_fund.column_dimensions["A"].width = 12
+    for c in range(2, fund_cols + 2):
+        ws_fund.column_dimensions[get_column_letter(c)].width = 16
+    ws_fund.freeze_panes = "B16"
 
     import os
     wb.calculation.fullCalcOnLoad = True
