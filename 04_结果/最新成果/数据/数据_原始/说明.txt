@@ -7,7 +7,8 @@
 - etfs/：原始19支ETF Yahoo日线CSV，含Adj Close。
 - etfs_extended/：扩展57支ETF Yahoo v8完整日线CSV，含Adj Close。
 - profunds/：ProFunds原始NAV CSV与129支基金Adj Close JSON。
-- external_daily.csv：VIX/TNX外部数据。
+- external_daily.csv：VIX/TNX外部数据，含OHLC与衍生指标。
+- VIX_historical.csv / TNX_historical.csv：Yahoo抓取的VIX/TNX原始OHLC日线。
 
 每个子目录的文件结构说明见：
 - etfs/说明.txt

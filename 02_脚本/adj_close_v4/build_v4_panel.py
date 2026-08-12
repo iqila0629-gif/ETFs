@@ -17,7 +17,7 @@ def main() -> None:
     if "date" in fund.columns:
         fund = fund.rename(columns={"date": "Date"})
     etf = pd.read_csv(config.ETF19_PANEL)
-    external = pd.read_csv(config.EXTERNAL_DAILY, parse_dates=["Date"]).sort_values("Date").reset_index(drop=True)
+    external_raw = pd.read_csv(config.EXTERNAL_DAILY, parse_dates=["Date"]).sort_values("Date").reset_index(drop=True)
 
     fund["Date"] = pd.to_datetime(fund["Date"])
     etf["Date"] = pd.to_datetime(etf["Date"])
@@ -39,9 +39,9 @@ def main() -> None:
         .reset_index(drop=True)
     )
 
-    vix = external["VIX_Close"]
-    tnx = external["TNX_Yield"]
-    ext = pd.DataFrame({"Date": external["Date"]})
+    vix = external_raw["VIX_Close"]
+    tnx = external_raw["TNX_Yield"]
+    ext = pd.DataFrame({"Date": external_raw["Date"]})
     etf_for_ext = etf[
         ["Date", "SPY", "HYG", "TLT", "JNK", "UUP", "GLD", "XLK", "XLF", "TIP"]
     ].sort_values("Date")
@@ -60,7 +60,23 @@ def main() -> None:
     ext["VIX_TNX_Ratio"] = vix / tnx
     ext["YldCurveProxy"] = ext["TLT"] - ext["TIP"]
     ext = ext.drop(columns=["SPY", "HYG", "TLT", "JNK", "UUP", "GLD", "XLK", "XLF", "TIP"])
-    external = ext.sort_values("Date").reset_index(drop=True)
+    for col in (
+        "VIX_Open", "VIX_High", "VIX_Low",
+        "TNX_Open", "TNX_High", "TNX_Low",
+    ):
+        ext[col] = external_raw[col].to_numpy()
+    ext_cols = [
+        "Date",
+        "VIX_Open", "VIX_High", "VIX_Low", "VIX_Close", "VIX_Chg%",
+        "TNX_Open", "TNX_High", "TNX_Low", "TNX_Yield", "TNX_ChgBp",
+        "CreditSpread", "JNKSpread", "StkBonCorr", "USDGoldRatio", "SectRotation",
+        "VIX_5dChg", "VIX_20dVol", "VIX_TNX_Ratio", "YldCurveProxy",
+    ]
+    missing = [c for c in ext_cols if c not in ext.columns]
+    if missing:
+        print("missing external columns:", missing)
+        sys.exit(1)
+    external = ext[ext_cols].sort_values("Date").reset_index(drop=True)
 
     config.PROCESSED.mkdir(parents=True, exist_ok=True)
     panel.to_csv(config.V4_ETF19_PANEL, index=False)
