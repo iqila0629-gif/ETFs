@@ -60,6 +60,7 @@ def main() -> None:
         "2. VIX/TNX 回报与变化指标集中放一起，第15行直接写名称（如 VIX回报、VIX_Chg%、TNX_ChgBp），后面用空列分隔。",
         "3. 其他派生外部列：第14行=指标名称，第15行=计算公式（谁减谁），数据区为 Excel 公式。",
         "4. ETF 回报、VIX/TNX 回报、派生指标均用公式计算，回报率保留4位小数。",
+        "5. ETF 原始 OHLCV 集中排列；全部 ETF 原始数据之后另起 ETF 回报区，回报列集中排列。",
     ]
     for i, line in enumerate(note_lines, start=3):
         ws_note.cell(row=i, column=1, value=line)
@@ -74,10 +75,14 @@ def main() -> None:
     ext_ohlc = load_external_ohlc()
     for e in ETF_ALL:
         etf_cols[e] = {}
-        for key in ("open", "high", "low", "close", "adj", "volume", "ret"):
+        for key in ("open", "high", "low", "close", "adj", "volume"):
             etf_cols[e][key] = col_idx
             col_idx += 1
         blank_cols.add(col_idx); col_idx += 1
+    for e in ETF_ALL:
+        etf_cols[e]["ret"] = col_idx
+        col_idx += 1
+    blank_cols.add(col_idx); col_idx += 1
 
     vix_cols = {}
     tnx_cols = {}
@@ -116,11 +121,12 @@ def main() -> None:
         for key, label in (
             ("open", "Open"), ("high", "High"), ("low", "Low"),
             ("close", "Close"), ("adj", "Adj Close"), ("volume", "Volume"),
-            ("ret", "回报"),
         ):
             ws.cell(row=15, column=etf_cols[e][key], value=label)
+    for e in ETF_ALL:
+        ws.cell(row=15, column=etf_cols[e]["ret"], value=f"{e}回报")
     for name, cols in (("VIX", vix_cols), ("TNX", tnx_cols)):
-        ws.cell(row=14, column=cols["open"] + 2, value=name)
+        ws.cell(row=14, column=cols["open"] + 1, value=name)
         for key, label in (
             ("open", "Open"), ("high", "High"), ("low", "Low"),
             ("close", "Close"),
