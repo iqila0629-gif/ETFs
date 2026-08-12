@@ -259,7 +259,7 @@ def build_workbook(
         ws[f"{col}9"] = f"=STDEV({col}{ds}:{col}{de})"
         ws[f"{col}10"] = f"=SUM({col}{ds}:{col}{de})"
 
-    fund_adj = {t: sample.load_fund_adj(t, root=config.CLEANED_FUND_ADJ_DIR) for t in fund_order}
+    fund_adj = {t: sample.load_fund_adj(t) for t in fund_order}
     etf_ohlc = {e: sample.load_etf_ohlc(e) for e in etf_all}
     ext_raw = pd.read_csv(config.EXTERNAL_DAILY, parse_dates=["Date"]).set_index("Date")
 
