@@ -15,7 +15,7 @@ import build_v4_m30_newformat_sample as sample
 
 ETF_ALL = ["SPY", "TLT", "HYG", "JNK", "UUP", "GLD", "XLK", "XLF", "TIP"]
 DATES = [
-    "2026-08-11", "2026-08-10", "2026-08-07", "2026-08-06", "2026-08-05",
+    "2026-08-07", "2026-08-06", "2026-08-05",
     "2026-08-04", "2026-08-03", "2026-07-31", "2026-07-30", "2026-07-29",
     "2026-07-28", "2026-07-27", "2026-07-24", "2026-07-23", "2026-07-22",
     "2026-07-21", "2026-07-20", "2026-07-17", "2026-07-16", "2026-07-15",
@@ -168,8 +168,18 @@ def main() -> None:
             ("close", "Close"), ("adj", "Adj Close"), ("volume", "Volume"),
         ):
             ws.cell(row=15, column=cols[key], value=label)
+    chg_formula = {
+        "VIX_Chg%": "VIX_close/昨VIX_close-1",
+        "VIX_5dChg": "VIX_close/5日前VIX_close-1",
+        "VIX_20dVol": "STDEV(VIX日变化,近20日)",
+        "TNX_ChgBp": "(TNX_close-昨TNX_close)*100",
+    }
     for key in chg_cols:
-        ws.cell(row=15, column=chg_cols[key], value=key)
+        if key in chg_formula:
+            ws.cell(row=14, column=chg_cols[key], value=key)
+            ws.cell(row=15, column=chg_cols[key], value=chg_formula[key])
+        else:
+            ws.cell(row=15, column=chg_cols[key], value=key)
     for name, formula in derived.items():
         ws.cell(row=14, column=derived_cols[name], value=name)
         ws.cell(row=15, column=derived_cols[name], value=formula)
@@ -230,7 +240,7 @@ def main() -> None:
         ):
             a_letter = get_column_letter(a)
             b_letter = get_column_letter(b)
-            ws.cell(row=r, column=derived_cols[name], value=f"={a_letter}{r}-{b_letter}{r}")
+            ws.cell(row=r, column=derived_cols[name], value=f'=IFERROR({a_letter}{r}-{b_letter}{r},"")')
         if i + 20 <= de:
             sp = get_column_letter(etf_cols["SPY"]["ret"])
             tl = get_column_letter(etf_cols["TLT"]["ret"])
