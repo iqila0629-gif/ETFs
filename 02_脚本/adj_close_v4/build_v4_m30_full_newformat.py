@@ -168,9 +168,9 @@ def build_workbook(
     merged_idx = {}
     for t in fund_order:
         cols = []
-        for cond, _ in per_fund[t]:
+        for cond, horizon in per_fund[t]:
             cols.append(col_idx)
-            headers.append(sample.condition_label(cond))
+            headers.append(sample.condition_label(cond, horizon))
             col_idx += 1
         strat_cols[t] = cols
         merged_idx[t] = col_idx

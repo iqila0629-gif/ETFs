@@ -282,7 +282,8 @@ def self_label(suffix: str) -> str:
     return suffix
 
 
-def condition_label(condition: str) -> str:
+def condition_label(condition: str, horizon: int = 1) -> str:
+    suffix = "，买基金第二天" if horizon <= 1 else f"，买基金后{horizon}日平均回报"
     if condition.startswith("combo_"):
         parts = condition[len("combo_"):].split("__")
         labels = []
@@ -293,11 +294,11 @@ def condition_label(condition: str) -> str:
                 labels.append(self_label(p.removeprefix("self_")))
             else:
                 labels.append(etf_label(p.split("_")))
-        return " 且 ".join(labels) + "，买基金第二天"
+        return " 且 ".join(labels) + suffix
     if condition.startswith("ext_"):
-        return ext_label(condition) + "，买基金第二天"
+        return ext_label(condition) + suffix
     if condition.startswith("self_"):
-        return self_label(condition.removeprefix("self_")) + "，买基金第二天"
+        return self_label(condition.removeprefix("self_")) + suffix
     tokens = condition.split("_")
     if (
         len(tokens) == 6
@@ -307,14 +308,14 @@ def condition_label(condition: str) -> str:
         and set(tokens[1:4]) <= {"up", "down"}
     ):
         labels = [etf_label([tokens[0], tokens[1]]), etf_label([tokens[4], tokens[2]]), etf_label([tokens[5], tokens[3]])]
-        return " 且 ".join(labels) + "，买基金第二天"
+        return " 且 ".join(labels) + suffix
     if len(tokens) == 6:
         labels = [etf_label([tokens[0], tokens[1]]), etf_label([tokens[2], tokens[3]]), etf_label([tokens[4], tokens[5]])]
-        return " 且 ".join(labels) + "，买基金第二天"
+        return " 且 ".join(labels) + suffix
     if len(tokens) == 4:
         labels = [etf_label([tokens[0], tokens[1]]), etf_label([tokens[2], tokens[3]])]
-        return " 且 ".join(labels) + "，买基金第二天"
-    return etf_label(tokens) + "，买基金第二天"
+        return " 且 ".join(labels) + suffix
+    return etf_label(tokens) + suffix
 
 
 def load_fund_adj(ticker: str, root: pathlib.Path | None = None) -> dict:
