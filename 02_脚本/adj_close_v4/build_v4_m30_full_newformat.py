@@ -18,15 +18,25 @@ import build_v4_m30_newformat_sample as sample
 
 CUTOFF = np.datetime64("2025-01-01")
 STAT_NAMES = ["Hit Ratio", "Up Count", "Down Count", "Average", "Max", "Min", "Count", "Std", "Sum"]
-EXT_ORDER = [
+EXT_RAW_FIELDS = {
+    "VIX": {"open": "VIX_Open", "high": "VIX_High", "low": "VIX_Low", "close": "VIX_Close"},
+    "TNX": {"open": "TNX_Open", "high": "TNX_High", "low": "TNX_Low", "close": "TNX_Yield"},
+}
+EXT_CHG_NAMES = ["VIX回报", "VIX_Chg%", "VIX_5dChg", "VIX_20dVol", "TNX回报", "TNX_ChgBp"]
+EXT_DERIVED = {
+    "CreditSpread": "HYG-TLT",
+    "JNKSpread": "JNK-TLT",
+    "StkBonCorr": "CORREL(SPY,TLT,近20日)",
+    "USDGoldRatio": "UUP-GLD",
+    "SectRotation": "XLK-XLF",
+    "VIX_TNX_Ratio": "VIX_close/TNX_close",
+    "YldCurveProxy": "TLT-TIP",
+}
+EXT_LOGICAL = [
     "VIX_Close", "VIX_Chg%", "TNX_Yield", "TNX_ChgBp", "VIX_5dChg", "VIX_20dVol",
     "CreditSpread", "JNKSpread", "StkBonCorr", "USDGoldRatio", "SectRotation",
     "VIX_TNX_Ratio", "YldCurveProxy",
 ]
-PCT_EXT = {
-    "VIX_Chg%", "TNX_ChgBp", "VIX_5dChg", "VIX_20dVol",
-    "CreditSpread", "JNKSpread", "USDGoldRatio", "SectRotation", "YldCurveProxy",
-}
 
 thin = Side(style="thin", color="BFBFBF")
 border = Border(left=thin, right=thin, top=thin, bottom=thin)
@@ -66,7 +76,7 @@ def build_workbook(
     }
 
     etf_all = sorted(config.V4_UNIVERSE)
-    ext_cols = [c for c in EXT_ORDER if c in set(pd.read_csv(config.V4_EXTERNAL_PANEL).columns)]
+    ext_cols = list(EXT_LOGICAL)
 
     base_headers = []
     for t in fund_order:
@@ -79,8 +89,10 @@ def build_workbook(
     for e in etf_all:
         base_headers += [f"{e}回报"]
     base_headers += [""]
-    base_headers += ext_cols
-    base_headers += [""]
+    base_headers += ["Open", "High", "Low", "Close", ""]
+    base_headers += ["Open", "High", "Low", "Close", ""]
+    base_headers += EXT_CHG_NAMES + [""]
+    base_headers += list(EXT_DERIVED.values()) + [""]
 
     col_idx = 2
     blank_cols: set[int] = set()
@@ -108,10 +120,46 @@ def build_workbook(
         etf_return_col[e] = get_column_letter(col_idx); col_idx += 1
     blank_cols.add(col_idx); col_idx += 1
 
-    ext_col_map = {}
-    for c in ext_cols:
-        ext_col_map[c] = get_column_letter(col_idx); col_idx += 1
+    vix_idx: dict[str, int] = {}
+    tnx_idx: dict[str, int] = {}
+    vix_start = col_idx
+    for key in ("open", "high", "low", "close"):
+        vix_idx[key] = col_idx
+        col_idx += 1
     blank_cols.add(col_idx); col_idx += 1
+    tnx_start = col_idx
+    for key in ("open", "high", "low", "close"):
+        tnx_idx[key] = col_idx
+        col_idx += 1
+    blank_cols.add(col_idx); col_idx += 1
+
+    chg_idx: dict[str, int] = {}
+    for name in EXT_CHG_NAMES:
+        chg_idx[name] = col_idx
+        col_idx += 1
+    blank_cols.add(col_idx); col_idx += 1
+
+    derived_idx: dict[str, int] = {}
+    for name in EXT_DERIVED:
+        derived_idx[name] = col_idx
+        col_idx += 1
+    blank_cols.add(col_idx); col_idx += 1
+
+    ext_col_map = {
+        "VIX_Close": get_column_letter(vix_idx["close"]),
+        "VIX_Chg%": get_column_letter(chg_idx["VIX_Chg%"]),
+        "TNX_Yield": get_column_letter(tnx_idx["close"]),
+        "TNX_ChgBp": get_column_letter(chg_idx["TNX_ChgBp"]),
+        "VIX_5dChg": get_column_letter(chg_idx["VIX_5dChg"]),
+        "VIX_20dVol": get_column_letter(chg_idx["VIX_20dVol"]),
+        "CreditSpread": get_column_letter(derived_idx["CreditSpread"]),
+        "JNKSpread": get_column_letter(derived_idx["JNKSpread"]),
+        "StkBonCorr": get_column_letter(derived_idx["StkBonCorr"]),
+        "USDGoldRatio": get_column_letter(derived_idx["USDGoldRatio"]),
+        "SectRotation": get_column_letter(derived_idx["SectRotation"]),
+        "VIX_TNX_Ratio": get_column_letter(derived_idx["VIX_TNX_Ratio"]),
+        "YldCurveProxy": get_column_letter(derived_idx["YldCurveProxy"]),
+    }
 
     colmap = {**fund_return_col, **etf_return_col, **ext_col_map}
 
@@ -145,10 +193,11 @@ def build_workbook(
         "   =IF(COUNT(B16:B17)=2,ROUND((B16/B17-1)*100,4),\"\")",
         "   B16 是今日 Adj Close，B17 是前一交易日 Adj Close；",
         "   COUNT 判断两天价格都存在才计算当日回报率，否则留空，避免 #DIV/0!。",
-        "   VIX_Close 的回报率公式相同；VIX_Chg% 为外部涨跌幅列，可与计算值核对。",
+        "   VIX/TNX 原始数据为 Open/High/Low/Close，回报率由 Close 计算；VIX_Chg%/TNX_ChgBp/VIX_5dChg/VIX_20dVol 为变化指标列。",
         "   ETF 原始数据列为 Open/High/Low/Close/Adj Close/Volume，回报率由 Adj Close 计算；",
         "   第14行为区块名称行（如EEM），第15行为列头；ETF列头不重复ETF名。",
-        "   表内按区块排列：基金区、每支ETF、ETF区、VIX区结束后均用空白列分隔。",
+        "   派生外部列第14行为名称，第15行为计算公式（谁减谁），数据区为 Excel 公式，如 CreditSpread=HYG回报-TLT回报。",
+        "   表内按区块排列：基金区、ETF原始区、ETF回报区、VIX/TNX区、变化区、派生区结束后均用空白列分隔。",
         "   所有回报率均以百分比显示并保留4位小数（公式 ROUND 到4位，显示格式 0.0000%）。",
         "3. 策略公式",
         "   =IF(条件, 该基金次日实际回报, \"\")",
@@ -192,7 +241,7 @@ def build_workbook(
 
     fund_adj = {t: sample.load_fund_adj(t) for t in fund_order}
     etf_ohlc = {e: sample.load_etf_ohlc(e) for e in etf_all}
-    ext_val = {c: dict(zip(pd.to_datetime(master["Date"]), master[c])) for c in ext_cols}
+    ext_raw = pd.read_csv(config.EXTERNAL_DAILY, parse_dates=["Date"]).set_index("Date")
 
     strategy_thr_refs: dict[int, list[str]] = {}
     for t in fund_order:
@@ -212,6 +261,12 @@ def build_workbook(
 
     for e in etf_all:
         ws.cell(row=14, column=etf_block_start[e] + 2, value=e)
+    ws.cell(row=14, column=vix_start + 1, value="VIX")
+    ws.cell(row=14, column=tnx_start + 1, value="TNX")
+    for name in ("VIX_Chg%", "VIX_5dChg", "VIX_20dVol", "TNX_ChgBp"):
+        ws.cell(row=14, column=chg_idx[name], value=name)
+    for name in EXT_DERIVED:
+        ws.cell(row=14, column=derived_idx[name], value=name)
     for t in fund_order:
         for c_idx in strat_cols[t] + [merged_idx[t]]:
             ws.cell(row=14, column=c_idx, value=fund_labels[t])
@@ -245,8 +300,14 @@ def build_workbook(
         for e in etf_all:
             row.append("")
         row.append("")
-        for c in ext_cols:
-            row.append(round(ext_val[c].get(d, float("nan")), 4))
+        ext_rec = ext_raw.loc[d] if d in ext_raw.index else {}
+        for name, idx_map in (("VIX", vix_idx), ("TNX", tnx_idx)):
+            for key in ("open", "high", "low", "close"):
+                row.append(round(ext_rec.get(EXT_RAW_FIELDS[name][key], float("nan")), 4))
+            row.append("")
+        row += [""] * len(EXT_CHG_NAMES)
+        row.append("")
+        row += [""] * len(EXT_DERIVED)
         row.append("")
         ws.append(row)
         for pcol, rcol in zip(price_cols, ret_cols):
@@ -257,6 +318,45 @@ def build_workbook(
                 )
             else:
                 ws[f"{rcol}{r}"] = ""
+
+        vc = get_column_letter(vix_idx["close"])
+        tc = get_column_letter(tnx_idx["close"])
+        vchg = get_column_letter(chg_idx["VIX_Chg%"])
+        ws.cell(row=r, column=chg_idx["VIX回报"], value=(
+            f"=IF(COUNT({vc}{r}:{vc}{r + 1})=2,ROUND(({vc}{r}/{vc}{r + 1}-1)*100,4),\"\")"
+        ))
+        ws.cell(row=r, column=chg_idx["VIX_Chg%"], value=(
+            f"=IF(COUNT({vc}{r}:{vc}{r + 1})=2,ROUND(({vc}{r}/{vc}{r + 1}-1)*100,4),\"\")"
+        ))
+        ws.cell(row=r, column=chg_idx["TNX回报"], value=(
+            f"=IF(COUNT({tc}{r}:{tc}{r + 1})=2,ROUND(({tc}{r}/{tc}{r + 1}-1)*100,4),\"\")"
+        ))
+        ws.cell(row=r, column=chg_idx["TNX_ChgBp"], value=(
+            f"=IF(COUNT({tc}{r}:{tc}{r + 1})=2,({tc}{r}-{tc}{r + 1})*100,\"\")"
+        ))
+        if i + 5 < len(dates_desc):
+            ws.cell(row=r, column=chg_idx["VIX_5dChg"], value=(
+                f"=IF(COUNT({vc}{r}:{vc}{r + 5})=6,ROUND(({vc}{r}/{vc}{r + 5}-1)*100,4),\"\")"
+            ))
+        if i + 20 <= de:
+            ws.cell(row=r, column=chg_idx["VIX_20dVol"], value=(
+                f'=IF(COUNT({vchg}{r}:{vchg}{r + 19})=20,IFERROR(ROUND(STDEV({vchg}{r}:{vchg}{r + 19}),4),""),"")'
+            ))
+        for name, a, b in (
+            ("CreditSpread", etf_return_col["HYG"], etf_return_col["TLT"]),
+            ("JNKSpread", etf_return_col["JNK"], etf_return_col["TLT"]),
+            ("USDGoldRatio", etf_return_col["UUP"], etf_return_col["GLD"]),
+            ("SectRotation", etf_return_col["XLK"], etf_return_col["XLF"]),
+            ("YldCurveProxy", etf_return_col["TLT"], etf_return_col["TIP"]),
+        ):
+            ws.cell(row=r, column=derived_idx[name], value=f'=IFERROR({a}{r}-{b}{r},"")')
+        if i + 20 <= de:
+            sp = etf_return_col["SPY"]
+            tl = etf_return_col["TLT"]
+            ws.cell(row=r, column=derived_idx["StkBonCorr"], value=(
+                f'=IF(COUNT({sp}{r}:{sp}{r + 19})=20,IFERROR(CORREL({sp}{r}:{sp}{r + 19},{tl}{r}:{tl}{r + 19}),""),"")'
+            ))
+        ws.cell(row=r, column=derived_idx["VIX_TNX_Ratio"], value=f"={vc}{r}/{tc}{r}")
         for t in fund_order:
             fund_col = colmap[t]
             for c_idx, (cond, horizon) in zip(strat_cols[t], per_fund[t]):
@@ -274,17 +374,29 @@ def build_workbook(
                 expr = f"IF({col}{r}<>\"\",{col}{r},{expr})"
             ws.cell(row=r, column=merged_idx[t], value=f"={expr}")
 
-    pct_cols = (
-        list(fund_return_col.values())
-        + list(etf_return_col.values())
-        + [ext_col_map[c] for c in ext_cols if c in PCT_EXT]
-    )
+    pct_cols = list(fund_return_col.values()) + list(etf_return_col.values())
+    ext_pct = [
+        get_column_letter(chg_idx[name])
+        for name in ("VIX回报", "VIX_Chg%", "VIX_5dChg", "VIX_20dVol", "TNX回报")
+    ]
+    ext_pct += [
+        get_column_letter(derived_idx[name])
+        for name in ("CreditSpread", "JNKSpread", "USDGoldRatio", "SectRotation", "YldCurveProxy")
+    ]
+    ext_bp = get_column_letter(chg_idx["TNX_ChgBp"])
+    ext_num = [
+        get_column_letter(derived_idx["StkBonCorr"]),
+        get_column_letter(derived_idx["VIX_TNX_Ratio"]),
+    ]
     for t in fund_order:
         pct_cols += [get_column_letter(c) for c in strat_cols[t]]
         pct_cols.append(get_column_letter(merged_idx[t]))
     for r in range(ds, de + 1):
-        for col in pct_cols:
+        for col in pct_cols + ext_pct:
             ws[f"{col}{r}"].number_format = '0.0000"%"'
+        ws[f"{ext_bp}{r}"].number_format = '0.00"bp"'
+        for col in ext_num:
+            ws[f"{col}{r}"].number_format = "0.0000"
 
     for c in range(2, n_cols + 1):
         if c in blank_cols:
