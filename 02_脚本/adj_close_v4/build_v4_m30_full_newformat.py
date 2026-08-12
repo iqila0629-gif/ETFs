@@ -52,7 +52,7 @@ def load_mapping() -> pd.DataFrame:
 
 def target_formula(fund_col: str, r: int, horizon: int) -> str:
     if horizon == 1:
-        return f"IF(ABS({fund_col}{r - 1})<=50,{fund_col}{r - 1},\"\")"
+        return f'IFERROR(IF(ABS({fund_col}{r - 1})<=50,{fund_col}{r - 1},""),"")'
     return (
         f'IFERROR(IF(ABS(AVERAGE({fund_col}{r - horizon}:{fund_col}{r - 1}))<=50,'
         f'ROUND(AVERAGE({fund_col}{r - horizon}:{fund_col}{r - 1}),4),""),"")'
