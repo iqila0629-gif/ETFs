@@ -230,6 +230,8 @@ def build_workbook(
         "   修改数字可调整条件，公式自动更新。",
         "6. 基金基础数据 Sheet",
         "   与“数据”Sheet 严格同一行对齐（如 8/4 在两个 Sheet 均为第16行），包含全部基金 Adj Close 与回报；回报由同表 Adj Close 公式计算。",
+        "7. 策略列守卫",
+        "   策略目标为次日回报或未来 N 日平均回报，仅当 |目标| <= 50% 时显示，超过则留空；原始 Adj Close 和基金回报列保持原值。",
     ]
     for i, line in enumerate(note_lines, start=3):
         ws_note.cell(row=i, column=1, value=line)
