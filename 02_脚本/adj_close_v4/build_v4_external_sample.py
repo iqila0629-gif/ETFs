@@ -99,9 +99,10 @@ def main() -> None:
     ws_note["A1"].font = Font(name="Arial", size=14, bold=True)
     note_lines = [
         "布局说明：",
-        "1. VIX/TNX 按 ETF 格式展示：第14行=名称，第15行=Open/High/Low/Close/Adj Close/Volume/回报。",
-        "2. 派生外部列：第14行=指标名称，第15行=计算公式（谁减谁），数据区为 Excel 公式。",
-        "3. ETF 回报、VIX/TNX 回报、派生指标均用公式计算，回报率保留4位小数。",
+        "1. VIX/TNX 原始数据按 ETF 格式展示：第14行=名称，第15行=Open/High/Low/Close/Adj Close/Volume。",
+        "2. VIX/TNX 回报与变化指标集中放一起，第15行直接写名称（如 VIX回报、VIX_Chg%、TNX_ChgBp），后面用空列分隔。",
+        "3. 其他派生外部列：第14行=指标名称，第15行=计算公式（谁减谁），数据区为 Excel 公式。",
+        "4. ETF 回报、VIX/TNX 回报、派生指标均用公式计算，回报率保留4位小数。",
     ]
     for i, line in enumerate(note_lines, start=3):
         ws_note.cell(row=i, column=1, value=line)
@@ -123,16 +124,18 @@ def main() -> None:
     vix_cols = {}
     tnx_cols = {}
     for cols in (vix_cols, tnx_cols):
-        for key in ("open", "high", "low", "close", "adj", "volume", "ret"):
+        for key in ("open", "high", "low", "close", "adj", "volume"):
             cols[key] = col_idx
             col_idx += 1
         blank_cols.add(col_idx); col_idx += 1
 
+    chg_cols = {}
+    for key in ("VIX回报", "VIX_Chg%", "VIX_5dChg", "VIX_20dVol", "TNX回报", "TNX_ChgBp"):
+        chg_cols[key] = col_idx
+        col_idx += 1
+    blank_cols.add(col_idx); col_idx += 1
+
     derived = {
-        "VIX_Chg%": "VIX_close/昨VIX_close-1",
-        "TNX_ChgBp": "(TNX_close-昨TNX_close)*100",
-        "VIX_5dChg": "VIX_close/5日前VIX_close-1",
-        "VIX_20dVol": "STDEV(VIX日变化,近20日)",
         "CreditSpread": "HYG-TLT",
         "JNKSpread": "JNK-TLT",
         "StkBonCorr": "CORREL(SPY,TLT,近20日)",
@@ -163,9 +166,10 @@ def main() -> None:
         for key, label in (
             ("open", "Open"), ("high", "High"), ("low", "Low"),
             ("close", "Close"), ("adj", "Adj Close"), ("volume", "Volume"),
-            ("ret", "回报"),
         ):
             ws.cell(row=15, column=cols[key], value=label)
+    for key in chg_cols:
+        ws.cell(row=15, column=chg_cols[key], value=key)
     for name, formula in derived.items():
         ws.cell(row=14, column=derived_cols[name], value=name)
         ws.cell(row=15, column=derived_cols[name], value=formula)
@@ -193,29 +197,29 @@ def main() -> None:
             if vals:
                 for key, v in zip(("open", "high", "low", "close", "adj", "volume"), vals):
                     ws.cell(row=r, column=cols[key], value=v if key == "volume" else round(v, 4))
-            close = get_column_letter(cols["close"])
-            if i < len(DATES) - 1:
-                ws.cell(row=r, column=cols["ret"], value=(
-                    f"=IF(COUNT({close}{r}:{close}{r + 1})=2,"
-                    f"ROUND(({close}{r}/{close}{r + 1}-1)*100,4),\"\")"
-                ))
 
         vc = get_column_letter(vix_cols["close"])
         tc = get_column_letter(tnx_cols["close"])
-        ws.cell(row=r, column=derived_cols["VIX_Chg%"], value=(
+        ws.cell(row=r, column=chg_cols["VIX回报"], value=(
             f"=IF(COUNT({vc}{r}:{vc}{r + 1})=2,ROUND(({vc}{r}/{vc}{r + 1}-1)*100,4),\"\")"
         ))
-        ws.cell(row=r, column=derived_cols["TNX_ChgBp"], value=(
+        ws.cell(row=r, column=chg_cols["VIX_Chg%"], value=(
+            f"=IF(COUNT({vc}{r}:{vc}{r + 1})=2,ROUND(({vc}{r}/{vc}{r + 1}-1)*100,4),\"\")"
+        ))
+        ws.cell(row=r, column=chg_cols["TNX回报"], value=(
+            f"=IF(COUNT({tc}{r}:{tc}{r + 1})=2,ROUND(({tc}{r}/{tc}{r + 1}-1)*100,4),\"\")"
+        ))
+        ws.cell(row=r, column=chg_cols["TNX_ChgBp"], value=(
             f"=IF(COUNT({tc}{r}:{tc}{r + 1})=2,({tc}{r}-{tc}{r + 1})*100,\"\")"
         ))
         if i + 5 < len(DATES):
-            ws.cell(row=r, column=derived_cols["VIX_5dChg"], value=(
+            ws.cell(row=r, column=chg_cols["VIX_5dChg"], value=(
                 f"=IF(COUNT({vc}{r}:{vc}{r + 5})=6,ROUND(({vc}{r}/{vc}{r + 5}-1)*100,4),\"\")"
             ))
         if i + 20 <= de:
-            vchg = get_column_letter(derived_cols["VIX_Chg%"])
-            ws.cell(row=r, column=derived_cols["VIX_20dVol"], value=(
-                f'=IF(COUNT({vchg}{r}:{vchg}{r + 19})=20,ROUND(STDEV({vchg}{r}:{vchg}{r + 19}),4),"")'
+            vchg = get_column_letter(chg_cols["VIX_Chg%"])
+            ws.cell(row=r, column=chg_cols["VIX_20dVol"], value=(
+                f'=IF(COUNT({vchg}{r}:{vchg}{r + 19})=20,IFERROR(ROUND(STDEV({vchg}{r}:{vchg}{r + 19}),4),""),"")'
             ))
         for name, a, b in (
             ("CreditSpread", etf_cols["HYG"]["ret"], etf_cols["TLT"]["ret"]),
@@ -231,16 +235,18 @@ def main() -> None:
             sp = get_column_letter(etf_cols["SPY"]["ret"])
             tl = get_column_letter(etf_cols["TLT"]["ret"])
             ws.cell(row=r, column=derived_cols["StkBonCorr"], value=(
-                f"=IF(COUNT({sp}{r}:{sp}{r + 19})=20,CORREL({sp}{r}:{sp}{r + 19},{tl}{r}:{tl}{r + 19}),\"\")"
+                f'=IF(COUNT({sp}{r}:{sp}{r + 19})=20,IFERROR(CORREL({sp}{r}:{sp}{r + 19},{tl}{r}:{tl}{r + 19}),""),"")'
             ))
         ws.cell(row=r, column=derived_cols["VIX_TNX_Ratio"], value=f"={vc}{r}/{tc}{r}")
 
     pct_cols = []
     for e in ETF_ALL:
         pct_cols.append(etf_cols[e]["ret"])
-    pct_cols += [vix_cols["ret"], tnx_cols["ret"]]
     pct_cols += [
-        derived_cols["VIX_Chg%"], derived_cols["VIX_5dChg"], derived_cols["VIX_20dVol"],
+        chg_cols["VIX回报"], chg_cols["VIX_Chg%"], chg_cols["VIX_5dChg"],
+        chg_cols["VIX_20dVol"], chg_cols["TNX回报"],
+    ]
+    pct_cols += [
         derived_cols["CreditSpread"], derived_cols["JNKSpread"],
         derived_cols["USDGoldRatio"], derived_cols["SectRotation"],
         derived_cols["YldCurveProxy"],
@@ -248,7 +254,7 @@ def main() -> None:
     for r in range(ds, de + 1):
         for c in pct_cols:
             ws.cell(row=r, column=c).number_format = '0.0000"%"'
-        ws.cell(row=r, column=derived_cols["TNX_ChgBp"]).number_format = '0.00"bp"'
+        ws.cell(row=r, column=chg_cols["TNX_ChgBp"]).number_format = '0.00"bp"'
         ws.cell(row=r, column=derived_cols["StkBonCorr"]).number_format = "0.0000"
         ws.cell(row=r, column=derived_cols["VIX_TNX_Ratio"]).number_format = "0.0000"
 
