@@ -317,8 +317,11 @@ def condition_label(condition: str) -> str:
     return etf_label(tokens) + "，买基金第二天"
 
 
-def load_fund_adj(ticker: str) -> dict:
-    p = config.RESULT_ROOT / "最新成果" / "数据" / "数据_原始" / "profunds" / "adj_close_nasdaq" / f"{ticker}.json"
+def load_fund_adj(ticker: str, root: pathlib.Path | None = None) -> dict:
+    if root is None:
+        p = config.RESULT_ROOT / "最新成果" / "数据" / "数据_原始" / "profunds" / "adj_close_nasdaq" / f"{ticker}.json"
+    else:
+        p = root / f"{ticker}.json"
     data = json.loads(p.read_text(encoding="utf-8-sig"))
     rows = data["data"]["tradesTable"]["rows"]
     out = {}

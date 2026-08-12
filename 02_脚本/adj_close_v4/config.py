@@ -32,6 +32,7 @@ EXTERNAL_DAILY = EVENT_INPUTS / "external_daily.csv"
 V4_ETF19_PANEL = PROCESSED / "v4_etf19_panel.csv"
 V4_ETF20_PANEL = PROCESSED / "v4_etf20_panel.csv"
 V4_EXTERNAL_PANEL = PROCESSED / "v4_external_panel.csv"
+CLEANED_FUND_ADJ_DIR = PROCESSED / "profunds_adj_cleaned"
 
 V3_PASS = MIDDLE / "全部ETF特有" / "v3_dual_criteria_pass.csv"
 PAIR_STRICT = MIDDLE / "通用" / "文件" / "pair_strict_pass.csv"
