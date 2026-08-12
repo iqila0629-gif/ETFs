@@ -53,7 +53,7 @@ def load_mapping() -> pd.DataFrame:
 def target_formula(fund_col: str, r: int, horizon: int) -> str:
     if horizon == 1:
         return f"{fund_col}{r - 1}"
-    return f'IFERROR(ROUND(AVERAGE({fund_col}{r - 1}:{fund_col}{r - horizon}),4),"")'
+    return f'IFERROR(ROUND(AVERAGE({fund_col}{r - horizon}:{fund_col}{r - 1}),4),"")'
 
 
 def build_workbook(
@@ -377,7 +377,8 @@ def build_workbook(
         for t in fund_order:
             fund_col = colmap[t]
             for c_idx, (cond, horizon) in zip(strat_cols[t], per_fund[t]):
-                if i < horizon:
+                lookback = sample.condition_lookback(cond)
+                if i < horizon or i + lookback >= len(dates_desc):
                     ws.cell(row=r, column=c_idx, value="")
                 else:
                     cond_expr = sample.condition_expr(

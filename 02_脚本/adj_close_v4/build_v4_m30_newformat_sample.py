@@ -86,9 +86,18 @@ def self_cond_expr(suffix: str, fund_col: str, row: int, thr_ref: str) -> str:
     if suffix in ("3up", "3down", "5up", "5down"):
         n = int(suffix[0])
         sign = ">" if suffix.endswith("up") else "<"
-        parts = [f"{fund_col}{row - k}{sign}{thr_ref}" for k in range(n)]
+        # 日期降序：当天在第 row 行，前两个交易日是下方 row+1 / row+2。
+        parts = [f"{fund_col}{row + k}{sign}{thr_ref}" for k in range(n)]
         return "AND(" + ",".join(parts) + ")"
     raise ValueError(suffix)
+
+
+def condition_lookback(condition: str) -> int:
+    if "self_5up" in condition or "self_5down" in condition:
+        return 4
+    if "self_3up" in condition or "self_3down" in condition:
+        return 2
+    return 0
 
 
 def part_expr(part: str, ticker: str, row: int, colmap: dict[str, str], fund_col: str, thr_ref: str) -> str:
