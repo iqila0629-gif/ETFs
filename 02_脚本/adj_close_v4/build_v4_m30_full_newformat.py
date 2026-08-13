@@ -23,6 +23,14 @@ EXT_RAW_FIELDS = {
     "TNX": {"open": "TNX_Open", "high": "TNX_High", "low": "TNX_Low", "close": "TNX_Yield"},
 }
 EXT_CHG_NAMES = ["VIX回报", "VIX_Chg%", "VIX_5dChg", "VIX_20dVol", "TNX回报", "TNX_ChgBp"]
+EXT_CHG_FORMULAS = {
+    "VIX回报": "VIX回报",
+    "VIX_Chg%": "VIX_close/昨VIX_close-1",
+    "VIX_5dChg": "VIX_close/5日前VIX_close-1",
+    "VIX_20dVol": "STDEV(VIX日变化,近20日)",
+    "TNX回报": "TNX回报",
+    "TNX_ChgBp": "(TNX_close-昨TNX_close)*100",
+}
 EXT_DERIVED = {
     "CreditSpread": "HYG-TLT",
     "JNKSpread": "JNK-TLT",
@@ -94,7 +102,7 @@ def build_workbook(
     base_headers += [""]
     base_headers += ["Open", "High", "Low", "Close", ""]
     base_headers += ["Open", "High", "Low", "Close", ""]
-    base_headers += EXT_CHG_NAMES + [""]
+    base_headers += [EXT_CHG_FORMULAS[n] for n in EXT_CHG_NAMES] + [""]
     base_headers += list(EXT_DERIVED.values()) + [""]
 
     col_idx = 2
@@ -378,7 +386,7 @@ def build_workbook(
             ws.cell(row=r, column=derived_idx["StkBonCorr"], value=(
                 f'=IF(COUNT({sp}{r}:{sp}{r + 19})=20,IFERROR(CORREL({sp}{r}:{sp}{r + 19},{tl}{r}:{tl}{r + 19}),""),"")'
             ))
-        ws.cell(row=r, column=derived_idx["VIX_TNX_Ratio"], value=f"={vc}{r}/{tc}{r}")
+        ws.cell(row=r, column=derived_idx["VIX_TNX_Ratio"], value=f'=IFERROR({vc}{r}/{tc}{r},"")')
         for t in fund_order:
             fund_col = colmap[t]
             for c_idx, (cond, horizon) in zip(strat_cols[t], per_fund[t]):
