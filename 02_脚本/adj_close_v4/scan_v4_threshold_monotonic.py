@@ -127,19 +127,26 @@ def is_scan_token(part: str, all_etfs: set[str]) -> bool:
     return suffix in {"up", "down", "big_up", "big_down", "gt2", "lt-2"}
 
 
+def strategy_parts(condition: str, all_etfs: set[str]) -> list[str]:
+    if condition.startswith("combo_"):
+        return condition[len("combo_"):].split("__")
+    tokens = condition.split("_")
+    if (
+        len(tokens) in (4, 6)
+        and tokens[0] in all_etfs
+        and tokens[2] in all_etfs
+        and set(tokens[1::2]) <= {"up", "down"}
+    ):
+        return [f"{tokens[i]}_{tokens[i + 1]}" for i in range(0, len(tokens), 2)]
+    return [condition]
+
+
 def scan_tokens(condition: str, all_etfs: set[str]) -> list[str]:
-    parts = condition[len("combo_"):].split("__") if condition.startswith("combo_") else [condition]
     out = []
-    for p in parts:
+    for p in strategy_parts(condition, all_etfs):
         if is_scan_token(p, all_etfs):
             out.append(p)
     return out
-
-
-def strategy_parts(condition: str) -> list[str]:
-    if condition.startswith("combo_"):
-        return condition[len("combo_"):].split("__")
-    return [condition]
 
 
 def bucket_stats(vals: np.ndarray, targets: np.ndarray) -> dict:
@@ -219,7 +226,7 @@ def main() -> None:
         horizon = int(r.horizon)
         source = str(r.source)
         for token in scan_tokens(condition, all_etfs):
-            parts = strategy_parts(condition)
+            parts = strategy_parts(condition, all_etfs)
             is_streak = bool(re.match(r"self_\d", token))
             scan_values = scan_magnitudes(token)
             for th in scan_values:
@@ -293,6 +300,7 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
 
 
 

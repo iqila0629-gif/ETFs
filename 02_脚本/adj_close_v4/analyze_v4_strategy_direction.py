@@ -108,7 +108,7 @@ def main() -> None:
                     "full_hit": row["full_hit"],
                     "full_trades": row["full_trades"],
                 })
-        pd.DataFrame(detail).to_csv(OUT_DIR / "v4_strategy_direction_detail.csv", index=False)
+        pd.DataFrame(detail).to_csv(OUT_DIR / "v4_strategy_direction_detail_v2.csv", index=False)
     print("groups:", len(df))
     print("median rho_avg:", med_avg.to_dict())
     print("median rho_hit:", med_hit.to_dict())
@@ -118,3 +118,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
