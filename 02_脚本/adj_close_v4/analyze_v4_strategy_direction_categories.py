@@ -53,6 +53,7 @@ def main() -> None:
         cat = classify(avgs, len(avgs))
         rows.append({
             "ticker": r.ticker,
+            "condition": r.condition,
             "condition_text": r.condition_text,
             "scan_token": r.scan_token,
             "horizon": r.horizon,
@@ -77,11 +78,38 @@ def main() -> None:
     summary["pct"] = (summary["count"] / len(df) * 100).round(2)
     summary.to_csv(OUT_DIR / "v4_strategy_direction_category_summary.csv", index=False)
 
+    # Detail rows in the same layout as v4_strategy_direction_detail_v2.csv
+    detail_cols = ["ticker", "condition_text", "scan_token", "horizon", "threshold", "full_avg", "full_hit", "full_trades"]
+    keys = set(zip(df["ticker"], df["condition"], df["scan_token"], df["horizon"]))
+    cat_map = {}
+    for r in df.itertuples(index=False):
+        cat_map[(r.ticker, r.condition, r.scan_token, r.horizon)] = r.category
+    detail_rows = []
+    for (tick, cond, tok, h), g in sweep.groupby(["ticker", "condition", "scan_token", "horizon"]):
+        if (tick, cond, tok, h) not in keys:
+            continue
+        row0 = g.iloc[0]
+        cond_text = dev.loc[(dev["ticker"] == tick) & (dev["condition"] == cond) & (dev["scan_token"] == tok) & (dev["horizon"] == h), "condition_text"].iloc[0]
+        for _, row in g.sort_values("threshold").iterrows():
+            detail_rows.append({
+                "ticker": tick,
+                "condition": cond,
+                "condition_text": cond_text,
+                "scan_token": tok,
+                "horizon": h,
+                "threshold": row["threshold"],
+                "full_avg": row["full_avg"],
+                "full_hit": row["full_hit"],
+                "full_trades": row["full_trades"],
+            })
+    detail_df = pd.DataFrame(detail_rows)
+    detail_df["_category"] = detail_df.apply(lambda r: cat_map[(r["ticker"], r["condition"], r["scan_token"], r["horizon"])], axis=1)
+
     xlsx_path = OUT_DIR / "v4_strategy_direction_categories.xlsx"
     with pd.ExcelWriter(xlsx_path, engine="openpyxl") as writer:
-        df.to_excel(writer, sheet_name="汇总", index=False)
-        for cat in sorted(df["category"].unique()):
-            df[df["category"] == cat].to_excel(writer, sheet_name=cat, index=False)
+        detail_df[detail_cols].to_excel(writer, sheet_name="汇总", index=False)
+        for cat in sorted(detail_df["_category"].unique()):
+            detail_df[detail_df["_category"] == cat][detail_cols].to_excel(writer, sheet_name=cat, index=False)
     print("classified rows:", len(df))
     print(summary.to_string(index=False))
     print("xlsx:", xlsx_path)
@@ -89,3 +117,6 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
+
+

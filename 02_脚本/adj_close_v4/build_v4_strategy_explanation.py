@@ -271,9 +271,9 @@ def conclusion_text(roles: list[str], theme: str, name: str) -> str:
         if risk_off and safe_theme:
             concl = "避险需求上升时该基金作为防御/避险资产，价格倾向上涨"
         elif risk_off:
-            concl = "风险偏好收缩时该基金价格倾向承压；若自身已下跌，超跌反弹概率上升"
+            concl = "风险冲击日该类高Beta/杠杆基金往往超跌，次日存在均值回归（超跌反弹）倾向"
         elif risk_on and safe_theme:
-            concl = "风险偏好回暖时该类防御资产相对承压"
+            concl = "风险偏好回暖日防御资产相对落后/超跌，次日存在均值回归回补倾向"
         elif risk_on:
             concl = "风险偏好回暖时该基金价格倾向上涨"
         else:
@@ -352,6 +352,7 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
 
 
 
