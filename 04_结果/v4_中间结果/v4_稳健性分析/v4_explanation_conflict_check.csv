@@ -1,0 +1,13 @@
+group_type,group,regime,up_count,down_count,up_examples,down_examples
+主题,中国,risk_off,4,6,UUP>0 且 XLF<0 且 XLK>0，买基金后2日平均回报 | EEM<0 且 TIP<0 且 UUP>0，买基金第二天 | HYG>0 且 SLV>0 且 XLC>0，买基金第二天,FXY>0 且 GDX>0 且 QQQ<0，买基金第二天 | FXY>0 且 板块轮动<0，买基金后2日平均回报 | GLD>0 且 SPY<0 且 XLV<0，买基金后2日平均回报
+主题,中盘,risk_off,1,12,FXY<0 且 GLD>0 且 XLC>0，买基金后2日平均回报,GDX>0 且 SPY<0 且 XLF<0，买基金第二天 | GDX>0 且 IWM<0 且 XLF<0，买基金第二天 | GDX>0 且 XLF<0 且 XLK<0，买基金第二天
+主题,国际,risk_off,1,4,SLV>0 且 TIP<0 且 TLT<0，买基金后2日平均回报,HYG>0 且 QQQ<0，买基金后2日平均回报 | SLV>0 且 VIX5d>=10.0%，买基金后2日平均回报 | IWM<0 且 该基金当日回报<=-2%，买基金第二天
+主题,小盘,risk_off,1,17,JNK>0 且 LQD<0 且 XLC>0，买基金后2日平均回报,GDX>0 且 SPY<0 且 XLF<0，买基金第二天 | GDX>0 且 SPY<0 且 UUP<0，买基金第二天 | GDX>0 且 XLC<0 且 XLK<0，买基金第二天
+主题,拉美,risk_off,2,6,LQD<0 且 SLV<0 且 XLF<0，买基金后3日平均回报 | LQD<0 且 SLV<0 且 XLF<0，买基金后3日平均回报,GDX>0 且 XLC<0，买基金第二天 | GDX>0 且 板块轮动<=-0.5%，买基金后2日平均回报 | QQQ<=-1% 且 VIX>0，买基金第二天
+主题,新兴市场,risk_off,4,6,FXY<0 且 IWM>0 且 JNK<0，买基金第二天 | EEM>0 且 UUP>0 且 XLF<0，买基金后3日平均回报 | GLD>0 且 TIP<0 且 XLU>0，买基金后2日平均回报,SPY<0 且 XLK<0 且 XLV<0，买基金第二天 | GLD<0 且 TIP>0 且 XLV>0，买基金第二天 | FXY>0 且 IWM<0 且 TLT>0，买基金第二天
+主题,日本,risk_off,3,4,FXY<0 且 GLD>0 且 XLC>0，买基金后2日平均回报 | XLC<0 且 信用利差>0，买基金后2日平均回报 | LQD<0 且 TIP<0 且 XLC<0，买基金后2日平均回报,EEM<0 且 SPY<0 且 XLV<0，买基金第二天 | QQQ<0 且 SPY<0 且 XLK<0，买基金后3日平均回报 | EEM<0 且 SPY<0 且 XLV<0，买基金第二天
+主题,日本,risk_on,2,1,GLD<0 且 XLU<0，买基金后2日平均回报 | GLD<0 且 XLU<0，买基金后2日平均回报,QQQ>0 且 SPY>0 且 TIP<0，买基金后2日平均回报
+主题,比特币,risk_off,1,3,EEM>0 且 GLD>0 且 SLV>0，买基金后2日平均回报,QQQ<0 且 XLK<0 且 XLV<0，买基金第二天 | EEM<0 且 信用利差<0，买基金后2日平均回报 | EEM<0 且 IWM<0 且 SPY<0，买基金后2日平均回报
+主题,能源,risk_off,1,6,QQQ>0 且 XLC>0 且 XLV>0，买基金第二天,XLE<0 且 VIX5d>=10.0%，买基金第二天 | GDX>0 且 SPY<0 且 XLV<0，买基金后2日平均回报 | XLE<0 且 VIX5d>=10.0%，买基金第二天
+主题,能源,risk_on,4,1,TLT<0 且 XLE>0 且 XLU<0，买基金后2日平均回报 | GLD<0 且 SPY>0 且 XLC>0，买基金后2日平均回报 | TLT<0 且 XLE>0 且 XLU<0，买基金后2日平均回报,SPY>0 且 XLC>0 且 XLK>0，买基金第二天
+主题,贵金属,risk_off,2,2,TIP>0 且 VIX5d>=10.0%，买基金后3日平均回报 | TIP>0 且 VIX5d>=10.0%，买基金后3日平均回报,GLD>0 且 XLE>0 且 XLV<0，买基金第二天 | GLD>0 且 XLE>0 且 XLV<0，买基金第二天
