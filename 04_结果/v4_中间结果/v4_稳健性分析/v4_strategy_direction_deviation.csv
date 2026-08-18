@@ -1,6 +1,9 @@
-ticker,condition,condition_text,scan_token,horizon,direction,rho,median_rho,n_thresholds,full_avg_delivered,full_avg_deepest
-CYPIX,combo_XLK_big_down__self_big_down,XLK<=-1% 且 该基金当日回报<=-2%，买基金第二天,XLK_big_down,1,down,-0.6180114950946984,0.7307212318274453,6,0.326094877391186,-0.3882216458225711
-UBPIX,combo_QQQ_big_down__ext_vix_chg_up,QQQ<=-1% 且 VIX>0，买基金第二天,QQQ_big_down,1,down,-0.7946580057806992,0.7307212318274453,6,0.258171853015116,-1.86407766990291
-UBPSX,combo_QQQ_big_down__ext_vix_chg_up,QQQ<=-1% 且 VIX>0，买基金第二天,QQQ_big_down,1,down,-0.7971896287767701,0.7307212318274453,6,0.2529222920879801,-1.84275184275185
-UDPSX,combo_QQQ_big_down__ext_vix_5dchg_up,QQQ<=-1% 且 VIX5d>0，买基金第二天,QQQ_big_down,1,down,-0.8950748056965625,0.7307212318274453,5,0.192437168832011,-0.2743822032898993
-ULPIX,combo_QQQ_big_down__ext_vix_5dchg_up,QQQ<=-1% 且 VIX5d>0，买基金第二天,QQQ_big_down,1,down,-0.8519525269562808,0.7307212318274453,5,0.2375073228720942,-0.0206826054947039
+ticker,condition,condition_text,scan_token,horizon,direction,rho_avg,rho_hit,median_rho_avg,median_rho_hit,flag
+BIPIX,combo_SLV_big_up__self_down,SLV>=1% 且 该基金当日回报<0，买基金后2日平均回报,SLV_big_up,2,up,0.9383311968524115,-0.7090091288847544,0.9005592021103213,0.7854618863318855,、命中率
+CYPIX,combo_XLK_big_down__self_big_down,XLK<=-1% 且 该基金当日回报<=-2%，买基金第二天,XLK_big_down,1,down,-0.6180114950946984,-0.10914594100906795,0.7307212318274453,0.8180830268961307,平均回报
+CYPIX,combo_XLK_big_down__self_big_down,XLK<=-1% 且 该基金当日回报<=-2%，买基金第二天,self_big_down,1,down,-0.14415802484591664,-0.6469457145006519,0.7307212318274453,0.8180830268961307,、命中率
+UBPIX,combo_QQQ_big_down__ext_vix_chg_up,QQQ<=-1% 且 VIX>0，买基金第二天,QQQ_big_down,1,down,-0.7946580057806992,-0.6555689035516263,0.7307212318274453,0.8180830268961307,平均回报、命中率
+UBPSX,combo_QQQ_big_down__ext_vix_chg_up,QQQ<=-1% 且 VIX>0，买基金第二天,QQQ_big_down,1,down,-0.7971896287767701,-0.6605380254969175,0.7307212318274453,0.8180830268961307,平均回报、命中率
+UDPSX,combo_QQQ_big_down__ext_vix_5dchg_up,QQQ<=-1% 且 VIX5d>0，买基金第二天,QQQ_big_down,1,down,-0.8950748056965625,-0.7976603667987051,0.7307212318274453,0.8180830268961307,平均回报、命中率
+UIPIX,combo_XLC_big_up__ext_usd_gold_ratio_down,XLC>=1% 且 美元/黄金<0，买基金后2日平均回报,XLC_big_up,2,up,-0.5219140232155851,0.9996595056629889,0.9005592021103213,0.7854618863318855,平均回报
+ULPIX,combo_QQQ_big_down__ext_vix_5dchg_up,QQQ<=-1% 且 VIX5d>0，买基金第二天,QQQ_big_down,1,down,-0.8519525269562808,-0.6419936836881035,0.7307212318274453,0.8180830268961307,平均回报、命中率

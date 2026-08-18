@@ -1,4 +1,4 @@
-"""Strategy-level threshold direction deviation vs all-strategy median direction."""
+"""Strategy-level threshold direction deviation vs all-strategy median direction (avg + hit)."""
 
 from __future__ import annotations
 
@@ -42,32 +42,39 @@ def main() -> None:
             continue
         g = g.sort_values("threshold")
         x = g["threshold"].to_numpy(dtype=float)
-        y = g["full_avg"].to_numpy(dtype=float)
-        rho = float(np.corrcoef(x, y)[0, 1]) if np.std(x) > 0 and np.std(y) > 0 else float("nan")
+        y_avg = g["full_avg"].to_numpy(dtype=float)
+        y_hit = g["full_hit"].to_numpy(dtype=float)
+        rho_avg = float(np.corrcoef(x, y_avg)[0, 1]) if np.std(x) > 0 and np.std(y_avg) > 0 else float("nan")
+        rho_hit = float(np.corrcoef(x, y_hit)[0, 1]) if np.std(x) > 0 and np.std(y_hit) > 0 else float("nan")
         groups.append({
             "ticker": tick,
             "condition": cond,
             "scan_token": tok,
             "horizon": h,
             "direction": direction_of(tok),
-            "rho": rho,
+            "rho_avg": rho_avg,
+            "rho_hit": rho_hit,
             "n_thresholds": len(g),
             "full_avg_delivered": float(g.iloc[0]["full_avg"]),
             "full_avg_deepest": float(g.iloc[-1]["full_avg"]),
+            "full_hit_delivered": float(g.iloc[0]["full_hit"]),
+            "full_hit_deepest": float(g.iloc[-1]["full_hit"]),
         })
     df = pd.DataFrame(groups)
-    med = df.groupby("direction")["rho"].median()
-    df["median_rho"] = df["direction"].map(med)
+    med_avg = df.groupby("direction")["rho_avg"].median()
+    med_hit = df.groupby("direction")["rho_hit"].median()
+    df["median_rho_avg"] = df["direction"].map(med_avg)
+    df["median_rho_hit"] = df["direction"].map(med_hit)
 
     flagged = []
     for r in df.itertuples(index=False):
-        if not np.isfinite(r.rho):
+        if not np.isfinite(r.rho_avg) and not np.isfinite(r.rho_hit):
             continue
-        if r.direction == "down":
-            opposite = bool(r.median_rho > 0 and r.rho < -0.5)
-        else:
-            opposite = bool(r.median_rho < 0 and r.rho > 0.5)
-        if opposite:
+        rho_avg = r.rho_avg if np.isfinite(r.rho_avg) else float("nan")
+        rho_hit = r.rho_hit if np.isfinite(r.rho_hit) else float("nan")
+        bad_avg = bool(np.isfinite(rho_avg) and rho_avg < -0.5)
+        bad_hit = bool(np.isfinite(rho_hit) and rho_hit < -0.5)
+        if bad_avg or bad_hit:
             flagged.append({
                 "ticker": r.ticker,
                 "condition": r.condition,
@@ -75,24 +82,39 @@ def main() -> None:
                 "scan_token": r.scan_token,
                 "horizon": r.horizon,
                 "direction": r.direction,
-                "rho": r.rho,
-                "median_rho": r.median_rho,
-                "n_thresholds": r.n_thresholds,
-                "full_avg_delivered": r.full_avg_delivered,
-                "full_avg_deepest": r.full_avg_deepest,
+                "rho_avg": rho_avg,
+                "rho_hit": rho_hit,
+                "median_rho_avg": r.median_rho_avg,
+                "median_rho_hit": r.median_rho_hit,
+                "flag": ("平均回报" if bad_avg else "") + ("、命中率" if bad_hit else ""),
             })
     fdf = pd.DataFrame(flagged)
     fdf.to_csv(OUT_DIR / "v4_strategy_direction_deviation.csv", index=False)
 
-
+    if len(fdf) >= 10:
+        detail = []
+        keys = set(zip(fdf["ticker"], fdf["condition"], fdf["scan_token"], fdf["horizon"]))
+        for (tick, cond, tok, h), g in sweep.groupby(["ticker", "condition", "scan_token", "horizon"]):
+            if (tick, cond, tok, h) not in keys:
+                continue
+            for _, row in g.iterrows():
+                detail.append({
+                    "ticker": tick,
+                    "condition_text": cond_text.get((tick, cond), cond),
+                    "scan_token": tok,
+                    "horizon": h,
+                    "threshold": row["threshold"],
+                    "full_avg": row["full_avg"],
+                    "full_hit": row["full_hit"],
+                    "full_trades": row["full_trades"],
+                })
+        pd.DataFrame(detail).to_csv(OUT_DIR / "v4_strategy_direction_detail.csv", index=False)
     print("groups:", len(df))
-    print(med.to_string())
+    print("median rho_avg:", med_avg.to_dict())
+    print("median rho_hit:", med_hit.to_dict())
     print("flagged:", len(fdf))
     print(fdf.to_string(index=False) if len(fdf) else "")
 
 
 if __name__ == "__main__":
     main()
-
-
-

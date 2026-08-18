@@ -175,68 +175,125 @@ def roles_for(part: str) -> list[str]:
     return roles
 
 
-def mechanism_text(parts: list[str], theme: str) -> str:
+SAFE_THEMES = {"贵金属", "公用事业", "必需消费", "国债", "利率机会", "医疗", "医药"}
+
+
+def product_profile(name: str, theme: str) -> str:
+    low = name.lower()
+    if "ultrashort" in low or "ultra short" in low:
+        product = "反向杠杆产品（约-2倍）"
+    elif "short" in low or "bear" in low:
+        product = "反向产品"
+    elif "ultra" in low:
+        product = "杠杆产品（约2倍）"
+    elif "bull" in low:
+        product = "多头产品"
+    else:
+        product = "主题产品"
+    return f"{theme}类{product}"
+
+
+def condition_meaning(roles: list[str]) -> list[str]:
+    order = [
+        ("risk_off_down", "风险偏好收缩，资金撤离高风险资产"),
+        ("vix_up", "恐慌情绪升温"),
+        ("credit_down", "信用风险上升，高风险资产承压"),
+        ("safe_up", "避险与利率敏感资产走强"),
+        ("gold_up", "避险与抗通胀需求上升"),
+        ("defensive_up", "资金转向防御性板块"),
+        ("rates_down", "利率下行预期升温"),
+        ("risk_on_up", "风险偏好回暖，资金回流权益与信用资产"),
+        ("vix_down", "恐慌情绪回落"),
+        ("credit_up", "信用环境偏宽松"),
+        ("rates_up", "利率上行预期升温"),
+        ("usd_down", "美元走弱"),
+        ("usd_up", "美元走强"),
+        ("sect_growth", "板块轮动偏向成长/科技"),
+        ("sect_value", "板块轮动偏向价值/金融"),
+        ("energy_up", "能源板块走强，通胀与周期预期升温"),
+        ("energy_down", "能源板块走弱，通胀与周期预期降温"),
+        ("defensive_down", "防御性板块走弱"),
+        ("safe_down", "避险资产走弱"),
+        ("self_down", "基金自身下跌/急跌"),
+        ("self_up", "基金自身走强"),
+    ]
+    out = []
+    for role, text in order:
+        if role in roles:
+            out.append(text)
+        if len(out) >= 2:
+            break
+    return out or ["多因子条件同时满足"]
+
+
+def market_impact(roles: list[str]) -> str:
+    risk_off = any(r in roles for r in ["risk_off_down", "vix_up", "credit_down", "safe_up", "gold_up", "defensive_up", "rates_down"])
+    risk_on = any(r in roles for r in ["risk_on_up", "vix_down", "credit_up", "defensive_down", "safe_down", "rates_up"])
+    if risk_off and risk_on:
+        impact = "市场风险偏好与防御信号并存，资金分流加剧"
+    elif risk_off:
+        impact = "资金转向避险与防御资产，风险资产承压"
+    elif risk_on:
+        impact = "资金回流风险资产，避险资产相对走弱"
+    else:
+        impact = "市场维持原有风险偏好格局"
+    if "usd_down" in roles:
+        impact += "，美元走弱利好贵金属与新兴市场"
+    if "usd_up" in roles:
+        impact += "，美元走强压制贵金属与新兴市场"
+    if "sect_growth" in roles:
+        impact += "，成长/科技板块相对占优"
+    if "sect_value" in roles:
+        impact += "，价值/金融板块相对占优"
+    if "self_down" in roles:
+        impact += "，超跌后存在均值回归动力"
+    return impact
+
+
+def conclusion_text(roles: list[str], theme: str, name: str) -> str:
+    low = name.lower()
+    inverse = any(k in low for k in ["short", "bear"])
+    safe_theme = theme in SAFE_THEMES
+    risk_off = any(r in roles for r in ["risk_off_down", "vix_up", "credit_down", "safe_up", "gold_up", "defensive_up", "rates_down"])
+    risk_on = any(r in roles for r in ["risk_on_up", "vix_down", "credit_up", "defensive_down", "safe_down", "rates_up"])
+    if inverse:
+        if risk_off and safe_theme:
+            concl = "避险需求上升时贵金属/防御资产走强，反向产品价格倾向承压"
+        elif risk_off:
+            concl = "风险偏好收缩时高风险资产承压，反向产品价格倾向上涨"
+        elif risk_on and safe_theme:
+            concl = "风险偏好回暖时防御资产相对走弱，反向产品价格倾向反弹"
+        elif risk_on:
+            concl = "风险偏好回暖时风险资产走强，反向产品价格倾向承压"
+        else:
+            concl = "条件触发后反向产品方向取决于标的资产相对强弱"
+    else:
+        if risk_off and safe_theme:
+            concl = "避险需求上升时该基金作为防御/避险资产，价格倾向上涨"
+        elif risk_off:
+            concl = "风险偏好收缩时该基金价格倾向承压；若自身已下跌，超跌反弹概率上升"
+        elif risk_on and safe_theme:
+            concl = "风险偏好回暖时该类防御资产相对承压"
+        elif risk_on:
+            concl = "风险偏好回暖时该基金价格倾向上涨"
+        else:
+            concl = "条件触发后该基金价格方向取决于市场状态"
+    if "self_down" in roles:
+        concl = "基金自身急跌后存在超跌反弹动量" + ("，" + concl if inverse or safe_theme or risk_off or risk_on else "")
+    return concl
+
+
+def mechanism_text(parts: list[str], theme: str, name: str) -> tuple[str, str]:
     roles: list[str] = []
     for p in parts:
         roles += roles_for(p)
-
-    priority = [
-        ("risk_off_down", "风险偏好收缩，资金撤离高风险资产"),
-        ("vix_up", "恐慌/波动率上升，避险情绪占优"),
-        ("credit_down", "信用利差走阔，信用风险上升"),
-        ("safe_up", "避险/利率敏感资产走强（黄金、日元、国债等）"),
-        ("gold_up", "贵金属走强，避险与抗通胀需求上升"),
-        ("defensive_up", "防御性板块走强，资金寻求低波动"),
-        ("risk_on_up", "风险偏好回暖，资金回流权益与信用资产"),
-        ("vix_down", "恐慌/波动率回落，市场趋于平静"),
-        ("credit_up", "信用环境偏宽松，资金愿意承担信用风险"),
-        ("rates_down", "利率下行预期，利好长久期与利率敏感资产"),
-        ("rates_up", "利率上行预期，压制长久期资产"),
-        ("usd_down", "美元走弱，利好贵金属与新兴市场"),
-        ("usd_up", "美元走强，压制贵金属与新兴市场"),
-        ("sect_growth", "板块轮动偏向成长/科技"),
-        ("sect_value", "板块轮动偏向价值/金融"),
-        ("energy_up", "能源板块走强，反映通胀与周期预期"),
-        ("energy_down", "能源板块走弱，通胀与周期预期降温"),
-        ("defensive_down", "防御性板块走弱，资金风险偏好上升"),
-        ("safe_down", "避险资产走弱"),
-        ("self_up", "基金自身走强后存在动量延续或高位回落风险"),
-        ("self_down", "基金自身下跌/急跌后存在超跌反弹动量"),
-        ("streak3_down", "连续3日下跌后超跌反弹概率上升"),
-        ("streak5_down", "连续5日下跌后超跌反弹概率上升"),
-        ("streak3_up", "连续3日上涨后惯性延续或回调风险并存"),
-        ("streak5_up", "连续5日上涨后回调风险上升"),
-    ]
-
-    narratives: list[str] = []
-    for role, text in priority:
-        if role in roles:
-            narratives.append(text)
-
-    if "risk_on_up" in roles and "risk_off_down" in roles:
-        narratives = [n for n in narratives if n not in (
-            "风险偏好回暖，资金回流权益与信用资产",
-            "风险偏好收缩，资金撤离高风险资产",
-        )]
-        narratives.insert(0, "风险偏好与防御信号并存，市场分歧加大")
-    if "safe_up" in roles and "safe_down" in roles:
-        narratives = [n for n in narratives if n not in (
-            "避险/利率敏感资产走强（黄金、日元、国债等）",
-            "避险资产走弱",
-        )]
-        narratives.insert(0, "避险资产表现分化")
-    if "defensive_up" in roles and "defensive_down" in roles:
-        narratives = [n for n in narratives if n not in (
-            "防御性板块走强，资金寻求低波动",
-            "防御性板块走弱，资金风险偏好上升",
-        )]
-        narratives.insert(0, "防御性板块表现分化")
-
-    if not narratives:
-        narratives.append("多因子状态组合，反映特定市场环境")
-    narratives = narratives[:4]
+    meanings = condition_meaning(roles)
+    impact = market_impact(roles)
+    profile = product_profile(name, theme)
+    concl = conclusion_text(roles, theme, name)
     cond_text = "，".join(part_text(p) for p in parts)
-    return cond_text, "；".join(narratives) + "。"
+    mech = f"{'；'.join(meanings)}。{impact}。该基金为{profile}，{concl}。"
+    return cond_text, mech
 def part_text(part: str) -> str:
     kind, payload = parse_single(part)
     if kind == "self":
@@ -279,7 +336,7 @@ def main() -> None:
         parts = parse_parts(condition)
         name = name_map.get(ticker, ticker)
         theme = fund_theme(name)
-        cond_text, mech_text = mechanism_text(parts, theme)
+        cond_text, mech_text = mechanism_text(parts, theme, name)
         rows.append({
             "ticker": ticker,
             "fund_name": name,
@@ -295,6 +352,7 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
 
 
 
