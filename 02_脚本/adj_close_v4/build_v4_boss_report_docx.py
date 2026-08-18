@@ -200,6 +200,7 @@ def main():
     make_heading(doc, "2.3 同基金/同主题解释一致性检查", 3)
     add_normal(doc, "按“基金”维度检查：没有同一基金在相同市场状态（风险偏好收缩/回暖）下同时出现“价格倾向上涨”和“价格倾向承压”的矛盾解释。按“主题”维度存在方向相反的结论，但原因是主题内同时包含多头与反向基金，例如中国主题既有 Ultra China 多头、也有 Ultra Short China 反向，风险偏好收缩时多头承压、反向产品上涨，属于产品属性，不是解释矛盾。")
     add_normal(doc, "示例（银行金融类）：BKPIX/BKPSX 的两条解释分别是“风险偏好收缩时价格倾向承压”和“风险偏好回暖时价格倾向上涨”，属于不同市场状态下的互补结论，不构成矛盾。检查明细见 v4_explanation_conflict_check.csv。")
+    add_normal(doc, "解释缺口检查：另有 136/231 条策略的机制包含“价格倾向承压”，但条件里没有“该基金自身下跌”，且策略全历史平均回报为正；这类“承压却要买入”的解释存在逻辑缺口，后续需修订机制，改为说明条件组合的均值回归/反转逻辑。明细见 v4_explanation_weak_pressure.csv。")
 
     # 三、风险概览
     make_heading(doc, "三、风险概览", 2)
@@ -318,6 +319,14 @@ def main():
     _rows = [[r.ticker, r.condition_text, r.scan_token, f"{r.rho_avg:.2f}", f"{r.rho_hit:.2f}", r.flag] for r in _dev.itertuples(index=False)]
     add_table(doc, ["基金", "条件", "调整条件", "平均回报rho", "命中率rho", "异常指标"], _rows,
               [Cm(1.5), Cm(4.0), Cm(2.0), Cm(1.6), Cm(1.6), Cm(2.0)], font_size=7)
+    add_normal(doc, "异常类别概览（多 sheet Excel：v4_strategy_direction_categories.xlsx）：")
+    add_table(doc, ["异常类别", "数量", "占比", "特征"], [
+        ["触发阈值太少", "103", "54.2%", "有效阈值点不足 4 个，无法可靠判断趋势"],
+        ["末端反转", "56", "29.5%", "平均回报先升后降，最后 1-2 个阈值明显回落"],
+        ["忽上忽下", "27", "14.2%", "阈值间方向频繁切换，无稳定趋势"],
+        ["整体反向单调", "3", "1.6%", "阈值越严格，平均回报持续下降"],
+        ["拐点先升后降", "1", "0.5%", "存在中间峰值，峰后趋势反转"],
+    ], [Cm(3.0), Cm(2.0), Cm(2.0), Cm(7.0)], font_size=8)
     add_normal(doc, "异常策略数 >=10，逐策略阈值明细改放 CSV：v4_strategy_direction_detail_v2.csv。改进措施：对这些异常策略不做“更深阈值”外推，优先保留交付阈值。")
 
 

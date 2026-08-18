@@ -86,7 +86,7 @@ def main() -> None:
                 "rho_hit": rho_hit,
                 "median_rho_avg": r.median_rho_avg,
                 "median_rho_hit": r.median_rho_hit,
-                "flag": ("平均回报" if bad_avg else "") + ("、命中率" if bad_hit else ""),
+                "flag": "、".join(p for p, b in [("平均回报", bad_avg), ("命中率", bad_hit)] if b),
             })
     fdf = pd.DataFrame(flagged)
     fdf.to_csv(OUT_DIR / "v4_strategy_direction_deviation.csv", index=False)
@@ -118,4 +118,5 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
 
