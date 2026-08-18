@@ -1,0 +1,3 @@
+submit buttons in range form: [{"text":"2026","type":"button","cls":" w-100 dropdown-toggle"},{"text":"August","type":"button","cls":" w-100 dropdown-toggle"}]
+URL: https://www.wallstreet-online.de/fonds/448765288/historische-kurse
+data: {"first":"13.08.26","last":"17.07.26","n":20}

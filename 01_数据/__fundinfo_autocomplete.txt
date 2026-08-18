@@ -1,0 +1,4 @@
+{
+ "dropdownClass": "search-results-dropdown",
+ "items": []
+}

@@ -1,0 +1,2 @@
+submit buttons: [{"text":"2026","type":"button","cls":" w-100 dropdown-toggle"},{"text":"八月","type":"button","cls":" w-100 dropdown-toggle"}]
+date inputs: 0

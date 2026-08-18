@@ -1,0 +1,324 @@
+claimed: 主页 | fundinfo | https://www.fundinfo.com/user/zh-hans/CH-priv
+LINKS:
+[
+ {
+  "href": "https://www.fundinfo.com/user/zh-hans/CH-priv",
+  "text": ""
+ },
+ {
+  "href": "https://www.trustnet.com/",
+  "text": "Trustnet"
+ },
+ {
+  "href": "https://www.etfinfo.com/",
+  "text": "etfinfo"
+ },
+ {
+  "href": "https://statistics.fundinfo.com/",
+  "text": "Statistics"
+ },
+ {
+  "href": "https://datafeeds.fefundinfo.com/",
+  "text": "Data Feed Portal"
+ },
+ {
+  "href": "https://datapartner.fefundinfo.com/",
+  "text": "Data Partner Portal"
+ },
+ {
+  "href": "https://dissemination.fundinfo.com/",
+  "text": "Document Dissemination"
+ },
+ {
+  "href": "https://f2c.publifund.com/",
+  "text": "PubliFund"
+ },
+ {
+  "href": "https://www.feanalytics.com/",
+  "text": "FE Analytics"
+ },
+ {
+  "href": "https://fefi.my.site.com/fefundinfocommunity/s",
+  "text": "Customer Portal"
+ },
+ {
+  "href": "https://portal.fefundinfo.com/",
+  "text": "Nexus"
+ },
+ {
+  "href": "https://www.fe-fundinfo.com/",
+  "text": ""
+ },
+ {
+  "href": "https://www.fundinfo.com/user/zh-hans/CH-priv#",
+  "text": "English"
+ },
+ {
+  "href": "https://www.fundinfo.com/user/zh-hans/CH-priv#",
+  "text": "Deutsch"
+ },
+ {
+  "href": "https://www.fundinfo.com/user/zh-hans/CH-priv#",
+  "text": "Français"
+ },
+ {
+  "href": "https://www.fundinfo.com/user/zh-hans/CH-priv#",
+  "text": "Italiano"
+ },
+ {
+  "href": "https://www.fundinfo.com/user/zh-hans/CH-priv#",
+  "text": "Español"
+ },
+ {
+  "href": "https://www.fundinfo.com/user/zh-hans/CH-priv#",
+  "text": "繁體"
+ },
+ {
+  "href": "",
+  "text": "yunying cen"
+ },
+ {
+  "href": "https://www.fundinfo.com/user/zh-hans/CH-priv/Config",
+  "text": "电子邮件订阅"
+ },
+ {
+  "href": "https://www.fundinfo.com/user/zh-hans/CH-priv#",
+  "text": "退出"
+ },
+ {
+  "href": "https://www.fundinfo.com/user/zh-hans/CH-priv/Videos",
+  "text": "视频"
+ },
+ {
+  "href": "https://www.fundinfo.com/user/zh-hans/CH-priv/News",
+  "text": "新闻"
+ },
+ {
+  "href": "https://www.fundinfo.com/user/zh-hans/CH-priv/LandingPage?filter=%7B%22myFunds%22%3Anull%7D&myFundsDate=2026-08-16T14:04:03.897Z",
+  "text": "我的基金"
+ },
+ {
+  "href": "https://www.fundinfo.com/user/zh-hans/CH-priv/Legal",
+  "text": "法律文件"
+ },
+ {
+  "href": "https://www.fundinfo.com/user/zh-hans/compare",
+  "text": "Compare"
+ },
+ {
+  "href": "https://www.fundinfo.com/user/zh-hans/CH-priv/Member",
+  "text": "会员"
+ },
+ {
+  "href": "",
+  "text": "筛选器\n关闭筛选器"
+ },
+ {
+  "href": "",
+  "text": "Submit"
+ },
+ {
+  "href": "https://www.fundinfo.com/user/zh-hans/CH-priv/Fund?OFST020000=IE00B73J8P34",
+  "text": "BNY Mellon GF - EM Corporate Debt"
+ },
+ {
+  "href": "https://www.fundinfo.com/user/zh-hans/CH-priv/Fund?OFST020000=LU1299305356",
+  "text": "Carmignac Portfolio - Carmignac Portfolio Patrimoine"
+ },
+ {
+  "href": "https://www.fundinfo.com/user/zh-hans/CH-priv/Fund?OFST020000=FR0011036920",
+  "text": "ODDO BHF Avenir Europe"
+ },
+ {
+  "href": "https://www.fundinfo.com/user/zh-hans/CH-priv/Fund?OFST020000=CH0049136846",
+  "text": "Picard Angst Funds - All Commodity Plus"
+ },
+ {
+  "href": "https://www.fundinfo.com/user/zh-hans/CH-priv/Fund?OFST020000=LU1751016160",
+  "text": "Redwheel Funds - Redwheel Global Convertibles Fund"
+ },
+ {
+  "href": "https://www.fundinfo.com/user/zh-hans/CH-priv/Fund?OFST020000=LU1514167649",
+  "text": "Schroder ISF - Global Credit Income"
+ },
+ {
+  "href": "https://www.fundinfo.com/zh-hans/News/Details/a03b840e-47eb-4e81-9be8-0771cc1543c6?nl=en",
+  "text": "zh\n2026-07-01\t\nAsia Pacific Investment Grade Bonds Views and"
+ },
+ {
+  "href": "https://www.fundinfo.com/zh-hans/News/Details/ab3df4ef-fd03-4ffa-bf4f-7086c3430e1a?nl=en",
+  "text": "zh\n2026-06-26\t\nLéa Dunand-Chatellet Appointed Chief Executiv"
+ },
+ {
+  "href": "https://www.fundinfo.com/zh-hans/News/Details/ab3df4ef-fd03-4ffa-bf4f-7086c3430e1a?nl=en",
+  "text": "zh\n2026-06-26\t\nLéa Dunand-Chatellet Appointed Chief Executiv"
+ },
+ {
+  "href": "https://www.fundinfo.com/zh-hans/News/Details/9a918773-e026-431e-b1e0-b07dfbba59da?nl=en",
+  "text": "zh\n2026-08-12\t\nOutlook & Positioning for Global Investment G"
+ },
+ {
+  "href": "https://www.fundinfo.com/zh-hans/News/Details/5419b669-bca8-456b-8ee9-ddc84aa3afc4?nl=en",
+  "text": "zh\n2026-08-12\t\nOutlook and Positioning for the Global Bond F"
+ },
+ {
+  "href": "https://www.fundinfo.com/zh-hans/News/Details/36207325-a222-4669-b75b-383c1beabe88?nl=en",
+  "text": "zh\n2026-08-12\t\nOutlook & Positioning for the Income Fund as "
+ },
+ {
+  "href": "https://www.fundinfo.com/zh-hans/News/Details/92a61481-8647-4a52-a46a-4c1c33ceda7c?nl=en",
+  "text": "zh\n2026-08-12\t\nOutlook & Positioning for Global Investment G"
+ },
+ {
+  "href": "https://www.fundinfo.com/zh-hans/News/Details/5e32f5f5-feee-43c2-8039-3d649d6baeca?nl=en",
+  "text": "zh\n2026-08-12\t\nNordea 1 - European High Yield Bond Fund, com"
+ },
+ {
+  "href": "https://www.fundinfo.com/zh-hans/News/Details/e1e73722-b4ce-4173-9d59-d294f526bc6c?nl=en",
+  "text": "zh\n2026-08-12\t\nOutlook & Positioning for Capital Securities "
+ },
+ {
+  "href": "https://www.fundinfo.com/zh-hans/News/Details/e2f55b8c-ff1d-4f4a-bbcc-702d9deac815?nl=en",
+  "text": "zh\n2026-08-12\t\nNordea 1 - European Covered Bond Fund, commen"
+ },
+ {
+  "href": "https://www.fundinfo.com/zh-hans/News/Details/fe848dac-22df-427d-a86d-fe56550159cb?nl=en",
+  "text": "zh\n2026-08-12\t\nOutlook & Positioning for the GIS Asia High Y"
+ },
+ {
+  "href": "https://www.fundinfo.com/zh-hans/News/Details/cb2e4a34-e8c7-4ecd-be66-1c8c5d779f4f?nl=en",
+  "text": "zh\n2026-08-03\t\nMonthly report July 2026\nThe reporting month "
+ },
+ {
+  "href": "https://www.fundinfo.com/zh-hans/News/Details/f07be9c7-0885-4c24-ba4b-c7ea8ee9a61e?nl=en",
+  "text": "zh\n2026-07-15\t\nOutlook and Positioning for the GIS Euro Bond"
+ },
+ {
+  "href": "https://www.fundinfo.com/zh-hans/News/Details/96ffcb0d-e275-4938-a947-84b1275af710?nl=en",
+  "text": "zh\n2026-07-10\t\nNordea 1 - European High Yield Bond Fund, Jun"
+ },
+ {
+  "href": "https://www.fundinfo.com/zh-hans/News/Details/ee896302-22a1-45e8-94e8-6a9b8a9bb6a3?nl=en",
+  "text": "zh\n2026-07-10\t\nNordea 1 - European Covered Bond Fund, June c"
+ },
+ {
+  "href": "https://www.fundinfo.com/zh-hans/News/Details/dce88587-372f-422f-a70a-ada4b4ee8cca?nl=en",
+  "text": "zh\n2026-07-08\t\nR-co Conviction Equity Value Euro\nFund Update"
+ },
+ {
+  "href": "https://www.fundinfo.com/zh-hans/News/Details/cc626eef-9f18-410b-845a-501c2d1c2f1f?nl=en",
+  "text": "zh\n2026-07-07\t\nRothschild & Co Asset Management wins multipl"
+ },
+ {
+  "href": "https://www.fundinfo.com/zh-hans/News/Details/296a80a7-d39e-4e03-96f6-bfebd470ecbc?nl=en",
+  "text": "zh\n2026-07-07\t\nMonthly report June 2026\nDriven by continuing"
+ },
+ {
+  "href": "https://www.fundinfo.com/zh-hans/News/Details/a03b840e-47eb-4e81-9be8-0771cc1543c6?nl=en",
+  "text": "zh\n2026-07-01\t\nAsia Pacific Investment Grade Bonds Views and"
+ },
+ {
+  "href": "https://www.fundinfo.com/zh-hans/News/Details/ab3df4ef-fd03-4ffa-bf4f-7086c3430e1a?nl=en",
+  "text": "zh\n2026-06-26\t\nLéa Dunand-Chatellet Appointed Chief Executiv"
+ },
+ {
+  "href": "https://www.fundinfo.com/zh-hans/News/Details/ab3df4ef-fd03-4ffa-bf4f-7086c3430e1a?nl=en",
+  "text": "zh\n2026-06-26\t\nLéa Dunand-Chatellet Appointed Chief Executiv"
+ },
+ {
+  "href": "https://www.fundinfo.com/zh-hans/News/Details/9a918773-e026-431e-b1e0-b07dfbba59da?nl=en",
+  "text": "zh\n2026-08-12\t\nOutlook & Positioning for Global Investment G"
+ },
+ {
+  "href": "https://www.fundinfo.com/zh-hans/News/Details/5419b669-bca8-456b-8ee9-ddc84aa3afc4?nl=en",
+  "text": "zh\n2026-08-12\t\nOutlook and Positioning for the Global Bond F"
+ },
+ {
+  "href": "https://www.fundinfo.com/zh-hans/News/Details/36207325-a222-4669-b75b-383c1beabe88?nl=en",
+  "text": "zh\n2026-08-12\t\nOutlook & Positioning for the Income Fund as "
+ },
+ {
+  "href": "https://www.fundinfo.com/zh-hans/News/Details/92a61481-8647-4a52-a46a-4c1c33ceda7c?nl=en",
+  "text": "zh\n2026-08-12\t\nOutlook & Positioning for Global Investment G"
+ },
+ {
+  "href": "https://www.fundinfo.com/zh-hans/News/Details/5e32f5f5-feee-43c2-8039-3d649d6baeca?nl=en",
+  "text": "zh\n2026-08-12\t\nNordea 1 - European High Yield Bond Fund, com"
+ },
+ {
+  "href": "https://www.fundinfo.com/zh-hans/News/Details/e1e73722-b4ce-4173-9d59-d294f526bc6c?nl=en",
+  "text": "zh\n2026-08-12\t\nOutlook & Positioning for Capital Securities "
+ },
+ {
+  "href": "https://www.fundinfo.com/zh-hans/News/Details/e2f55b8c-ff1d-4f4a-bbcc-702d9deac815?nl=en",
+  "text": "zh\n2026-08-12\t\nNordea 1 - European Covered Bond Fund, commen"
+ },
+ {
+  "href": "https://www.fundinfo.com/zh-hans/News/Details/fe848dac-22df-427d-a86d-fe56550159cb?nl=en",
+  "text": "zh\n2026-08-12\t\nOutlook & Positioning for the GIS Asia High Y"
+ },
+ {
+  "href": "https://www.fundinfo.com/zh-hans/News/Details/cb2e4a34-e8c7-4ecd-be66-1c8c5d779f4f?nl=en",
+  "text": "zh\n2026-08-03\t\nMonthly report July 2026\nThe reporting month "
+ },
+ {
+  "href": "https://www.fundinfo.com/zh-hans/News/Details/f07be9c7-0885-4c24-ba4b-c7ea8ee9a61e?nl=en",
+  "text": "zh\n2026-07-15\t\nOutlook and Positioning for the GIS Euro Bond"
+ },
+ {
+  "href": "https://www.fundinfo.com/zh-hans/News/Details/96ffcb0d-e275-4938-a947-84b1275af710?nl=en",
+  "text": "zh\n2026-07-10\t\nNordea 1 - European High Yield Bond Fund, Jun"
+ },
+ {
+  "href": "https://www.fundinfo.com/zh-hans/News/Details/ee896302-22a1-45e8-94e8-6a9b8a9bb6a3?nl=en",
+  "text": "zh\n2026-07-10\t\nNordea 1 - European Covered Bond Fund, June c"
+ },
+ {
+  "href": "https://www.fundinfo.com/zh-hans/News/Details/dce88587-372f-422f-a70a-ada4b4ee8cca?nl=en",
+  "text": "zh\n2026-07-08\t\nR-co Conviction Equity Value Euro\nFund Update"
+ },
+ {
+  "href": "https://www.fundinfo.com/zh-hans/News/Details/cc626eef-9f18-410b-845a-501c2d1c2f1f?nl=en",
+  "text": "zh\n2026-07-07\t\nRothschild & Co Asset Management wins multipl"
+ },
+ {
+  "href": "https://www.fundinfo.com/zh-hans/News/Details/296a80a7-d39e-4e03-96f6-bfebd470ecbc?nl=en",
+  "text": "zh\n2026-07-07\t\nMonthly report June 2026\nDriven by continuing"
+ },
+ {
+  "href": "https://www.fundinfo.com/zh-hans/News/Details/a03b840e-47eb-4e81-9be8-0771cc1543c6?nl=en",
+  "text": "zh\n2026-07-01\t\nAsia Pacific Investment Grade Bonds Views and"
+ },
+ {
+  "href": "https://www.fundinfo.com/zh-hans/News/Details/ab3df4ef-fd03-4ffa-bf4f-7086c3430e1a?nl=en",
+  "text": "zh\n2026-06-26\t\nLéa Dunand-Chatellet Appointed Chief Executiv"
+ },
+ {
+  "href": "https://www.fundinfo.com/zh-hans/News/Details/ab3df4ef-fd03-4ffa-bf4f-7086c3430e1a?nl=en",
+  "text": "zh\n2026-06-26\t\nLéa Dunand-Chatellet Appointed Chief Executiv"
+ },
+ {
+  "href": "https://www.fundinfo.com/user/zh-hans/CH-priv/News",
+  "text": "查看所有新闻"
+ },
+ {
+  "href": "https://www.fundinfo.com/user/zh-hans/CH-priv/Member/Details/9989b37f-2e2e-4c2e-aeb7-dc097a27463b",
+  "text": ""
+ },
+ {
+  "href": "https://www.fundinfo.com/user/zh-hans/CH-priv/Member/Details/87d781e5-7cc6-4a90-9a96-758133d143d7",
+  "text": ""
+ },
+ {
+  "href": "https://www.fundinfo.com/user/zh-hans/CH-priv/Member/Details/7f888ffd-6f67-4542-94fd-5bfdd9029f9e",
+  "text": ""
+ },
+ {
+  "href": "https://www.fundinfo.com/user/zh-hans/CH-priv/Member/Details/56b3db8f-92a6-4f3e-85f0-f1a51e0880ac",
+  "text": ""
+ },
+ {
+  "href": "https://www.fundinfo.com/user/zh-hans/CH-priv/Member/Details/e53b1844-6f5b-4664-b8a3-59dcb055832b",
+  "text": ""
+ }
+]

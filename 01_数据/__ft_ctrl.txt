@@ -1,0 +1,116 @@
+found tab: Mediobanca AllianceBernstein American Growth Portfolio IE, IT0005630238:EUR historical prices - FT.com | https://markets.ft.com/data/funds/tearsheet/historical?s=IT0005630238:EUR
+claimed URL: https://markets.ft.com/data/funds/tearsheet/historical?s=IT0005630238:EUR
+TITLE: Mediobanca AllianceBernstein American Growth Portfolio IE, IT0005630238:EUR historical prices - FT.com
+CONTROLS: {
+ "inputs": [
+  {
+   "id": "o-header-search-term",
+   "name": "q",
+   "type": "text",
+   "value": ""
+  },
+  {
+   "id": "o-header-search-term-js",
+   "name": "q",
+   "type": "text",
+   "value": ""
+  },
+  {
+   "id": "o-header-drawer-search-term",
+   "name": "q",
+   "type": "text",
+   "value": ""
+  },
+  {
+   "id": "",
+   "name": "query",
+   "type": "search",
+   "value": ""
+  },
+  {
+   "id": "",
+   "name": "",
+   "type": "text",
+   "value": ""
+  },
+  {
+   "id": "",
+   "name": "__RequestVerificationToken",
+   "type": "hidden",
+   "value": "lmP9uWBlGqDXehlvLgHLxjNNkqw1po6rlusMNe4AOl7xHaweVj1UQj1I8T0EybUjti20ZBhebXZFrNQiv2zky0Ii56GognzeZ4UdPBT_IGW_qQ13lfyub3Af4yuwa4zGd47gthATunS2MEcHKnBW7w2"
+  },
+  {
+   "id": "",
+   "name": "",
+   "type": "text",
+   "value": ""
+  },
+  {
+   "id": "P442104371",
+   "name": "",
+   "type": "text",
+   "value": "18 Aug, 2025"
+  },
+  {
+   "id": "P504980764",
+   "name": "",
+   "type": "text",
+   "value": "16 Aug, 2026"
+  }
+ ],
+ "links": [],
+ "selects": [
+  {
+   "id": "",
+   "name": "",
+   "opts": [
+    "New watchlist="
+   ]
+  },
+  {
+   "id": "",
+   "name": "",
+   "opts": [
+    "New portfolio="
+   ]
+  },
+  {
+   "id": "",
+   "name": "",
+   "opts": [
+    "Select a currency=",
+    "UK Pound (GBP)=GBP",
+    "Argentinian Nuevo Peso (ARS)=ARS",
+    "Australian Dollar (AUD)=AUD",
+    "Bahraini Dinar (BHD)=BHD",
+    "Brunei Dollar (BND)=BND",
+    "Brazilian Real (BRL)=BRL",
+    "Canadian Dollar (CAD)=CAD",
+    "Chilean Peso (CLP)=CLP",
+    "Chinese Yuan Renminbi (CNY)=CNY",
+    "Czech Koruna (CZK)=CZK",
+    "Danish Krone (DKK)=DKK",
+    "Egyptian Pound (EGP)=EGP",
+    "Euro (EUR)=EUR",
+    "Fiji Dollar (FJD)=FJD"
+   ]
+  },
+  {
+   "id": "",
+   "name": "",
+   "opts": [
+    "2025=2025",
+    "2026=2026"
+   ]
+  },
+  {
+   "id": "",
+   "name": "",
+   "opts": [
+    "2025=2025",
+    "2026=2026"
+   ]
+  }
+ ],
+ "yearButtons": []
+}

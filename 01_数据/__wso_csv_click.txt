@@ -1,0 +1,9 @@
+csv button count: 1
+click err Timed out after 3000ms waiting for selector button >> nth=0: Browser Use encountered an error interacting with this webpage: Error: Element is not visible
+    at <anonymous>:224:767
+    at <anonymous>:224:1354
+    at <anonymous>:225:11
+    at <anonymous>:226:11
+waiting on click for selector button >> nth=0
+Locator diagnostics: {"kind":"no_visible_match","action":"click","locator":"button >> nth=0","matchCount":1,"matches":[{"ariaLabel":"Navigation","disabled":false,"role":null,"tag":"button","text":"","type":"button","visible":false}],"visibleCount":0,"truncated":false}
+no download event

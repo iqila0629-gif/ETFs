@@ -1,0 +1,100 @@
+[
+ {
+  "action": "https://www.wallstreet-online.de/fonds/448765288/historische-kurse#",
+  "inputs": [
+   {
+    "id": "",
+    "name": "inst_id",
+    "tag": "INPUT",
+    "text": "",
+    "type": "hidden",
+    "value": "448765288"
+   },
+   {
+    "id": "marketSelect",
+    "name": "market_id",
+    "tag": "INPUT",
+    "text": "",
+    "type": "hidden",
+    "value": "30"
+   },
+   {
+    "id": "categoryId",
+    "name": "category_id",
+    "tag": "INPUT",
+    "text": "",
+    "type": "hidden",
+    "value": "3"
+   }
+  ],
+  "method": "post"
+ },
+ {
+  "action": "https://www.wallstreet-online.de/suche/",
+  "inputs": [
+   {
+    "id": "",
+    "name": "suche",
+    "tag": "INPUT",
+    "text": "",
+    "type": "hidden",
+    "value": ""
+   },
+   {
+    "id": "search",
+    "name": "q",
+    "tag": "INPUT",
+    "text": "",
+    "type": "text",
+    "value": ""
+   },
+   {
+    "id": "",
+    "name": "sa",
+    "tag": "BUTTON",
+    "text": "",
+    "type": "submit",
+    "value": "Suche"
+   }
+  ],
+  "method": "get"
+ },
+ {
+  "action": "https://www.wallstreet-online.de/fonds/448765288/historische-kurse",
+  "inputs": [
+   {
+    "id": "",
+    "name": "",
+    "tag": "BUTTON",
+    "text": "2026",
+    "type": "button",
+    "value": ""
+   },
+   {
+    "id": "",
+    "name": "",
+    "tag": "BUTTON",
+    "text": "August",
+    "type": "button",
+    "value": ""
+   },
+   {
+    "id": "date_from",
+    "name": "",
+    "tag": "INPUT",
+    "text": "",
+    "type": "date",
+    "value": ""
+   },
+   {
+    "id": "date_to",
+    "name": "",
+    "tag": "INPUT",
+    "text": "",
+    "type": "date",
+    "value": ""
+   }
+  ],
+  "method": "post"
+ }
+]

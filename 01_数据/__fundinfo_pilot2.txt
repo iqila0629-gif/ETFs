@@ -1,0 +1,69 @@
+
+### ALLIANCE BERNSTEIN AMERICAN INCOME PORTFOLIO INC USD
+{
+ "name": "ALLIANCE BERNSTEIN AMERICAN INCOME PORTFOLIO INC USD",
+ "ok": false,
+ "error": "no good candidate",
+ "queries": [
+  "Alliance",
+  "Alliance Bernstein"
+ ],
+ "chosen": null,
+ "matches": []
+}
+
+### FRANKLIN TEMPLETON LATIN AMERICA A ACC USD
+{
+ "name": "FRANKLIN TEMPLETON LATIN AMERICA A ACC USD",
+ "ok": false,
+ "error": "no share rows",
+ "queries": [
+  "Franklin",
+  "Franklin Templeton"
+ ],
+ "chosen": null,
+ "matches": [],
+ "sample": "\t\nTrustnet\netfinfo\nStatistics\nData Feed Portal\nData Partner Portal\nDocument Dissemination\nPubliFund\nFE Analytics\nCustome"
+}
+
+### BROWN ADVISORY GLOBAL LEADERS
+{
+ "name": "BROWN ADVISORY GLOBAL LEADERS",
+ "ok": false,
+ "error": "no share rows",
+ "queries": [
+  "Brown",
+  "Brown Advisory"
+ ],
+ "chosen": null,
+ "matches": [],
+ "sample": "\t\nTrustnet\netfinfo\nStatistics\nData Feed Portal\nData Partner Portal\nDocument Dissemination\nPubliFund\nFE Analytics\nCustome"
+}
+
+### GUINNESS GAM GLOBAL EQUITY INCOME INC D USD
+{
+ "name": "GUINNESS GAM GLOBAL EQUITY INCOME INC D USD",
+ "ok": false,
+ "error": "no share rows",
+ "queries": [
+  "Guinness",
+  "Guinness Gam"
+ ],
+ "chosen": null,
+ "matches": [],
+ "sample": "\t\nTrustnet\netfinfo\nStatistics\nData Feed Portal\nData Partner Portal\nDocument Dissemination\nPubliFund\nFE Analytics\nCustome"
+}
+
+### RUSSELL OPENWORLD GLOBAL HIGH DIVIDEND EQUITY I ACC USD
+{
+ "name": "RUSSELL OPENWORLD GLOBAL HIGH DIVIDEND EQUITY I ACC USD",
+ "ok": false,
+ "error": "no share rows",
+ "queries": [
+  "Russell",
+  "Russell Openworld"
+ ],
+ "chosen": null,
+ "matches": [],
+ "sample": "\t\nTrustnet\netfinfo\nStatistics\nData Feed Portal\nData Partner Portal\nDocument Dissemination\nPubliFund\nFE Analytics\nCustome"
+}

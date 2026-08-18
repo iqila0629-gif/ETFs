@@ -1,0 +1,41 @@
+{
+ "overlay": true,
+ "overlayClass": "mod-ui-filter-overlay clearfix mod-filter-ui-historical-prices-overlay",
+ "toggles": [
+  {
+   "cls": "mod-ui-link mod-ui-navi-tabs__link",
+   "dataMod": "",
+   "id": "",
+   "tag": "A",
+   "text": "Historical prices"
+  },
+  {
+   "cls": "mod-ui-filter-overlay clearfix mod-filter-ui-historical-prices-overlay",
+   "dataMod": "",
+   "id": "",
+   "tag": "DIV",
+   "text": "Date Range: Jul 17, 2026 - Aug"
+  },
+  {
+   "cls": "mod-filter-ui-historical-prices-overlay__field",
+   "dataMod": "dateRange",
+   "id": "",
+   "tag": "FIELDSET",
+   "text": "Date range20252026July  282930"
+  },
+  {
+   "cls": "o-buttons mod-ui-date-picker__button--close",
+   "dataMod": "",
+   "id": "",
+   "tag": "BUTTON",
+   "text": "Close"
+  },
+  {
+   "cls": "o-buttons mod-ui-date-picker__button--close",
+   "dataMod": "",
+   "id": "",
+   "tag": "BUTTON",
+   "text": "Close"
+  }
+ ]
+}

@@ -1,0 +1,55 @@
+
+### ALLIANCE BERNSTEIN AMERICAN INCOME PORTFOLIO INC USD
+{
+ "name": "ALLIANCE BERNSTEIN AMERICAN INCOME PORTFOLIO INC USD",
+ "query": "Alliance Bernstein",
+ "ok": false,
+ "error": "no candidates",
+ "chosen": null,
+ "candidates": [],
+ "matches": []
+}
+
+### FRANKLIN TEMPLETON LATIN AMERICA A ACC USD
+{
+ "name": "FRANKLIN TEMPLETON LATIN AMERICA A ACC USD",
+ "query": "Franklin Templeton",
+ "ok": false,
+ "error": "no candidates",
+ "chosen": null,
+ "candidates": [],
+ "matches": []
+}
+
+### BROWN ADVISORY GLOBAL LEADERS
+{
+ "name": "BROWN ADVISORY GLOBAL LEADERS",
+ "query": "Brown Advisory",
+ "ok": false,
+ "error": "no candidates",
+ "chosen": null,
+ "candidates": [],
+ "matches": []
+}
+
+### GUINNESS GAM GLOBAL EQUITY INCOME INC D USD
+{
+ "name": "GUINNESS GAM GLOBAL EQUITY INCOME INC D USD",
+ "query": "Guinness",
+ "ok": false,
+ "error": "no candidates",
+ "chosen": null,
+ "candidates": [],
+ "matches": []
+}
+
+### RUSSELL OPENWORLD GLOBAL HIGH DIVIDEND EQUITY I ACC USD
+{
+ "name": "RUSSELL OPENWORLD GLOBAL HIGH DIVIDEND EQUITY I ACC USD",
+ "query": "Russell Openworld",
+ "ok": false,
+ "error": "no candidates",
+ "chosen": null,
+ "candidates": [],
+ "matches": []
+}

@@ -1,0 +1,30 @@
+
+### ARBROOK G10 AMERICAN EQUITIES A1 USD ACC USD
+{
+ "name": "ARBROOK G10 AMERICAN EQUITIES A1 USD ACC USD",
+ "ok": false,
+ "error": "no autocomplete candidates",
+ "query": "ARBROOK G10 AMERICAN",
+ "chosen": null,
+ "matches": []
+}
+
+### PICTET FUNDS GLOBAL MEGATREND SEL I USD ACC USD
+{
+ "name": "PICTET FUNDS GLOBAL MEGATREND SEL I USD ACC USD",
+ "ok": false,
+ "error": "no autocomplete candidates",
+ "query": "PICTET FUNDS GLOBAL",
+ "chosen": null,
+ "matches": []
+}
+
+### FRANKLIN TEMPLETON LATIN AMERICA A ACC USD
+{
+ "name": "FRANKLIN TEMPLETON LATIN AMERICA A ACC USD",
+ "ok": false,
+ "error": "no autocomplete candidates",
+ "query": "FRANKLIN TEMPLETON LATIN",
+ "chosen": null,
+ "matches": []
+}

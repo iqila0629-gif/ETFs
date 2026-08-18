@@ -1,0 +1,29 @@
+link count: 10
+parsed rows: 4
+ALL: [
+ {
+  "share": "A",
+  "currency": "EUR",
+  "policy": "Acc",
+  "isin": "LU0269642889"
+ },
+ {
+  "share": "A",
+  "currency": "CHF",
+  "policy": "Acc",
+  "isin": "LU1045226963"
+ },
+ {
+  "share": "I",
+  "currency": "USD",
+  "policy": "Acc",
+  "isin": "LU2850666467"
+ },
+ {
+  "share": "A3",
+  "currency": "USD",
+  "policy": "Acc",
+  "isin": "CH1140317863"
+ }
+]
+I-USD-Acc: [{"share":"I","currency":"USD","policy":"Acc","isin":"LU2850666467"}]

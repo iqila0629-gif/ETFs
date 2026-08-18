@@ -51,3 +51,11 @@ venv/
 04_结果/最新成果/中间文档/通用/文件/pair_strict_pass.csv
 04_结果/最新成果/中间文档/通用/文件/pair_frozen_pass.csv
 04_结果/最新成果/中间文档/通用/文件/v3_candidates_stats.csv
+
+# EIP new project: regenerable raw fund prices and processed panel (re-downloaded / rebuilt by scripts)
+01_数据/新项目_基金价格/
+01_数据/新项目_processed/
+
+# EIP new project: API keys must never be committed
+01_数据/api_keys.json
+

@@ -1,0 +1,15 @@
+{
+ "inputs": [
+  {
+   "id": "P314886171",
+   "value": "17 Jul, 2026",
+   "visible": false
+  },
+  {
+   "id": "P962426677",
+   "value": "16 Aug, 2026",
+   "visible": false
+  }
+ ],
+ "overlayText": "Date Range: Jul 17, 2026 - Aug 16, 2026"
+}

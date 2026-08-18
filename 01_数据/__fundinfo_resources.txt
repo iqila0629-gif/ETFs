@@ -1,0 +1,6 @@
+ERR TypeError: Cannot read properties of undefined (reading 'getEntriesByType')
+    at __playwrightEvaluate (<anonymous>:2642:34)
+    at <anonymous>:2651:14
+    at runUserScript (<anonymous>:2652:10)
+    at <anonymous>:2656:10
+    at <anonymous>:2657:3

@@ -1,0 +1,2 @@
+file,funds,test_hit_ge50,test_hit_ge55,test_avg_ge02,test_avg_gt0,test_trades_ge30,median_test_hit,median_test_avg,median_test_std,median_test_trades
+v4_oos_fixed_split_merged.csv,103,103,101,103,103,103,0.6170212765957447,0.4782942770772816,2.178038944233603,101.0

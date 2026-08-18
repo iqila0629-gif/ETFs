@@ -1,0 +1,6 @@
+day element count: 1
+click err Playwright selector deadline exceeded
+waiting on click for selector .picker__day[data-pick='1782835200000'] >> nth=0
+Locator diagnostics: {"kind":"no_visible_match","action":"click","locator":".picker__day[data-pick='1782835200000'] >> nth=0","matchCount":1,"matches":[{"ariaLabel":"1 Jul, 2026","disabled":false,"role":"gridcell","tag":"div","text":"1","type":null,"visible":false}],"visibleCount":0,"truncated":false}
+URL after day click: https://markets.ft.com/data/funds/tearsheet/historical?s=IT0005630238:EUR&_submit=2025/01/01&_submit=2025/12/31
+values: {"subs":["2026/07/17","2026/08/16"],"vis":["17 Jul, 2026","16 Aug, 2026"]}

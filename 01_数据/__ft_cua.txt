@@ -1,0 +1,2 @@
+rect: {"height":36,"left":38.33333587646485,"top":292,"width":780}
+aria after cua click: true

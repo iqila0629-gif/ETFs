@@ -1,0 +1,4 @@
+{
+ "html": "<div class=\"search-results-dropdown active\" data-fundgrouptemplate=\"{0}的所有基金\"><ul><li><a href=\"/user/zh-hans/CH-priv/LandingPage?filter=%7B%22OFST900000%22%3A%5B%22fdf8ce1c-14a9-46c2-a135-0d51efa6e9b4%22%5D%7D\">Arbrook Investors的所有基金</a></li><li><a href=\"/user/zh-hans/CH-priv/LandingPage?filter=%7B%22OFST900017%22%3A%5B%22254eb047-49fc-41cb-9a65-da64cf9d6589%22%5D%7D\">Skyline Umbrella Fund ICAV - Arbrook American Equities Fund</a></li></ul></div>",
+ "text": "Arbrook Investors的所有基金\nSkyline Umbrella Fund ICAV - Arbrook American Equities Fund"
+}

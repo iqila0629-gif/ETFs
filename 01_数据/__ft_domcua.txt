@@ -1,0 +1,3 @@
+after display click aria: true
+dom_cua len: 1329
+dom around Date Range: "<button node_id=1 type=\"button\">Find Similar Funds</button>\n<a node_id=2 href=\"//markets.ft.com/data/funds/uk\">Go to the Funds Screener</a>\n<li node_id=3 role=\"tab\">Summary</li>\n<a node_id=4 href=\"/data/funds/tearsheet/summary?s=IT0005630238:EUR\">Summary</a>\n<li node_id=5 role=\"tab\">

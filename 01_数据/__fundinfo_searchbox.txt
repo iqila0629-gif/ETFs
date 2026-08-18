@@ -1,0 +1,6 @@
+ERR TypeError: btn.click is not a function
+    at __playwrightEvaluate (<anonymous>:2643:20)
+    at <anonymous>:2646:14
+    at runUserScript (<anonymous>:2647:10)
+    at <anonymous>:2651:10
+    at <anonymous>:2652:3

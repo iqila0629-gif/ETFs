@@ -1,0 +1,143 @@
+searchButton count: 1
+inputs after click: [
+ {
+  "cls": "",
+  "id": "",
+  "name": "__RequestVerificationToken",
+  "placeholder": "",
+  "visible": false
+ },
+ {
+  "cls": "",
+  "id": "",
+  "name": "query",
+  "placeholder": "请输入搜索请求（基金名称/ISIN/WKN/Valor 编号）",
+  "visible": true
+ },
+ {
+  "cls": "filterSearch",
+  "id": "",
+  "name": "",
+  "placeholder": "",
+  "visible": true
+ },
+ {
+  "cls": "",
+  "id": "ARIS Commodities",
+  "name": "OFST900269",
+  "placeholder": "",
+  "visible": false
+ },
+ {
+  "cls": "",
+  "id": "ARIS Convertible Arbitrage",
+  "name": "OFST900269",
+  "placeholder": "",
+  "visible": false
+ },
+ {
+  "cls": "",
+  "id": "ARIS Corporate Events",
+  "name": "OFST900269",
+  "placeholder": "",
+  "visible": false
+ },
+ {
+  "cls": "",
+  "id": "ARIS Credit Arbitrage",
+  "name": "OFST900269",
+  "placeholder": "",
+  "visible": false
+ },
+ {
+  "cls": "",
+  "id": "ARIS Currencies",
+  "name": "OFST900269",
+  "placeholder": "",
+  "visible": false
+ },
+ {
+  "cls": "",
+  "id": "ARIS Emerging Markets",
+  "name": "OFST900269",
+  "placeholder": "",
+  "visible": false
+ },
+ {
+  "cls": "",
+  "id": "ARIS Event Driven",
+  "name": "OFST900269",
+  "placeholder": "",
+  "visible": false
+ },
+ {
+  "cls": "",
+  "id": "ARIS Fixed Income Arbitrage",
+  "name": "OFST900269",
+  "placeholder": "",
+  "visible": false
+ },
+ {
+  "cls": "",
+  "id": "ARIS Global Macro",
+  "name": "OFST900269",
+  "placeholder": "",
+  "visible": false
+ },
+ {
+  "cls": "",
+  "id": "ARIS Index Trackers",
+  "name": "OFST900269",
+  "placeholder": "",
+  "visible": false
+ },
+ {
+  "cls": "",
+  "id": "ARIS Long/Short Equity Long Bias Strategy",
+  "name": "OFST900269",
+  "placeholder": "",
+  "visible": false
+ },
+ {
+  "cls": "",
+  "id": "ARIS Long/Short Equity Variable Bias Strategy",
+  "name": "OFST900269",
+  "placeholder": "",
+  "visible": false
+ },
+ {
+  "cls": "",
+  "id": "ARIS Long/Short Market Neutral",
+  "name": "OFST900269",
+  "placeholder": "",
+  "visible": false
+ },
+ {
+  "cls": "",
+  "id": "ARIS Managed Futures/CTAs",
+  "name": "OFST900269",
+  "placeholder": "",
+  "visible": false
+ },
+ {
+  "cls": "",
+  "id": "ARIS Merger Arbitrage",
+  "name": "OFST900269",
+  "placeholder": "",
+  "visible": false
+ },
+ {
+  "cls": "",
+  "id": "ARIS Volatility Arbitrage",
+  "name": "OFST900269",
+  "placeholder": "",
+  "visible": false
+ },
+ {
+  "cls": "",
+  "id": "Asset Backed Securities",
+  "name": "OFST900269",
+  "placeholder": "",
+  "visible": false
+ }
+]

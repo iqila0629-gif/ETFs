@@ -1,0 +1,79 @@
+{
+ "action": "https://markets.ft.com/data/funds/tearsheet/historical?s=IT0005630238:EUR",
+ "inputs": [
+  {
+   "cls": "o-forms__text mod-ui-form__text--event picker__input",
+   "id": "P442104371",
+   "name": "",
+   "tag": "INPUT",
+   "text": "",
+   "type": "text",
+   "value": "18 Aug, 2025"
+  },
+  {
+   "cls": "",
+   "id": "",
+   "name": "_submit",
+   "tag": "INPUT",
+   "text": "",
+   "type": "hidden",
+   "value": "2025/08/18"
+  },
+  {
+   "cls": "picker__select--year",
+   "id": "",
+   "name": "",
+   "tag": "SELECT",
+   "text": "2025\n2026",
+   "type": "select-one",
+   "value": "2025"
+  },
+  {
+   "cls": "o-buttons mod-ui-date-picker__button--close",
+   "id": "",
+   "name": "",
+   "tag": "BUTTON",
+   "text": "Close",
+   "type": "button",
+   "value": ""
+  },
+  {
+   "cls": "o-forms__text mod-ui-form__text--event picker__input",
+   "id": "P504980764",
+   "name": "",
+   "tag": "INPUT",
+   "text": "",
+   "type": "text",
+   "value": "16 Aug, 2026"
+  },
+  {
+   "cls": "",
+   "id": "",
+   "name": "_submit",
+   "tag": "INPUT",
+   "text": "",
+   "type": "hidden",
+   "value": "2026/08/16"
+  },
+  {
+   "cls": "picker__select--year",
+   "id": "",
+   "name": "",
+   "tag": "SELECT",
+   "text": "2025\n2026",
+   "type": "select-one",
+   "value": "2026"
+  },
+  {
+   "cls": "o-buttons mod-ui-date-picker__button--close",
+   "id": "",
+   "name": "",
+   "tag": "BUTTON",
+   "text": "Close",
+   "type": "button",
+   "value": ""
+  }
+ ],
+ "method": "get",
+ "overlayButtons": []
+}

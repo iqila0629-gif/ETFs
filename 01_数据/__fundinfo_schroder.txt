@@ -1,0 +1,2 @@
+current url: https://www.fundinfo.com/user/zh-hans/CH-priv/Fund?OFST020000=LU0175074193
+nav ERR Timed out after 10000ms waiting for CDP command Page.navigate.

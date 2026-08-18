@@ -1,0 +1,8 @@
+auth: {"hasLogin":false,"signedOut":true}
+after goto: {
+ "first": "Thursday, August 13, 2026",
+ "last": "Friday, July 17, 2026",
+ "rows": 20,
+ "signedOut": true,
+ "url": "https://markets.ft.com/data/funds/tearsheet/historical?s=IT0005630238:EUR&_submit=2024/01/02"
+}

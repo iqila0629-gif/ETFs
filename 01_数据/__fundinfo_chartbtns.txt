@@ -1,0 +1,197 @@
+{
+ "caps": [],
+ "chartButtons": [
+  {
+   "cls": "sub-menu application-selector",
+   "tag": "LI",
+   "text": "Trustnet\netfinfo\nStatistics\nDa",
+   "title": null
+  },
+  {
+   "cls": "sub-menu language-selector",
+   "tag": "LI",
+   "text": "简体\t\nEnglish\nDeutsch\nFrançais\nI",
+   "title": null
+  },
+  {
+   "cls": "sub-menu",
+   "tag": "LI",
+   "text": "yunying cen\n电子邮件订阅\n退出",
+   "title": null
+  },
+  {
+   "cls": "searchButton",
+   "tag": "BUTTON",
+   "text": "J",
+   "title": null
+  },
+  {
+   "cls": "highcharts-range-selector",
+   "tag": "INPUT",
+   "text": "",
+   "title": null
+  },
+  {
+   "cls": "highcharts-range-selector",
+   "tag": "INPUT",
+   "text": "",
+   "title": null
+  },
+  {
+   "cls": "highcharts-container ",
+   "tag": "DIV",
+   "text": "Sep '23\nJan '24\nMay '24\nSep '2",
+   "title": null
+  },
+  {
+   "cls": "highcharts-root",
+   "tag": "svg",
+   "text": "",
+   "title": null
+  },
+  {
+   "cls": "highcharts-background",
+   "tag": "rect",
+   "text": "",
+   "title": null
+  },
+  {
+   "cls": "highcharts-plot-background",
+   "tag": "rect",
+   "text": "",
+   "title": null
+  },
+  {
+   "cls": "highcharts-plot-lines-0",
+   "tag": "g",
+   "text": "",
+   "title": null
+  },
+  {
+   "cls": "highcharts-plot-line ",
+   "tag": "path",
+   "text": "",
+   "title": null
+  },
+  {
+   "cls": "highcharts-grid highcharts-xaxis-grid",
+   "tag": "g",
+   "text": "",
+   "title": null
+  },
+  {
+   "cls": "highcharts-grid-line",
+   "tag": "path",
+   "text": "",
+   "title": null
+  },
+  {
+   "cls": "highcharts-grid-line",
+   "tag": "path",
+   "text": "",
+   "title": null
+  },
+  {
+   "cls": "highcharts-grid-line",
+   "tag": "path",
+   "text": "",
+   "title": null
+  },
+  {
+   "cls": "highcharts-grid-line",
+   "tag": "path",
+   "text": "",
+   "title": null
+  },
+  {
+   "cls": "highcharts-grid-line",
+   "tag": "path",
+   "text": "",
+   "title": null
+  },
+  {
+   "cls": "highcharts-grid-line",
+   "tag": "path",
+   "text": "",
+   "title": null
+  },
+  {
+   "cls": "highcharts-grid-line",
+   "tag": "path",
+   "text": "",
+   "title": null
+  },
+  {
+   "cls": "highcharts-grid-line",
+   "tag": "path",
+   "text": "",
+   "title": null
+  },
+  {
+   "cls": "highcharts-grid-line",
+   "tag": "path",
+   "text": "",
+   "title": null
+  },
+  {
+   "cls": "highcharts-grid highcharts-xaxis-grid highcharts-navigator-xaxis",
+   "tag": "g",
+   "text": "",
+   "title": null
+  },
+  {
+   "cls": "highcharts-grid-line",
+   "tag": "path",
+   "text": "",
+   "title": null
+  },
+  {
+   "cls": "highcharts-grid-line",
+   "tag": "path",
+   "text": "",
+   "title": null
+  },
+  {
+   "cls": "highcharts-grid-line",
+   "tag": "path",
+   "text": "",
+   "title": null
+  },
+  {
+   "cls": "highcharts-grid highcharts-yaxis-grid",
+   "tag": "g",
+   "text": "",
+   "title": null
+  },
+  {
+   "cls": "highcharts-grid-line",
+   "tag": "path",
+   "text": "",
+   "title": null
+  },
+  {
+   "cls": "highcharts-grid-line",
+   "tag": "path",
+   "text": "",
+   "title": null
+  },
+  {
+   "cls": "highcharts-grid-line",
+   "tag": "path",
+   "text": "",
+   "title": null
+  }
+ ],
+ "highchartsContainers": [
+  "highcharts-range-selector",
+  "highcharts-range-selector",
+  "highcharts-container ",
+  "highcharts-root",
+  "highcharts-background",
+  "highcharts-plot-background",
+  "highcharts-plot-lines-0",
+  "highcharts-plot-line ",
+  "highcharts-grid highcharts-xaxis-grid",
+  "highcharts-grid-line"
+ ]
+}

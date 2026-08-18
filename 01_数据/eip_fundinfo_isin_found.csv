@@ -1,0 +1,4 @@
+﻿name,isin,share,currency,policy,source,note
+ARBROOK G10 AMERICAN EQUITIES A1 USD ACC USD,IE00BZ60K206,A1,USD,Acc,fundinfo(浏览器手动验证),Skyline Umbrella Fund ICAV - Arbrook American Equities Fund
+PICTET FUNDS GLOBAL MEGATREND SEL I USD ACC USD,LU2850666467,I,USD,Acc,fundinfo(浏览器手动验证),Pictet - Global Megatrend Selection
+BLACKROCK (LUX) SA BGF GLOBAL INFL L A2 USD,LU3069870890,?,USD,Acc,"fundinfo(批次,待核)",与FT给的LU0425308086不一致，需人工确认份额

@@ -1,0 +1,6 @@
+{
+ "btnHTML": "<button type=\"button\" class=\"btn btn-default btn-xs d-none d-sm-inline-block\" name=\"downloadAsCSV\">Export als CSV</button>",
+ "csvRefs": [
+  "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20data-codex-favicon-badge%3D%22codex-fav"
+ ]
+}

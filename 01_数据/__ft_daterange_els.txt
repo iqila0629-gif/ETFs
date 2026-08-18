@@ -1,0 +1,44 @@
+[
+ {
+  "cls": "mod-ui-filter-overlay clearfix mod-filter-ui-historical-pric",
+  "dataMod": "",
+  "tag": "DIV",
+  "text": "Date Range: Jul 17, 2026 - Aug 16, 2026",
+  "visible": true
+ },
+ {
+  "cls": "o-forms__label mod-ui-form__label--event",
+  "dataMod": "",
+  "tag": "LABEL",
+  "text": "Date range",
+  "visible": false
+ },
+ {
+  "cls": "clearfix mod-ui-filter-overlay__display",
+  "dataMod": "",
+  "tag": "DIV",
+  "text": "Date Range: Jul 17, 2026 - Aug 16, 2026",
+  "visible": true
+ },
+ {
+  "cls": "mod-ui-filter-overlay__filter-item",
+  "dataMod": "",
+  "tag": "SPAN",
+  "text": "Date Range: Jul 17, 2026 - Aug 16, 2026",
+  "visible": true
+ },
+ {
+  "cls": "mod-ui-filter-overlay__filter-item--text",
+  "dataMod": "",
+  "tag": "SPAN",
+  "text": "Date Range: Jul 17, 2026 - Aug 16, 2026",
+  "visible": true
+ },
+ {
+  "cls": "mod-tearsheet-historical-prices__message hideSection",
+  "dataMod": "",
+  "tag": "DIV",
+  "text": "There are no Historical Prices for the selected date range, ",
+  "visible": false
+ }
+]

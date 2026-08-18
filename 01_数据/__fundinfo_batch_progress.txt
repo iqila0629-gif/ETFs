@@ -1,0 +1,39 @@
+[1/72] ok=0 last=ABERDEEN STD - NORTH AMERICAN SMALLER CO err=no good autocomplete candidate
+[2/72] ok=0 last=ALLIANCE BERNSTEIN AMERICAN INCOME PORTF err=no good autocomplete candidate
+[3/72] ok=0 last=ALLIANCEBERNSTEIN AMERICAN INCOME USD err=no good autocomplete candidate
+[4/72] ok=0 last=AMUNDI BD GLOBAL AGG AUC 3D USD err=no good autocomplete candidate
+[5/72] ok=0 last=ARBROOK G10 AMERICAN EQUITIES A1 USD ACC err=no good autocomplete candidate
+[6/72] ok=0 last=ARTISAN PTNRS GBL GLOBAL OPPORTUNITIES I err=no good autocomplete candidate
+[7/72] ok=0 last=BLACKROCK (LUX) SA BGF GLOBAL INFL L A2  err=no good autocomplete candidate
+[8/72] ok=0 last=BLACKROCK (LUX) SA FIXED INCOME GLOBAL O err=no good autocomplete candidate
+[9/72] ok=0 last=BLACKROCK (LUX) SA FIXED INCOME GLOBAL O err=no good autocomplete candidate
+[10/72] ok=0 last=CAPITAL CITIGROUP GLOBAL MARKETS FUNDING err=no good autocomplete candidate
+[11/72] ok=0 last=CAUSEWAY BBVA GLOBAL QUAD INCOME USD err=no good autocomplete candidate
+[12/72] ok=0 last=CAUSEWAY BNP PARIBAS GLOBAL INCOME LOCK  err=no good autocomplete candidate
+[13/72] ok=0 last=CAUSEWAY BNP PARIBAS GLOBAL INCOME LOCK  err=no good autocomplete candidate
+[14/72] ok=0 last=CAUSEWAY BNP PARIBAS GLOBAL INCOME LOCK  err=no good autocomplete candidate
+[15/72] ok=0 last=CAUSEWAY BNP PARIBAS GLOBAL INCOME LOCK  err=no good autocomplete candidate
+[16/72] ok=0 last=CAUSEWAY BNP PARIBAS GLOBAL INCOME LOCK  err=no good autocomplete candidate
+[17/72] ok=0 last=CAUSEWAY BNP PARIBAS GLOBAL INCOME LOCK  err=no good autocomplete candidate
+[18/72] ok=0 last=CAUSEWAY MORGAN STANLEY GLOBAL MARKETS I err=no good autocomplete candidate
+[19/72] ok=0 last=CELERITY GLOBAL BALANCED FUND IC A ACC U err=no good autocomplete candidate
+[20/72] ok=0 last=COMMERZBANK GLOBAL INDEX INCOME BUILDER  err=no good autocomplete candidate
+[21/72] ok=0 last=CT MGMT AMERICAN 3U USD ACC USD err=no good autocomplete candidate
+[22/72] ok=0 last=CTMGMT LUX AMERICAN AU USD ACC USD err=no good autocomplete candidate
+[23/72] ok=0 last=DELL INTERNATIONAL LLC USD err=no good autocomplete candidate
+[24/72] ok=0 last=FINCREST GLOBAL EQUITY FUND CLASS A USD err=no good autocomplete candidate
+[25/72] ok=0 last=FRANKLIN TEMP GLOBAL HI YLD MDIS \$ USD err=no good autocomplete candidate
+[26/72] ok=0 last=FRANKLIN TEMP GLOBAL INC A ACC USD USD err=no good autocomplete candidate
+[27/72] ok=0 last=FRANKLIN TEMPL GLOBAL FOCUS FD A DIS USD err=no good autocomplete candidate
+[28/72] ok=0 last=FRANKLIN TEMPLETON FRANKLIN MUT GLOBAL D err=no good autocomplete candidate
+[29/72] ok=0 last=FRANKLIN TEMPLETON GLOBAL FOCUS A ACC US err=no good autocomplete candidate
+[30/72] ok=0 last=FRANKLIN TEMPLETON GLOBAL TOTAL RETURN A err=no good autocomplete candidate
+[31/72] ok=0 last=FRANKLIN TEMPLETON GLOBAL TOTAL RETURN F err=no good autocomplete candidate
+[32/72] ok=0 last=FRANKLIN TEMPLETON LATIN AMERICA A ACC U err=no good autocomplete candidate
+[33/72] ok=0 last=FTGF GBL BRANDYWNE GLOBAL FIXED INCOME A err=no good autocomplete candidate
+[34/72] ok=0 last=FTGF GBL W/A GLOBAL HIGH YIELD A USD ACC err=no good autocomplete candidate
+[35/72] ok=0 last=GLOBAL X FDS GBL X FTSE ARGENT USD USD err=no good autocomplete candidate
+[36/72] ok=0 last=GLOBAL X FDS GBL X ROBOTICS & ARTIFICIAL err=no good autocomplete candidate
+[37/72] ok=0 last=GUINNESS GAM GLOBAL EQUITY INCOME INC D  err=no good autocomplete candidate
+[38/72] ok=0 last=IDAD NATIXIS GLOBAL INDICES AC JULY 2026 err=no good autocomplete candidate
+[39/72] ok=0 last=IDAD NATIXIS GLOBAL MARKETS DEFENSIVE AC err=no good autocomplete candidate

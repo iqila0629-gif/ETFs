@@ -1,0 +1,261 @@
+link count: 2
+URL: https://www.fundinfo.com/user/zh-hans/CH-priv/LandingPage?filter=%7B%22OFST900000%22%3A%5B%22fdf8ce1c-14a9-46c2-a135-0d51efa6e9b4%22%5D%7D
+TITLE: 篩选结果 | fundinfo
+--- TEXT ---
+	
+Trustnet
+etfinfo
+Statistics
+Data Feed Portal
+Data Partner Portal
+Document Dissemination
+PubliFund
+FE Analytics
+Customer Portal
+Nexus
+简体	
+English
+Deutsch
+Français
+Italiano
+Español
+繁體
+私人投资者
+瑞士
+yunying cen
+电子邮件订阅
+退出
+视频
+新闻
+我的基金
+法律文件
+Compare
+会员
+J
+筛选器
+关闭筛选器
+Fund Group Name: Arbrook Investors
+篩选结果
+1 基金，14 股份类别
+概览
+Fee and Charges
+Performance
+评级
+Additional Documents
+可持续发展
+基金名称
+>
+NAV
+YTD
+MR
+PR
+SUP
+PRP
+KIID
+KFS
+LM
+AUM Fund
+Skyline Umbrella Fund ICAV - Arbrook American Equities Fund - A1
+货币:USD 分销政策:Acc. 国际证券识别编码:IE00BZ60K206
+?
+?
+?
+?
+?
+?
+?
+?
+?
+?
+Skyline Umbrella Fund ICAV - Arbrook American Equities Fund - A10
+货币:USD 分销政策:Dist. 国际证券识别编码:IE00BGV5W214
+?
+?
+?
+?
+?
+?
+?
+?
+?
+?
+Skyline Umbrella Fund ICAV - Arbrook American Equities Fund - A2
+货币:USD 分销政策:Dist. 国际证券识别编码:IE00BF0W1S53
+?
+?
+?
+?
+?
+?
+?
+?
+?
+?
+Skyline Umbrella Fund ICAV - Arbrook American Equities Fund - A7
+货币:USD 分销政策:Acc. 国际证券识别编码:IE00BF0W1W99
+?
+?
+?
+?
+?
+?
+?
+?
+?
+?
+Skyline Umbrella Fund ICAV - Arbrook American Equities Fund - A9
+货币:USD 分销政策:Acc. 国际证券识别编码:IE00BGV5W107
+?
+?
+?
+?
+?
+?
+?
+?
+?
+?
+Skyline Umbrella Fund ICAV - Arbrook American Equities Fund - B1
+货币:GBP 分销政策:Acc. 国际证券识别编码:IE00BF0W1X07
+?
+?
+?
+?
+?
+?
+?
+?
+?
+?
+Skyline Umbrella Fund ICAV - Arbrook American Equities Fund - B10
+货币:GBP 分销政策:Dist. 国际证券识别编码:IE00BGV5W438
+?
+?
+?
+?
+?
+?
+?
+?
+?
+?
+Skyline Umbrella Fund ICAV - Arbrook American Equities Fund - B2
+货币:GBP 分销政策:Dist. 国际证券识别编码:IE00BZ60K313
+?
+?
+?
+?
+?
+?
+?
+?
+?
+?
+Skyline Umbrella Fund ICAV - Arbrook American Equities Fund - B9
+货币:GBP 分销政策:Acc. 国际证券识别编码:IE00BGV5W321
+?
+?
+?
+?
+?
+?
+?
+?
+?
+?
+Skyline Umbrella Fund ICAV - Arbrook American Equities Fund - C1
+货币:CHF 分销政策:Acc. 国际证券识别编码:IE00BF0W2048
+?
+?
+?
+?
+?
+?
+?
+?
+?
+?
+Skyline Umbrella Fund ICAV - Arbrook American Equities Fund - C2
+货币:CHF 分销政策:Dist. 国际证券识别编码:IE00BZ60K537
+?
+?
+?
+?
+?
+?
+?
+?
+?
+?
+Skyline Umbrella Fund ICAV - Arbrook American Equities Fund - D1
+货币:EUR 分销政策:Acc. 国际证券识别编码:IE00BF0W2261
+?
+?
+?
+?
+?
+?
+?
+?
+?
+?
+Skyline Umbrella Fund ICAV - Arbrook American Equities Fund - D10
+货币:EUR 分销政策:Dist. 国际证券识别编码:IE00BGV5W875
+?
+?
+?
+?
+?
+?
+?
+?
+?
+?
+Skyline Umbrella Fund ICAV - Arbrook American Equities Fund - D2
+货币:EUR 分销政策:Dist. 国际证券识别编码:IE00BZ60K420
+?
+?
+?
+?
+?
+?
+?
+?
+?
+?
+Compare Clear Compare List
+数据源和脚注
+
+a specific document for professional investors
+
+
+
+h 100% NAV hedge
+
+
+
+rh residual hedge
+
+
+
+b Net Asset Value (NAV) / Issue Price exclusive commissions, for listed real estate funds closing price
+
+
+
+QFI exclusively reserved for qualified investors
+
+
+
+| Share class in 我的基金
+
+
+
+Data source fund data, documents, NAV/YTD: fund group
+
+
+
+Data source "Lipper Rating for Consistent Return": Copyright Refinitiv: The Lipper Rating for Consistent Return identifies a fund that has provided relatively superior consistency and risk-adjusted returns when compared to a group of similar funds. Funds which achieve high ratings for Consistent Return may be the best fit for investors who value a fund's year-to-year consistency relative to other funds in a particular peer group. Investors are cautioned that some peer groups are inherently more volatile than others, and even Lipper Leaders for Consistent Return in the most volatile groups may not be well suited to shorter-term goals or less risk-tolerant investors. (keys 5 – 1, highest 5).
+
+
+
+Data source "Citywire": Citywire Ratings and Citywire Rankings © and database right Citywire Financial Publishers Ltd.: Citywire fund manager ratings look at the risk-adjusted performance of the funds managed by the fund managers in the past three years. The ratings 

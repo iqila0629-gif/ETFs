@@ -1,0 +1,19 @@
+fill0 err Playwright selector deadline exceeded
+locator.fill failed for selector input[name="_submit"] >> nth=0
+Locator diagnostics: {"kind":"no_visible_match","action":"fill","locator":"input[name=\"_submit\"] >> nth=0","matchCount":1,"matches":[{"ariaLabel":null,"disabled":false,"role":null,"tag":"input","text":"","type":"hidden","visible":false}],"visibleCount":0,"truncated":false}
+fill1 err Timed out after 3000ms waiting for selector input[name="_submit"] >> nth=1: Browser Use encountered an error interacting with this webpage: Error: Element is not visible
+    at <anonymous>:224:185
+    at <anonymous>:224:715
+    at <anonymous>:225:11
+    at <anonymous>:226:11
+locator.fill failed for selector input[name="_submit"] >> nth=1
+Locator diagnostics: {"kind":"no_visible_match","action":"fill","locator":"input[name=\"_submit\"] >> nth=1","matchCount":1,"matches":[{"ariaLabel":null,"disabled":false,"role":null,"tag":"input","text":"","type":"hidden","visible":false}],"visibleCount":0,"truncated":false}
+enter err Playwright selector deadline exceeded
+locator.press failed for selector #P442104371 >> nth=0
+Locator diagnostics: {"kind":"no_matches","action":"press","locator":"#P442104371 >> nth=0","matchCount":0,"matches":[],"visibleCount":0,"truncated":false}
+URL: https://markets.ft.com/data/funds/tearsheet/historical?s=IT0005630238:EUR&_submit=2025/01/01&_submit=2025/12/31
+{
+ "count": 20,
+ "first": "Thursday, August 13, 2026",
+ "last": "Friday, July 17, 2026"
+}

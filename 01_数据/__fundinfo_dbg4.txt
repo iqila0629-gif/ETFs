@@ -1,0 +1,3 @@
+searchButton count: 1
+visible inputs: [{"id":"","name":"query","ph":"请输入搜索请求（基金名称/ISIN/WKN/Valor 编号）"}]
+dropdown: {"cls":"search-results-dropdown","display":"block"}

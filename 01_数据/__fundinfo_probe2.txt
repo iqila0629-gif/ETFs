@@ -1,0 +1,42 @@
+{
+ "buttons": [],
+ "inlineMatches": [
+  [
+   "dataLayer",
+   "dataLayer"
+  ],
+  [],
+  [
+   "data(",
+   "data(",
+   "data(",
+   "data(",
+   "data-filter]",
+   "ApiKey",
+   "ApiKey()",
+   "ApiKey",
+   "ApiKey()",
+   "apiKey",
+   "ApiKey();",
+   "apiKeyParam"
+  ],
+  [
+   "dataLayer.push({event:"
+  ]
+ ],
+ "scripts": [
+  "https://consentcdn.cookiebot.com/consentconfig/5d37873d-891c-400b-8083-52aa3e966a21/state.js",
+  "https://consent.cookiebot.com/Scripts/widgetIcon.min.js",
+  "https://sc.lfeeder.com/lftracker_v1_ywVkO4XwALE7Z6Bj.js",
+  "https://www.googletagmanager.com/gtag/js?id=G-YJSVZTCYY5&cx=c&gtm=4e68c1",
+  "https://consent.cookiebot.com/uc.js?cbid=5d37873d-891c-400b-8083-52aa3e966a21&implementation=gtm&consentmode-dataredaction=dynamic",
+  "https://www.googletagmanager.com/gtm.js?id=GTM-T3Q42PQ",
+  "https://www.fundinfo.com/bundles/jsmusthavebundle?v=N2YlHnRI7it2_JoqUZTYWxPtx-s61zIGkk78Q0eabPM1",
+  "https://www.fundinfo.com/bundles/jsdefaultTheme?v=pI6gF8LmY1O419Qa5fFWxhqWd6QyDiMTPZjQflunIwE1",
+  "https://www.fundinfo.com/user/zh-hans/CH-priv/Javascript/variables",
+  "https://www.fundinfo.com/WfcStatic/StaticScript/GlobalHeaderScript?id=67ae8c41-7caa-4458-ae4f-a8584d6eb9de&design=DefaultDesign",
+  "https://www.fundinfo.com/Scripts/Views/Home/FilterForm.js",
+  "https://az416426.vo.msecnd.net/scripts/a/ai.0.js",
+  "https://cdn.fundinfo.com/ajax/libs/highstock/7.1.3/highstock.js"
+ ]
+}

@@ -1,0 +1,68 @@
+Pictet dropdown items: [
+ {
+  "href": "/user/zh-hans/CH-priv/LandingPage?filter=%7B%22OFST900017%22%3A%5B%22d2bea614-ab3b-40c9-8c00-b84038e3533b%22%5D%7D",
+  "text": "Multi Solutions - Pictet Road To Megatrends 2028"
+ },
+ {
+  "href": "/user/zh-hans/CH-priv/LandingPage?filter=%7B%22OFST900017%22%3A%5B%22250b231e-08af-4eb0-b5ad-4872222a026d%22%5D%7D",
+  "text": "Multi Solutions - Pictet Road To Megatrends 2028 II"
+ },
+ {
+  "href": "/user/zh-hans/CH-priv/LandingPage?filter=%7B%22OFST900017%22%3A%5B%2266d6a67d-48d3-4fde-8961-dc940550d03a%22%5D%7D",
+  "text": "Multi Solutions - Pictet Road To Megatrends Protected 85"
+ },
+ {
+  "href": "/user/zh-hans/CH-priv/LandingPage?filter=%7B%22OFST900017%22%3A%5B%220ff6c22c-be62-4ac2-9396-0155209d75db%22%5D%7D",
+  "text": "Multi Solutions - Pictet Smart Road To Megatrends"
+ },
+ {
+  "href": "/user/zh-hans/CH-priv/LandingPage?filter=%7B%22OFST900017%22%3A%5B%227eed0ef2-1f5a-11e5-9d04-0050568e4b05%22%5D%7D",
+  "text": "Pictet - Global Megatrend Selection"
+ },
+ {
+  "href": "/user/zh-hans/CH-priv/LandingPage?filter=%7B%22OFST900017%22%3A%5B%220ada7523-528a-4496-9e05-8674c5f93adc%22%5D%7D",
+  "text": "Willerfunds – Private Suite – Pictet Global Megatrend Selection"
+ }
+]
+Franklin dropdown items: [
+ {
+  "href": "/user/zh-hans/CH-priv/LandingPage?filter=%7B%22OFST900000%22%3A%5B%22f4343d47-1b6f-4719-87e1-fc3a8b471e4e%22%5D%7D",
+  "text": "De Pury Pictet Turrettini & Cie的所有基金"
+ },
+ {
+  "href": "/user/zh-hans/CH-priv/LandingPage?filter=%7B%22OFST900000%22%3A%5B%22cdc23b16-972e-42e1-856f-32062e19b91f%22%5D%7D",
+  "text": "Pictet的所有基金"
+ },
+ {
+  "href": "/user/zh-hans/CH-priv/LandingPage?filter=%7B%22OFST900000%22%3A%5B%22dec524d0-59d2-455a-808e-648ff9e2dc5b%22%5D%7D",
+  "text": "Pictet WM的所有基金"
+ },
+ {
+  "href": "/user/zh-hans/CH-priv/LandingPage?filter=%7B%22OFST900017%22%3A%5B%2250dcc040-c11a-4aca-90b3-8bbb9aab6fb1%22%5D%7D",
+  "text": "AMSelect - PICTET Global Multi Asset"
+ },
+ {
+  "href": "/user/zh-hans/CH-priv/LandingPage?filter=%7B%22OFST900017%22%3A%5B%22d2bea614-ab3b-40c9-8c00-b84038e3533b%22%5D%7D",
+  "text": "Multi Solutions - Pictet Road To Megatrends 2028"
+ },
+ {
+  "href": "/user/zh-hans/CH-priv/LandingPage?filter=%7B%22OFST900017%22%3A%5B%22250b231e-08af-4eb0-b5ad-4872222a026d%22%5D%7D",
+  "text": "Multi Solutions - Pictet Road To Megatrends 2028 II"
+ },
+ {
+  "href": "/user/zh-hans/CH-priv/LandingPage?filter=%7B%22OFST900017%22%3A%5B%2266d6a67d-48d3-4fde-8961-dc940550d03a%22%5D%7D",
+  "text": "Multi Solutions - Pictet Road To Megatrends Protected 85"
+ },
+ {
+  "href": "/user/zh-hans/CH-priv/LandingPage?filter=%7B%22OFST900017%22%3A%5B%220ff6c22c-be62-4ac2-9396-0155209d75db%22%5D%7D",
+  "text": "Multi Solutions - Pictet Smart Road To Megatrends"
+ },
+ {
+  "href": "/user/zh-hans/CH-priv/LandingPage?filter=%7B%22OFST900017%22%3A%5B%223a58b7ea-5348-49a5-bd29-3103f07b574d%22%5D%7D",
+  "text": "Multi Solutions - Pictet Smart Road to AI"
+ },
+ {
+  "href": "/user/zh-hans/CH-priv/LandingPage?filter=%7B%22OFST900017%22%3A%5B%22c609018d-0196-4dd2-8676-109f2463c469%22%5D%7D",
+  "text": "Multi Solutions - Pictet Target Income 2028"
+ }
+]

@@ -1,0 +1,2 @@
+year btn count: 1
+dropdown options: ["Zur Watchlist hinzufügen","Zum Portfolio hinzufügen","Zur Watchlist hinzufügen","Zum Portfolio hinzufügen","Porträt","Börsen","Chart","Times & Sales","Kurse, Performance & Rendite","Diskussion erstellen","Fonds Suche","Profit Maximizer","Fondsvergleich","2025","2026","Januar","Februar","März","April","Mai"]

@@ -1,0 +1,6 @@
+URL: https://markets.ft.com/data/funds/tearsheet/historical?s=IT0005630238:EUR&_submit=2025/01/01&_submit=2025/12/31
+{
+ "count": 20,
+ "first": "Thursday, August 13, 2026",
+ "last": "Friday, July 17, 2026"
+}

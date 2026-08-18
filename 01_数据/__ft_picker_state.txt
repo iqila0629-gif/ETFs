@@ -1,0 +1,32 @@
+click To err Playwright selector deadline exceeded
+waiting on click for selector input.picker__input >> nth=1
+Locator diagnostics: {"kind":"no_visible_match","action":"click","locator":"input.picker__input >> nth=1","matchCount":1,"matches":[{"ariaLabel":null,"disabled":false,"role":null,"tag":"input","text":"","type":"text","visible":false}],"visibleCount":0,"truncated":false}
+picker state: {
+ "yearSelects": [
+  {
+   "open": false,
+   "opts": [
+    "2025",
+    "2026"
+   ],
+   "val": "2026"
+  },
+  {
+   "open": false,
+   "opts": [
+    "2016",
+    "2017",
+    "2018",
+    "2019",
+    "2020",
+    "2021",
+    "2022",
+    "2023",
+    "2024",
+    "2025",
+    "2026"
+   ],
+   "val": "2026"
+  }
+ ]
+}

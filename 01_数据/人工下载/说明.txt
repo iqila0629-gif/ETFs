@@ -1,0 +1,22 @@
+人工下载数据存放目录
+====================
+
+用途：自动化抓取到瓶颈后，人工从 FT Markets / fundinfo.com / wallstreet-online 下载的基金历史数据统一放在这里。
+
+文件要求：
+1. 一个基金一个 CSV，文件名用 `01_数据/eip_fund_names.csv` 里的“规范名称”（可用缩写，但尽量一致）。
+2. 每列至少包含 Date 与 Close（或 NAV / Adj Close / Price），日期格式不限（MM/DD/YYYY、YYYY-MM-DD 均可），脚本会自动规范化。
+3. 可选：加一列 fund_name 显式标注基金名（与文件名不一致时以 fund_name 为准）。
+
+示例：
+    Date,Close
+    2024-01-02,123.45
+    2024-01-03,124.00
+
+处理：
+- 放好后运行 `02_脚本/新项目/import_manual_downloads.py`（或告诉我“已放好”，我来导入）。
+- 脚本会：读取 -> 规范化日期/数值 -> 合并成 eip_manual_panel.csv -> 与 453 个清单名匹配 -> 更新 eip_master_status.csv。
+
+注意：
+- 请核对份额与币种（ACC/DIS、USD/HKD），只下载与清单一致的那一条。
+- 债券/结构性（20 个无解项）不用下载。

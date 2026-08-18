@@ -1,0 +1,98 @@
+{
+ "buttons": [
+  {
+   "cls": "o-header__search-submit",
+   "tag": "BUTTON",
+   "text": "Search",
+   "type": "submit"
+  },
+  {
+   "cls": "o-header__search-submit",
+   "tag": "BUTTON",
+   "text": "Search",
+   "type": "submit"
+  },
+  {
+   "cls": "o-header__subnav-button o-header__subnav-button--l",
+   "tag": "BUTTON",
+   "text": "",
+   "type": "submit"
+  },
+  {
+   "cls": "o-header__subnav-button o-header__subnav-button--r",
+   "tag": "BUTTON",
+   "text": "",
+   "type": "submit"
+  },
+  {
+   "cls": "o-header__drawer-search-submit",
+   "tag": "BUTTON",
+   "text": "Search",
+   "type": "submit"
+  },
+  {
+   "cls": "o-header__drawer-menu-toggle o-header__drawer-menu",
+   "tag": "BUTTON",
+   "text": "Show more World link",
+   "type": "button"
+  },
+  {
+   "cls": "o-header__drawer-menu-toggle o-header__drawer-menu",
+   "tag": "BUTTON",
+   "text": "Show more US link",
+   "type": "button"
+  },
+  {
+   "cls": "o-header__drawer-menu-toggle o-header__drawer-menu",
+   "tag": "BUTTON",
+   "text": "Show more Companies ",
+   "type": "button"
+  },
+  {
+   "cls": "o-header__drawer-menu-toggle o-header__drawer-menu",
+   "tag": "BUTTON",
+   "text": "Show more Tech link",
+   "type": "button"
+  },
+  {
+   "cls": "o-header__drawer-menu-toggle o-header__drawer-menu",
+   "tag": "BUTTON",
+   "text": "Show more Markets li",
+   "type": "button"
+  },
+  {
+   "cls": "o-header__drawer-menu-toggle o-header__drawer-menu",
+   "tag": "BUTTON",
+   "text": "Show more Opinion li",
+   "type": "button"
+  },
+  {
+   "cls": "o-header__drawer-menu-toggle o-header__drawer-menu",
+   "tag": "BUTTON",
+   "text": "Show more Work & Car",
+   "type": "button"
+  },
+  {
+   "cls": "o-header__drawer-menu-toggle o-header__drawer-menu",
+   "tag": "BUTTON",
+   "text": "Show more Life & Art",
+   "type": "button"
+  },
+  {
+   "cls": "o-header__drawer-menu-toggle o-header__drawer-menu",
+   "tag": "BUTTON",
+   "text": "Show more Personal F",
+   "type": "button"
+  },
+  {
+   "cls": "o-buttons mod-ui-button mod-ui-button--icon mod-ui",
+   "tag": "BUTTON",
+   "text": "",
+   "type": "submit"
+  }
+ ],
+ "containerHTML": "<div class=\"picker__frame\"><div class=\"picker__wrap\"><div class=\"picker__box\"><div class=\"picker__header\"><select class=\"picker__select--year\" aria-controls=\"P442104371_table\" title=\"Select a year\"><option value=\"2025\" selected=\"\">2025</option><option value=\"2026\">2026</option></select><div class=\"picker__month\">August</div><div class=\"picker__nav--prev\" data-nav=\"-1\" role=\"button\" aria-controls=\"P442104371_table\" title=\"Previous month\"> </div><div class=\"picker__nav--next\" data-nav=\"1\" role=\"button\" aria-controls=\"P442104371_table\" title=\"Next month\"> </div></div><table class=\"picker__table\" id=\"P442104371_table\" role=\"grid\" aria-controls=\"P442104371\" aria-readonly=\"true\"><tbody><tr><td role=\"presentation\"><div class=\"picker__day picker__day--outfocus\" data-pick=\"1753545600000\" role=\"gridcell\" aria-label=\"27 Jul, 2025\">27</div></td><td role=\"presentation\"><div class=\"picker__day picker__day--outfocus\" data-pick=\"1753632000000\" role=\"gridcell\" aria-label=\"28 Jul, 2025\">28</div></td><td role=\"presentation\"><div class=\"picker__day picker__day--outfocus\" data-pick=\"1753718400000\" role=\"gridcell\" aria-label=\"29 Jul, 2025\">29</div></td><td role=\"presentation\"><div class=\"picker__day picker__day--outfocus\" data-pick=\"1753804800000\" role=\"gridcell\" aria-label=\"30 Jul, 2025\">30</div></td><td role=\"presentation\"><div class=\"picker__day picker__day--outfocus\" data-pick=\"1753891200000\" role=\"gridcell\" aria-label=\"31 Jul, 2025\">31</div></td><td role=\"presentation\"><div class=\"picker__day picker__day--infocus\" data-pick=\"1753977600000\" role=\"gridcell\" aria-label=\"1 Aug, 2025\">1</div></td><td role=\"presentation\"><div class=\"picker__day picker__day--infocus\" data-pick=\"1754064000000\" role=\"gridcell\" aria-label=\"2 Aug, 2025\">2</div></td></tr><tr><td role=\"presentation\"><div class=\"picker__day picker__day--infocus\" data-pick=\"1754150400000\" role=\"gridcell\" aria-label=\"3 Aug, 2025\">3</div></td><td role=\"presentation\"><div class=\"picker__day picker__day--infocus\" data-pick=\"1754236800000\" role=\"gridcell\" aria-label=\"4 Aug, 2025\">4</div></td><td role=\"presentation\"><div class=\"picker__day picker__day--infocus\" data-pick=\"1754323200000\" role=\"gridcell\" aria-label=\"5 Aug, 2025\">5</div></td><td role=\"presentation\"><div class=\"picker__day picker__day--infocus\" data-pick=\"1754409600000\" role=\"gridcell\" aria-label=\"6 Aug, 2025\">6</div></td><td role=\"presentation\"><div class=\"picker__day picker__day--infocus\" data-pick=\"1754496000000\" role=\"gridcell\" aria-label=\"7 Aug, 2025\">7</div></td><td role=\"presentation\"><div class=\"picker__day picker__day--infocus\" data-pick=\"1754582400000\" role=\"gridcell\" aria-label=\"8 Aug, 2025\">8</div></td><td role=\"presentation\"><div class=\"picker__day picker__day--infocus\" data-pick=\"1754668800000\" role=\"gridcell\" aria-label=\"9 Aug, 2025\">9</div></td></tr><tr><td role=\"presentation\"><div class=\"picker__day picker__day--infocus\" data-pick=\"1754755200000\" role=\"gridcell\" aria-label=\"10 Aug, 2025\">10</div></td><td role=\"presentation\"><div class=\"p",
+ "formAction": "https://markets.ft.com/data/funds/tearsheet/historical?s=IT0005630238:EUR",
+ "formHTML": "<form class=\"mod-ui-filter-overlay__form__content\"><p>You may only view one year's worth of data at a time.</p><fieldset class=\"mod-filter-ui-historical-prices-overlay__field\" data-mod-filter=\"dateRange\"><label class=\"o-forms__label mod-ui-form__label--event\" for=\"dateRange\">Date range</label><span name=\"dateRange\"><div class=\"mod-ui-date-picker mod-filter-ui-historical-prices-overlay__date--from\"><div class=\"mod-ui-date-picker__input-container\"><input type=\"text\" placeholder=\"From\" class=\"o-forms__text mod-ui-form__text--event picker__input\" data-value=\"2026/07/17\" readonly=\"\" id=\"P442104371\" aria-haspopup=\"true\" aria-expanded=\"false\" aria-readonly=\"false\" aria-owns=\"P442104371_root\"><input type=\"hidden\" name=\"_submit\" value=\"2025/08/18\"><i class=\"mod-icon mod-icon--calendar\"></i></div><div class=\" mod-ui-date-picker__calendar\"><div class=\"picker\" id=\"P442104371_root\" aria-hidden=\"true\"><div class=\"picker__holder\" tabindex=\"-1\"><div class=\"picker__frame\"><div class=\"picker__wrap\"><div class=\"picker__box\"><div class=\"picker__header\"><select class=\"picker__select--year\" aria-controls=\"P442104371_table\" title=\"Select a year\"><option value=\"2025\" selected=\"\">2025</option><option value=\"2026\">2026</option></select><div class=\"picker__month\">August</div><div class=\"picker__nav--prev\" data-nav=\"-1\" role=\"button\" aria-controls=\"P442104371_table\" title=\"Previous month\"> </div><div class=\"picker__nav--next\" data-nav=\"1\" role=\"button\" aria-controls=\"P442104371_table\" title=\"Next month\"> </div></div><table class=\"picker__table\" id=\"P442104371_table\" role=\"grid\" aria-controls=\"P442104371\" aria-readonly=\"true\"><tbody><tr><td role=\"presentation\"><div class=\"picker__day picker__day--outfocus\" data-pick=\"1753545600000\" role=\"gridcell\" aria-label=\"27 Jul, 2025\">27</div></td><td role=\"presentation\"><div class=\"picker__day picker__day--outfocus\" data-pick=\"1753632000000\" role=\"gridcell\" aria-label=\"28 Jul, 2025\">28</div></td><td role=\"presentation\"><div class=\"picker__day picker__day--outfocus\" data-pick=\"1753718400000\" role=\"gridcell\" aria-label=\"29 Jul, 2025\">29</div></td><td role=\"presentation\"><div class=\"picker__day picker__day--outfocus\" data-pick=\"1753804800000\" role=\"gridcell\" aria-label=\"30 Jul, 2025\">30</div></td><td role=\"presentation\"><div class=\"picker__day picker__day--outfocus\" data-pick=\"1753891200000\" role=\"gridcell\" aria-label=\"31 Jul, 2025\">31</div></td><td role=\"presentation\"><div class=\"picker__day picker__day--infocus\" data-pick=\"1753977600000\" role=\"gridcell\" aria-label=\"1 Aug, 2025\">1</div></td><td role=\"presentation\"><div class=\"picker__day picker__day--infocus\" data-pick=\"1754064000000\" role=\"gridcell\" aria-label=\"2 Aug, 2025\">2</div></td></tr><tr><td role=\"presentation\"><div class=\"picker__day picker__day--infocus\" data-pick=\"1754150400000\" role=\"gridcell\" aria-label=\"3 Aug, 2025\">3</div></td><td role=\"presentation\"><div class=\"picker__day picker__day--infocus\" data-pick=\"1754236800000\" role=\"gridcell\" aria-label=\"4 Aug, 2025\">4</div></td",
+ "formMethod": "get"
+}

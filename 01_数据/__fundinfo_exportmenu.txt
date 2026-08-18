@@ -1,0 +1,24 @@
+chart rect: {"bottom":845,"height":400,"left":443.5,"right":1152.5,"top":445,"width":709}
+menu: {
+ "items": [
+  "Trustnet",
+  "etfinfo",
+  "Statistics",
+  "Data Feed Portal",
+  "Data Partner Portal",
+  "Document Dissemination",
+  "PubliFund",
+  "FE Analytics",
+  "Customer Portal",
+  "Nexus",
+  "English",
+  "Deutsch",
+  "Français",
+  "Italiano",
+  "Español",
+  "繁體",
+  "电子邮件订阅",
+  "退出"
+ ],
+ "menuEls": []
+}

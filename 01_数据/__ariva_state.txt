@@ -1,0 +1,6 @@
+{
+ "columns_fonds": "null",
+ "hasColumns": false,
+ "hasSearchFilter": false,
+ "search_filter_fonds": "null"
+}

@@ -1,0 +1,61 @@
+BROWSERS=[
+ {
+  "capabilities": {
+   "browser": [
+    {
+     "description": "Controls an explicit browser viewport override for responsive or device-size testing. Use it when a task calls for specific dimensions or breakpoint validation; otherwise leave it unset so the browser uses its normal viewport. Reset temporary overrides before finishing unless the user asked to keep them.",
+     "id": "viewport"
+    }
+   ],
+   "tab": [
+    {
+     "description": "List assets already observed in the current page state and bundle selected assets into a temporary local artifact.",
+     "id": "pageAssets"
+    }
+   ]
+  },
+  "family": "edge",
+  "id": "-1934-4343-9e1a-3c5d6a2ebf51",
+  "name": "Edge",
+  "type": "extension",
+  "metadata": {
+   "extensionId": "hehggadaopoacecdllhhajmbjkdcmajg",
+   "extensionInstanceId": "18efe5d8-3fd5-46a9-8507-fed6209a6468"
+  }
+ },
+ {
+  "apiSupportOverrides": {
+   "BrowserUser.history": true,
+   "BrowserUser.claimTab": true,
+   "Tab.markDeliverable": true,
+   "Tab.markHandoff": true,
+   "Tabs.finalize": true
+  },
+  "capabilities": {
+   "browser": [
+    {
+     "id": "visibility",
+     "description": "Use to show or hide the browser to the user, and to determine the browser's current visibility. Keep browser work in the background unless the user asks to see it or live viewing is useful. When the browser should be visible, call set(true)."
+    },
+    {
+     "id": "viewport",
+     "description": "Controls an explicit browser viewport override for responsive or device-size testing. Use it when a task calls for specific dimensions or breakpoint validation; otherwise leave it unset so the browser uses its normal viewport. Reset temporary overrides before finishing unless the user asked to keep them."
+    }
+   ],
+   "tab": [
+    {
+     "id": "pageAssets",
+     "description": "List assets already observed in the current page state and bundle selected assets into a temporary local artifact."
+    }
+   ]
+  },
+  "id": "-db98-40ca-8f16-bcd70d004484",
+  "name": "Codex In-app Browser",
+  "type": "iab",
+  "metadata": {
+   "codexAppBuildFlavor": "prod",
+   "codexAppSessionId": "a81f6800-2d94-4e4f-9ad8-d9225211bf84",
+   "codexSessionId": "019ffe5b-4538-76b2-8b34-567ef8d481f7"
+  }
+ }
+]
