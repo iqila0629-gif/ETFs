@@ -34,10 +34,54 @@ def part_direction(token: str) -> tuple[str, bool]:
         if base.endswith("down") or base == "lt-2":
             return "self", False
         return "self", True
+    if token.startswith("ext_"):
+        import scan_v4_conditions as sc
+        for safe, _col in sc.EXTERNAL_COLS.items():
+            prefix = f"ext_{safe}_"
+            if token.startswith(prefix):
+                op = token[len(prefix):]
+                if op.startswith("ge"):
+                    return "ext", True
+                if op.startswith("le"):
+                    return "ext", False
+                return "ext", op == "up"
+        return "ext", True
     base = token.split("_", 1)[1] if "_" in token else token
     if base.endswith("down") or base.endswith("lt-2"):
         return "etf", False
     return "etf", True
+
+
+def delivered_magnitude(token: str) -> float:
+    if token.startswith("self_"):
+        suffix = token[len("self_"):]
+        if suffix in ("big_up", "big_down"):
+            return 2.0
+        return 0.0
+    if token.startswith("ext_"):
+        import scan_v4_conditions as sc
+        for safe, _col in sc.EXTERNAL_COLS.items():
+            prefix = f"ext_{safe}_"
+            if token.startswith(prefix):
+                op = token[len(prefix):]
+                if op in ("up", "down"):
+                    return 0.0
+                return abs(float(op[2:].replace("_", ".")))
+        return 0.0
+    suffix = token.split("_", 1)[1] if "_" in token else ""
+    if suffix in ("big_up", "big_down"):
+        return 1.0
+    if suffix in ("gt2", "lt-2"):
+        return 2.0
+    return 0.0
+
+
+def scan_magnitudes(token: str) -> list[float]:
+    if re.match(r"self_\d", token):
+        return [1.0, 2.0, 3.0, 4.0, 5.0]
+    base = delivered_magnitude(token)
+    vals = sorted({round(base + k * 0.5, 2) for k in range(-4, 5)})
+    return [v for v in vals if v >= 0.5]
 
 
 def build_scan_part(master, part, ticker, all_etfs, scan_token, th_pct):
@@ -52,6 +96,16 @@ def build_scan_part(master, part, ticker, all_etfs, scan_token, th_pct):
         kind, positive = part_direction(scan_token)
         if kind == "self":
             r = master[ticker].to_numpy(dtype=float) * 100.0
+        elif kind == "ext":
+            import scan_v4_conditions as sc
+            col = None
+            for safe, c in sc.EXTERNAL_COLS.items():
+                if part.startswith(f"ext_{safe}_"):
+                    col = c
+                    break
+            if col is None:
+                raise ValueError(part)
+            r = master[col].to_numpy(dtype=float)
         else:
             etf = part.split("_", 1)[0]
             r = master[etf].to_numpy(dtype=float)
@@ -61,11 +115,23 @@ def build_scan_part(master, part, ticker, all_etfs, scan_token, th_pct):
     return sel.build_unified_mask(master, part, ticker, all_etfs)
 
 
-def scan_tokens(condition: str) -> list[str]:
+def is_scan_token(part: str, all_etfs: set[str]) -> bool:
+    if part.startswith("self_"):
+        return True
+    if part.startswith("ext_"):
+        return True
+    first = part.split("_", 1)[0]
+    if first not in all_etfs:
+        return False
+    suffix = part[len(first) + 1:] if "_" in part else ""
+    return suffix in {"up", "down", "big_up", "big_down", "gt2", "lt-2"}
+
+
+def scan_tokens(condition: str, all_etfs: set[str]) -> list[str]:
     parts = condition[len("combo_"):].split("__") if condition.startswith("combo_") else [condition]
     out = []
     for p in parts:
-        if any(s in p for s in ["_big_up", "_big_down", "_gt2", "_lt-2"]) or re.match(r"self_\d", p):
+        if is_scan_token(p, all_etfs):
             out.append(p)
     return out
 
@@ -152,10 +218,10 @@ def main() -> None:
         condition = str(r.condition)
         horizon = int(r.horizon)
         source = str(r.source)
-        for token in scan_tokens(condition):
+        for token in scan_tokens(condition, all_etfs):
             parts = strategy_parts(condition)
             is_streak = bool(re.match(r"self_\d", token))
-            scan_values = [1, 2, 3, 4, 5] if is_streak else THRESHOLDS
+            scan_values = scan_magnitudes(token)
             for th in scan_values:
                 mask = None
                 for p in parts:
@@ -179,6 +245,7 @@ def main() -> None:
                     "scan_token": token,
                     "horizon": horizon,
                     "scan_kind": "streak_days" if is_streak else "threshold",
+                    "delivered_threshold": delivered_magnitude(token),
                     "threshold": th,
                     "full_avg": full["avg"],
                     "full_trades": full["trades"],
@@ -226,6 +293,9 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
+
+
 
 
 
