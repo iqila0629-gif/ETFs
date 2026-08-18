@@ -70,6 +70,16 @@ def merged_returns(selected: list[dict]) -> dict[np.datetime64, float]:
     return {d: pair[0] for d, pair in by_date.items()}
 
 
+def merged_test_returns(selected: list[dict]) -> dict[np.datetime64, float]:
+    by_date: dict[np.datetime64, tuple[float, float]] = {}
+    for s in selected:
+        for d, v in s["returns_test"].items():
+            cur = by_date.get(d)
+            if cur is None or s["strength"] > cur[1]:
+                by_date[d] = (v, s["strength"])
+    return {d: pair[0] for d, pair in by_date.items()}
+
+
 def returns_to_array(returns: dict[np.datetime64, float], keep) -> np.ndarray:
     return np.array(
         [v for d, v in sorted(returns.items()) if keep(d)],
@@ -286,7 +296,7 @@ def main() -> None:
                     "test_hit": s["test_hit"],
                     "test_std": s["test_std"],
                 })
-            test_merged = metric_dict(returns_to_array(merged_returns(selected), lambda d: d >= TEST_START))
+            test_merged = metric_dict(returns_to_array(merged_test_returns(selected), lambda d: True))
             train_merged = metric_dict(returns_to_array(merged_returns(selected), lambda d: d < TRAIN_END))
             oos_rows.append({
                 "ticker": ticker,
@@ -301,6 +311,28 @@ def main() -> None:
         pd.DataFrame(reselect_rows).to_csv(OUT_DIR / "v4_oos_reselected_strategies.csv", index=False)
         pd.DataFrame(oos_rows).to_csv(OUT_DIR / "v4_oos_reselected_merged.csv", index=False)
         print("reselect done:", len(oos_rows), "funds")
+
+    if mode == "merged":
+        reselected = pd.read_csv(OUT_DIR / "v4_oos_reselected_strategies.csv", keep_default_na=False)
+        target_cache = {}
+        oos_rows = []
+        for ticker, group in reselected.groupby("ticker", sort=True):
+            selected = []
+            for r in group.itertuples(index=False):
+                rec = strategy_rec(master, ticker, str(r.condition), int(r.horizon), str(r.source), all_etfs, target_cache)
+                selected.append(rec)
+            test_merged = metric_dict(returns_to_array(merged_test_returns(selected), lambda d: True))
+            train_merged = metric_dict(returns_to_array(merged_returns(selected), lambda d: d < TRAIN_END))
+            oos_rows.append({
+                "ticker": ticker,
+                "n_strategies": len(selected),
+                "density_full": "",
+                "density_frozen": "",
+                **{f"train_{k}": v for k, v in train_merged.items()},
+                **{f"test_{k}": v for k, v in test_merged.items()},
+            })
+        pd.DataFrame(oos_rows).to_csv(OUT_DIR / "v4_oos_reselected_merged.csv", index=False)
+        print("merged recompute done:", len(oos_rows), "funds")
 
     summary = summarize(OUT_DIR)
     summary.to_csv(OUT_DIR / "v4_oos_summary.csv", index=False)
@@ -334,4 +366,6 @@ def summarize(out_dir: Path) -> pd.DataFrame:
 
 if __name__ == "__main__":
     main()
+
+
 

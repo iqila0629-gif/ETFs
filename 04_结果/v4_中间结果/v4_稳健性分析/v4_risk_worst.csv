@@ -1,0 +1,61 @@
+list,ticker,fund_name,fund_theme,condition,value
+full_std_max,UHPIX,Ultra Short China ProFund Investor Class,中国,EEM_down_TIP_down_UUP_up,5.035381504057929
+full_std_max,UHPIX,Ultra Short China ProFund Investor Class,中国,HYG_up_SLV_up_XLC_up,4.82456909870814
+full_std_max,PMPIX,Precious Metals Ultra Sector Profund Investor,贵金属,combo_ext_sect_rotation_up__self_big_down,4.637091102138066
+full_std_max,PMPSX,Precious Metals Ultra Sector Profund Service,贵金属,combo_ext_sect_rotation_up__self_big_down,4.627522928715568
+full_std_max,UGPSX,Ultra China ProFund Service Class,中国,IWM_down_UUP_down_XLK_down,4.512614212028385
+full_std_max,UBPIX,UltraLatin America ProFund - Investor Cl,拉美,combo_QQQ_big_down__ext_vix_chg_up,4.438111591313709
+full_std_max,UBPSX,UltraLatin America ProFund - Service Cl,拉美,combo_QQQ_big_down__ext_vix_chg_up,4.437484894369449
+full_std_max,BITIX,Short Bitcoin ProFund - Investor Class,比特币,EEM_up_JNK_up_SPY_up,4.367727900401828
+full_std_max,BITIX,Short Bitcoin ProFund - Investor Class,比特币,combo_XLC_up__self_down,4.229264865484878
+full_std_max,UUPIX,UltraEmerging Markets ProFund Investor Class,新兴市场,SPY_down_XLK_down_XLV_down,4.119989592120389
+ann_vol_max,UHPIX,Ultra Short China ProFund Investor Class,中国,EEM_down_TIP_down_UUP_up,79.93420329642994
+ann_vol_max,UHPIX,Ultra Short China ProFund Investor Class,中国,HYG_up_SLV_up_XLC_up,76.58766010937264
+ann_vol_max,PMPIX,Precious Metals Ultra Sector Profund Investor,贵金属,combo_ext_sect_rotation_up__self_big_down,73.61153917804641
+ann_vol_max,PMPSX,Precious Metals Ultra Sector Profund Service,贵金属,combo_ext_sect_rotation_up__self_big_down,73.459649133784
+ann_vol_max,UGPSX,Ultra China ProFund Service Class,中国,IWM_down_UUP_down_XLK_down,71.63552980681683
+ann_vol_max,UBPIX,UltraLatin America ProFund - Investor Cl,拉美,combo_QQQ_big_down__ext_vix_chg_up,70.45283736821521
+ann_vol_max,UBPSX,UltraLatin America ProFund - Service Cl,拉美,combo_QQQ_big_down__ext_vix_chg_up,70.44288886264373
+ann_vol_max,BITIX,Short Bitcoin ProFund - Investor Class,比特币,EEM_up_JNK_up_SPY_up,69.33553091316918
+ann_vol_max,BITIX,Short Bitcoin ProFund - Investor Class,比特币,combo_XLC_up__self_down,67.13749837617615
+ann_vol_max,UUPIX,UltraEmerging Markets ProFund Investor Class,新兴市场,SPY_down_XLK_down_XLV_down,65.40280718954992
+loss_max,UBPIX,UltraLatin America ProFund - Investor Cl,拉美,combo_QQQ_big_down__ext_vix_chg_up,-40.49853508812723
+loss_max,UBPSX,UltraLatin America ProFund - Service Cl,拉美,combo_QQQ_big_down__ext_vix_chg_up,-40.458642753724725
+loss_max,UAPSX,ProFunds Ultra Small-Cap ProFund Service Class,小盘,EEM_down_XLE_down_XLF_down,-32.37111049045135
+loss_max,UAPIX,Ultra Small-Cap ProFund， Investor,小盘,EEM_down_XLE_down_XLF_down,-32.34797276346632
+loss_max,UAPIX,Ultra Small-Cap ProFund， Investor,小盘,combo_XLK_down__ext_stk_bon_corr_down,-32.34797276346632
+loss_max,UMPSX,ProFunds Ultra Mid-Cap ProFund Service Class,中盘,combo_XLE_down__ext_vix_5dchg_ge10,-30.84485005419219
+loss_max,UMPIX,Ultra Mid-Cap ProFund， Investor,中盘,combo_XLE_down__ext_vix_5dchg_ge10,-30.82856302855265
+loss_max,UDPSX,Ultra Dow 30 Profund Service Class,大盘,combo_QQQ_big_down__ext_vix_5dchg_up,-29.25695377368488
+loss_max,ULPIX,UltraBull ProFund Investor Shares,大盘多头,combo_QQQ_big_down__ext_vix_5dchg_up,-27.06807803758855
+loss_max,UJPIX,Ultra Japan ProFund， Investor Class,日本,EEM_down_SPY_down_XLV_down,-26.6487467640028
+test_std_max,UGPSX,Ultra China ProFund Service Class,中国,IWM_down_UUP_down_XLK_down,5.110559985598989
+test_std_max,SMPIX,Semiconductor UltraSector ProFund， Investor Class,半导体,GLD_up_XLF_down_XLK_down,4.901111745865992
+test_std_max,SMPSX,Semiconductor UltraSector ProFund， Service Class,半导体,combo_ext_vix_5dchg_up__self_down,4.571587968967004
+test_std_max,UGPIX,Ultra China ProFund Investor Class,中国,FXY_up_GDX_up_QQQ_down,4.482104542471053
+test_std_max,UAPIX,Ultra Small-Cap ProFund， Investor,小盘,EEM_down_XLE_down_XLF_down,4.377308237882752
+test_std_max,UAPSX,ProFunds Ultra Small-Cap ProFund Service Class,小盘,EEM_down_XLE_down_XLF_down,4.37572169771117
+test_std_max,UOPIX,Ultra NASDAQ-100 ProFunds Investor Class,纳指100,combo_ext_vix_chg_up__self_big_down,4.20357809459632
+test_std_max,UOPSX,Ultra NASDAQ-100 ProFund Service Class,纳指100,combo_ext_vix_chg_up__self_big_down,4.172445721148399
+test_std_max,UUPSX,UltraEmerging Markets ProFund Service Class,新兴市场,SPY_down_XLK_down_XLV_down,4.084165714385013
+test_std_max,UUPIX,UltraEmerging Markets ProFund Investor Class,新兴市场,SPY_down_XLK_down_XLV_down,4.084038888914523
+tstat_max,UMPIX,Ultra Mid-Cap ProFund， Investor,中盘,GLD_up_XLK_down_XLV_down,5.1583073738403
+tstat_max,UMPSX,ProFunds Ultra Mid-Cap ProFund Service Class,中盘,GLD_up_XLK_down_XLV_down,5.099657166558119
+tstat_max,REPIX,ProFunds Real Estate UltraSector ProFund Investor,房地产,GLD_up_XLK_down_XLV_down,4.974121031722357
+tstat_max,SMPIX,Semiconductor UltraSector ProFund， Investor Class,半导体,QQQ_down_SLV_down_XLV_down,4.876180450477724
+tstat_max,UJPIX,Ultra Japan ProFund， Investor Class,日本,QQQ_down_SPY_down_XLK_down,4.799893834617137
+tstat_max,UTPSX,Utilities Ultra Sector ProFund， Service,公用事业,FXY_up_GDX_up_XLK_down,4.605133280804134
+tstat_max,UTPIX,Utilities UltraSector ProFund， Investor Class,公用事业,FXY_up_GDX_up_XLK_down,4.599823731249982
+tstat_max,INPIX,Internet UltraSector ProFund， Investor Class,互联网,GLD_down_TIP_up_XLF_up,4.565402186165557
+tstat_max,UGPSX,Ultra China ProFund Service Class,中国,FXY_up_QQQ_down,4.469369416634885
+tstat_max,HCPIX,Health Care UltraSector ProFund Investor,医疗,FXY_up_GDX_up_QQQ_down,4.395541466524692
+tstat_min,UIPIX,ProFunds Ultra Short Mid-Cap ProFund Investor Class,中盘,combo_XLC_big_up__ext_usd_gold_ratio_down,1.050184460435371
+tstat_min,BITIX,Short Bitcoin ProFund - Investor Class,比特币,EEM_up_JNK_up_SPY_up,1.082098155974619
+tstat_min,UKPIX,Ultra Short Japan ProFunds Investor Class,日本,combo_XLC_down__ext_credit_spread_up,1.250013701270036
+tstat_min,UDPSX,Ultra Dow 30 Profund Service Class,大盘,combo_QQQ_big_down__ext_vix_5dchg_up,1.2884996823450845
+tstat_min,UHPIX,Ultra Short China ProFund Investor Class,中国,EEM_down_TIP_down_UUP_up,1.288767046939383
+tstat_min,UCPIX,ProFunds Ultra Short Small-Cap ProFund Investor Class,小盘,JNK_up_LQD_down_XLC_up,1.3587146296729076
+tstat_min,UKPIX,Ultra Short Japan ProFunds Investor Class,日本,LQD_down_TIP_down_XLC_down,1.3875765391387842
+tstat_min,IDPSX,Industrials Ultra Sector ProFund Service Class,工业,combo_SPY_down__ext_usd_gold_ratio_le-1,1.4679437959819093
+tstat_min,UHPIX,Ultra Short China ProFund Investor Class,中国,HYG_up_SLV_up_XLC_up,1.4987484298521718
+tstat_min,ULPIX,UltraBull ProFund Investor Shares,大盘多头,combo_QQQ_big_down__ext_vix_5dchg_up,1.511987311671361

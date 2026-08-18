@@ -1,0 +1,232 @@
+ticker,fund_name,fund_theme,strategy_no,触发条件,条件解释,机制
+BIPIX,Biotechnology UltraSector ProFund， Investor,生物科技,1,FXY>0 且 GDX>0 且 QQQ<0，买基金第二天,日元上涨，金矿股上涨，科技成长下跌,风险偏好收缩，资金撤离高风险资产；避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升。
+BIPIX,Biotechnology UltraSector ProFund， Investor,生物科技,2,SLV>=1% 且 该基金当日回报<0，买基金后2日平均回报,白银大涨(>=1%)，自身下跌,避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升；基金自身下跌/急跌后存在超跌反弹动量。
+BIPIX,Biotechnology UltraSector ProFund， Investor,生物科技,3,XLK<0 且 信用利差>0，买基金第二天,科技下跌，信用利差上升,信用利差走阔，信用风险上升；板块轮动偏向价值/金融。
+BIPSX,Biotechnology Ultra Sector Pro Fund， Service,生物科技,1,QQQ<0 且 该基金当日回报<=-2%，买基金第二天,科技成长下跌，自身大跌(<=-2%),风险偏好收缩，资金撤离高风险资产；基金自身下跌/急跌后存在超跌反弹动量。
+BIPSX,Biotechnology Ultra Sector Pro Fund， Service,生物科技,2,FXY>0 且 XLE<0 且 XLU>0，买基金第二天,日元上涨，能源下跌，公用事业上涨,避险/利率敏感资产走强（黄金、日元、国债等）；防御性板块走强，资金寻求低波动；能源板块走弱，通胀与周期预期降温。
+BIPSX,Biotechnology Ultra Sector Pro Fund， Service,生物科技,3,XLC<0 且 板块轮动<0，买基金后2日平均回报,通信服务下跌，科技/金融轮动下降,板块轮动偏向价值/金融。
+BITIX,Short Bitcoin ProFund - Investor Class,比特币,1,XLC>0 且 该基金当日回报<0，买基金第二天,通信服务上涨，自身下跌,基金自身下跌/急跌后存在超跌反弹动量。
+BITIX,Short Bitcoin ProFund - Investor Class,比特币,2,EEM>0 且 JNK>0 且 SPY>0，买基金第二天,新兴市场上涨，高收益债上涨，标普500上涨,风险偏好回暖，资金回流权益与信用资产；信用环境偏宽松，资金愿意承担信用风险。
+BITIX,Short Bitcoin ProFund - Investor Class,比特币,3,EEM>0 且 GLD>0 且 SLV>0，买基金后2日平均回报,新兴市场上涨，黄金上涨，白银上涨,避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升；风险偏好回暖，资金回流权益与信用资产。
+BKPIX,Banks UltraSector ProFund， Investor Class,银行金融,1,GDX>0 且 IWM<0 且 XLK<0，买基金第二天,金矿股上涨，小盘下跌，科技下跌,风险偏好收缩，资金撤离高风险资产；避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升；板块轮动偏向价值/金融。
+BKPIX,Banks UltraSector ProFund， Investor Class,银行金融,2,EEM>0 且 GDX<0 且 GLD<0，买基金后2日平均回报,新兴市场上涨，金矿股下跌，黄金下跌,风险偏好回暖，资金回流权益与信用资产；避险资产走弱。
+BKPIX,Banks UltraSector ProFund， Investor Class,银行金融,3,GLD<0 且 VIX5d>=10.0%，买基金第二天,黄金下跌，VIX近5日变化>=10,恐慌/波动率上升，避险情绪占优；避险资产走弱。
+BKPSX,Banks UltraSector ProFund， Service Class,银行金融,1,GDX>0 且 QQQ<0 且 SLV>0，买基金后2日平均回报,金矿股上涨，科技成长下跌，白银上涨,风险偏好收缩，资金撤离高风险资产；避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升。
+BKPSX,Banks UltraSector ProFund， Service Class,银行金融,2,EEM>0 且 GDX<0 且 GLD<0，买基金后2日平均回报,新兴市场上涨，金矿股下跌，黄金下跌,风险偏好回暖，资金回流权益与信用资产；避险资产走弱。
+BKPSX,Banks UltraSector ProFund， Service Class,银行金融,3,GLD<0 且 VIX5d>=10.0%，买基金第二天,黄金下跌，VIX近5日变化>=10,恐慌/波动率上升，避险情绪占优；避险资产走弱。
+BLPIX,Bull ProFund Investor Class,大盘多头,1,XLV<=-1% 且 该基金当日回报<0，买基金第二天,医疗大跌(<=-1%)，自身下跌,防御性板块走弱，资金风险偏好上升；避险资产走弱；基金自身下跌/急跌后存在超跌反弹动量。
+BLPSX,Bull ProFund Service,大盘多头,1,XLV<=-1% 且 该基金当日回报<0，买基金第二天,医疗大跌(<=-1%)，自身下跌,防御性板块走弱，资金风险偏好上升；避险资产走弱；基金自身下跌/急跌后存在超跌反弹动量。
+BMPIX,Materials UltraSector ProFund - Investor Class,原材料,1,GDX>0 且 XLF<0 且 XLK<0，买基金第二天,金矿股上涨，金融下跌，科技下跌,避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升；板块轮动偏向成长/科技；板块轮动偏向价值/金融。
+BMPIX,Materials UltraSector ProFund - Investor Class,原材料,2,GLD>0 且 XLF<0 且 XLK<0，买基金后2日平均回报,黄金上涨，金融下跌，科技下跌,避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升；板块轮动偏向成长/科技；板块轮动偏向价值/金融。
+BMPIX,Materials UltraSector ProFund - Investor Class,原材料,3,GDX>0 且 JNK<0 且 XLF<0，买基金第二天,金矿股上涨，高收益债下跌，金融下跌,风险偏好收缩，资金撤离高风险资产；信用利差走阔，信用风险上升；避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升。
+BMPSX,Materials UltraSector ProFund - Service Class,原材料,1,GDX>0 且 JNK<0 且 XLF<0，买基金第二天,金矿股上涨，高收益债下跌，金融下跌,风险偏好收缩，资金撤离高风险资产；信用利差走阔，信用风险上升；避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升。
+BMPSX,Materials UltraSector ProFund - Service Class,原材料,2,GDX>0 且 UUP<0 且 XLK<0，买基金第二天,金矿股上涨，美元下跌，科技下跌,避险资产表现分化；贵金属走强，避险与抗通胀需求上升；美元走弱，利好贵金属与新兴市场；板块轮动偏向价值/金融。
+BMPSX,Materials UltraSector ProFund - Service Class,原材料,3,GDX>0 且 GLD>0 且 JNK<0，买基金第二天,金矿股上涨，黄金上涨，高收益债下跌,风险偏好收缩，资金撤离高风险资产；信用利差走阔，信用风险上升；避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升。
+BTCFX,Bitcoin ProFund - Investor Class,比特币,1,QQQ<0 且 XLK<0 且 XLV<0，买基金第二天,科技成长下跌，科技下跌，医疗下跌,风险偏好收缩，资金撤离高风险资产；板块轮动偏向价值/金融；防御性板块走弱，资金风险偏好上升；避险资产走弱。
+BTCFX,Bitcoin ProFund - Investor Class,比特币,2,EEM<0 且 信用利差<0，买基金后2日平均回报,新兴市场下跌，信用利差下降,风险偏好收缩，资金撤离高风险资产；信用环境偏宽松，资金愿意承担信用风险。
+BTCFX,Bitcoin ProFund - Investor Class,比特币,3,EEM<0 且 IWM<0 且 SPY<0，买基金后2日平均回报,新兴市场下跌，小盘下跌，标普500下跌,风险偏好收缩，资金撤离高风险资产。
+CNPIX,Consumer Staples UltraSector ProFund - Investor Class,必需消费,1,XLV<0 且 美元/黄金<=-1.0%，买基金第二天,医疗下跌，美元/黄金比<=-1,美元走弱，利好贵金属与新兴市场；防御性板块走弱，资金风险偏好上升；避险资产走弱。
+CNPIX,Consumer Staples UltraSector ProFund - Investor Class,必需消费,2,JNK>0 且 QQQ<0 且 XLK<0，买基金第二天,高收益债上涨，科技成长下跌，科技下跌,风险偏好与防御信号并存，市场分歧加大；信用环境偏宽松，资金愿意承担信用风险；板块轮动偏向价值/金融。
+CNPIX,Consumer Staples UltraSector ProFund - Investor Class,必需消费,3,JNK>0 且 QQQ<0，买基金第二天,高收益债上涨，科技成长下跌,风险偏好与防御信号并存，市场分歧加大；信用环境偏宽松，资金愿意承担信用风险。
+CNPSX,Consumer Staples UltraSector ProFund - Service Class,必需消费,1,GDX>0 且 TIP>0 且 XLK<0，买基金第二天,金矿股上涨，通胀保护国债上涨，科技下跌,避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升；板块轮动偏向价值/金融。
+CNPSX,Consumer Staples UltraSector ProFund - Service Class,必需消费,2,GDX>0 且 TLT>0 且 XLK<0，买基金第二天,金矿股上涨，长期国债上涨，科技下跌,避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升；板块轮动偏向价值/金融。
+CNPSX,Consumer Staples UltraSector ProFund - Service Class,必需消费,3,LQD>0 且 QQQ<0 且 XLU>0，买基金第二天,投资级信用债上涨，科技成长下跌，公用事业上涨,风险偏好收缩，资金撤离高风险资产；避险/利率敏感资产走强（黄金、日元、国债等）；防御性板块走强，资金寻求低波动；信用环境偏宽松，资金愿意承担信用风险。
+CYPIX,Consumer Discretionary UltraSector ProFund - Investor Class,可选消费,1,EEM<0 且 GDX>0 且 GLD>0，买基金第二天,新兴市场下跌，金矿股上涨，黄金上涨,风险偏好收缩，资金撤离高风险资产；避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升。
+CYPIX,Consumer Discretionary UltraSector ProFund - Investor Class,可选消费,2,FXY>0 且 GDX>0 且 QQQ<0，买基金第二天,日元上涨，金矿股上涨，科技成长下跌,风险偏好收缩，资金撤离高风险资产；避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升。
+CYPIX,Consumer Discretionary UltraSector ProFund - Investor Class,可选消费,3,XLK<=-1% 且 该基金当日回报<=-2%，买基金第二天,科技大跌(<=-1%)，自身大跌(<=-2%),板块轮动偏向价值/金融；基金自身下跌/急跌后存在超跌反弹动量。
+CYPSX,Consumer Discretionary UltraSector ProFund - Service Class,可选消费,1,EEM<0 且 GDX>0，买基金第二天,新兴市场下跌，金矿股上涨,风险偏好收缩，资金撤离高风险资产；避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升。
+CYPSX,Consumer Discretionary UltraSector ProFund - Service Class,可选消费,2,GDX>0 且 TIP>0 且 XLV<0，买基金第二天,金矿股上涨，通胀保护国债上涨，医疗下跌,避险资产表现分化；贵金属走强，避险与抗通胀需求上升；防御性板块走弱，资金风险偏好上升。
+CYPSX,Consumer Discretionary UltraSector ProFund - Service Class,可选消费,3,EEM<0 且 SLV>0 且 XLF<0，买基金第二天,新兴市场下跌，白银上涨，金融下跌,风险偏好收缩，资金撤离高风险资产；避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升；板块轮动偏向成长/科技。
+ENPIX,Energy UltraSector ProFund - Investor Class,能源,1,XLE<0 且 VIX5d>=10.0%，买基金第二天,能源下跌，VIX近5日变化>=10,恐慌/波动率上升，避险情绪占优；能源板块走弱，通胀与周期预期降温。
+ENPIX,Energy UltraSector ProFund - Investor Class,能源,2,GDX>0 且 SPY<0 且 XLV<0，买基金后2日平均回报,金矿股上涨，标普500下跌，医疗下跌,避险资产表现分化；风险偏好收缩，资金撤离高风险资产；贵金属走强，避险与抗通胀需求上升；防御性板块走弱，资金风险偏好上升。
+ENPIX,Energy UltraSector ProFund - Investor Class,能源,3,XLC<0 且 板块轮动<0，买基金第二天,通信服务下跌，科技/金融轮动下降,板块轮动偏向价值/金融。
+ENPSX,Energy UltraSector ProFund - Service Class,能源,1,XLE<0 且 VIX5d>=10.0%，买基金第二天,能源下跌，VIX近5日变化>=10,恐慌/波动率上升，避险情绪占优；能源板块走弱，通胀与周期预期降温。
+ENPSX,Energy UltraSector ProFund - Service Class,能源,2,XLC<0 且 板块轮动<0，买基金后2日平均回报,通信服务下跌，科技/金融轮动下降,板块轮动偏向价值/金融。
+ENPSX,Energy UltraSector ProFund - Service Class,能源,3,GDX>0 且 HYG<0 且 SLV>0，买基金后3日平均回报,金矿股上涨，高收益债下跌，白银上涨,风险偏好收缩，资金撤离高风险资产；信用利差走阔，信用风险上升；避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升。
+FNPIX,Financials UltraSector ProFund Investor,金融,1,GDX>0 且 XLF<0 且 XLK<0，买基金第二天,金矿股上涨，金融下跌，科技下跌,避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升；板块轮动偏向成长/科技；板块轮动偏向价值/金融。
+FNPIX,Financials UltraSector ProFund Investor,金融,2,XLV<0 且 VIX5d>=10.0%，买基金后2日平均回报,医疗下跌，VIX近5日变化>=10,恐慌/波动率上升，避险情绪占优；防御性板块走弱，资金风险偏好上升；避险资产走弱。
+FNPIX,Financials UltraSector ProFund Investor,金融,3,GDX>0 且 收益率曲线>0，买基金第二天,金矿股上涨，收益率曲线代理上升,避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升；利率下行预期，利好长久期与利率敏感资产。
+FNPSX,Financials UltraSector ProFund Service Class,金融,1,GDX>0 且 SPY<0 且 XLF<0，买基金第二天,金矿股上涨，标普500下跌，金融下跌,风险偏好收缩，资金撤离高风险资产；避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升；板块轮动偏向成长/科技。
+FNPSX,Financials UltraSector ProFund Service Class,金融,2,XLV<0 且 VIX5d>=10.0%，买基金后2日平均回报,医疗下跌，VIX近5日变化>=10,恐慌/波动率上升，避险情绪占优；防御性板块走弱，资金风险偏好上升；避险资产走弱。
+FNPSX,Financials UltraSector ProFund Service Class,金融,3,GDX>0 且 收益率曲线>0，买基金第二天,金矿股上涨，收益率曲线代理上升,避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升；利率下行预期，利好长久期与利率敏感资产。
+GVPSX,US Government Plus Profund， Service,国债,1,TLT<0 且 该基金连续3日下跌，买基金第二天,长期国债下跌，自身连续3日下跌,避险资产走弱；基金自身下跌/急跌后存在超跌反弹动量；连续3日下跌后超跌反弹概率上升。
+HCPIX,Health Care UltraSector ProFund Investor,医疗,1,FXY>0 且 GDX>0 且 QQQ<0，买基金第二天,日元上涨，金矿股上涨，科技成长下跌,风险偏好收缩，资金撤离高风险资产；避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升。
+HCPIX,Health Care UltraSector ProFund Investor,医疗,2,LQD>0 且 XLC>0 且 XLE<0，买基金第二天,投资级信用债上涨，通信服务上涨，能源下跌,信用环境偏宽松，资金愿意承担信用风险；能源板块走弱，通胀与周期预期降温。
+HCPIX,Health Care UltraSector ProFund Investor,医疗,3,SLV>=1% 且 板块轮动<=-0.5%，买基金后2日平均回报,白银大涨(>=1%)，科技/金融轮动<=-0.5,避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升；板块轮动偏向价值/金融。
+HCPSX,Health Care UltraSector ProFund， Service Class,医疗,1,FXY>0 且 GDX>0 且 QQQ<0，买基金第二天,日元上涨，金矿股上涨，科技成长下跌,风险偏好收缩，资金撤离高风险资产；避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升。
+HCPSX,Health Care UltraSector ProFund， Service Class,医疗,2,LQD>0 且 XLC>0 且 XLE<0，买基金第二天,投资级信用债上涨，通信服务上涨，能源下跌,信用环境偏宽松，资金愿意承担信用风险；能源板块走弱，通胀与周期预期降温。
+HCPSX,Health Care UltraSector ProFund， Service Class,医疗,3,SLV>=1% 且 板块轮动<=-0.5%，买基金后2日平均回报,白银大涨(>=1%)，科技/金融轮动<=-0.5,避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升；板块轮动偏向价值/金融。
+IDPIX,Industrials Ultra Sector ProFund Investor Class,工业,1,GDX>0 且 XLK<0，买基金第二天,金矿股上涨，科技下跌,避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升；板块轮动偏向价值/金融。
+IDPIX,Industrials Ultra Sector ProFund Investor Class,工业,2,GDX>0 且 LQD>0 且 XLF<0，买基金第二天,金矿股上涨，投资级信用债上涨，金融下跌,避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升；信用环境偏宽松，资金愿意承担信用风险；板块轮动偏向成长/科技。
+IDPIX,Industrials Ultra Sector ProFund Investor Class,工业,3,QQQ>0 且 该基金当日回报<0，买基金第二天,科技成长上涨，自身下跌,风险偏好回暖，资金回流权益与信用资产；基金自身下跌/急跌后存在超跌反弹动量。
+IDPSX,Industrials Ultra Sector ProFund Service Class,工业,1,GDX>0 且 SPY<0 且 XLK<0，买基金第二天,金矿股上涨，标普500下跌，科技下跌,风险偏好收缩，资金撤离高风险资产；避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升；板块轮动偏向价值/金融。
+IDPSX,Industrials Ultra Sector ProFund Service Class,工业,2,QQQ<0 且 SLV>0 且 TLT<0，买基金第二天,科技成长下跌，白银上涨，长期国债下跌,避险资产表现分化；风险偏好收缩，资金撤离高风险资产；贵金属走强，避险与抗通胀需求上升。
+IDPSX,Industrials Ultra Sector ProFund Service Class,工业,3,SPY<0 且 美元/黄金<=-1.0%，买基金第二天,标普500下跌，美元/黄金比<=-1,风险偏好收缩，资金撤离高风险资产；美元走弱，利好贵金属与新兴市场。
+INPIX,Internet UltraSector ProFund， Investor Class,互联网,1,GLD>0 且 XLF<0 且 XLK<0，买基金第二天,黄金上涨，金融下跌，科技下跌,避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升；板块轮动偏向成长/科技；板块轮动偏向价值/金融。
+INPIX,Internet UltraSector ProFund， Investor Class,互联网,2,XLK>=1% 且 VIX5d<0，买基金第二天,科技大涨(>=1%)，VIX近5日变化下降,恐慌/波动率回落，市场趋于平静；板块轮动偏向成长/科技。
+INPIX,Internet UltraSector ProFund， Investor Class,互联网,3,GLD<0 且 TIP>0 且 XLF>0，买基金后2日平均回报,黄金下跌，通胀保护国债上涨，金融上涨,避险资产表现分化；板块轮动偏向价值/金融。
+INPSX,Internet UltraSector ProFund， Service Class,互联网,1,IWM<0 且 美元/黄金<=-1.0%，买基金第二天,小盘下跌，美元/黄金比<=-1,风险偏好收缩，资金撤离高风险资产；美元走弱，利好贵金属与新兴市场。
+INPSX,Internet UltraSector ProFund， Service Class,互联网,2,FXY>0 且 IWM>0 且 TIP>0，买基金第二天,日元上涨，小盘上涨，通胀保护国债上涨,避险/利率敏感资产走强（黄金、日元、国债等）；风险偏好回暖，资金回流权益与信用资产。
+INPSX,Internet UltraSector ProFund， Service Class,互联网,3,GLD>0 且 LQD<0 且 XLK<0，买基金后3日平均回报,黄金上涨，投资级信用债下跌，科技下跌,信用利差走阔，信用风险上升；避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升；板块轮动偏向价值/金融。
+LGPIX,Large Cap Growth ProFund Investor,成长,1,XLV<0 且 美元/黄金<=-1.0%，买基金第二天,医疗下跌，美元/黄金比<=-1,美元走弱，利好贵金属与新兴市场；防御性板块走弱，资金风险偏好上升；避险资产走弱。
+LGPSX,Large Cap Growth ProFund Service,成长,1,XLV<0 且 美元/黄金<=-1.0%，买基金第二天,医疗下跌，美元/黄金比<=-1,美元走弱，利好贵金属与新兴市场；防御性板块走弱，资金风险偏好上升；避险资产走弱。
+LVPIX,Large Cap Value ProFund Investor,价值,1,XLV<0 且 美元/黄金<=-1.0%，买基金第二天,医疗下跌，美元/黄金比<=-1,美元走弱，利好贵金属与新兴市场；防御性板块走弱，资金风险偏好上升；避险资产走弱。
+LVPSX,Large Cap Value ProFund Service,价值,1,XLV<0 且 美元/黄金<=-1.0%，买基金第二天,医疗下跌，美元/黄金比<=-1,美元走弱，利好贵金属与新兴市场；防御性板块走弱，资金风险偏好上升；避险资产走弱。
+MDPIX,Mid-Cap ProFund， Investor Class,中盘,1,GDX>0 且 SPY<0 且 XLF<0，买基金第二天,金矿股上涨，标普500下跌，金融下跌,风险偏好收缩，资金撤离高风险资产；避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升；板块轮动偏向成长/科技。
+MDPSX,Mid-Cap ProFund， Service Class,中盘,1,GDX>0 且 IWM<0 且 XLF<0，买基金第二天,金矿股上涨，小盘下跌，金融下跌,风险偏好收缩，资金撤离高风险资产；避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升；板块轮动偏向成长/科技。
+MGPIX,Mid-Cap Growth ProFund， Investor Class,中盘,1,GDX>0 且 XLF<0 且 XLK<0，买基金第二天,金矿股上涨，金融下跌，科技下跌,避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升；板块轮动偏向成长/科技；板块轮动偏向价值/金融。
+MGPSX,Mid-Cap Growth ProFund， Service Class,中盘,1,GDX>0 且 XLF<0 且 XLK<0，买基金第二天,金矿股上涨，金融下跌，科技下跌,避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升；板块轮动偏向成长/科技；板块轮动偏向价值/金融。
+MLPIX,Mid-Cap Value ProFund， Investor Class,中盘,1,GDX>0 且 SPY<0 且 XLF<0，买基金第二天,金矿股上涨，标普500下跌，金融下跌,风险偏好收缩，资金撤离高风险资产；避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升；板块轮动偏向成长/科技。
+MLPSX,Mid-Cap Value ProFund， Service Class,中盘,1,GDX>0 且 SPY<0 且 XLF<0，买基金第二天,金矿股上涨，标普500下跌，金融下跌,风险偏好收缩，资金撤离高风险资产；避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升；板块轮动偏向成长/科技。
+OEPIX,Oil & Gas Equipment & Services UltraSector ProFund - Investor Class,能源,1,XLU<=-1% 且 VIX收盘>0，买基金后3日平均回报,公用事业大跌(<=-1%)，VIX水平上升,恐慌/波动率上升，避险情绪占优；防御性板块走弱，资金风险偏好上升；避险资产走弱。
+OEPIX,Oil & Gas Equipment & Services UltraSector ProFund - Investor Class,能源,2,TLT<0 且 XLE>0 且 XLU<0，买基金后2日平均回报,长期国债下跌，能源上涨，公用事业下跌,能源板块走强，反映通胀与周期预期；防御性板块走弱，资金风险偏好上升；避险资产走弱。
+OEPIX,Oil & Gas Equipment & Services UltraSector ProFund - Investor Class,能源,3,GLD<0 且 SPY>0 且 XLC>0，买基金后2日平均回报,黄金下跌，标普500上涨，通信服务上涨,风险偏好回暖，资金回流权益与信用资产；避险资产走弱。
+OEPSX,Oil & Gas Equipment & Services UltraSector ProFund - Service Class,能源,1,XLU<=-1% 且 VIX20d>0，买基金后3日平均回报,公用事业大跌(<=-1%)，VIX近20日波动上升,恐慌/波动率上升，避险情绪占优；防御性板块走弱，资金风险偏好上升；避险资产走弱。
+OEPSX,Oil & Gas Equipment & Services UltraSector ProFund - Service Class,能源,2,TLT<0 且 XLE>0 且 XLU<0，买基金后2日平均回报,长期国债下跌，能源上涨，公用事业下跌,能源板块走强，反映通胀与周期预期；防御性板块走弱，资金风险偏好上升；避险资产走弱。
+OEPSX,Oil & Gas Equipment & Services UltraSector ProFund - Service Class,能源,3,GLD<0 且 SPY>0 且 XLC>0，买基金后2日平均回报,黄金下跌，标普500上涨，通信服务上涨,风险偏好回暖，资金回流权益与信用资产；避险资产走弱。
+OTPIX,NASDAQ-100 ProFund Investor Class,纳指100,1,XLF<=-1% 且 该基金当日回报<0，买基金第二天,金融大跌(<=-1%)，自身下跌,板块轮动偏向成长/科技；基金自身下跌/急跌后存在超跌反弹动量。
+OTPIX,NASDAQ-100 ProFund Investor Class,纳指100,2,GDX>0 且 SPY<0 且 XLC<0，买基金第二天,金矿股上涨，标普500下跌，通信服务下跌,风险偏好收缩，资金撤离高风险资产；避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升。
+OTPIX,NASDAQ-100 ProFund Investor Class,纳指100,3,GLD<0 且 QQQ<0 且 XLF>0，买基金后2日平均回报,黄金下跌，科技成长下跌，金融上涨,风险偏好收缩，资金撤离高风险资产；板块轮动偏向价值/金融；避险资产走弱。
+OTPSX,NASDAQ-100 ProFund Service Class,纳指100,1,IWM<0 且 美元/黄金<=-1.0%，买基金第二天,小盘下跌，美元/黄金比<=-1,风险偏好收缩，资金撤离高风险资产；美元走弱，利好贵金属与新兴市场。
+PHPIX,Pharmaceuticals UltraSector ProFund Investor,医药,1,FXY>0 且 GDX>0 且 QQQ<0，买基金第二天,日元上涨，金矿股上涨，科技成长下跌,风险偏好收缩，资金撤离高风险资产；避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升。
+PHPIX,Pharmaceuticals UltraSector ProFund Investor,医药,2,GLD>=1% 且 该基金当日回报<0，买基金后3日平均回报,黄金大涨(>=1%)，自身下跌,避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升；基金自身下跌/急跌后存在超跌反弹动量。
+PHPIX,Pharmaceuticals UltraSector ProFund Investor,医药,3,FXY>0 且 QQQ<0 且 XLE>0，买基金后2日平均回报,日元上涨，科技成长下跌，能源上涨,风险偏好收缩，资金撤离高风险资产；避险/利率敏感资产走强（黄金、日元、国债等）；能源板块走强，反映通胀与周期预期。
+PHPSX,Pharmaceuticals UltraSector ProFund， Service Class,医药,1,FXY>0 且 GDX>0 且 QQQ<0，买基金第二天,日元上涨，金矿股上涨，科技成长下跌,风险偏好收缩，资金撤离高风险资产；避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升。
+PHPSX,Pharmaceuticals UltraSector ProFund， Service Class,医药,2,IWM>0 且 LQD>0 且 SLV<0，买基金第二天,小盘上涨，投资级信用债上涨，白银下跌,风险偏好回暖，资金回流权益与信用资产；信用环境偏宽松，资金愿意承担信用风险；避险资产走弱。
+PHPSX,Pharmaceuticals UltraSector ProFund， Service Class,医药,3,IWM<0 且 XLC>0，买基金第二天,小盘下跌，通信服务上涨,风险偏好收缩，资金撤离高风险资产。
+PMPIX,Precious Metals Ultra Sector Profund Investor,贵金属,1,板块轮动>0 且 该基金当日回报<=-2%，买基金第二天,科技/金融轮动上升，自身大跌(<=-2%),板块轮动偏向成长/科技；基金自身下跌/急跌后存在超跌反弹动量。
+PMPIX,Precious Metals Ultra Sector Profund Investor,贵金属,2,EEM>0 且 GLD<0 且 TLT<0，买基金后2日平均回报,新兴市场上涨，黄金下跌，长期国债下跌,风险偏好回暖，资金回流权益与信用资产；避险资产走弱。
+PMPIX,Precious Metals Ultra Sector Profund Investor,贵金属,3,TIP>0 且 VIX5d>=10.0%，买基金后3日平均回报,通胀保护国债上涨，VIX近5日变化>=10,恐慌/波动率上升，避险情绪占优；避险/利率敏感资产走强（黄金、日元、国债等）。
+PMPSX,Precious Metals Ultra Sector Profund Service,贵金属,1,板块轮动>0 且 该基金当日回报<=-2%，买基金第二天,科技/金融轮动上升，自身大跌(<=-2%),板块轮动偏向成长/科技；基金自身下跌/急跌后存在超跌反弹动量。
+PMPSX,Precious Metals Ultra Sector Profund Service,贵金属,2,EEM>0 且 GLD<0 且 TLT<0，买基金后2日平均回报,新兴市场上涨，黄金下跌，长期国债下跌,风险偏好回暖，资金回流权益与信用资产；避险资产走弱。
+PMPSX,Precious Metals Ultra Sector Profund Service,贵金属,3,TIP>0 且 VIX5d>=10.0%，买基金后3日平均回报,通胀保护国债上涨，VIX近5日变化>=10,恐慌/波动率上升，避险情绪占优；避险/利率敏感资产走强（黄金、日元、国债等）。
+REPIX,ProFunds Real Estate UltraSector ProFund Investor,房地产,1,GLD>0 且 XLK<0 且 XLV<0，买基金后3日平均回报,黄金上涨，科技下跌，医疗下跌,避险资产表现分化；贵金属走强，避险与抗通胀需求上升；板块轮动偏向价值/金融；防御性板块走弱，资金风险偏好上升。
+REPIX,ProFunds Real Estate UltraSector ProFund Investor,房地产,2,GDX>0 且 VIX5d>0，买基金第二天,金矿股上涨，VIX近5日变化上升,恐慌/波动率上升，避险情绪占优；避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升。
+REPIX,ProFunds Real Estate UltraSector ProFund Investor,房地产,3,GDX>0 且 SLV>0 且 XLV<0，买基金第二天,金矿股上涨，白银上涨，医疗下跌,避险资产表现分化；贵金属走强，避险与抗通胀需求上升；防御性板块走弱，资金风险偏好上升。
+REPSX,ProFunds Real  Estate UltraSector ProFund Service Cl,房地产,1,FXY>0 且 XLF<0 且 XLU<0，买基金第二天,日元上涨，金融下跌，公用事业下跌,避险资产表现分化；板块轮动偏向成长/科技；防御性板块走弱，资金风险偏好上升。
+REPSX,ProFunds Real  Estate UltraSector ProFund Service Cl,房地产,2,JNK>0 且 QQQ<0 且 XLK<0，买基金第二天,高收益债上涨，科技成长下跌，科技下跌,风险偏好与防御信号并存，市场分歧加大；信用环境偏宽松，资金愿意承担信用风险；板块轮动偏向价值/金融。
+REPSX,ProFunds Real  Estate UltraSector ProFund Service Cl,房地产,3,GDX>0 且 SLV>0 且 XLV<0，买基金第二天,金矿股上涨，白银上涨，医疗下跌,避险资产表现分化；贵金属走强，避险与抗通胀需求上升；防御性板块走弱，资金风险偏好上升。
+RRPIX,Rising Rates Opportunity Profunds， Investor,利率机会,1,XLV<=-1% 且 板块轮动>0，买基金第二天,医疗大跌(<=-1%)，科技/金融轮动上升,板块轮动偏向成长/科技；防御性板块走弱，资金风险偏好上升；避险资产走弱。
+RRPSX,Rising Rates Opportunity Profunds， Service,利率机会,1,XLV<=-1% 且 板块轮动>0，买基金第二天,医疗大跌(<=-1%)，科技/金融轮动上升,板块轮动偏向成长/科技；防御性板块走弱，资金风险偏好上升；避险资产走弱。
+SGPIX,Small-Cap Growth ProFund， Investor Class,小盘,1,GDX>0 且 SPY<0 且 XLF<0，买基金第二天,金矿股上涨，标普500下跌，金融下跌,风险偏好收缩，资金撤离高风险资产；避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升；板块轮动偏向成长/科技。
+SGPIX,Small-Cap Growth ProFund， Investor Class,小盘,2,GDX>0 且 SPY<0 且 UUP<0，买基金第二天,金矿股上涨，标普500下跌，美元下跌,避险资产表现分化；风险偏好收缩，资金撤离高风险资产；贵金属走强，避险与抗通胀需求上升；美元走弱，利好贵金属与新兴市场。
+SGPIX,Small-Cap Growth ProFund， Investor Class,小盘,3,GDX>0 且 XLC<0 且 XLK<0，买基金第二天,金矿股上涨，通信服务下跌，科技下跌,避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升；板块轮动偏向价值/金融。
+SGPSX,Small-Cap Growth ProFund， Service Class,小盘,1,GDX>0 且 SPY<0 且 XLK<0，买基金第二天,金矿股上涨，标普500下跌，科技下跌,风险偏好收缩，资金撤离高风险资产；避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升；板块轮动偏向价值/金融。
+SGPSX,Small-Cap Growth ProFund， Service Class,小盘,2,XLK<0 且 美元/黄金<=-1.0%，买基金第二天,科技下跌，美元/黄金比<=-1,美元走弱，利好贵金属与新兴市场；板块轮动偏向价值/金融。
+SGPSX,Small-Cap Growth ProFund， Service Class,小盘,3,GDX>0 且 LQD>0 且 XLK<0，买基金第二天,金矿股上涨，投资级信用债上涨，科技下跌,避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升；信用环境偏宽松，资金愿意承担信用风险；板块轮动偏向价值/金融。
+SLPIX,Small-Cap ProFund， Investor Class,小盘,1,GDX>0 且 XLF<0 且 XLK<0，买基金第二天,金矿股上涨，金融下跌，科技下跌,避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升；板块轮动偏向成长/科技；板块轮动偏向价值/金融。
+SLPSX,Small-Cap ProFund， Service Class,小盘,1,GDX>0 且 XLF<0 且 XLK<0，买基金第二天,金矿股上涨，金融下跌，科技下跌,避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升；板块轮动偏向成长/科技；板块轮动偏向价值/金融。
+SMPIX,Semiconductor UltraSector ProFund， Investor Class,半导体,1,GLD>0 且 XLF<0 且 XLK<0，买基金第二天,黄金上涨，金融下跌，科技下跌,避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升；板块轮动偏向成长/科技；板块轮动偏向价值/金融。
+SMPIX,Semiconductor UltraSector ProFund， Investor Class,半导体,2,QQQ<0 且 SLV<0 且 XLV<0，买基金后3日平均回报,科技成长下跌，白银下跌，医疗下跌,风险偏好收缩，资金撤离高风险资产；防御性板块走弱，资金风险偏好上升；避险资产走弱。
+SMPIX,Semiconductor UltraSector ProFund， Investor Class,半导体,3,FXY>0 且 HYG>0 且 XLU>0，买基金第二天,日元上涨，高收益债上涨，公用事业上涨,避险/利率敏感资产走强（黄金、日元、国债等）；防御性板块走强，资金寻求低波动；风险偏好回暖，资金回流权益与信用资产；信用环境偏宽松，资金愿意承担信用风险。
+SMPSX,Semiconductor UltraSector ProFund， Service Class,半导体,1,VIX5d>0 且 该基金当日回报<0，买基金第二天,VIX近5日变化上升，自身下跌,恐慌/波动率上升，避险情绪占优；基金自身下跌/急跌后存在超跌反弹动量。
+SMPSX,Semiconductor UltraSector ProFund， Service Class,半导体,2,FXY>0 且 TIP>0，买基金第二天,日元上涨，通胀保护国债上涨,避险/利率敏感资产走强（黄金、日元、国债等）。
+SMPSX,Semiconductor UltraSector ProFund， Service Class,半导体,3,XLV<0 且 美元/黄金<0，买基金后2日平均回报,医疗下跌，美元/黄金比下降,美元走弱，利好贵金属与新兴市场；防御性板块走弱，资金风险偏好上升；避险资产走弱。
+SNPIX,Short Energy ProFund - Investor Class,能源,1,QQQ>0 且 XLC>0 且 XLV>0，买基金第二天,科技成长上涨，通信服务上涨，医疗上涨,避险/利率敏感资产走强（黄金、日元、国债等）；防御性板块走强，资金寻求低波动；风险偏好回暖，资金回流权益与信用资产。
+SNPSX,Short Energy ProFund - Service Class,能源,1,SPY>0 且 XLC>0 且 XLK>0，买基金第二天,标普500上涨，通信服务上涨，科技上涨,风险偏好回暖，资金回流权益与信用资产；板块轮动偏向成长/科技。
+SPPIX,Short Precious Metals ProFund Investor Class,贵金属,1,GLD>0 且 XLE>0 且 XLV<0，买基金第二天,黄金上涨，能源上涨，医疗下跌,避险资产表现分化；贵金属走强，避险与抗通胀需求上升；能源板块走强，反映通胀与周期预期；防御性板块走弱，资金风险偏好上升。
+SPPSX,Short Precious Metals ProFund Service Class,贵金属,1,GLD>0 且 XLE>0 且 XLV<0，买基金第二天,黄金上涨，能源上涨，医疗下跌,避险资产表现分化；贵金属走强，避险与抗通胀需求上升；能源板块走强，反映通胀与周期预期；防御性板块走弱，资金风险偏好上升。
+SVPIX,Small-Cap Value ProFund， Investor Class,小盘,1,GDX>0 且 SPY<0 且 XLK<0，买基金第二天,金矿股上涨，标普500下跌，科技下跌,风险偏好收缩，资金撤离高风险资产；避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升；板块轮动偏向价值/金融。
+SVPIX,Small-Cap Value ProFund， Investor Class,小盘,2,GDX>0 且 SPY<0，买基金第二天,金矿股上涨，标普500下跌,风险偏好收缩，资金撤离高风险资产；避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升。
+SVPIX,Small-Cap Value ProFund， Investor Class,小盘,3,SLV>0 且 SPY<0 且 TIP>0，买基金第二天,白银上涨，标普500下跌，通胀保护国债上涨,风险偏好收缩，资金撤离高风险资产；避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升。
+SVPSX,Small-Cap Value ProFund， Service Class,小盘,1,GDX>0 且 SPY<0 且 XLK<0，买基金第二天,金矿股上涨，标普500下跌，科技下跌,风险偏好收缩，资金撤离高风险资产；避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升；板块轮动偏向价值/金融。
+SVPSX,Small-Cap Value ProFund， Service Class,小盘,2,GDX>0 且 SPY<0 且 XLF<0，买基金第二天,金矿股上涨，标普500下跌，金融下跌,风险偏好收缩，资金撤离高风险资产；避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升；板块轮动偏向成长/科技。
+SVPSX,Small-Cap Value ProFund， Service Class,小盘,3,GDX>0 且 GLD>0 且 SPY<0，买基金第二天,金矿股上涨，黄金上涨，标普500下跌,风险偏好收缩，资金撤离高风险资产；避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升。
+TEPIX,Technology UltraSector ProFund， Investor Class,科技,1,GLD>0 且 XLF<0 且 XLK<0，买基金第二天,黄金上涨，金融下跌，科技下跌,避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升；板块轮动偏向成长/科技；板块轮动偏向价值/金融。
+TEPIX,Technology UltraSector ProFund， Investor Class,科技,2,TIP>0 且 XLE<0 且 XLK>0，买基金第二天,通胀保护国债上涨，能源下跌，科技上涨,避险/利率敏感资产走强（黄金、日元、国债等）；板块轮动偏向成长/科技；能源板块走弱，通胀与周期预期降温。
+TEPIX,Technology UltraSector ProFund， Investor Class,科技,3,XLC<0 且 板块轮动<0，买基金第二天,通信服务下跌，科技/金融轮动下降,板块轮动偏向价值/金融。
+TEPSX,Technology UltraSector ProFund， Service Class,科技,1,GLD>0 且 XLF<0 且 XLK<0，买基金第二天,黄金上涨，金融下跌，科技下跌,避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升；板块轮动偏向成长/科技；板块轮动偏向价值/金融。
+TEPSX,Technology UltraSector ProFund， Service Class,科技,2,TIP>0 且 XLE<0 且 XLK>0，买基金第二天,通胀保护国债上涨，能源下跌，科技上涨,避险/利率敏感资产走强（黄金、日元、国债等）；板块轮动偏向成长/科技；能源板块走弱，通胀与周期预期降温。
+TEPSX,Technology UltraSector ProFund， Service Class,科技,3,XLC<0 且 板块轮动<0，买基金第二天,通信服务下跌，科技/金融轮动下降,板块轮动偏向价值/金融。
+UAPIX,Ultra Small-Cap ProFund， Investor,小盘,1,EEM<0 且 XLE<0 且 XLF<0，买基金第二天,新兴市场下跌，能源下跌，金融下跌,风险偏好收缩，资金撤离高风险资产；板块轮动偏向成长/科技；能源板块走弱，通胀与周期预期降温。
+UAPIX,Ultra Small-Cap ProFund， Investor,小盘,2,该基金当日回报<=-2%，买基金后3日平均回报,自身大跌(<=-2%),基金自身下跌/急跌后存在超跌反弹动量。
+UAPIX,Ultra Small-Cap ProFund， Investor,小盘,3,XLK<0 且 股债相关<0，买基金第二天,科技下跌，股债相关度下降,板块轮动偏向价值/金融。
+UAPSX,ProFunds Ultra Small-Cap ProFund Service Class,小盘,1,EEM<0 且 XLE<0 且 XLF<0，买基金第二天,新兴市场下跌，能源下跌，金融下跌,风险偏好收缩，资金撤离高风险资产；板块轮动偏向成长/科技；能源板块走弱，通胀与周期预期降温。
+UAPSX,ProFunds Ultra Small-Cap ProFund Service Class,小盘,2,SPY<0 且 该基金当日回报<=-2%，买基金后3日平均回报,标普500下跌，自身大跌(<=-2%),风险偏好收缩，资金撤离高风险资产；基金自身下跌/急跌后存在超跌反弹动量。
+UAPSX,ProFunds Ultra Small-Cap ProFund Service Class,小盘,3,FXY>0 且 TIP>0 且 XLU>0，买基金第二天,日元上涨，通胀保护国债上涨，公用事业上涨,避险/利率敏感资产走强（黄金、日元、国债等）；防御性板块走强，资金寻求低波动。
+UBPIX,UltraLatin America ProFund - Investor Cl,拉美,1,GDX>0 且 XLC<0，买基金第二天,金矿股上涨，通信服务下跌,避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升。
+UBPIX,UltraLatin America ProFund - Investor Cl,拉美,2,GDX>0 且 板块轮动<=-0.5%，买基金后2日平均回报,金矿股上涨，科技/金融轮动<=-0.5,避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升；板块轮动偏向价值/金融。
+UBPIX,UltraLatin America ProFund - Investor Cl,拉美,3,QQQ<=-1% 且 VIX>0，买基金第二天,科技成长大跌(<=-1%)，VIX当日变化上升,风险偏好收缩，资金撤离高风险资产；恐慌/波动率上升，避险情绪占优。
+UBPSX,UltraLatin America ProFund - Service Cl,拉美,1,GDX>0 且 XLC<0，买基金第二天,金矿股上涨，通信服务下跌,避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升。
+UBPSX,UltraLatin America ProFund - Service Cl,拉美,2,GDX>0 且 板块轮动<=-0.5%，买基金后2日平均回报,金矿股上涨，科技/金融轮动<=-0.5,避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升；板块轮动偏向价值/金融。
+UBPSX,UltraLatin America ProFund - Service Cl,拉美,3,QQQ<=-1% 且 VIX>0，买基金第二天,科技成长大跌(<=-1%)，VIX当日变化上升,风险偏好收缩，资金撤离高风险资产；恐慌/波动率上升，避险情绪占优。
+UCPIX,ProFunds Ultra Short Small-Cap ProFund Investor Class,小盘,1,JNK>0 且 LQD<0 且 XLC>0，买基金后2日平均回报,高收益债上涨，投资级信用债下跌，通信服务上涨,信用利差走阔，信用风险上升；风险偏好回暖，资金回流权益与信用资产；信用环境偏宽松，资金愿意承担信用风险。
+UCPSX,Ultra Short Small-Cap ProFund Service Class,小盘,1,GDX<0 且 XLC>0 且 XLF>0，买基金第二天,金矿股下跌，通信服务上涨，金融上涨,板块轮动偏向价值/金融；避险资产走弱。
+UDPIX,Ultra Dow 30 Profund Investor Class,大盘,1,XLV<=-1% 且 该基金当日回报<0，买基金第二天,医疗大跌(<=-1%)，自身下跌,防御性板块走弱，资金风险偏好上升；避险资产走弱；基金自身下跌/急跌后存在超跌反弹动量。
+UDPIX,Ultra Dow 30 Profund Investor Class,大盘,2,GDX>0 且 GLD>0 且 XLK<0，买基金第二天,金矿股上涨，黄金上涨，科技下跌,避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升；板块轮动偏向价值/金融。
+UDPIX,Ultra Dow 30 Profund Investor Class,大盘,3,SPY>0 且 TIP>0 且 XLE<0，买基金第二天,标普500上涨，通胀保护国债上涨，能源下跌,避险/利率敏感资产走强（黄金、日元、国债等）；风险偏好回暖，资金回流权益与信用资产；能源板块走弱，通胀与周期预期降温。
+UDPSX,Ultra Dow 30 Profund Service Class,大盘,1,XLV<=-1% 且 该基金当日回报<0，买基金第二天,医疗大跌(<=-1%)，自身下跌,防御性板块走弱，资金风险偏好上升；避险资产走弱；基金自身下跌/急跌后存在超跌反弹动量。
+UDPSX,Ultra Dow 30 Profund Service Class,大盘,2,FXY>0 且 GDX>0 且 TIP>0，买基金第二天,日元上涨，金矿股上涨，通胀保护国债上涨,避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升。
+UDPSX,Ultra Dow 30 Profund Service Class,大盘,3,QQQ<=-1% 且 VIX5d>0，买基金第二天,科技成长大跌(<=-1%)，VIX近5日变化上升,风险偏好收缩，资金撤离高风险资产；恐慌/波动率上升，避险情绪占优。
+UEPIX,Europe 30 ProFund Investor Class,欧洲,1,GDX>0 且 SPY<0，买基金第二天,金矿股上涨，标普500下跌,风险偏好收缩，资金撤离高风险资产；避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升。
+UEPSX,Europe 30 ProFund,欧洲,1,GDX>0 且 SPY<0，买基金第二天,金矿股上涨，标普500下跌,风险偏好收缩，资金撤离高风险资产；避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升。
+UFPIX,UltraShort Latin America ProFund - Investor Cl,拉美,1,LQD<0 且 SLV<0 且 XLF<0，买基金后3日平均回报,投资级信用债下跌，白银下跌，金融下跌,信用利差走阔，信用风险上升；板块轮动偏向成长/科技；避险资产走弱。
+UFPSX,UltraShort Latin America ProFund -Service Cl,拉美,1,LQD<0 且 SLV<0 且 XLF<0，买基金后3日平均回报,投资级信用债下跌，白银下跌，金融下跌,信用利差走阔，信用风险上升；板块轮动偏向成长/科技；避险资产走弱。
+UGPIX,Ultra China ProFund Investor Class,中国,1,FXY>0 且 GDX>0 且 QQQ<0，买基金第二天,日元上涨，金矿股上涨，科技成长下跌,风险偏好收缩，资金撤离高风险资产；避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升。
+UGPIX,Ultra China ProFund Investor Class,中国,2,FXY>0 且 板块轮动<0，买基金后2日平均回报,日元上涨，科技/金融轮动下降,避险/利率敏感资产走强（黄金、日元、国债等）；板块轮动偏向价值/金融。
+UGPIX,Ultra China ProFund Investor Class,中国,3,GLD>0 且 SPY<0 且 XLV<0，买基金后2日平均回报,黄金上涨，标普500下跌，医疗下跌,避险资产表现分化；风险偏好收缩，资金撤离高风险资产；贵金属走强，避险与抗通胀需求上升；防御性板块走弱，资金风险偏好上升。
+UGPSX,Ultra China ProFund Service Class,中国,1,IWM<0 且 UUP<0 且 XLK<0，买基金第二天,小盘下跌，美元下跌，科技下跌,风险偏好收缩，资金撤离高风险资产；美元走弱，利好贵金属与新兴市场；板块轮动偏向价值/金融；避险资产走弱。
+UGPSX,Ultra China ProFund Service Class,中国,2,FXY>0 且 QQQ<0，买基金后3日平均回报,日元上涨，科技成长下跌,风险偏好收缩，资金撤离高风险资产；避险/利率敏感资产走强（黄金、日元、国债等）。
+UGPSX,Ultra China ProFund Service Class,中国,3,XLU>=1% 且 VIX<0，买基金后2日平均回报,公用事业大涨(>=1%)，VIX当日变化下降,避险/利率敏感资产走强（黄金、日元、国债等）；防御性板块走强，资金寻求低波动；恐慌/波动率回落，市场趋于平静。
+UHPIX,Ultra Short China ProFund Investor Class,中国,1,UUP>0 且 XLF<0 且 XLK>0，买基金后2日平均回报,美元上涨，金融下跌，科技上涨,避险/利率敏感资产走强（黄金、日元、国债等）；美元走强，压制贵金属与新兴市场；板块轮动偏向成长/科技。
+UHPIX,Ultra Short China ProFund Investor Class,中国,2,EEM<0 且 TIP<0 且 UUP>0，买基金第二天,新兴市场下跌，通胀保护国债下跌，美元上涨,避险资产表现分化；风险偏好收缩，资金撤离高风险资产；美元走强，压制贵金属与新兴市场。
+UHPIX,Ultra Short China ProFund Investor Class,中国,3,HYG>0 且 SLV>0 且 XLC>0，买基金第二天,高收益债上涨，白银上涨，通信服务上涨,避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升；风险偏好回暖，资金回流权益与信用资产；信用环境偏宽松，资金愿意承担信用风险。
+UHPSX,Ultra Short China ProFund Service Class,中国,1,FXY<0 且 IWM>0 且 XLE<0，买基金后2日平均回报,日元下跌，小盘上涨，能源下跌,风险偏好回暖，资金回流权益与信用资产；能源板块走弱，通胀与周期预期降温；避险资产走弱。
+UHPSX,Ultra Short China ProFund Service Class,中国,2,FXY<0 且 JNK<0 且 UUP>0，买基金后2日平均回报,日元下跌，高收益债下跌，美元上涨,避险资产表现分化；风险偏好收缩，资金撤离高风险资产；信用利差走阔，信用风险上升；美元走强，压制贵金属与新兴市场。
+UHPSX,Ultra Short China ProFund Service Class,中国,3,XLC<0 且 板块轮动>0，买基金后3日平均回报,通信服务下跌，科技/金融轮动上升,板块轮动偏向成长/科技。
+UIPIX,ProFunds Ultra Short Mid-Cap ProFund Investor Class,中盘,1,XLC>=1% 且 美元/黄金<0，买基金后2日平均回报,通信服务大涨(>=1%)，美元/黄金比下降,美元走弱，利好贵金属与新兴市场。
+UIPSX,ProFunds Ultra Short Mid-Cap ProFund Service Class,中盘,1,FXY<0 且 GLD>0 且 XLC>0，买基金后2日平均回报,日元下跌，黄金上涨，通信服务上涨,避险资产表现分化；贵金属走强，避险与抗通胀需求上升。
+UJPIX,Ultra Japan ProFund， Investor Class,日本,1,EEM<0 且 SPY<0 且 XLV<0，买基金第二天,新兴市场下跌，标普500下跌，医疗下跌,风险偏好收缩，资金撤离高风险资产；防御性板块走弱，资金风险偏好上升；避险资产走弱。
+UJPIX,Ultra Japan ProFund， Investor Class,日本,2,GLD<0 且 XLU<0，买基金后2日平均回报,黄金下跌，公用事业下跌,防御性板块走弱，资金风险偏好上升；避险资产走弱。
+UJPIX,Ultra Japan ProFund， Investor Class,日本,3,QQQ<0 且 SPY<0 且 XLK<0，买基金后3日平均回报,科技成长下跌，标普500下跌，科技下跌,风险偏好收缩，资金撤离高风险资产；板块轮动偏向价值/金融。
+UJPSX,Ultra Japan ProFund， Service Class,日本,1,EEM<0 且 SPY<0 且 XLV<0，买基金第二天,新兴市场下跌，标普500下跌，医疗下跌,风险偏好收缩，资金撤离高风险资产；防御性板块走弱，资金风险偏好上升；避险资产走弱。
+UJPSX,Ultra Japan ProFund， Service Class,日本,2,GLD<0 且 XLU<0，买基金后2日平均回报,黄金下跌，公用事业下跌,防御性板块走弱，资金风险偏好上升；避险资产走弱。
+UJPSX,Ultra Japan ProFund， Service Class,日本,3,QQQ<0 且 XLK<0，买基金后2日平均回报,科技成长下跌，科技下跌,风险偏好收缩，资金撤离高风险资产；板块轮动偏向价值/金融。
+UKPIX,Ultra Short Japan ProFunds Investor Class,日本,1,FXY<0 且 GLD>0 且 XLC>0，买基金后2日平均回报,日元下跌，黄金上涨，通信服务上涨,避险资产表现分化；贵金属走强，避险与抗通胀需求上升。
+UKPIX,Ultra Short Japan ProFunds Investor Class,日本,2,XLC<0 且 信用利差>0，买基金后2日平均回报,通信服务下跌，信用利差上升,信用利差走阔，信用风险上升。
+UKPIX,Ultra Short Japan ProFunds Investor Class,日本,3,LQD<0 且 TIP<0 且 XLC<0，买基金后2日平均回报,投资级信用债下跌，通胀保护国债下跌，通信服务下跌,信用利差走阔，信用风险上升；避险资产走弱。
+UKPSX,Ultra Short Japan ProFunds Service Class,日本,1,QQQ>0 且 SPY>0 且 TIP<0，买基金后2日平均回报,科技成长上涨，标普500上涨，通胀保护国债下跌,风险偏好回暖，资金回流权益与信用资产；避险资产走弱。
+ULPIX,UltraBull ProFund Investor Shares,大盘多头,1,XLF<=-1% 且 该基金当日回报<0，买基金第二天,金融大跌(<=-1%)，自身下跌,板块轮动偏向成长/科技；基金自身下跌/急跌后存在超跌反弹动量。
+ULPIX,UltraBull ProFund Investor Shares,大盘多头,2,FXY>0 且 GDX>0，买基金第二天,日元上涨，金矿股上涨,避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升。
+ULPIX,UltraBull ProFund Investor Shares,大盘多头,3,QQQ<=-1% 且 VIX5d>0，买基金第二天,科技成长大跌(<=-1%)，VIX近5日变化上升,风险偏好收缩，资金撤离高风险资产；恐慌/波动率上升，避险情绪占优。
+ULPSX,UltraBull ProFund Service,大盘多头,1,XLF<=-1% 且 该基金当日回报<0，买基金第二天,金融大跌(<=-1%)，自身下跌,板块轮动偏向成长/科技；基金自身下跌/急跌后存在超跌反弹动量。
+ULPSX,UltraBull ProFund Service,大盘多头,2,FXY>0 且 GDX>0，买基金第二天,日元上涨，金矿股上涨,避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升。
+ULPSX,UltraBull ProFund Service,大盘多头,3,FXY>0 且 XLK<0 且 XLU>0，买基金第二天,日元上涨，科技下跌，公用事业上涨,避险/利率敏感资产走强（黄金、日元、国债等）；防御性板块走强，资金寻求低波动；板块轮动偏向价值/金融。
+UMPIX,Ultra Mid-Cap ProFund， Investor,中盘,1,GDX>0 且 SPY<0 且 XLK<0，买基金第二天,金矿股上涨，标普500下跌，科技下跌,风险偏好收缩，资金撤离高风险资产；避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升；板块轮动偏向价值/金融。
+UMPIX,Ultra Mid-Cap ProFund， Investor,中盘,2,XLE<0 且 VIX5d>=10.0%，买基金第二天,能源下跌，VIX近5日变化>=10,恐慌/波动率上升，避险情绪占优；能源板块走弱，通胀与周期预期降温。
+UMPIX,Ultra Mid-Cap ProFund， Investor,中盘,3,GLD>0 且 XLK<0 且 XLV<0，买基金后3日平均回报,黄金上涨，科技下跌，医疗下跌,避险资产表现分化；贵金属走强，避险与抗通胀需求上升；板块轮动偏向价值/金融；防御性板块走弱，资金风险偏好上升。
+UMPSX,ProFunds Ultra Mid-Cap ProFund Service Class,中盘,1,GDX>0 且 SPY<0 且 XLK<0，买基金第二天,金矿股上涨，标普500下跌，科技下跌,风险偏好收缩，资金撤离高风险资产；避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升；板块轮动偏向价值/金融。
+UMPSX,ProFunds Ultra Mid-Cap ProFund Service Class,中盘,2,XLE<0 且 VIX5d>=10.0%，买基金第二天,能源下跌，VIX近5日变化>=10,恐慌/波动率上升，避险情绪占优；能源板块走弱，通胀与周期预期降温。
+UMPSX,ProFunds Ultra Mid-Cap ProFund Service Class,中盘,3,GLD>0 且 XLK<0 且 XLV<0，买基金后3日平均回报,黄金上涨，科技下跌，医疗下跌,避险资产表现分化；贵金属走强，避险与抗通胀需求上升；板块轮动偏向价值/金融；防御性板块走弱，资金风险偏好上升。
+UNPIX,UltraInternational ProFund Investor Class,国际,1,XLE<0 且 该基金当日回报<0，买基金第二天,能源下跌，自身下跌,能源板块走弱，通胀与周期预期降温；基金自身下跌/急跌后存在超跌反弹动量。
+UNPIX,UltraInternational ProFund Investor Class,国际,2,HYG>0 且 QQQ<0，买基金后2日平均回报,高收益债上涨，科技成长下跌,风险偏好与防御信号并存，市场分歧加大；信用环境偏宽松，资金愿意承担信用风险。
+UNPIX,UltraInternational ProFund Investor Class,国际,3,SLV>0 且 VIX5d>=10.0%，买基金后2日平均回报,白银上涨，VIX近5日变化>=10,恐慌/波动率上升，避险情绪占优；避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升。
+UNPSX,UltraInternational ProFund Service Class,国际,1,IWM<0 且 该基金当日回报<=-2%，买基金第二天,小盘下跌，自身大跌(<=-2%),风险偏好收缩，资金撤离高风险资产；基金自身下跌/急跌后存在超跌反弹动量。
+UNPSX,UltraInternational ProFund Service Class,国际,2,GDX>0 且 QQQ<0 且 SPY<0，买基金第二天,金矿股上涨，科技成长下跌，标普500下跌,风险偏好收缩，资金撤离高风险资产；避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升。
+UNPSX,UltraInternational ProFund Service Class,国际,3,FXY<0 且 GLD<0 且 XLF>0，买基金后2日平均回报,日元下跌，黄金下跌，金融上涨,板块轮动偏向价值/金融；避险资产走弱。
+UOPIX,Ultra NASDAQ-100 ProFunds Investor Class,纳指100,1,VIX>0 且 该基金当日回报<=-2%，买基金第二天,VIX当日变化上升，自身大跌(<=-2%),恐慌/波动率上升，避险情绪占优；基金自身下跌/急跌后存在超跌反弹动量。
+UOPIX,Ultra NASDAQ-100 ProFunds Investor Class,纳指100,2,TIP>0 且 VIX5d<0，买基金第二天,通胀保护国债上涨，VIX近5日变化下降,避险/利率敏感资产走强（黄金、日元、国债等）；恐慌/波动率回落，市场趋于平静。
+UOPIX,Ultra NASDAQ-100 ProFunds Investor Class,纳指100,3,GLD>0 且 QQQ<0 且 XLF<0，买基金第二天,黄金上涨，科技成长下跌，金融下跌,风险偏好收缩，资金撤离高风险资产；避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升；板块轮动偏向成长/科技。
+UOPSX,Ultra NASDAQ-100 ProFund Service Class,纳指100,1,VIX>0 且 该基金当日回报<=-2%，买基金第二天,VIX当日变化上升，自身大跌(<=-2%),恐慌/波动率上升，避险情绪占优；基金自身下跌/急跌后存在超跌反弹动量。
+UOPSX,Ultra NASDAQ-100 ProFund Service Class,纳指100,2,TIP>0 且 VIX5d<0，买基金第二天,通胀保护国债上涨，VIX近5日变化下降,避险/利率敏感资产走强（黄金、日元、国债等）；恐慌/波动率回落，市场趋于平静。
+UOPSX,Ultra NASDAQ-100 ProFund Service Class,纳指100,3,FXY>0 且 TLT>0 且 XLU>0，买基金第二天,日元上涨，长期国债上涨，公用事业上涨,避险/利率敏感资产走强（黄金、日元、国债等）；防御性板块走强，资金寻求低波动。
+USPIX,Ultra Short NASDAQ-100 ProFund Investor Shares,反向,1,EEM>0 且 SLV>0 且 XLV>0，买基金第二天,新兴市场上涨，白银上涨，医疗上涨,避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升；防御性板块走强，资金寻求低波动；风险偏好回暖，资金回流权益与信用资产。
+USPSX,UltraShort NASDAQ-100 ProFund Service Class,反向,1,EEM>0 且 GLD>0 且 HYG>0，买基金第二天,新兴市场上涨，黄金上涨，高收益债上涨,避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升；风险偏好回暖，资金回流权益与信用资产；信用环境偏宽松，资金愿意承担信用风险。
+UTPIX,Utilities UltraSector ProFund， Investor Class,公用事业,1,FXY>0 且 GDX>0 且 XLK<0，买基金第二天,日元上涨，金矿股上涨，科技下跌,避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升；板块轮动偏向价值/金融。
+UTPSX,Utilities Ultra Sector ProFund， Service,公用事业,1,FXY>0 且 GDX>0 且 XLK<0，买基金第二天,日元上涨，金矿股上涨，科技下跌,避险/利率敏感资产走强（黄金、日元、国债等）；贵金属走强，避险与抗通胀需求上升；板块轮动偏向价值/金融。
+UTPSX,Utilities Ultra Sector ProFund， Service,公用事业,2,GLD>0 且 JNK<0 且 XLU<0，买基金第二天,黄金上涨，高收益债下跌，公用事业下跌,避险资产表现分化；风险偏好收缩，资金撤离高风险资产；信用利差走阔，信用风险上升；贵金属走强，避险与抗通胀需求上升。
+UTPSX,Utilities Ultra Sector ProFund， Service,公用事业,3,GDX>0 且 XLK<0 且 XLV<0，买基金后3日平均回报,金矿股上涨，科技下跌，医疗下跌,避险资产表现分化；贵金属走强，避险与抗通胀需求上升；板块轮动偏向价值/金融；防御性板块走弱，资金风险偏好上升。
+UUPIX,UltraEmerging Markets ProFund Investor Class,新兴市场,1,SPY<0 且 XLK<0 且 XLV<0，买基金第二天,标普500下跌，科技下跌，医疗下跌,风险偏好收缩，资金撤离高风险资产；板块轮动偏向价值/金融；防御性板块走弱，资金风险偏好上升；避险资产走弱。
+UUPIX,UltraEmerging Markets ProFund Investor Class,新兴市场,2,GLD<0 且 TIP>0 且 XLV>0，买基金第二天,黄金下跌，通胀保护国债上涨，医疗上涨,避险资产表现分化；防御性板块走强，资金寻求低波动。
+UUPIX,UltraEmerging Markets ProFund Investor Class,新兴市场,3,FXY>0 且 IWM<0 且 TLT>0，买基金第二天,日元上涨，小盘下跌，长期国债上涨,风险偏好收缩，资金撤离高风险资产；避险/利率敏感资产走强（黄金、日元、国债等）。
+UUPSX,UltraEmerging Markets ProFund Service Class,新兴市场,1,SPY<0 且 XLK<0 且 XLV<0，买基金第二天,标普500下跌，科技下跌，医疗下跌,风险偏好收缩，资金撤离高风险资产；板块轮动偏向价值/金融；防御性板块走弱，资金风险偏好上升；避险资产走弱。
+UUPSX,UltraEmerging Markets ProFund Service Class,新兴市场,2,GLD<0 且 TIP>0 且 XLV>0，买基金第二天,黄金下跌，通胀保护国债上涨，医疗上涨,避险资产表现分化；防御性板块走强，资金寻求低波动。
+UUPSX,UltraEmerging Markets ProFund Service Class,新兴市场,3,FXY>0 且 IWM<0 且 TLT>0，买基金第二天,日元上涨，小盘下跌，长期国债上涨,风险偏好收缩，资金撤离高风险资产；避险/利率敏感资产走强（黄金、日元、国债等）。
+UVPIX,UltraShort Emerging Markets Investor Class,新兴市场,1,FXY<0 且 IWM>0 且 JNK<0，买基金第二天,日元下跌，小盘上涨，高收益债下跌,风险偏好与防御信号并存，市场分歧加大；信用利差走阔，信用风险上升；避险资产走弱。
+UVPIX,UltraShort Emerging Markets Investor Class,新兴市场,2,EEM>0 且 UUP>0 且 XLF<0，买基金后3日平均回报,新兴市场上涨，美元上涨，金融下跌,避险/利率敏感资产走强（黄金、日元、国债等）；风险偏好回暖，资金回流权益与信用资产；美元走强，压制贵金属与新兴市场；板块轮动偏向成长/科技。
+UVPIX,UltraShort Emerging Markets Investor Class,新兴市场,3,GLD>0 且 TIP<0 且 XLU>0，买基金后2日平均回报,黄金上涨，通胀保护国债下跌，公用事业上涨,避险资产表现分化；贵金属走强，避险与抗通胀需求上升；防御性板块走强，资金寻求低波动。
+UVPSX,UltraShort Emerging Markets Service Class,新兴市场,1,HYG<0 且 QQQ<0 且 SLV<0，买基金后2日平均回报,高收益债下跌，科技成长下跌，白银下跌,风险偏好收缩，资金撤离高风险资产；信用利差走阔，信用风险上升；避险资产走弱。
+UWPSX,ProFunds Ultra Short Dow 30 ProFund-Service Class,反向,1,XLV>0 且 XLC<0，买基金第二天,医疗上涨，通信服务下跌,避险/利率敏感资产走强（黄金、日元、国债等）；防御性板块走强，资金寻求低波动。
+UXPSX,UltraShort International ProFund Service Class,国际,1,SLV>0 且 TIP<0 且 TLT<0，买基金后2日平均回报,白银上涨，通胀保护国债下跌，长期国债下跌,避险资产表现分化；贵金属走强，避险与抗通胀需求上升。
+WCPIX,Communication Services UltraSector ProFund Investor Class,通信,1,GLD>0 且 XLK<0 且 XLV<0，买基金后2日平均回报,黄金上涨，科技下跌，医疗下跌,避险资产表现分化；贵金属走强，避险与抗通胀需求上升；板块轮动偏向价值/金融；防御性板块走弱，资金风险偏好上升。
+WCPSX,Communication Services UltraSector ProFund Service Class,通信,1,GLD>0 且 XLK<0 且 XLV<0，买基金后2日平均回报,黄金上涨，科技下跌，医疗下跌,避险资产表现分化；贵金属走强，避险与抗通胀需求上升；板块轮动偏向价值/金融；防御性板块走弱，资金风险偏好上升。

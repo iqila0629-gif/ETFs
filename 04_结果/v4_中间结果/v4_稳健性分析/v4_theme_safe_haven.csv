@@ -1,0 +1,22 @@
+ticker,strategy_no,source,condition,horizon,full_avg,full_trades,full_hit,frozen_avg,frozen_trades,frozen_hit,density_full,density_frozen,fund_name,fund_theme
+CNPIX,1,condition_expansion,combo_XLV_down__ext_usd_gold_ratio_le-1,1,0.5153039450834003,179,0.6312849162011173,0.2154455582550128,50,0.64,160,35,Consumer Staples UltraSector ProFund - Investor Class,必需消费
+CNPIX,2,triple_scan,JNK_up_QQQ_down_XLK_down,1,0.3487410055118108,287,0.5993031358885017,0.6927733458351178,39,0.6410256410256411,160,35,Consumer Staples UltraSector ProFund - Investor Class,必需消费
+CNPIX,3,pair_scan,JNK_up_QQQ_down,1,0.4034706711432366,195,0.5897435897435898,0.5330194219542004,47,0.6170212765957447,160,35,Consumer Staples UltraSector ProFund - Investor Class,必需消费
+CNPSX,1,triple_scan,GDX_up_TIP_up_XLK_down,1,0.2993846892805182,509,0.5834970530451866,0.4229868929633824,41,0.5609756097560976,160,35,Consumer Staples UltraSector ProFund - Service Class,必需消费
+CNPSX,2,triple_scan,GDX_up_TLT_up_XLK_down,1,0.3790079556227398,294,0.5986394557823129,0.664691027591022,37,0.6486486486486487,160,35,Consumer Staples UltraSector ProFund - Service Class,必需消费
+CNPSX,3,triple_scan,LQD_up_QQQ_down_XLU_up,1,0.3162314483048891,167,0.592814371257485,0.3366902106869618,50,0.64,160,35,Consumer Staples UltraSector ProFund - Service Class,必需消费
+GVPSX,1,condition_expansion,combo_TLT_down__self_3down,1,0.2071217863263763,400,0.58,0.2564370825738502,36,0.6388888888888888,120,30,US Government Plus Profund， Service,国债
+PMPIX,1,condition_expansion,combo_ext_sect_rotation_up__self_big_down,1,0.5729399031604261,521,0.5527831094049904,0.3892610369323368,42,0.6190476190476191,200,40,Precious Metals Ultra Sector Profund Investor,贵金属
+PMPIX,2,triple_scan,EEM_up_GLD_down_TLT_down,2,0.348111487842735,622,0.5643086816720257,0.4302103194685872,40,0.625,200,40,Precious Metals Ultra Sector Profund Investor,贵金属
+PMPIX,3,condition_expansion,combo_TIP_up__ext_vix_5dchg_ge10,3,0.3888612605997276,483,0.556935817805383,1.2739301686274491,48,0.6458333333333334,200,40,Precious Metals Ultra Sector Profund Investor,贵金属
+PMPSX,1,condition_expansion,combo_ext_sect_rotation_up__self_big_down,1,0.5827151396860079,525,0.5542857142857143,0.3854061369241733,42,0.6190476190476191,200,40,Precious Metals Ultra Sector Profund Service,贵金属
+PMPSX,2,triple_scan,EEM_up_GLD_down_TLT_down,2,0.3435989863661148,622,0.5627009646302251,0.4263596226408491,40,0.625,200,40,Precious Metals Ultra Sector Profund Service,贵金属
+PMPSX,3,condition_expansion,combo_TIP_up__ext_vix_5dchg_ge10,3,0.4196450042643785,483,0.556935817805383,1.2697700762237496,48,0.6458333333333334,200,40,Precious Metals Ultra Sector Profund Service,贵金属
+RRPIX,1,condition_expansion,combo_XLV_big_down__ext_sect_rotation_up,1,0.295038471444693,210,0.5666666666666667,0.2535319353836,34,0.5882352941176471,120,30,Rising Rates Opportunity Profunds， Investor,利率机会
+RRPSX,1,condition_expansion,combo_XLV_big_down__ext_sect_rotation_up,1,0.2942216326244474,197,0.5532994923857868,0.249716705752992,34,0.5882352941176471,120,30,Rising Rates Opportunity Profunds， Service,利率机会
+SPPIX,1,triple_scan,GLD_up_XLE_up_XLV_down,1,0.2866728234755039,423,0.5791962174940898,0.3886047724476755,56,0.5714285714285714,120,30,Short Precious Metals ProFund Investor Class,贵金属
+SPPSX,1,triple_scan,GLD_up_XLE_up_XLV_down,1,0.2893970327750828,423,0.5791962174940898,0.3947352470568139,56,0.5714285714285714,120,30,Short Precious Metals ProFund Service Class,贵金属
+UTPIX,1,triple_scan,FXY_up_GDX_up_XLK_down,1,0.3792684267341154,508,0.5826771653543307,0.5563531971108809,38,0.5789473684210527,120,30,Utilities UltraSector ProFund， Investor Class,公用事业
+UTPSX,1,triple_scan,FXY_up_GDX_up_XLK_down,1,0.3796063187201983,508,0.5826771653543307,0.5529098511164146,38,0.5789473684210527,160,35,Utilities Ultra Sector ProFund， Service,公用事业
+UTPSX,2,triple_scan,GLD_up_JNK_down_XLU_down,1,0.2361412651293274,188,0.5585106382978723,0.3957134328549019,47,0.5957446808510638,160,35,Utilities Ultra Sector ProFund， Service,公用事业
+UTPSX,3,triple_scan,GDX_up_XLK_down_XLV_down,3,0.2019311465769198,487,0.6283367556468172,0.4523559676359032,36,0.6388888888888888,160,35,Utilities Ultra Sector ProFund， Service,公用事业
