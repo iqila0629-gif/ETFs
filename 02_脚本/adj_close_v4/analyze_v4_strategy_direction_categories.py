@@ -79,11 +79,14 @@ def main() -> None:
     summary.to_csv(OUT_DIR / "v4_strategy_direction_category_summary.csv", index=False)
 
     # Detail rows in the same layout as v4_strategy_direction_detail_v2.csv
-    detail_cols = ["ticker", "condition_text", "scan_token", "horizon", "threshold", "full_avg", "full_hit", "full_trades"]
+    detail_cols = ["ticker", "condition_text", "scan_token", "horizon", "threshold", "full_avg", "full_hit", "full_trades", "异常指标"]
     keys = set(zip(df["ticker"], df["condition"], df["scan_token"], df["horizon"]))
     cat_map = {}
+    flag_map = {}
     for r in df.itertuples(index=False):
-        cat_map[(r.ticker, r.condition, r.scan_token, r.horizon)] = r.category
+        key = (r.ticker, r.condition, r.scan_token, r.horizon)
+        cat_map[key] = r.category
+        flag_map[key] = r.flag
     detail_rows = []
     for (tick, cond, tok, h), g in sweep.groupby(["ticker", "condition", "scan_token", "horizon"]):
         if (tick, cond, tok, h) not in keys:
@@ -101,6 +104,7 @@ def main() -> None:
                 "full_avg": row["full_avg"],
                 "full_hit": row["full_hit"],
                 "full_trades": row["full_trades"],
+                "异常指标": flag_map[(tick, cond, tok, h)],
             })
     detail_df = pd.DataFrame(detail_rows)
     detail_df["_category"] = detail_df.apply(lambda r: cat_map[(r["ticker"], r["condition"], r["scan_token"], r["horizon"])], axis=1)
@@ -117,6 +121,7 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
 
 
 

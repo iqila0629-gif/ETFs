@@ -81,7 +81,7 @@ def scan_magnitudes(token: str) -> list[float]:
         return [1.0, 2.0, 3.0, 4.0, 5.0]
     base = delivered_magnitude(token)
     vals = sorted({round(base + k * 0.5, 2) for k in range(-4, 5)})
-    return [v for v in vals if v >= 0.5]
+    return [v for v in vals if v >= 0.0]
 
 
 def build_scan_part(master, part, ticker, all_etfs, scan_token, th_pct):
@@ -300,6 +300,7 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
 
 
 
