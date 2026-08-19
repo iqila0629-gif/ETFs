@@ -314,22 +314,27 @@ def main():
     add_normal(doc, "结论：连跌天数从 1 增至 4，平均回报与命中率单调上升，符合“连跌越久反弹越强”的假设；第 5 天叠加外部条件后无触发。")
 
     make_heading(doc, "4.3 方向相反的异常策略", 3)
-    add_normal(doc, "按策略逐条统计阈值加深后的效果方向，同时看平均回报与命中率两个相关系数；任一指标相关系数 < -0.5 即列入异常。全部 563 组策略级阈值扫描中，负向策略平均回报中位数相关系数为 +0.76、命中率中位数为 +0.63；正向策略分别为 +0.45、+0.02。共 209 组异常策略（同一策略调整不同条件计为不同组）：")
+    add_normal(doc, "按策略逐条统计阈值加深后的效果方向，同时看平均回报与命中率两个相关系数；任一指标相关系数 < -0.5 即列入异常。全部 563 组策略级阈值扫描中，负向策略平均回报中位数相关系数为 +0.76、命中率中位数为 +0.63；正向策略分别为 +0.45、+0.02。初筛 209 组异常；其中“触发阈值太少”且平均回报呈正向单调的 22 组已剔除（样本少但方向与预期一致，不应判为异常），最终保留 187 组。")
     import pandas as _pd
-    _dev = _pd.read_csv(r"C:\Users\vanessacen\Desktop\新基金预测\04_结果\v4_中间结果\v4_稳健性分析\v4_strategy_direction_deviation.csv").sort_values(["direction", "rho_avg"])
-    _rows = [[r.ticker, r.condition_text, r.scan_token, f"{r.rho_avg:.2f}", f"{r.rho_hit:.2f}", r.flag] for r in _dev.itertuples(index=False)]
-    add_table(doc, ["基金", "条件", "调整条件", "平均回报rho", "命中率rho", "异常指标"], _rows,
-              [Cm(1.5), Cm(4.0), Cm(2.0), Cm(1.6), Cm(1.6), Cm(2.0)], font_size=7)
-    add_normal(doc, "异常类别概览（多 sheet Excel：v4_strategy_direction_categories.xlsx）：")
+    _cat = _pd.read_csv(r"C:\Users\vanessacen\Desktop\新基金预测\04_结果\v4_中间结果\v4_稳健性分析\v4_strategy_direction_category_summary.csv")
+    _desc = {
+        "末端反转": "平均回报先升后降，最后 1-2 个阈值明显回落",
+        "触发阈值太少": "有效阈值点不足 4 个，无法可靠判断趋势",
+        "忽上忽下": "阈值间方向频繁切换，无稳定趋势",
+        "整体反向单调": "阈值越严格，平均回报持续下降",
+        "拐点与整体不同": "存在与整体方向不一致的拐点",
+    }
+    add_normal(doc, "异常类别概览：")
     add_table(doc, ["异常类别", "数量", "占比", "特征"], [
-        ["触发阈值太少", "95", "45.5%", "有效阈值点不足 4 个，无法可靠判断趋势"],
-        ["末端反转", "76", "36.4%", "平均回报先升后降，最后 1-2 个阈值明显回落"],
-        ["忽上忽下", "31", "14.8%", "阈值间方向频繁切换，无稳定趋势"],
-        ["整体反向单调", "6", "2.9%", "阈值越严格，平均回报持续下降"],
-        ["拐点先升后降", "1", "0.5%", "存在中间峰值，峰后趋势反转"],
+        [r.category, str(r.count), f"{r.pct:.1f}%", _desc[r.category]]
+        for r in _cat.itertuples(index=False)
     ], [Cm(3.0), Cm(2.0), Cm(2.0), Cm(7.0)], font_size=8)
-    add_normal(doc, "异常策略数 >=10，逐策略阈值明细改放 CSV：v4_strategy_direction_detail_v2.csv。改进措施：对这些异常策略不做“更深阈值”外推，优先保留交付阈值。")
-
+    _rows = _pd.read_csv(r"C:\Users\vanessacen\Desktop\新基金预测\04_结果\v4_中间结果\v4_稳健性分析\v4_strategy_direction_category_rows.csv").sort_values(["category", "rho_avg"])
+    add_normal(doc, "异常策略明细（按异常类型分组排序）：")
+    _detail = [[r.ticker, r.condition_text, r.scan_token, f"{r.rho_avg:.2f}", f"{r.rho_hit:.2f}", r.flag, r.category] for r in _rows.itertuples(index=False)]
+    add_table(doc, ["基金", "条件", "调整条件", "平均回报rho", "命中率rho", "异常指标", "异常类型"], _detail,
+              [Cm(1.5), Cm(4.0), Cm(2.0), Cm(1.6), Cm(1.6), Cm(2.0), Cm(2.2)], font_size=7)
+    add_normal(doc, "逐策略阈值明细改放 CSV：v4_strategy_direction_detail_v2.csv。改进措施：对这些异常策略不做“更深阈值”外推，优先保留交付阈值。")
 
     out = r"C:\Users\vanessacen\Desktop\新基金预测\03_文档\报告\2026-08-18_v4稳健性分析报告_上司版.docx"
     doc.save(out)
