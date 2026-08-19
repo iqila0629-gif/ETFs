@@ -1,4 +1,4 @@
-"""Classify abnormal threshold strategies and export multi-sheet Excel."""
+"""Classify monotonicity-deviation anomalies by deviation count and position."""
 
 from __future__ import annotations
 
@@ -12,24 +12,39 @@ import config
 OUT_DIR = config.V4_OUT / "v4_稳健性分析"
 
 
-def classify(series: np.ndarray, n_valid: int) -> str:
+def classify_series(avg: np.ndarray, hit: np.ndarray, n_valid: int) -> str:
     if n_valid < 4:
         return "触发阈值太少"
-    s = np.asarray(series, dtype=float)
-    if s.size < 3:
+    s = np.asarray(avg, dtype=float)
+    h = np.asarray(hit, dtype=float)
+    n = len(s)
+    if n < 3:
         return "触发阈值太少"
-    # 末端反转：最后 1-2 个点明显低于前面的峰值，且尾部不再上升
-    prefix_max = s[:-2].max() if s.size >= 3 else s[0]
-    if min(s[-2:]) < prefix_max - 0.05 and s[-1] <= s[-2] + 0.05:
+
+    avg_drops = int(np.sum(np.diff(s) < 0))
+    hit_drops = int(np.sum(np.diff(h) < 0))
+    max_drops = max(avg_drops, hit_drops)
+    if max_drops >= n - 1:
+        return "反向单调"
+
+    peak = int(np.argmax(s))
+    avg_drop_pos = [int(i + 1) for i in range(n - 1) if s[i + 1] < s[i]]
+    hit_drop_pos = [int(i + 1) for i in range(n - 1) if h[i + 1] < h[i]]
+    tail = {n - 2, n - 1}
+    if all(p in tail for p in avg_drop_pos + hit_drop_pos) and peak >= n - 2:
         return "末端反转"
-    diffs = np.diff(s)
-    sign_changes = int(np.sum(np.sign(diffs[1:]) != np.sign(diffs[:-1])))
-    if sign_changes >= max(1, (s.size - 2) * 0.5):
+
+    if 1 <= peak <= n - 2 and len([p for p in avg_drop_pos if p > peak]) >= 2:
+        return "拐点"
+
+    def sign_changes(x: np.ndarray) -> int:
+        d = np.sign(np.diff(x))
+        return int(np.sum(d[1:] != d[:-1]))
+
+    if sign_changes(s) >= max(1, (n - 2) // 2) or sign_changes(h) >= max(1, (n - 2) // 2):
         return "忽上忽下"
-    peak_idx = int(np.argmax(s))
-    if 0 < peak_idx < s.size - 1:
-        return "拐点与整体不同"
-    return "整体反向单调"
+
+    return "部分偏离"
 
 
 def main() -> None:
@@ -45,12 +60,10 @@ def main() -> None:
             & (sweep["condition"] == r.condition)
             & (sweep["scan_token"] == r.scan_token)
             & (sweep["horizon"] == r.horizon)
-        ].sort_values("threshold")
-        valid = g.dropna(subset=["full_avg"])
-        avgs = valid["full_avg"].to_numpy(dtype=float)
-        hits = valid["full_hit"].to_numpy(dtype=float)
-        trades = valid["full_trades"].to_numpy(dtype=float)
-        cat = classify(avgs, len(avgs))
+        ].dropna(subset=["full_avg"]).sort_values("threshold")
+        avg = g["full_avg"].to_numpy(dtype=float)
+        hit = g["full_hit"].to_numpy(dtype=float)
+        cat = classify_series(avg, hit, len(avg))
         rows.append({
             "ticker": r.ticker,
             "condition": r.condition,
@@ -60,74 +73,53 @@ def main() -> None:
             "direction": r.direction,
             "rho_avg": r.rho_avg,
             "rho_hit": r.rho_hit,
+            "n_valid": r.n_valid,
+            "avg_drops": r.avg_drops,
+            "hit_drops": r.hit_drops,
+            "max_drops": r.max_drops,
+            "avg_drop_pos": r.avg_drop_pos,
+            "hit_drop_pos": r.hit_drop_pos,
             "flag": r.flag,
             "category": cat,
-            "avg_mono": bool(np.all(np.diff(avgs) >= 0)) if len(avgs) >= 2 else False,
-            "n_valid_thresholds": len(avgs),
-            "avg_min": float(avgs.min()) if len(avgs) else float("nan"),
-            "avg_max": float(avgs.max()) if len(avgs) else float("nan"),
-            "avg_last": float(avgs[-1]) if len(avgs) else float("nan"),
-            "hit_min": float(hits.min()) if len(hits) else float("nan"),
-            "hit_max": float(hits.max()) if len(hits) else float("nan"),
-            "hit_last": float(hits[-1]) if len(hits) else float("nan"),
-            "trades_min": float(trades.min()) if len(trades) else float("nan"),
-            "trades_max": float(trades.max()) if len(trades) else float("nan"),
-            "trades_last": float(trades[-1]) if len(trades) else float("nan"),
         })
     df = pd.DataFrame(rows)
-    removed = df[(df["category"] == "触发阈值太少") & df["avg_mono"]].copy()
-    df = df[~((df["category"] == "触发阈值太少") & df["avg_mono"])].copy()
+    df.to_csv(OUT_DIR / "v4_strategy_direction_category_rows.csv", index=False)
     summary = df["category"].value_counts().rename_axis("category").reset_index(name="count")
     summary["pct"] = (summary["count"] / len(df) * 100).round(2)
     summary.to_csv(OUT_DIR / "v4_strategy_direction_category_summary.csv", index=False)
-    df.to_csv(OUT_DIR / "v4_strategy_direction_category_rows.csv", index=False)
 
-    # Detail rows in the same layout as v4_strategy_direction_detail_v2.csv
     detail_cols = ["ticker", "condition_text", "scan_token", "horizon", "threshold", "full_avg", "full_hit", "full_trades", "异常指标"]
     keys = set(zip(df["ticker"], df["condition"], df["scan_token"], df["horizon"]))
-    cat_map = {}
     flag_map = {}
     for r in df.itertuples(index=False):
-        key = (r.ticker, r.condition, r.scan_token, r.horizon)
-        cat_map[key] = r.category
-        flag_map[key] = r.flag
-    removed_keys = set(zip(removed["ticker"], removed["condition"], removed["scan_token"], removed["horizon"]))
-    removed_flag = {}
-    for r in removed.itertuples(index=False):
-        removed_flag[(r.ticker, r.condition, r.scan_token, r.horizon)] = r.flag
-
-    def detail_for(group_df, keys_set, flag_map_use):
-        out = []
-        for (tick, cond, tok, h), g in group_df.groupby(["ticker", "condition", "scan_token", "horizon"]):
-            if (tick, cond, tok, h) not in keys_set:
-                continue
-            cond_text = dev.loc[(dev["ticker"] == tick) & (dev["condition"] == cond) & (dev["scan_token"] == tok) & (dev["horizon"] == h), "condition_text"].iloc[0]
-            for _, row in g.sort_values("threshold").iterrows():
-                out.append({
-                    "ticker": tick,
-                    "condition": cond,
-                    "condition_text": cond_text,
-                    "scan_token": tok,
-                    "horizon": h,
-                    "threshold": row["threshold"],
-                    "full_avg": row["full_avg"],
-                    "full_hit": row["full_hit"],
-                    "full_trades": row["full_trades"],
-                    "异常指标": flag_map_use[(tick, cond, tok, h)],
-                })
-        return out
-
-    detail_df = pd.DataFrame(detail_for(sweep, keys, flag_map))
-    detail_df["_category"] = detail_df.apply(lambda r: cat_map[(r["ticker"], r["condition"], r["scan_token"], r["horizon"])], axis=1)
-    removed_detail_df = pd.DataFrame(detail_for(sweep, removed_keys, removed_flag))
+        flag_map[(r.ticker, r.condition, r.scan_token, r.horizon)] = r.flag
+    detail = []
+    for (tick, cond, tok, h), g in sweep.groupby(["ticker", "condition", "scan_token", "horizon"]):
+        if (tick, cond, tok, h) not in keys:
+            continue
+        ctext = dev.loc[(dev["ticker"] == tick) & (dev["condition"] == cond) & (dev["scan_token"] == tok) & (dev["horizon"] == h), "condition_text"].iloc[0]
+        for _, row in g.sort_values("threshold").iterrows():
+            detail.append({
+                "ticker": tick,
+                "condition": cond,
+                "condition_text": ctext,
+                "scan_token": tok,
+                "horizon": h,
+                "threshold": row["threshold"],
+                "full_avg": row["full_avg"],
+                "full_hit": row["full_hit"],
+                "full_trades": row["full_trades"],
+                "异常指标": flag_map[(tick, cond, tok, h)],
+            })
+    detail_df = pd.DataFrame(detail)
+    detail_df["_category"] = detail_df.apply(lambda r: df.loc[(df["ticker"] == r["ticker"]) & (df["condition"] == r["condition"]) & (df["scan_token"] == r["scan_token"]) & (df["horizon"] == r["horizon"]), "category"].iloc[0], axis=1)
 
     xlsx_path = OUT_DIR / "v4_strategy_direction_categories.xlsx"
     with pd.ExcelWriter(xlsx_path, engine="openpyxl") as writer:
         detail_df[detail_cols].to_excel(writer, sheet_name="汇总", index=False)
         for cat in sorted(detail_df["_category"].unique()):
             detail_df[detail_df["_category"] == cat][detail_cols].to_excel(writer, sheet_name=cat, index=False)
-        if not removed_detail_df.empty:
-            removed_detail_df[detail_cols].to_excel(writer, sheet_name="已剔除_触发阈值太少_正向单调", index=False)
+
     print("classified rows:", len(df))
     print(summary.to_string(index=False))
     print("xlsx:", xlsx_path)
@@ -135,9 +127,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
-
-
-
-
-
