@@ -1,30 +1,30 @@
 ticker,condition,condition_text,scan_token,horizon,direction,rho_avg,rho_hit,n_valid,avg_drops,hit_drops,max_drops,avg_drop_pos,hit_drop_pos,flag,category
-BIPIX,combo_SLV_big_up__self_down,SLV>=1% 且 该基金当日回报<0，买基金后2日平均回报,SLV_big_up,2,up,0.9589642108002152,-0.4941427760749922,7,1,3,3,4,4|5|6,命中率,忽上忽下
+BIPIX,combo_SLV_big_up__self_down,SLV>=1% 且 该基金当日回报<0，买基金后2日平均回报,SLV_big_up,2,up,0.9589642108002152,-0.4941427760749922,7,1,3,3,4,4|5|6,命中率,拐点
 BIPIX,combo_SLV_big_up__self_down,SLV>=1% 且 该基金当日回报<0，买基金后2日平均回报,self_down,2,down,0.947773667770576,0.5024848397485367,5,0,3,3,,1|2|4,命中率,忽上忽下
-BIPSX,combo_QQQ_down__self_big_down,QQQ<0 且 该基金当日回报<=-2%，买基金第二天,self_big_down,1,down,0.4209071644001005,0.4056347893462125,8,3,3,3,1|4|5,1|4|5,平均回报、命中率,拐点
+BIPSX,combo_QQQ_down__self_big_down,QQQ<0 且 该基金当日回报<=-2%，买基金第二天,self_big_down,1,down,0.4209071644001005,0.4056347893462125,8,3,3,3,1|4|5,1|4|5,平均回报、命中率,忽上忽下
 BIPSX,combo_XLC_down__ext_sect_rotation_down,XLC<0 且 板块轮动<0，买基金后2日平均回报,XLC_down,2,down,-0.9158547461567236,-0.7281472773733655,4,3,2,3,1|2|3,2|3,平均回报,反向单调
 BITIX,combo_XLC_up__self_down,XLC>0 且 该基金当日回报<0，买基金第二天,self_down,1,down,0.9667537958614664,-0.3677941064708871,5,0,3,3,,1|2|4,命中率,忽上忽下
 BKPIX,GDX_up_IWM_down_XLK_down,GDX>0 且 IWM<0 且 XLK<0，买基金第二天,GDX_up,1,up,-0.8507935866162318,-0.7376075769741138,5,2,3,3,1|4,1|3|4,命中率,忽上忽下
-BKPIX,combo_GLD_down__ext_vix_5dchg_ge10,GLD<0 且 VIX5d>=10.0%，买基金第二天,ext_vix_5dchg_ge10,1,up,0.5118044548835208,0.6485995119037924,9,4,2,4,3|5|6|8,6|7,平均回报,拐点
-BKPSX,GDX_up_QQQ_down_SLV_up,GDX>0 且 QQQ<0 且 SLV>0，买基金后2日平均回报,GDX_up,2,up,-0.6628782105344578,-0.4678748825966115,5,3,3,3,1|2|3,1|2|3,平均回报、命中率,忽上忽下
-BKPSX,combo_GLD_down__ext_vix_5dchg_ge10,GLD<0 且 VIX5d>=10.0%，买基金第二天,ext_vix_5dchg_ge10,1,up,0.5421062445080271,0.6485995119037924,9,4,2,4,3|5|6|8,6|7,平均回报,拐点
+BKPIX,combo_GLD_down__ext_vix_5dchg_ge10,GLD<0 且 VIX5d>=10.0%，买基金第二天,ext_vix_5dchg_ge10,1,up,0.5118044548835208,0.6485995119037924,9,4,2,4,3|5|6|8,6|7,平均回报,忽上忽下
+BKPSX,GDX_up_QQQ_down_SLV_up,GDX>0 且 QQQ<0 且 SLV>0，买基金后2日平均回报,GDX_up,2,up,-0.6628782105344578,-0.4678748825966115,5,3,3,3,1|2|3,1|2|3,平均回报、命中率,拐点
+BKPSX,combo_GLD_down__ext_vix_5dchg_ge10,GLD<0 且 VIX5d>=10.0%，买基金第二天,ext_vix_5dchg_ge10,1,up,0.5421062445080271,0.6485995119037924,9,4,2,4,3|5|6|8,6|7,平均回报,忽上忽下
 BLPIX,combo_XLV_big_down__self_down,XLV<=-1% 且 该基金当日回报<0，买基金第二天,self_down,1,down,0.8268664709947937,-0.9603053029923784,4,1,3,3,3,1|2|3,命中率,反向单调
 BLPSX,combo_XLV_big_down__self_down,XLV<=-1% 且 该基金当日回报<0，买基金第二天,self_down,1,down,0.875252603375965,-0.9181005535742168,4,1,3,3,3,1|2|3,命中率,反向单调
 BMPIX,GDX_up_JNK_down_XLF_down,GDX>0 且 JNK<0 且 XLF<0，买基金第二天,GDX_up,1,up,-0.7955900614971436,-0.7231027168542815,5,2,3,3,1|4,1|3|4,命中率,忽上忽下
-BMPSX,GDX_up_GLD_up_JNK_down,GDX>0 且 GLD>0 且 JNK<0，买基金第二天,GDX_up,1,up,-0.8326310926153893,-0.6304196546943546,5,3,3,3,1|3|4,1|3|4,平均回报、命中率,忽上忽下
+BMPSX,GDX_up_GLD_up_JNK_down,GDX>0 且 GLD>0 且 JNK<0，买基金第二天,GDX_up,1,up,-0.8326310926153893,-0.6304196546943546,5,3,3,3,1|3|4,1|3|4,平均回报、命中率,拐点
 BMPSX,GDX_up_JNK_down_XLF_down,GDX>0 且 JNK<0 且 XLF<0，买基金第二天,GDX_up,1,up,-0.7962132582348698,-0.7231027168542815,5,2,3,3,1|4,1|3|4,命中率,忽上忽下
 BMPSX,GDX_up_UUP_down_XLK_down,GDX>0 且 UUP<0 且 XLK<0，买基金第二天,GDX_up,1,up,0.5388537825349105,-0.2506224513438559,5,2,3,3,1|2,1|2|4,命中率,忽上忽下
 CYPIX,EEM_down_GDX_up_GLD_up,EEM<0 且 GDX>0 且 GLD>0，买基金第二天,GDX_up,1,up,-0.7123188608333304,-0.674762490154421,5,2,3,3,2|4,2|3|4,命中率,拐点
-CYPIX,combo_XLK_big_down__self_big_down,XLK<=-1% 且 该基金当日回报<=-2%，买基金第二天,XLK_big_down,1,down,-0.4640337758645474,0.1445459714631171,7,3,2,3,3|5|6,5|6,平均回报,拐点
+CYPIX,combo_XLK_big_down__self_big_down,XLK<=-1% 且 该基金当日回报<=-2%，买基金第二天,XLK_big_down,1,down,-0.4640337758645474,0.1445459714631171,7,3,2,3,3|5|6,5|6,平均回报,忽上忽下
 CYPIX,combo_XLK_big_down__self_big_down,XLK<=-1% 且 该基金当日回报<=-2%，买基金第二天,self_big_down,1,down,0.6286475698376376,-0.2337970966344199,9,2,4,4,5|8,4|5|7|8,命中率,忽上忽下
 ENPIX,combo_XLC_down__ext_sect_rotation_down,XLC<0 且 板块轮动<0，买基金第二天,XLC_down,1,down,-0.956905248232174,0.9761293278412552,4,3,0,3,1|2|3,,平均回报,反向单调
 ENPIX,combo_XLE_down__ext_vix_5dchg_ge10,XLE<0 且 VIX5d>=10.0%，买基金第二天,XLE_down,1,down,-0.9722818666129648,-0.6943319488170056,5,4,2,4,1|2|3|4,3|4,平均回报,反向单调
 ENPIX,combo_XLE_down__ext_vix_5dchg_ge10,XLE<0 且 VIX5d>=10.0%，买基金第二天,ext_vix_5dchg_ge10,1,up,-0.1210863569676331,0.5019357967717376,9,3,3,3,5|6|8,6|7|8,平均回报、命中率,拐点
 ENPSX,GDX_up_HYG_down_SLV_up,GDX>0 且 HYG<0 且 SLV>0，买基金后3日平均回报,GDX_up,3,up,-0.7980810331451273,-0.704157128924127,5,2,3,3,2|4,2|3|4,命中率,拐点
-ENPSX,GDX_up_HYG_down_SLV_up,GDX>0 且 HYG<0 且 SLV>0，买基金后3日平均回报,SLV_up,3,up,-0.4769957685174887,-0.7963027371889048,5,2,3,3,1|3,1|3|4,命中率,忽上忽下
+ENPSX,GDX_up_HYG_down_SLV_up,GDX>0 且 HYG<0 且 SLV>0，买基金后3日平均回报,SLV_up,3,up,-0.4769957685174887,-0.7963027371889048,5,2,3,3,1|3,1|3|4,命中率,拐点
 ENPSX,combo_XLE_down__ext_vix_5dchg_ge10,XLE<0 且 VIX5d>=10.0%，买基金第二天,XLE_down,1,down,-0.93503006757316,-0.7484973252586046,5,4,2,4,1|2|3|4,3|4,平均回报,反向单调
 ENPSX,combo_XLE_down__ext_vix_5dchg_ge10,XLE<0 且 VIX5d>=10.0%，买基金第二天,ext_vix_5dchg_ge10,1,up,-0.1230125386725059,0.5019357967717376,9,3,3,3,5|6|8,6|7|8,平均回报、命中率,拐点
-FNPIX,GDX_up_XLF_down_XLK_down,GDX>0 且 XLF<0 且 XLK<0，买基金第二天,XLF_down,1,down,0.845440908778154,-0.0042153535221642,5,1,3,3,1,1|2|3,命中率,忽上忽下
+FNPIX,GDX_up_XLF_down_XLK_down,GDX>0 且 XLF<0 且 XLK<0，买基金第二天,XLF_down,1,down,0.845440908778154,-0.0042153535221642,5,1,3,3,1,1|2|3,命中率,拐点
 FNPIX,combo_GDX_up__ext_yld_curve_proxy_up,GDX>0 且 收益率曲线>0，买基金第二天,GDX_up,1,up,-0.8119520964520639,-0.7048744018723693,5,2,3,3,2|4,1|3|4,命中率,拐点
 FNPIX,combo_XLV_down__ext_vix_5dchg_ge10,XLV<0 且 VIX5d>=10.0%，买基金后2日平均回报,ext_vix_5dchg_ge10,2,up,-0.3800623862362844,0.5842710397191181,9,4,2,4,4|5|6|7,4|5,平均回报,拐点
 FNPSX,combo_GDX_up__ext_yld_curve_proxy_up,GDX>0 且 收益率曲线>0，买基金第二天,GDX_up,1,up,-0.8735594947177125,-0.8152858462594461,5,3,3,3,1|2|4,1|3|4,平均回报、命中率,忽上忽下
@@ -32,30 +32,30 @@ FNPSX,combo_XLV_down__ext_vix_5dchg_ge10,XLV<0 且 VIX5d>=10.0%，买基金后2�
 IDPSX,QQQ_down_SLV_up_TLT_down,QQQ<0 且 SLV>0 且 TLT<0，买基金第二天,SLV_up,1,up,-0.7995396765447115,-0.8697232991865737,4,2,3,3,1|3,1|2|3,命中率,反向单调
 INPIX,GLD_up_XLF_down_XLK_down,GLD>0 且 XLF<0 且 XLK<0，买基金第二天,XLK_down,1,down,0.1500981570890155,-0.7499943874560663,5,3,2,3,1|3|4,1|3,平均回报,拐点
 LGPIX,combo_XLV_down__ext_usd_gold_ratio_le-1,XLV<0 且 美元/黄金<=-1.0%，买基金第二天,ext_usd_gold_ratio_le-1,1,up,-0.0252790360934285,-0.2158726544261967,5,2,3,3,3|4,1|3|4,命中率,拐点
-MDPIX,GDX_up_SPY_down_XLF_down,GDX>0 且 SPY<0 且 XLF<0，买基金第二天,GDX_up,1,up,-0.2107808658239038,-0.6142704901551356,5,2,3,3,1|2,2|3|4,命中率,忽上忽下
-MLPIX,GDX_up_SPY_down_XLF_down,GDX>0 且 SPY<0 且 XLF<0，买基金第二天,XLF_down,1,down,0.6768105952675384,0.7579698372915611,5,3,1,3,1|2|3,1,平均回报,忽上忽下
+MDPIX,GDX_up_SPY_down_XLF_down,GDX>0 且 SPY<0 且 XLF<0，买基金第二天,GDX_up,1,up,-0.2107808658239038,-0.6142704901551356,5,2,3,3,1|2,2|3|4,命中率,拐点
+MLPIX,GDX_up_SPY_down_XLF_down,GDX>0 且 SPY<0 且 XLF<0，买基金第二天,XLF_down,1,down,0.6768105952675384,0.7579698372915611,5,3,1,3,1|2|3,1,平均回报,拐点
 PHPIX,FXY_up_GDX_up_QQQ_down,FXY>0 且 GDX>0 且 QQQ<0，买基金第二天,QQQ_down,1,down,0.3599633460687181,-0.910287463729038,4,1,3,3,3,1|2|3,命中率,反向单调
 PHPSX,FXY_up_GDX_up_QQQ_down,FXY>0 且 GDX>0 且 QQQ<0，买基金第二天,QQQ_down,1,down,-0.460829576816169,-0.8628264108074497,4,1,3,3,3,1|2|3,命中率,反向单调
-PMPIX,EEM_up_GLD_down_TLT_down,EEM>0 且 GLD<0 且 TLT<0，买基金后2日平均回报,EEM_up,2,up,-0.6998199969141663,-0.7074673457094872,5,2,3,3,1|4,1|3|4,命中率,忽上忽下
+PMPIX,EEM_up_GLD_down_TLT_down,EEM>0 且 GLD<0 且 TLT<0，买基金后2日平均回报,EEM_up,2,up,-0.6998199969141663,-0.7074673457094872,5,2,3,3,1|4,1|3|4,命中率,拐点
 PMPIX,combo_TIP_up__ext_vix_5dchg_ge10,TIP>0 且 VIX5d>=10.0%，买基金后3日平均回报,ext_vix_5dchg_ge10,3,up,-0.4335118556643882,-0.6639194617254169,9,4,6,6,3|4|5|6,1|2|4|5|6|8,平均回报、命中率,拐点
 PMPIX,combo_ext_sect_rotation_up__self_big_down,板块轮动>0 且 该基金当日回报<=-2%，买基金第二天,self_big_down,1,down,-0.3428476226602309,-0.1136677222683747,9,4,4,4,5|6|7|8,3|6|7|8,平均回报、命中率,拐点
-PMPSX,EEM_up_GLD_down_TLT_down,EEM>0 且 GLD<0 且 TLT<0，买基金后2日平均回报,EEM_up,2,up,-0.6999019526171255,-0.7049634289051777,5,2,3,3,1|4,1|3|4,命中率,忽上忽下
-PMPSX,combo_TIP_up__ext_vix_5dchg_ge10,TIP>0 且 VIX5d>=10.0%，买基金后3日平均回报,ext_vix_5dchg_ge10,3,up,-0.2661776349653312,-0.6639194617254169,9,3,6,6,3|5|6,1|2|4|5|6|8,平均回报、命中率,拐点
+PMPSX,EEM_up_GLD_down_TLT_down,EEM>0 且 GLD<0 且 TLT<0，买基金后2日平均回报,EEM_up,2,up,-0.6999019526171255,-0.7049634289051777,5,2,3,3,1|4,1|3|4,命中率,拐点
+PMPSX,combo_TIP_up__ext_vix_5dchg_ge10,TIP>0 且 VIX5d>=10.0%，买基金后3日平均回报,ext_vix_5dchg_ge10,3,up,-0.2661776349653312,-0.6639194617254169,9,3,6,6,3|5|6,1|2|4|5|6|8,平均回报、命中率,忽上忽下
 PMPSX,combo_ext_sect_rotation_up__self_big_down,板块轮动>0 且 该基金当日回报<=-2%，买基金第二天,self_big_down,1,down,-0.3768155754272791,-0.1088099887406031,9,4,2,4,5|6|7|8,7|8,平均回报,拐点
-REPIX,GDX_up_SLV_up_XLV_down,GDX>0 且 SLV>0 且 XLV<0，买基金第二天,GDX_up,1,up,-0.8653478654495986,-0.6098983573656293,5,3,1,3,1|2|3,3,平均回报,忽上忽下
+REPIX,GDX_up_SLV_up_XLV_down,GDX>0 且 SLV>0 且 XLV<0，买基金第二天,GDX_up,1,up,-0.8653478654495986,-0.6098983573656293,5,3,1,3,1|2|3,3,平均回报,拐点
 REPIX,combo_GDX_up__ext_vix_5dchg_up,GDX>0 且 VIX5d>0，买基金第二天,GDX_up,1,up,0.3859798439465833,-0.0330569128513808,5,3,2,3,1|3|4,1|3,平均回报,拐点
 REPSX,FXY_up_XLF_down_XLU_down,FXY>0 且 XLF<0 且 XLU<0，买基金第二天,XLF_down,1,down,-0.832576382060464,0.6876338176747724,5,3,1,3,2|3|4,3,平均回报,拐点
 REPSX,GDX_up_SLV_up_XLV_down,GDX>0 且 SLV>0 且 XLV<0，买基金第二天,GDX_up,1,up,-0.9455985212307744,-0.8871686749390754,5,4,3,4,1|2|3|4,1|2|3,平均回报、命中率,反向单调
 SGPIX,GDX_up_SPY_down_UUP_down,GDX>0 且 SPY<0 且 UUP<0，买基金第二天,GDX_up,1,up,-0.0681501479923456,-0.7178367048213473,5,2,3,3,1|3,1|3|4,命中率,忽上忽下
 SMPIX,QQQ_down_SLV_down_XLV_down,QQQ<0 且 SLV<0 且 XLV<0，买基金后3日平均回报,QQQ_down,3,down,0.6938202066948208,-0.0865531426809328,5,2,3,3,1|2,1|2|4,命中率,忽上忽下
-SMPIX,QQQ_down_SLV_down_XLV_down,QQQ<0 且 SLV<0 且 XLV<0，买基金后3日平均回报,SLV_down,3,down,0.8230946796169063,0.4853720887510011,5,1,3,3,1,1|2|3,命中率,忽上忽下
-SMPSX,combo_ext_vix_5dchg_up__self_down,VIX5d>0 且 该基金当日回报<0，买基金第二天,self_down,1,down,0.6844021998231169,-0.8111802316982076,5,2,3,3,2|4,2|3|4,命中率,忽上忽下
+SMPIX,QQQ_down_SLV_down_XLV_down,QQQ<0 且 SLV<0 且 XLV<0，买基金后3日平均回报,SLV_down,3,down,0.8230946796169063,0.4853720887510011,5,1,3,3,1,1|2|3,命中率,拐点
+SMPSX,combo_ext_vix_5dchg_up__self_down,VIX5d>0 且 该基金当日回报<0，买基金第二天,self_down,1,down,0.6844021998231169,-0.8111802316982076,5,2,3,3,2|4,2|3|4,命中率,拐点
 SNPSX,SPY_up_XLC_up_XLK_up,SPY>0 且 XLC>0 且 XLK>0，买基金第二天,XLK_up,1,up,-0.9891100604845532,-0.9506482605395664,4,3,3,3,1|2|3,1|2|3,平均回报、命中率,反向单调
-SVPIX,GDX_up_SPY_down_XLK_down,GDX>0 且 SPY<0 且 XLK<0，买基金第二天,XLK_down,1,down,0.5971644259382524,-0.7818379376440251,5,2,3,3,2|4,2|3|4,命中率,忽上忽下
+SVPIX,GDX_up_SPY_down_XLK_down,GDX>0 且 SPY<0 且 XLK<0，买基金第二天,XLK_down,1,down,0.5971644259382524,-0.7818379376440251,5,2,3,3,2|4,2|3|4,命中率,拐点
 SVPSX,GDX_up_GLD_up_SPY_down,GDX>0 且 GLD>0 且 SPY<0，买基金第二天,GDX_up,1,up,-0.762476911327657,-0.5369997860218401,5,2,3,3,2|4,2|3|4,命中率,拐点
 SVPSX,GDX_up_SPY_down_XLF_down,GDX>0 且 SPY<0 且 XLF<0，买基金第二天,GDX_up,1,up,-0.9290245216832352,-0.4910168935391704,5,4,2,4,1|2|3|4,2|4,平均回报,反向单调
-SVPSX,GDX_up_SPY_down_XLF_down,GDX>0 且 SPY<0 且 XLF<0，买基金第二天,XLF_down,1,down,0.5516039494610202,0.668669980083768,5,3,2,3,1|2|3,1|2,平均回报,忽上忽下
-SVPSX,GDX_up_SPY_down_XLK_down,GDX>0 且 SPY<0 且 XLK<0，买基金第二天,XLK_down,1,down,0.660428892191813,-0.7627181648637831,5,2,3,3,2|4,2|3|4,命中率,忽上忽下
+SVPSX,GDX_up_SPY_down_XLF_down,GDX>0 且 SPY<0 且 XLF<0，买基金第二天,XLF_down,1,down,0.5516039494610202,0.668669980083768,5,3,2,3,1|2|3,1|2,平均回报,拐点
+SVPSX,GDX_up_SPY_down_XLK_down,GDX>0 且 SPY<0 且 XLK<0，买基金第二天,XLK_down,1,down,0.660428892191813,-0.7627181648637831,5,2,3,3,2|4,2|3|4,命中率,拐点
 TEPIX,combo_XLC_down__ext_sect_rotation_down,XLC<0 且 板块轮动<0，买基金第二天,XLC_down,1,down,-0.9504475652995692,-0.9062156795709948,4,3,3,3,1|2|3,1|2|3,平均回报、命中率,反向单调
 TEPSX,GLD_up_XLF_down_XLK_down,GLD>0 且 XLF<0 且 XLK<0，买基金第二天,XLK_down,1,down,0.7492993149525033,-0.8676819480985566,5,1,3,3,1,1|3|4,命中率,忽上忽下
 TEPSX,combo_XLC_down__ext_sect_rotation_down,XLC<0 且 板块轮动<0，买基金第二天,XLC_down,1,down,-0.9287693677788462,-0.9105060727173454,4,3,3,3,1|2|3,1|2|3,平均回报、命中率,反向单调
@@ -64,17 +64,17 @@ UAPIX,EEM_down_XLE_down_XLF_down,EEM<0 且 XLE<0 且 XLF<0，买基金第二天,
 UAPIX,combo_XLK_down__ext_stk_bon_corr_down,XLK<0 且 股债相关<0，买基金第二天,XLK_down,1,down,0.2631814805142901,-0.726151621837357,5,3,2,3,2|3|4,2|4,平均回报,拐点
 UAPSX,EEM_down_XLE_down_XLF_down,EEM<0 且 XLE<0 且 XLF<0，买基金第二天,EEM_down,1,down,-0.7204589602527185,-0.6025561267032289,5,2,3,3,3|4,1|2|3,命中率,拐点
 UAPSX,EEM_down_XLE_down_XLF_down,EEM<0 且 XLE<0 且 XLF<0，买基金第二天,XLE_down,1,down,-0.347056623902179,-0.5950758758951981,5,3,3,3,1|3|4,1|2|4,平均回报、命中率,拐点
-UAPSX,EEM_down_XLE_down_XLF_down,EEM<0 且 XLE<0 且 XLF<0，买基金第二天,XLF_down,1,down,0.1746662645586107,-0.8743925183629976,5,1,3,3,4,2|3|4,命中率,忽上忽下
+UAPSX,EEM_down_XLE_down_XLF_down,EEM<0 且 XLE<0 且 XLF<0，买基金第二天,XLF_down,1,down,0.1746662645586107,-0.8743925183629976,5,1,3,3,4,2|3|4,命中率,拐点
 UBPIX,GDX_up_XLC_down,GDX>0 且 XLC<0，买基金第二天,GDX_up,1,up,0.0272082413890771,0.2930502585343637,5,3,3,3,1|2|4,1|2|4,平均回报、命中率,忽上忽下
 UBPIX,combo_QQQ_big_down__ext_vix_chg_up,QQQ<=-1% 且 VIX>0，买基金第二天,QQQ_big_down,1,down,-0.726228238316526,-0.5933859296494033,7,4,3,4,3|4|5|6,4|5|6,平均回报、命中率,拐点
-UBPIX,combo_QQQ_big_down__ext_vix_chg_up,QQQ<=-1% 且 VIX>0，买基金第二天,ext_vix_chg_up,1,up,-0.9520340252203644,-0.6059050965716279,5,3,3,3,1|2|3,1|2|3,平均回报、命中率,忽上忽下
+UBPIX,combo_QQQ_big_down__ext_vix_chg_up,QQQ<=-1% 且 VIX>0，买基金第二天,ext_vix_chg_up,1,up,-0.9520340252203644,-0.6059050965716279,5,3,3,3,1|2|3,1|2|3,平均回报、命中率,拐点
 UBPSX,GDX_up_XLC_down,GDX>0 且 XLC<0，买基金第二天,GDX_up,1,up,0.0152301120617014,0.3848380744513994,5,3,3,3,1|2|4,1|2|4,平均回报、命中率,忽上忽下
 UBPSX,combo_QQQ_big_down__ext_vix_chg_up,QQQ<=-1% 且 VIX>0，买基金第二天,QQQ_big_down,1,down,-0.7172440873816625,-0.5966058503369444,7,4,3,4,3|4|5|6,4|5|6,平均回报、命中率,拐点
-UBPSX,combo_QQQ_big_down__ext_vix_chg_up,QQQ<=-1% 且 VIX>0，买基金第二天,ext_vix_chg_up,1,up,-0.9519206623110787,-0.6365630205613745,5,3,3,3,1|2|3,1|2|3,平均回报、命中率,忽上忽下
-UDPIX,GDX_up_GLD_up_XLK_down,GDX>0 且 GLD>0 且 XLK<0，买基金第二天,GDX_up,1,up,-0.435133171735276,0.0284794334101291,5,2,3,3,1|3,1|3|4,命中率,忽上忽下
+UBPSX,combo_QQQ_big_down__ext_vix_chg_up,QQQ<=-1% 且 VIX>0，买基金第二天,ext_vix_chg_up,1,up,-0.9519206623110787,-0.6365630205613745,5,3,3,3,1|2|3,1|2|3,平均回报、命中率,拐点
+UDPIX,GDX_up_GLD_up_XLK_down,GDX>0 且 GLD>0 且 XLK<0，买基金第二天,GDX_up,1,up,-0.435133171735276,0.0284794334101291,5,2,3,3,1|3,1|3|4,命中率,拐点
 UDPIX,combo_XLV_big_down__self_down,XLV<=-1% 且 该基金当日回报<0，买基金第二天,self_down,1,down,0.8855369630040967,-0.9477353358983476,5,1,4,4,3,1|2|3|4,命中率,反向单调
 UDPSX,combo_QQQ_big_down__ext_vix_5dchg_up,QQQ<=-1% 且 VIX5d>0，买基金第二天,QQQ_big_down,1,down,-0.8276294850502647,-0.6785356184986143,6,3,3,3,3|4|5,3|4|5,平均回报、命中率,拐点
-UDPSX,combo_QQQ_big_down__ext_vix_5dchg_up,QQQ<=-1% 且 VIX5d>0，买基金第二天,ext_vix_5dchg_up,1,up,-0.9125515507911968,-0.7655617866615836,5,3,2,3,1|2|3,2|3,平均回报,忽上忽下
+UDPSX,combo_QQQ_big_down__ext_vix_5dchg_up,QQQ<=-1% 且 VIX5d>0，买基金第二天,ext_vix_5dchg_up,1,up,-0.9125515507911968,-0.7655617866615836,5,3,2,3,1|2|3,2|3,平均回报,拐点
 UDPSX,combo_XLV_big_down__self_down,XLV<=-1% 且 该基金当日回报<0，买基金第二天,self_down,1,down,0.8504352616968918,-0.8862629665433899,5,1,3,3,2,1|2|4,命中率,忽上忽下
 UGPIX,FXY_up_GDX_up_QQQ_down,FXY>0 且 GDX>0 且 QQQ<0，买基金第二天,GDX_up,1,up,0.5883648807236025,-0.2051746210457723,5,3,2,3,1|2|4,2|4,平均回报,忽上忽下
 UGPSX,combo_XLU_big_up__ext_vix_chg_down,XLU>=1% 且 VIX<0，买基金后2日平均回报,ext_vix_chg_down,2,down,0.6385440736931216,0.7721902207772491,5,3,1,3,1|3|4,1,平均回报,拐点
@@ -83,20 +83,20 @@ UJPIX,EEM_down_SPY_down_XLV_down,EEM<0 且 SPY<0 且 XLV<0，买基金第二天,
 UJPSX,EEM_down_SPY_down_XLV_down,EEM<0 且 SPY<0 且 XLV<0，买基金第二天,EEM_down,1,down,-0.694601502406491,-0.9562768520959776,5,2,4,4,1|4,1|2|3|4,命中率,反向单调
 UJPSX,QQQ_down_XLK_down,QQQ<0 且 XLK<0，买基金后2日平均回报,XLK_down,2,down,-0.3266084992861139,-0.8629648614490915,4,1,3,3,3,1|2|3,命中率,反向单调
 ULPIX,FXY_up_GDX_up,FXY>0 且 GDX>0，买基金第二天,GDX_up,1,up,-0.8107304775776617,-0.2443325615210796,5,3,2,3,1|2|4,2|4,平均回报,忽上忽下
-ULPIX,combo_QQQ_big_down__ext_vix_5dchg_up,QQQ<=-1% 且 VIX5d>0，买基金第二天,ext_vix_5dchg_up,1,up,-0.9142537150211196,-0.957878103997222,5,3,3,3,1|2|3,2|3|4,平均回报、命中率,忽上忽下
+ULPIX,combo_QQQ_big_down__ext_vix_5dchg_up,QQQ<=-1% 且 VIX5d>0，买基金第二天,ext_vix_5dchg_up,1,up,-0.9142537150211196,-0.957878103997222,5,3,3,3,1|2|3,2|3|4,平均回报、命中率,拐点
 ULPIX,combo_XLF_big_down__self_down,XLF<=-1% 且 该基金当日回报<0，买基金第二天,self_down,1,down,0.4282126099455554,0.2477396653708579,5,2,3,3,2|3,2|3|4,命中率,拐点
 ULPSX,FXY_up_GDX_up,FXY>0 且 GDX>0，买基金第二天,GDX_up,1,up,-0.6906717339207123,-0.1561098515830226,5,3,2,3,1|2|4,2|4,平均回报,忽上忽下
 ULPSX,combo_XLF_big_down__self_down,XLF<=-1% 且 该基金当日回报<0，买基金第二天,self_down,1,down,0.5940658742301501,-0.6350670137962714,5,2,3,3,2|3,2|3|4,命中率,拐点
-UMPIX,GDX_up_SPY_down_XLK_down,GDX>0 且 SPY<0 且 XLK<0，买基金第二天,GDX_up,1,up,0.7365878024372593,0.1073250501095231,5,1,3,3,2,2|3|4,命中率,忽上忽下
+UMPIX,GDX_up_SPY_down_XLK_down,GDX>0 且 SPY<0 且 XLK<0，买基金第二天,GDX_up,1,up,0.7365878024372593,0.1073250501095231,5,1,3,3,2,2|3|4,命中率,拐点
 UMPIX,combo_XLE_down__ext_vix_5dchg_ge10,XLE<0 且 VIX5d>=10.0%，买基金第二天,XLE_down,1,down,-0.8678816719167742,-0.7516441937677099,5,3,3,3,1|3|4,1|3|4,平均回报、命中率,忽上忽下
-UMPIX,combo_XLE_down__ext_vix_5dchg_ge10,XLE<0 且 VIX5d>=10.0%，买基金第二天,ext_vix_5dchg_ge10,1,up,0.4429255504176076,0.6432114259979976,9,6,3,6,1|2|3|5|6|8,1|5|8,平均回报、命中率,拐点
-UMPSX,GDX_up_SPY_down_XLK_down,GDX>0 且 SPY<0 且 XLK<0，买基金第二天,GDX_up,1,up,0.7212191213778544,-0.038383663671554,5,1,3,3,2,2|3|4,命中率,忽上忽下
+UMPIX,combo_XLE_down__ext_vix_5dchg_ge10,XLE<0 且 VIX5d>=10.0%，买基金第二天,ext_vix_5dchg_ge10,1,up,0.4429255504176076,0.6432114259979976,9,6,3,6,1|2|3|5|6|8,1|5|8,平均回报、命中率,忽上忽下
+UMPSX,GDX_up_SPY_down_XLK_down,GDX>0 且 SPY<0 且 XLK<0，买基金第二天,GDX_up,1,up,0.7212191213778544,-0.038383663671554,5,1,3,3,2,2|3|4,命中率,拐点
 UMPSX,combo_XLE_down__ext_vix_5dchg_ge10,XLE<0 且 VIX5d>=10.0%，买基金第二天,XLE_down,1,down,-0.8683395256609391,-0.7516441937677099,5,3,3,3,1|3|4,1|3|4,平均回报、命中率,忽上忽下
-UMPSX,combo_XLE_down__ext_vix_5dchg_ge10,XLE<0 且 VIX5d>=10.0%，买基金第二天,ext_vix_5dchg_ge10,1,up,0.4424888281675875,0.7036368587138014,9,6,3,6,1|2|3|5|6|8,1|5|8,平均回报、命中率,拐点
-UNPIX,combo_SLV_up__ext_vix_5dchg_ge10,SLV>0 且 VIX5d>=10.0%，买基金后2日平均回报,ext_vix_5dchg_ge10,2,up,-0.0810193600960168,-0.5566455645364806,9,4,4,4,2|3|5|6,3|4|5|6,平均回报、命中率,忽上忽下
+UMPSX,combo_XLE_down__ext_vix_5dchg_ge10,XLE<0 且 VIX5d>=10.0%，买基金第二天,ext_vix_5dchg_ge10,1,up,0.4424888281675875,0.7036368587138014,9,6,3,6,1|2|3|5|6|8,1|5|8,平均回报、命中率,忽上忽下
+UNPIX,combo_SLV_up__ext_vix_5dchg_ge10,SLV>0 且 VIX5d>=10.0%，买基金后2日平均回报,ext_vix_5dchg_ge10,2,up,-0.0810193600960168,-0.5566455645364806,9,4,4,4,2|3|5|6,3|4|5|6,平均回报、命中率,拐点
 UNPIX,combo_XLE_down__self_down,XLE<0 且 该基金当日回报<0，买基金第二天,XLE_down,1,down,0.1944361648872833,-0.7819386776428523,5,3,3,3,1|2|4,1|2|4,平均回报、命中率,忽上忽下
 UNPSX,FXY_down_GLD_down_XLF_up,FXY<0 且 GLD<0 且 XLF>0，买基金后2日平均回报,XLF_up,2,up,-0.8077021254140331,-0.9112135821958742,5,3,3,3,1|3|4,1|2|3,平均回报、命中率,拐点
-UNPSX,combo_IWM_down__self_big_down,IWM<0 且 该基金当日回报<=-2%，买基金第二天,self_big_down,1,down,0.1744901399796637,0.4931803507466729,9,3,3,3,5|6|8,2|3|5,平均回报、命中率,拐点
+UNPSX,combo_IWM_down__self_big_down,IWM<0 且 该基金当日回报<=-2%，买基金第二天,self_big_down,1,down,0.1744901399796637,0.4931803507466729,9,3,3,3,5|6|8,2|3|5,平均回报、命中率,忽上忽下
 UOPIX,combo_ext_vix_chg_up__self_big_down,VIX>0 且 该基金当日回报<=-2%，买基金第二天,ext_vix_chg_up,1,up,-0.7522970663191547,-0.6557340548577836,5,3,3,3,2|3|4,2|3|4,平均回报、命中率,拐点
 UOPIX,combo_ext_vix_chg_up__self_big_down,VIX>0 且 该基金当日回报<=-2%，买基金第二天,self_big_down,1,down,0.9062722137224192,0.7348594877100143,9,2,4,4,5|8,1|2|5|7,命中率,忽上忽下
 UOPSX,combo_ext_vix_chg_up__self_big_down,VIX>0 且 该基金当日回报<=-2%，买基金第二天,self_big_down,1,down,0.9363132679718856,0.4774337843336748,9,1,3,3,5,1|2|7,命中率,忽上忽下

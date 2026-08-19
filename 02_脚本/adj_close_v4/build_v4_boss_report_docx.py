@@ -318,8 +318,8 @@ def main():
     import pandas as _pd
     _cat = _pd.read_csv(r"C:\Users\vanessacen\Desktop\新基金预测\04_结果\v4_中间结果\v4_稳健性分析\v4_strategy_direction_category_summary.csv")
     _desc = {
-        "忽上忽下": "偏离点分散，阈值间方向频繁切换",
-        "拐点": "存在一个明显峰值/拐点，峰后趋势反转",
+        "拐点": "存在明显峰值/拐点，峰后趋势反转（按实际异常指标判断）",
+        "忽上忽下": "偏离点分散，阈值间方向频繁切换（按实际异常指标判断）",
         "反向单调": "几乎全程反向，阈值越严格平均回报越差",
     }
     add_normal(doc, "异常类别概览：")
@@ -327,10 +327,10 @@ def main():
         [r.category, str(r.count), f"{r.pct:.1f}%", _desc[r.category]]
         for r in _cat.itertuples(index=False)
     ], [Cm(3.0), Cm(2.0), Cm(2.0), Cm(7.0)], font_size=8)
-    _rows = _pd.read_csv(r"C:\Users\vanessacen\Desktop\新基金预测\04_结果\v4_中间结果\v4_稳健性分析\v4_strategy_direction_category_rows.csv").sort_values(["category", "rho_avg"])
+    _rows = _pd.read_csv(r"C:\Users\vanessacen\Desktop\新基金预测\04_结果\v4_中间结果\v4_稳健性分析\v4_strategy_direction_category_rows.csv").sort_values(["category", "max_drops"], ascending=[True, False])
     add_normal(doc, "异常策略明细（按异常类型分组排序）：")
-    _detail = [[r.ticker, r.condition_text, r.scan_token, f"{r.rho_avg:.2f}", f"{r.rho_hit:.2f}", r.flag, r.category] for r in _rows.itertuples(index=False)]
-    add_table(doc, ["基金", "条件", "调整条件", "平均回报rho", "命中率rho", "异常指标", "异常类型"], _detail,
+    _detail = [[r.ticker, r.condition_text, r.scan_token, str(r.avg_drops), str(r.hit_drops), r.flag, r.category] for r in _rows.itertuples(index=False)]
+    add_table(doc, ["基金", "条件", "调整条件", "平均回报偏离点", "命中率偏离点", "异常指标", "异常类型"], _detail,
               [Cm(1.5), Cm(4.0), Cm(2.0), Cm(1.6), Cm(1.6), Cm(2.0), Cm(2.2)], font_size=7)
     add_normal(doc, "逐策略阈值明细改放 CSV：v4_strategy_direction_detail_v2.csv。改进措施：对这些异常策略不做“更深阈值”外推，优先保留交付阈值。")
 

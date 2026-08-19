@@ -12,39 +12,53 @@ import config
 OUT_DIR = config.V4_OUT / "v4_稳健性分析"
 
 
-def classify_series(avg: np.ndarray, hit: np.ndarray, n_valid: int) -> str:
+def classify_one(series: np.ndarray, n: int) -> str:
+    if n < 4:
+        return "触发阈值太少"
+    s = np.asarray(series, dtype=float)
+    if n < 3:
+        return "触发阈值太少"
+    drops = int(np.sum(np.diff(s) < 0))
+    if drops >= n - 1:
+        return "反向单调"
+    d = np.sign(np.diff(s))
+    sign_changes = int(np.sum(d[1:] != d[:-1]))
+    peak = int(np.argmax(s))
+    drop_pos = [int(i + 1) for i in range(n - 1) if s[i + 1] < s[i]]
+    tail = {n - 2, n - 1}
+    if peak >= n - 2 and all(p in tail for p in drop_pos):
+        return "末端反转"
+    if sign_changes == 1:
+        return "拐点"
+    if 1 <= peak <= n - 2 and len([p for p in drop_pos if p > peak]) >= 2 and sign_changes <= 2:
+        return "拐点"
+    if sign_changes >= 2:
+        return "忽上忽下"
+    return "部分偏离"
+
+
+def classify_series(avg: np.ndarray, hit: np.ndarray, n_valid: int, flag: str) -> str:
     if n_valid < 4:
         return "触发阈值太少"
     s = np.asarray(avg, dtype=float)
     h = np.asarray(hit, dtype=float)
     n = len(s)
-    if n < 3:
-        return "触发阈值太少"
-
-    avg_drops = int(np.sum(np.diff(s) < 0))
-    hit_drops = int(np.sum(np.diff(h) < 0))
-    max_drops = max(avg_drops, hit_drops)
-    if max_drops >= n - 1:
-        return "反向单调"
-
-    peak = int(np.argmax(s))
-    avg_drop_pos = [int(i + 1) for i in range(n - 1) if s[i + 1] < s[i]]
-    hit_drop_pos = [int(i + 1) for i in range(n - 1) if h[i + 1] < h[i]]
-    tail = {n - 2, n - 1}
-    if all(p in tail for p in avg_drop_pos + hit_drop_pos) and peak >= n - 2:
-        return "末端反转"
-
-    if 1 <= peak <= n - 2 and len([p for p in avg_drop_pos if p > peak]) >= 2:
-        return "拐点"
-
-    def sign_changes(x: np.ndarray) -> int:
-        d = np.sign(np.diff(x))
-        return int(np.sum(d[1:] != d[:-1]))
-
-    if sign_changes(s) >= max(1, (n - 2) // 2) or sign_changes(h) >= max(1, (n - 2) // 2):
-        return "忽上忽下"
-
-    return "部分偏离"
+    use_avg = "平均回报" in flag
+    use_hit = "命中率" in flag
+    cats = []
+    if use_avg:
+        cats.append(classify_one(s, n))
+    if use_hit:
+        cats.append(classify_one(h, n))
+    if not cats:
+        return "部分偏离"
+    if len(cats) == 1:
+        return cats[0]
+    priority = ["反向单调", "末端反转", "拐点", "忽上忽下", "部分偏离", "触发阈值太少"]
+    for c in priority:
+        if c in cats:
+            return c
+    return cats[0]
 
 
 def main() -> None:
@@ -63,7 +77,7 @@ def main() -> None:
         ].dropna(subset=["full_avg"]).sort_values("threshold")
         avg = g["full_avg"].to_numpy(dtype=float)
         hit = g["full_hit"].to_numpy(dtype=float)
-        cat = classify_series(avg, hit, len(avg))
+        cat = classify_series(avg, hit, len(avg), r.flag)
         rows.append({
             "ticker": r.ticker,
             "condition": r.condition,
@@ -127,3 +141,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
